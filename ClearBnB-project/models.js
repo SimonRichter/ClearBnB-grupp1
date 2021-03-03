@@ -9,7 +9,7 @@ const Users = mongoose.model('Users', {
   password: { type: String, required: true },
 });
 
-const Bookings = global.mongoose('Bookings', {
+const Bookings = mongoose.model('Bookings', {
   startDate: { type: Number, required: true },
   endDate: { type: Number, required: true },
   userId: { type: String, unique: true, required: true },
@@ -17,7 +17,7 @@ const Bookings = global.mongoose('Bookings', {
   price: { type: Number, required: true },
 });
 
-const Residences = global.mongoose('Residences', {
+const Residences = mongoose.model('Residences', {
   title: { type: String, required: true },
   adress: { type: String, unique: true, required: true },
   type: { type: String, required: true },
@@ -30,7 +30,7 @@ const Residences = global.mongoose('Residences', {
   residenceLimit: { type: Number, required: true },
 });
 
-const Features = global.mongoose('Features', {
+const Features = mongoose.model('Features', {
   firstAidKit: Boolean,
   shower: Boolean,
   parking: Boolean,
@@ -46,3 +46,10 @@ const Features = global.mongoose('Features', {
   fridge: Boolean,
   dishwasher: Boolean
 });
+
+module.exports = {
+  users: Users,
+  bookings: Bookings,
+  residences: Residences,
+  features: Features
+}

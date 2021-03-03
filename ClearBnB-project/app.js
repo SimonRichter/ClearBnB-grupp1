@@ -12,6 +12,13 @@ global.mongoose.connect(atlasURL, {
   useUnifiedTopology: true
 });
 
+const models = require('./models.js');
 
+app.get('/rest/users', async (req, res) => {
+  console.log(models);
+  let user = models[users];
+  // let doc = await user.find();
+  // res.json(doc);
+})
 
 app.listen(5000, () => console.log("server started on port 5000"));
