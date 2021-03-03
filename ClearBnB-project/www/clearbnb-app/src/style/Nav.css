@@ -1,0 +1,13 @@
+.nav-bar{
+  height: 10vh;
+  background: linear-gradient(lightblue, #eee);
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  top: 0;
+}
+
+.nav-bar h4{
+  margin: 0;
+  padding: 20px 0 0 20px;
+}
