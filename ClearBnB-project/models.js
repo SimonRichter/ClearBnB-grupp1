@@ -3,31 +3,31 @@ const { mongo } = require("mongoose");
 const mongoose = global.mongoose;
 
 const Users = mongoose.model('Users', {
-  email: String,
-  firstName: String,
-  lastName: String,
-  password: String
+  email: { type: String, unique: true, required: true },
+  firstName: { type: String, required: true },
+  lastName: { type: String, required: true },
+  password: { type: String, required: true },
 });
 
 const Bookings = global.mongoose('Bookings', {
-  startDate: Number,
-  endDate: Number,
-  userId: String,
-  residenceId: String,
-  price: Number
+  startDate: { type: Number, required: true },
+  endDate: { type: Number, required: true },
+  userId: { type: String, unique: true, required: true },
+  residenceId: { type: String, required: true },
+  price: { type: Number, required: true },
 });
 
 const Residences = global.mongoose('Residences', {
-  title: String,
+  title: { type: String, required: true },
   adress: { type: String, unique: true, required: true },
-  type: String,
-  description: String,
-  startDate: Number,
-  endDate: Number,
-  imageURLs: Array,
-  featuresId: String,
-  userId: String,
-  residenceLimit: Number,
+  type: { type: String, required: true },
+  description: { type: String, required: true },
+  startDate: { type: Number, required: true },
+  endDate: { type: Number, required: true },
+  imageURLs: { type: Array, required: true },
+  featuresId: { type: String, unique: true, required: true },
+  userId: { type: String, unique: true, required: true },
+  residenceLimit: { type: Number, required: true },
 });
 
 const Features = global.mongoose('Features', {
