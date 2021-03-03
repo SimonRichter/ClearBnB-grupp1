@@ -3,9 +3,10 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
+
 app.use(express.json());
 
-const atlasURL = "mongodb+srv://clearBnB:grupp1java20@cluster-clearbnb.tl726.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const atlasURL = 'mongodb+srv://clearBnB:grupp1java20@cluster-clearbnb.tl726.mongodb.net/ClearBnB?retryWrites=true&w=majority';
 
 global.mongoose.connect(atlasURL, {
   useNewUrlParser: true,
@@ -14,11 +15,18 @@ global.mongoose.connect(atlasURL, {
 
 const models = require('./models.js');
 
-app.get('/rest/users', async (req, res) => {
-  console.log(models);
-  let user = models[users];
-  // let doc = await user.find();
-  // res.json(doc);
+app.get("/rest/:model", async (req, res) => {
+  let model = models[req.params.model]
+  let doc = await model.find()
+  res.json(doc)
 })
+
+
+app.post("/rest/:model", async (req, res) => {
+  let model = models[req.params.model]
+  let doc = new model(req.body);
+  doc.save().then(res.json(doc))
+})
+
 
 app.listen(5000, () => console.log("server started on port 5000"));

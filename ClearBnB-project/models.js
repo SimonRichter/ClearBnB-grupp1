@@ -1,15 +1,13 @@
-const { mongo } = require("mongoose");
-
 const mongoose = global.mongoose;
 
-const Users = mongoose.model('Users', {
+const Users = mongoose.model('user', {
   email: { type: String, unique: true, required: true },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   password: { type: String, required: true },
 });
 
-const Bookings = mongoose.model('Bookings', {
+const Bookings = mongoose.model('booking', {
   startDate: { type: Number, required: true },
   endDate: { type: Number, required: true },
   userId: { type: String, unique: true, required: true },
@@ -17,7 +15,7 @@ const Bookings = mongoose.model('Bookings', {
   price: { type: Number, required: true },
 });
 
-const Residences = mongoose.model('Residences', {
+const Residences = mongoose.model('residence', {
   title: { type: String, required: true },
   adress: { type: String, unique: true, required: true },
   type: { type: String, required: true },
@@ -30,7 +28,7 @@ const Residences = mongoose.model('Residences', {
   residenceLimit: { type: Number, required: true },
 });
 
-const Features = mongoose.model('Features', {
+const Features = mongoose.model('feature', {
   firstAidKit: Boolean,
   shower: Boolean,
   parking: Boolean,
