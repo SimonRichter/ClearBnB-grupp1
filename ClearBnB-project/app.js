@@ -21,12 +21,21 @@ app.get("/rest/:model", async (req, res) => {
   res.json(doc)
 })
 
+app.get("/rest/:model/:id", async (req, res) => {
+  let model = models[req.params.model]
+  let doc = await model.findById(req.params.id).populate(['residenceId', 'userId', 'featuresId']).exec();
+  res.json(doc)
+})
+
 
 app.post("/rest/:model", async (req, res) => {
   let model = models[req.params.model]
   let doc = new model(req.body);
   doc.save().then(res.json(doc))
 })
+
+
+
 
 
 app.listen(5000, () => console.log("server started on port 5000"));
