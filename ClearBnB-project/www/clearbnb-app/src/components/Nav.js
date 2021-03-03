@@ -6,9 +6,12 @@ const Nav = () => {
 
   return (
     <div className="nav-bar">
-      <Link to="/">
       <h4>ClearBnB</h4>
-      </Link>
+      <div className="links">
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
+      <Link to="/Residences">Residences</Link>
+      </div>
     </div>
   ); 
 }

@@ -1,4 +1,6 @@
 .nav-bar{
+  display: grid;
+  grid-template-columns: 50% 1fr;
   height: 10vh;
   background: linear-gradient(lightblue, #eee);
   position: fixed;
@@ -11,3 +13,8 @@
   margin: 0;
   padding: 20px 0 0 20px;
 }
+
+.nav-bar a {
+  margin: 20px;
+}
+

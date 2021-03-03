@@ -17,10 +17,10 @@ function App() {
         <div className="wrapper"></div>
       <Switch>
           <Route path="/" exact component={Home} /> 
-          <Route path="/" exact component={About} />  
-          <Route path="/" exact component={Residences} />  
-          <Route path="/" exact component={Login} />  
-          <Route path="/" exact component={Register}/>  
+          <Route path="/about" exact component={About} />   
+          <Route path="/residences" exact component={Residences} />  
+          <Route path="/login" exact component={Login} />  
+          <Route path="/register" exact component={Register}/>  
       </Switch>
     </div>
     </Router>
