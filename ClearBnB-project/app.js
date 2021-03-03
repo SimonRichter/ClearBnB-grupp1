@@ -24,15 +24,20 @@ app.get("/rest/:model", async (req, res) => {
 app.get("/rest/:model/:id", async (req, res) => {
   let model = models[req.params.model]
   let doc = await model.findById(req.params.id).populate(['residenceId', 'userId', 'featuresId']).exec();
-  res.json(doc)
+  res.json(doc);
 })
-
 
 app.post("/rest/:model", async (req, res) => {
   let model = models[req.params.model]
   let doc = new model(req.body);
   doc.save().then(res.json(doc))
 })
+
+app.delete('/rest/:model/:id', async (req, res) => {
+  let model = models[req.params.model];
+  let doc = await model.findByIdAndDelete(req.params.id);
+  res.json(doc);
+});
 
 
 
