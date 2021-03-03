@@ -6,6 +6,8 @@ const path = require("path");
 
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, './www')));
+
 const atlasURL = 'mongodb+srv://clearBnB:grupp1java20@cluster-clearbnb.tl726.mongodb.net/ClearBnB?retryWrites=true&w=majority';
 
 global.mongoose.connect(atlasURL, {
