@@ -11,10 +11,15 @@
 
 .nav-bar h4{
   margin: 0;
-  padding: 20px 0 0 20px;
+  margin-left: 10px;
+  align-self: center;
 }
 
-.nav-bar a {
+.links{
+  align-self: center;
+}
+
+.links a {
   margin: 20px;
 }
 
