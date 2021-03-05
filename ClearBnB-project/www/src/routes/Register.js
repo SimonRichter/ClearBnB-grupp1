@@ -23,7 +23,6 @@ function CreateUser() {
     history.push('/user/' + user.id)
   }
 
-  const Register = () => {
     return (
       <div className="register">
         <div class="grid-container">
@@ -55,7 +54,7 @@ function CreateUser() {
         </div>
       </div>
     );
-  }
+  
 }
 
  
