@@ -16,6 +16,11 @@ const ResidenceDetails = () => {
       })}
       </div>
       <h1>{residence.title}</h1>
+      <p><span>City: </span>{residence.city}</p>
+      <p><span>Country: </span>{residence.country}</p>
+      <p><span>Adress: </span>{residence.adress}</p>
+      <p><span>Type: </span>{residence.type}</p>
+      <p><span>Description: </span>{residence.description}</p>
     </div>
   );
 }

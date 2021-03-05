@@ -1,6 +1,9 @@
 .residenceDetail {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
+  padding: 20px;
+  background: #eee;
+  border-radius: 10px;
 }
 
 .residenceDetail > .images{
@@ -13,4 +16,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 10px;
+}
+
+.residenceDetail >  p > span{
+  font-weight: bolder;
 }
