@@ -9,16 +9,17 @@ const Register = () => {
         <div class="grid-item">3</div>
         <div class="grid-item">4</div>
         <div class="grid-item">
-          <input required="firstName" placeholder="First name" />
-          <input required="lastName" placeholder="Last name" />
-          <input required="email" placeholder="email" />
-          <input required="password" placeholder="password" />
-          <input required="confirmPassword" placeholder="confirmPassword" />
-          <button className="registerButton">Register</button>
+          <div class="inner-grid"><input required="firstName" key="1" placeholder="First name" /></div>
 
-
+          <div class="inner-grid"><input required="lastName" key="2" placeholder="Last name" /></div>
           
+          <div class="inner-grid"><input required="email" key="3" placeholder="email" /></div>
+          
+          <div class="inner-grid"><input required="password" key="4" placeholder="password" /></div>
 
+          <div class="inner-grid"><input required="confirmPassword" key="5" placeholder="confirm password" /></div>
+
+          <div class="inner-grid"><button className="registerButton" key="6">Register</button></div>
 
         </div>
         <div class="grid-item">6</div>
