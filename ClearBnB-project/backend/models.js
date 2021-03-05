@@ -19,7 +19,7 @@ const Residences = mongoose.model('residence', {
   title: { type: String, required: true },
   country: { type: String, required: true },
   city: {type: String, required: true},
-  adress: { type: String, unique: true, required: true },
+  address: { type: String, unique: true, required: true },
   type: { type: String, required: true },
   description: { type: String, required: true },
   startDate: { type: Number, required: true },
