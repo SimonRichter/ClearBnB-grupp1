@@ -89,18 +89,19 @@
 
 .divImgs {
   display: grid;
+  justify-items: center;
   grid-template-columns: 30% 30% 30%;
-  grid-gap: 30px;
+  grid-gap: 40px;
   margin-top: 20px;
   background-color: rgba(245, 240, 240, 0.253);
-  height: 737px;
-  padding: 40px;
+  height: 717px;
+  padding: 80px 10px 10px 10px;
 }
 
-.divImg1 img {
+.divImgs img {
+  margin-left: 50px;
   width: 100%;
-  object-fit: cover;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .exploreText {
