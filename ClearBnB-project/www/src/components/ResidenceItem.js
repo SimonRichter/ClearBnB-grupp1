@@ -1,11 +1,10 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
+
 import '../style/ResidenceItem.css';
 
 const ResidenceItem = ({ residence }) => {
-
   const history = useHistory()
-
 
   const goToDetailPage = () => {
     history.push('/residence/' + residence._id)
