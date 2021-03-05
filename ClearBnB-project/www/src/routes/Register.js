@@ -1,5 +1,14 @@
 import React from 'react';
 import '../style/Register.css';
+import {useRef} from 'react'
+
+
+const firstName = useRef();
+const lastName = useRef();
+const email = useRef();
+const password = useRef();
+const confirmPassword = useRef();
+
 const Register = () => {
   return (
     <div className="register">
@@ -9,18 +18,21 @@ const Register = () => {
         <div class="grid-item">3</div>
         <div class="grid-item">4</div>
         <div class="grid-item">
-          <div class="inner-grid"><input required="firstName" key="1" placeholder="First name" /></div>
+          <form key="1" style={styles.form} onSubmit={createUser}>
+          <div class="inner-grid"><input required="firstName" key="2" placeholder="First name" /></div>
 
-          <div class="inner-grid"><input required="lastName" key="2" placeholder="Last name" /></div>
+          <div class="inner-grid"><input required="lastName" key="3" placeholder="Last name" /></div>
           
-          <div class="inner-grid"><input required="email" key="3" placeholder="email" /></div>
+          <div class="inner-grid"><input required="email" key="4" placeholder="email" /></div>
           
-          <div class="inner-grid"><input required="password" key="4" placeholder="password" /></div>
+          <div class="inner-grid"><input required="password" key="5" placeholder="password" /></div>
 
-          <div class="inner-grid"><input required="confirmPassword" key="5" placeholder="confirm password" /></div>
+          <div class="inner-grid"><input required="confirmPassword" key="6" placeholder="confirm password" /></div>
 
-          <div class="inner-grid"><button className="registerButton" key="6">Register</button></div>
-
+          <div class="inner-grid">
+            <button className="registerButton" key="7" style={{...styles.input, ...styles.button}}>Register</button>
+          </div>
+          </form>
         </div>
         <div class="grid-item">6</div>
         <div class="grid-item">7</div>
@@ -31,4 +43,4 @@ const Register = () => {
   );
 }
  
-export default Register;
+export default Register(createUser);
