@@ -6,7 +6,7 @@ const About = () => {
     <div className="about">
       <div className="outerContainer">
 
-        <div className ="title">
+        {/* <div className ="title">
           <h1>About page</h1>
         </div>
 
@@ -16,8 +16,19 @@ const About = () => {
 
         <div className="lowerDescription">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam minima assumenda, pariatur at ab illo architecto cupiditate sit iure, explicabo ullam asperiores dolorem reiciendis reprehenderit nesciunt similique eaque quas dolor?
+        </div> */}
+        {/* ----------------------------------------Grid test */}
+        <div class="grid-container">
+          <div class="grid-item"></div>
+          <div class="grid-item">About page</div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur aliquid ab excepturi possimus fugit animi porro et. Odit ipsam excepturi aspernatur tempora at quis et fuga expedita cupiditate voluptates.</div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad doloremque blanditiis maiores eveniet, in nesciunt porro rerum id facilis laborum ex iusto nemo quaerat? Cupiditate sequi a reprehenderit fugit blanditiis!</div>
+          <div class="grid-item"></div>
         </div>
-
       </div>
 
     </div>
