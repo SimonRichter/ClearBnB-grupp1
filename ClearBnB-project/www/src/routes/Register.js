@@ -8,7 +8,18 @@ const Register = () => {
         <div class="grid-item">Register</div>
         <div class="grid-item">3</div>
         <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
+        <div class="grid-item">
+          <input required="firstName" placeholder="First name" />
+          <input required="lastName" placeholder="Last name" />
+          <input required="email" placeholder="email" />
+          <input required="password" placeholder="password" />
+          <input required="confirmPassword" placeholder="confirmPassword" />
+
+
+          
+
+
+        </div>
         <div class="grid-item">6</div>
         <div class="grid-item">7</div>
         <div class="grid-item">8</div>
