@@ -34,4 +34,10 @@
   color: white;
   background: rgb(68, 68, 248);
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.form-for-login button:hover{
+  Transform: scale(1.02);
+  transition: 300ms;
 }
