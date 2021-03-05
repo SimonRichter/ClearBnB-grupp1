@@ -1,0 +1,24 @@
+.residenceDetail {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background: #eee;
+  border-radius: 10px;
+}
+
+.residenceDetail > .images{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.residenceDetail > .images img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.residenceDetail >  p > span{
+  font-weight: bolder;
+}

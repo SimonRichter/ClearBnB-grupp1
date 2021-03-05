@@ -1,9 +1,10 @@
 import React from 'react'
+import ResidenceList from '../components/ResidenceList'
 
 const Residences = () => {
   return (  
     <div className="residences">
-      <h1>Residences</h1>
+      <ResidenceList/>
     </div>
   );
 }
