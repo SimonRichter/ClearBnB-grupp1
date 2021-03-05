@@ -4,20 +4,26 @@ export const UserContext = createContext();
 
 export const UserProvider = (props) => {
 
+  const [users, setUsers] = useState([]);
+
   
   const fetchUsers = async() => {
     let data = await fetch('/rest/users')
     data = await data.json();
-    console.log(data);
+    setUsers([...data]);
   }
-
 
   useEffect(() => {
     fetchUsers();
-  },[]);
+  }, []);
+  
+  const values = {
+    users,
+    setUsers
+  }
 
   return (
-    <UserContext.Provider value>
+    <UserContext.Provider value={values}>
       {props.children}
     </UserContext.Provider>
   );

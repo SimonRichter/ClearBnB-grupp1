@@ -25,7 +25,7 @@ const Residences = mongoose.model('residence', {
   startDate: { type: Number, required: true },
   endDate: { type: Number, required: true },
   imageURLs: { type: Array, required: true },
-  featuresId: { type: String, unique: true, required: true },
+  featuresId: { type: String, unique: true, required: false },
   userId: { type: String, unique: true, required: true },
   residenceLimit: { type: Number, required: true },
 });
