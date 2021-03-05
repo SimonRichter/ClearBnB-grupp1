@@ -3,11 +3,29 @@
   color: red;
   text-align: center;
 }
+.about body{
+  margin: 10px;
+}
+
 .upperDescription{
+  padding: 30px;
   text-align: center;
   max-width: 400px;
+  margin:auto;
+  border-color: lightblue;
+  border-style: solid;
+  border-radius: 15px;
+  margin-top: 10px;
+  background-color: rgba(173, 216, 230, 0.459);
 }
 .lowerDescription{
+  padding: 30px;
   text-align: center;
   max-width: 400px;
+  margin:auto;
+  border-color: lightblue;
+  border-style: solid;
+  border-radius: 15px;
+  margin-top: 10px;
+  background-color: rgba(173, 216, 230, 0.459);
 }
