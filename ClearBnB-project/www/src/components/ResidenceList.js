@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 
 const ResidenceList = () => {
-  return ();
+
+  const { residences } = useContext(ResidenceContext);
+
+  return (
+    <h1>{residences[0].title}</h1>
+  );
 }
 
 export default ResidenceList;
