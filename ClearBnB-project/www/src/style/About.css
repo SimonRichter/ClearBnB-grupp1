@@ -1,0 +1,13 @@
+/* > Wont work, not vailid syntax */
+.about h1{
+  color: red;
+  text-align: center;
+}
+.upperDescription{
+  text-align: center;
+  max-width: 400px;
+}
+.lowerDescription{
+  text-align: center;
+  max-width: 400px;
+}
