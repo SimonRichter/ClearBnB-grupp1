@@ -11,6 +11,8 @@ function CreateUser() {
   const confirmPassword = useRef();
 
   const createUser = async e => {
+    e.preventDefault();
+    
     const user = {
       firstName: firstName.current.value,
       lastName: lastName.current.value,
@@ -31,19 +33,19 @@ function CreateUser() {
           <div class="grid-item">3</div>
           <div class="grid-item">4</div>
           <div class="grid-item">
-            <form key="1" style={styles.form} onSubmit={createUser}>
-              <div class="inner-grid"><input required ref={firstName} key="2" style={styles.input} placeholder="First name" /></div>
+            <form key="1" onSubmit={createUser}>
+              <div class="inner-grid"><input required ref={firstName} key="2" placeholder="First name" /></div>
 
-              <div class="inner-grid"><input required ref={lastName} key="3" style={styles.input} placeholder="Last name" /></div>
+              <div class="inner-grid"><input required ref={lastName} key="3" placeholder="Last name" /></div>
 
-              <div class="inner-grid"><input required ref={email} key="4" style={styles.input} placeholder="email" /></div>
+              <div class="inner-grid"><input required ref={email} key="4" placeholder="email" /></div>
 
-              <div class="inner-grid"><input required ref={password} key="5" style={styles.input} placeholder="password" /></div>
+              <div class="inner-grid"><input required ref={password} key="5" placeholder="password" /></div>
 
-              <div class="inner-grid"><input required ref={confirmPassword} key="6" style={styles.input} placeholder="confirm password" /></div>
+              <div class="inner-grid"><input required ref={confirmPassword} key="6" placeholder="confirm password" /></div>
 
               <div class="inner-grid">
-                <button className="registerButton" key="7" style={{ ...styles.input, ...styles.button }}>Register</button>
+                <button className="registerButton" key="7">Register</button>
               </div>
             </form>
           </div>
