@@ -10,8 +10,7 @@ export const ResidenceProvider = (props) => {
   const fetchResidences = async() => {
     let data = await fetch('/rest/residences')
     data = await data.json();
-    console.log(data);
-    //setResidences([...data]);
+    setResidences([...data]);
   }
 
   useEffect(() => {
