@@ -83,3 +83,14 @@
   color: white;
   transition: 500ms;
 }
+
+.adventureDiv {
+  margin-top: 500px;
+  background-color: rgb(245, 240, 240);
+  height: 700px;
+}
+
+.divImg1 img {
+  border-radius: 5px;
+  max-width: 400px;
+}
