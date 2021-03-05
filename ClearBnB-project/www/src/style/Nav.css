@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 50% 1fr;
   height: 10vh;
-  background: linear-gradient(lightblue, #eee);
+  background: linear-gradient(rgba(26, 5, 5, 0.822), rgba(56, 56, 56, 0.548));
   position: fixed;
   width: 100%;
   margin: 0;
@@ -13,6 +13,7 @@
   margin: 0;
   margin-left: 10px;
   align-self: center;
+  color: white;
 }
 
 .links{
@@ -20,6 +21,7 @@
 }
 
 .links a {
+  color: white;
   margin: 20px;
 }
 

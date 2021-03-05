@@ -1,9 +1,9 @@
 import React from 'react';
-
+import '../style/Home.css';
 const Home = () => {
   return (
     <div className="home">
-      <h1>Home</h1>
+      <img className="homeImage" src="https://i.postimg.cc/kXXSQpKb/bkpicture-1.png" alt=""/>
     </div>
   );
 }
