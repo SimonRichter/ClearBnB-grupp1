@@ -93,8 +93,8 @@
   grid-template-columns: 30% 30% 30%;
   grid-gap: 40px;
   margin-top: 20px;
-  background-color: rgba(245, 240, 240, 0.253);
-  height: 717px;
+  background-color: rgba(245, 240, 240, 0.527);
+  height: 647px;
   padding: 80px 10px 10px 10px;
 }
 
@@ -102,6 +102,13 @@
   margin-left: 50px;
   width: 100%;
   border-radius: 3px;
+}
+
+.divImgs p {
+  text-align: center;
+  font-size: 19px;
+  margin-left: 50px;
+  font-weight: bolder;
 }
 
 .exploreText {
