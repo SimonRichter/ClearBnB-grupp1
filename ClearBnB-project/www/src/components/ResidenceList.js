@@ -1,12 +1,17 @@
 import React, { useContext } from 'react';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
+import ResidenceItem from './ResidenceItem';
 
 const ResidenceList = () => {
 
   const { residences } = useContext(ResidenceContext);
 
   return (
-    <h1>{residences[0].title}</h1>
+    <div className="residenceList">
+      {residences.map(residence => (
+        <ResidenceItem key={residence.id} residence={residence}/>
+      ))}
+    </div>
   );
 }
 
