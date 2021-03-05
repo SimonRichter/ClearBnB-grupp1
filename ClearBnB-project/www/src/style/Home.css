@@ -47,6 +47,9 @@
     transform: translateY(-15px);
   }
 }
+.homeWrapper {
+  z-index: -3;
+}
 
 .startTravel {
   margin-left: 60px;
@@ -79,18 +82,31 @@
 }
 
 .exploreBtn:hover {
-  background-color: rgba(0, 0, 0, 0.596);
+  background-color: rgba(0, 0, 0, 0.349);
   color: white;
   transition: 500ms;
 }
 
-.adventureDiv {
-  margin-top: 500px;
-  background-color: rgb(245, 240, 240);
-  height: 700px;
+.divImgs {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-gap: 30px;
+  margin-top: 20px;
+  background-color: rgba(245, 240, 240, 0.253);
+  height: 737px;
+  padding: 40px;
 }
 
 .divImg1 img {
+  width: 100%;
+  object-fit: cover;
   border-radius: 5px;
-  max-width: 400px;
+}
+
+.exploreText {
+  margin-top: 430px;
+  text-align: center;
+  z-index: 1;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.726);
 }
