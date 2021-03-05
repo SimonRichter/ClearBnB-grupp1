@@ -14,6 +14,7 @@ const Register = () => {
           <input required="email" placeholder="email" />
           <input required="password" placeholder="password" />
           <input required="confirmPassword" placeholder="confirmPassword" />
+          <button className="registerButton">Register</button>
 
 
           
