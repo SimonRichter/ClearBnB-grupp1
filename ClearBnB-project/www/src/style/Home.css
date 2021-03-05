@@ -15,7 +15,7 @@
 }
 .arrow {
   position: relative;
-  bottom: -2rem;
+  bottom: -24rem;
   left: 50%;
   margin-left: -20px;
   width: 40px;
@@ -46,4 +46,40 @@
   60% {
     transform: translateY(-15px);
   }
+}
+
+.startTravel {
+  margin-left: 60px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.startTravel p {
+  font-size: 30px;
+  margin: 200px 0 5px 0;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 6.2px;
+}
+.exploreBtn {
+  border: 2px solid rgba(255, 255, 255, 0.589);
+  text-decoration: none;
+  padding: 18px 24px;
+  font-size: 14px;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  letter-spacing: 2px;
+  outline: none;
+  text-decoration: none;
+  background-color: rgba(255, 234, 234, 0);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.exploreBtn:hover {
+  background-color: rgba(0, 0, 0, 0.596);
+  color: white;
+  transition: 500ms;
 }

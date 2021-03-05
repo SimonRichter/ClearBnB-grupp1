@@ -1,4 +1,4 @@
-.nav-bar{
+.nav-bar {
   display: grid;
   grid-template-columns: 50% 1fr;
   height: 10vh;
@@ -9,19 +9,19 @@
   top: 0;
 }
 
-.nav-bar h4{
+.nav-bar h4 {
   margin: 0;
   margin-left: 10px;
   align-self: center;
   color: white;
 }
 
-.links{
+.links {
   align-self: center;
 }
 
 .links a {
+  font-family: "Montserrat", sans-serif;
   color: white;
   margin: 20px;
 }
-

@@ -6,13 +6,10 @@ const Home = () => {
       <img className="homeImage" src="https://i.postimg.cc/kXXSQpKb/bkpicture-1.png" alt="" />
 
       <div className="startTravel">
-        <h4>Start Travel</h4>
-        <button>Explore the residences</button>
+        <p>Start Travel</p>
+        <button className="exploreBtn" >Explore the residences</button>
       </div>
 
-      <div className="infoImages">
-        <p>Experience the adventures</p>
-      </div>
       <div class="arrow bounce"></div>
     </div>
 
