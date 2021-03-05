@@ -1,13 +1,22 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import '../style/Login.css'
 
 const Login = () => {
+
+  const email = useRef()
+  const password = useRef()
+
+  const login = e => {
+    e.preventDefault();
+    //Code to login with DB
+  }
+
   return (  
     <div className="login">
       <div className="form-for-login">
-      <form>
-        <input required placeholder="Email.." type="email" />
-        <input required placeholder="Password.." type="password" />
+        <form onSubmit={login}>
+        <input ref={email} required placeholder="Email.." type="email" />
+        <input ref={password} required placeholder="Password.." type="password" />
         <button>Login</button>
       </form>
       </div>
