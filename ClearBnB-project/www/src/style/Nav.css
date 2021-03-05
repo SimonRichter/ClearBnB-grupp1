@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 50% 1fr;
   height: 10vh;
-  background: linear-gradient(rgba(26, 5, 5, 0.822), rgba(56, 56, 56, 0.548));
+  background: rgba(44, 29, 29, 0.822);
   position: fixed;
   width: 100%;
   margin: 0;
