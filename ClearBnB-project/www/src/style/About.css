@@ -1,4 +1,7 @@
 /* > Wont work, not vailid syntax */
+*{
+  box-sizing: border-box;
+}
 .about h1{
   color: red;
   text-align: center;
