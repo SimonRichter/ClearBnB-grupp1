@@ -25,7 +25,11 @@ const ResidenceDetails = () => {
       <p><span>Address: </span>{residence.adress}</p>
       <p><span>Type: </span>{residence.type}</p>
       <p><span>Description: </span>{residence.description}</p>
-      <DatePicker selected={selectedDate} onChange={date => setSelectedDate(date)} />
+      <DatePicker selected={selectedDate}
+        onChange={date => setSelectedDate(date)}
+        minDate={residence.startDate * 1000}
+        maxDate={residence.endDate * 1000}
+      />
     </div>
   );
 }
