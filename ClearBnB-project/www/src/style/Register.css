@@ -11,3 +11,29 @@
   font-size: 30px;
   text-align: center;
 }
+
+.inner-grid input{
+  width: 100%;
+  margin: 15px auto;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  display: block;
+}
+
+.register button{
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  padding: 10px;
+  color: white;
+  background: rgb(68, 68, 248);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.register button:hover{
+  Transform: scale(1.02);
+  transition: 300ms;
+}
