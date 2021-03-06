@@ -13,6 +13,10 @@ const ResidenceDetails = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
 
+  const bookResidence = () => {
+    //Code to book a residence
+  }
+
   return (
     <div className="residenceDetail">
       <div className="images">
@@ -42,6 +46,7 @@ const ResidenceDetails = () => {
           maxDate={residence.endDate * 1000}
           />
       </div>
+      <button onClick={bookResidence} class="book-btn">Book</button>
     </div>
   );
 }
