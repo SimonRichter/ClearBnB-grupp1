@@ -17,6 +17,11 @@ const ResidenceDetails = () => {
     //Code to book a residence
   }
 
+  const booked = date => {   
+    const day = Math.round(new Date(date).getTime() / 1000);
+    return day !== 1614639600
+  }
+
   return (
     <div className="residenceDetail">
       <div className="images">
@@ -37,6 +42,7 @@ const ResidenceDetails = () => {
           onChange={date => setStartDate(date)}
           minDate={residence.startDate * 1000}
           maxDate={residence.endDate * 1000}
+          filterDate={booked}
         />
         <DatePicker className="endDate"
           placeholderText="Departure.."
