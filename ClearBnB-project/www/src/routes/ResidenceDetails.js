@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import DatePicker from 'react-datepicker'
@@ -9,6 +9,8 @@ const ResidenceDetails = () => {
   const { id } = useParams()
   const { residences } = useContext(ResidenceContext);
   const residence = residences.find(r => r._id === id);
+
+  const [selectedDate, setSelectedDate] = useState(residence.startDate * 1000);
 
   return (
     <div className="residenceDetail">
@@ -23,7 +25,7 @@ const ResidenceDetails = () => {
       <p><span>Address: </span>{residence.adress}</p>
       <p><span>Type: </span>{residence.type}</p>
       <p><span>Description: </span>{residence.description}</p>
-      <DatePicker/>
+      <DatePicker selected={selectedDate} onChange={date => setSelectedDate(date)} />
     </div>
   );
 }
