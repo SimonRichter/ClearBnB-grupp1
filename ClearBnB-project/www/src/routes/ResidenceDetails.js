@@ -1,7 +1,9 @@
 import React, {useContext} from 'react'
 import { useParams } from 'react-router-dom'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
+import DatePicker from 'react-datepicker'
 import '../style/ResidenceDetails.css'
+import 'react-datepicker/dist/react-datepicker.css'
 
 const ResidenceDetails = () => {
   const { id } = useParams()
@@ -21,6 +23,7 @@ const ResidenceDetails = () => {
       <p><span>Address: </span>{residence.adress}</p>
       <p><span>Type: </span>{residence.type}</p>
       <p><span>Description: </span>{residence.description}</p>
+      <DatePicker/>
     </div>
   );
 }
