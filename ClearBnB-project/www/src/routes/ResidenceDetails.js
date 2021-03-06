@@ -28,14 +28,14 @@ const ResidenceDetails = () => {
       <p><span>Description: </span>{residence.description}</p>
       <div className="dates">
         <DatePicker className="startDate"
-          placeholderText="Start date.."
+          placeholderText="Arrival.."
           selected={startDate}
           onChange={date => setStartDate(date)}
           minDate={residence.startDate * 1000}
           maxDate={residence.endDate * 1000}
         />
         <DatePicker className="endDate"
-          placeholderText="End date.."
+          placeholderText="Departure.."
           selected={endDate}
           onChange={date => setEndDate(date)}
           minDate={residence.startDate * 1000}
