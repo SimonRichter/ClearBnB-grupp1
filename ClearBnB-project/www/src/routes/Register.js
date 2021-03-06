@@ -2,7 +2,7 @@ import React from 'react';
 import '../style/Register.css';
 import {useRef} from 'react'
 
-function CreateUser() {
+const CreateUser = () => {
   
   const firstName = useRef();
   const lastName = useRef();
@@ -60,4 +60,4 @@ function CreateUser() {
 }
 
  
-export default Register(createUser);
+export default CreateUser(createUser);
