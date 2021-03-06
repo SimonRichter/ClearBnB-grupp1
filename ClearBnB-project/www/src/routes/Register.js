@@ -13,16 +13,16 @@ const CreateUser = () => {
   const createUser = async e => {
     e.preventDefault();
     
-    const user = {
-      firstName: firstName.current.value,
-      lastName: lastName.current.value,
-      email: email.current.value,
-      password: password.current.value,
-      confirmPassword: confirmPassword.current.value
-    }
-    await addUser(user)
+    // const user = {
+    //   firstName: firstName.current.value,
+    //   lastName: lastName.current.value,
+    //   email: email.current.value,
+    //   password: password.current.value,
+    //   confirmPassword: confirmPassword.current.value
+    // }
+    // await addUser(user)
 
-    history.push('/user/' + user.id)
+    // history.push('/user/' + user.id)
   }
 
     return (
@@ -59,5 +59,5 @@ const CreateUser = () => {
   
 }
 
- 
-export default CreateUser(createUser);
+// export default CreateUser(createUser)
+export default CreateUser;
