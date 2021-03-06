@@ -22,3 +22,7 @@
 .residenceDetail >  p > span{
   font-weight: bolder;
 }
+
+.residenceDetail > .dates > DatePicker{
+
+}

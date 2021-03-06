@@ -10,7 +10,8 @@ const ResidenceDetails = () => {
   const { residences } = useContext(ResidenceContext);
   const residence = residences.find(r => r._id === id);
 
-  const [selectedDate, setSelectedDate] = useState(residence.startDate * 1000);
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
 
   return (
     <div className="residenceDetail">
@@ -25,11 +26,22 @@ const ResidenceDetails = () => {
       <p><span>Address: </span>{residence.adress}</p>
       <p><span>Type: </span>{residence.type}</p>
       <p><span>Description: </span>{residence.description}</p>
-      <DatePicker selected={selectedDate}
-        onChange={date => setSelectedDate(date)}
-        minDate={residence.startDate * 1000}
-        maxDate={residence.endDate * 1000}
-      />
+      <div className="dates">
+        <DatePicker className="startDate"
+          placeholderText="Start date.."
+          selected={startDate}
+          onChange={date => setStartDate(date)}
+          minDate={residence.startDate * 1000}
+          maxDate={residence.endDate * 1000}
+        />
+        <DatePicker className="endDate"
+          placeholderText="End date.."
+          selected={endDate}
+          onChange={date => setEndDate(date)}
+          minDate={residence.startDate * 1000}
+          maxDate={residence.endDate * 1000}
+          />
+      </div>
     </div>
   );
 }
