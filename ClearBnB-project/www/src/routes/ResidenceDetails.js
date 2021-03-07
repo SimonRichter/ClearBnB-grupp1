@@ -60,6 +60,7 @@ const ResidenceDetails = () => {
           minDate={residence.startDate * 1000}
           maxDate={residence.endDate * 1000}
           filterDate={booked}
+          isClearable
         />
         <DatePicker className="endDate"
           placeholderText="Departure.."
@@ -68,6 +69,7 @@ const ResidenceDetails = () => {
           minDate={residence.startDate * 1000}
           maxDate={residence.endDate * 1000}
           filterDate={booked}
+          isClearable
           />
       </div>
       {totalPrice && <p><span>Total price: </span>{totalPrice} €</p>}
