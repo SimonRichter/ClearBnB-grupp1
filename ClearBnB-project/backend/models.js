@@ -17,6 +17,7 @@ const Bookings = mongoose.model('booking', {
 
 const Residences = mongoose.model('residence', {
   title: { type: String, required: true },
+  price: { type: Number, required: true },
   country: { type: String, required: true },
   city: {type: String, required: true},
   adress: { type: String, unique: true, required: true },
