@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import DatePicker from 'react-datepicker'
@@ -19,16 +19,24 @@ const ResidenceDetails = () => {
 
     const differenceInTime = endDate.getTime() - startDate.getTime();
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-
     setTotalPrice(differenceInDays * residence.price);
-    console.log(totalPrice);
-
   }
 
-  const booked = date => { 
+  const booked = date => {
     const day = Math.round(new Date(date).getTime() / 1000);
     return day !== 1614639600
   }
+
+  useEffect(() => {
+    
+    if (startDate !== null && endDate !== null) {    
+      const differenceInTime = endDate.getTime() - startDate.getTime();
+      const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+      setTotalPrice(differenceInDays * residence.price);
+    }
+
+
+  },[startDate,endDate])
 
   return (
     <div className="residenceDetail">
@@ -62,8 +70,8 @@ const ResidenceDetails = () => {
           filterDate={booked}
           />
       </div>
+      {totalPrice && <p><span>Total price: </span>{totalPrice} €</p>}
       <button onClick={bookResidence} class="book-btn">Book</button>
-      {console.log(residences)}
     </div>
   );
 }
