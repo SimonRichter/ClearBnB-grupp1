@@ -22,17 +22,25 @@ const ResidenceDetails = () => {
     setTotalPrice(differenceInDays * residence.price);
   }
 
-  const booked = date => {
+  const filterForStartDate = date => {
     const day = Math.round(new Date(date).getTime() / 1000);
     return day !== 1614639600
   }
 
-  useEffect(() => {
-    
+  const filterForEndDate = date => {
+    const day = Math.round(new Date(date).getTime() / 1000);
+    const arrivalDate = Math.round(new Date(startDate).getTime() / 1000)
+    return arrivalDate < day
+  }
+
+
+  useEffect(() => {    
     if (startDate !== null && endDate !== null) {    
       const differenceInTime = endDate.getTime() - startDate.getTime();
       const differenceInDays = differenceInTime / (1000 * 3600 * 24);
       setTotalPrice(differenceInDays * residence.price);
+    } else {
+      setTotalPrice(null);
     }
 
 
@@ -59,7 +67,7 @@ const ResidenceDetails = () => {
           onChange={date => setStartDate(date)}
           minDate={residence.startDate * 1000}
           maxDate={residence.endDate * 1000}
-          filterDate={booked}
+          filterDate={filterForStartDate}
           isClearable
         />
         <DatePicker className="endDate"
@@ -68,7 +76,7 @@ const ResidenceDetails = () => {
           onChange={date => setEndDate(date)}
           minDate={residence.startDate * 1000}
           maxDate={residence.endDate * 1000}
-          filterDate={booked}
+          filterDate={filterForEndDate}
           isClearable
           />
       </div>
