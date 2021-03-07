@@ -10,17 +10,18 @@ const ResidenceDetails = () => {
   const { id } = useParams()
   const { residences } = useContext(ResidenceContext);
   const residence = residences.find(r => r._id === id);
-  const pricePerNight = residences.price
 
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [totalPrice, setTotalPrice] = useState(null);
 
   const bookResidence = () => {
 
-    const DifferenceInTime = endDate.getTime() - startDate.getTime();
-    const DifferenceInDays = DifferenceInTime / (1000 * 3600 * 24);
+    const differenceInTime = endDate.getTime() - startDate.getTime();
+    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
 
-    
+    setTotalPrice(differenceInDays * residence.price);
+    console.log(totalPrice);
 
   }
 
@@ -41,7 +42,7 @@ const ResidenceDetails = () => {
       <p><span>City: </span>{residence.city}</p>
       <p><span>Address: </span>{residence.adress}</p>
       <p><span>Type: </span>{residence.type}</p>
-      <p><span>Price per night: </span>{pricePerNight}</p>
+      <p><span>Price per night: </span>{residence.price}€</p>
       <p><span>Description: </span>{residence.description}</p>
       <div className="dates">
         <DatePicker className="startDate"
@@ -62,6 +63,7 @@ const ResidenceDetails = () => {
           />
       </div>
       <button onClick={bookResidence} class="book-btn">Book</button>
+      {console.log(residences)}
     </div>
   );
 }
