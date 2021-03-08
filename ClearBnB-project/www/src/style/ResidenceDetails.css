@@ -88,5 +88,6 @@ transition: 300ms;
 
 
 .residenceDetail > .infoWrapper >  .features > .dontExist{
+  color: rgb(133, 127, 127);
   text-decoration: line-through;
 }
