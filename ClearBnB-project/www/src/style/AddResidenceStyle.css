@@ -67,8 +67,33 @@
   margin-bottom: 30px;
 }
 
+.textBox {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  max-height: 40%;
+  max-width: 55%;
+  overflow: hidden;
+  outline: none;
+  border-radius: 0;
+}
+
+.addResWrapper .inputPrice {
+  border: none;
+  border-bottom: 1px solid rgb(0, 97, 153);
+  outline: none;
+  width: 250px;
+  height: 30px;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.inputPrice[type="number"]:hover::-webkit-inner-spin-button {
+  width: 50px;
+  height: 40px;
+}
+
 /* CSS Styling for animation on checkboxes and Design */
-.checkbox{
+.checkbox {
   margin-bottom: 50px;
 }
 .checkbox input {

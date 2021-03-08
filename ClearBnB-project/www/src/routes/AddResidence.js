@@ -111,6 +111,12 @@ const AddResidence = () => {
         <input className="inputTitle" type="text" placeholder="image 4" />
 
         <input className="inputTitle" type="text" placeholder="image 5" />
+
+         <p>Description</p> 
+        <textarea className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
+        
+        <p>Price per night</p>
+        <span>€</span><input className="inputPrice" type="number" step="20" placeholder="Price per night" />
       </form>
     </div>
   )
