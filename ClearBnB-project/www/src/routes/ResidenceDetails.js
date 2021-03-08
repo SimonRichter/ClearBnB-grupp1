@@ -10,6 +10,7 @@ const ResidenceDetails = () => {
 
   const { id } = useParams()
   const { residences } = useContext(ResidenceContext);
+  const { addBooking } = useContext(BookingContext);
   const residence = residences.find(r => r._id === id);
 
   const [startDate, setStartDate] = useState(null);
@@ -35,7 +36,7 @@ const ResidenceDetails = () => {
       userId: null,
       residenceId: id,
     }
-    
+    addBooking(bookingObj)
   }
 
   const filterForStartDate = date => {

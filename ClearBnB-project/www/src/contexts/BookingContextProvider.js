@@ -11,12 +11,17 @@ export const BookingProvider = (props) => {
     data = await data.json();
     setBookings([...data]);
   }
+
+  const addBooking = (obj) => {
+    
+  }
   
   const values = {
     bookings,
-    setBookings
+    setBookings,
+    addBooking
   }
-  
+
   useEffect(() => {
   fetchBookings();
   }, [])
