@@ -16,7 +16,18 @@ export const UserProvider = (props) => {
   useEffect(() => {
     fetchUsers();
   }, []);
-  
+  // -------------
+  const addUser = async user => {
+    let res = await fetch('/rest/users', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user)
+    })
+    res = await res.json();
+    user.id = res.id;
+    setUsers([...users, user])
+  }
+// --------------
   const values = {
     users,
     setUsers
