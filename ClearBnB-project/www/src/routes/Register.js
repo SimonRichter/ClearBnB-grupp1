@@ -1,9 +1,13 @@
 import React from 'react';
 import '../style/Register.css';
-import {useRef} from 'react'
+import { useRef, useContext } from 'react'
+import { useHistory } from 'react-router-dom'
+import {UserContext} from '../contexts/UserContextProvider'
 
 const CreateUser = () => {
-  
+  const history = useHistory();
+  // const { addUser } = useContext();
+
   const firstName = useRef();
   const lastName = useRef();
   const email = useRef();
@@ -13,13 +17,14 @@ const CreateUser = () => {
   const createUser = async e => {
     e.preventDefault();
     
-    // const user = {
-    //   firstName: firstName.current.value,
-    //   lastName: lastName.current.value,
-    //   email: email.current.value,
-    //   password: password.current.value,
-    //   confirmPassword: confirmPassword.current.value
-    // }
+    const user = {
+      firstName: firstName.current.value,
+      lastName: lastName.current.value,
+      email: email.current.value,
+      password: password.current.value,
+      confirmPassword: confirmPassword.current.value
+    }
+    console.log(user)
     // await addUser(user)
 
     // history.push('/user/' + user.id)
@@ -27,32 +32,32 @@ const CreateUser = () => {
 
     return (
       <div className="register">
-        <div class="grid-container">
-          <div class="grid-item"></div>
-          <div class="grid-item">Register</div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item-input">
+        <div className="grid-container">
+          <div className="grid-item"></div>
+          <div className="grid-item">Register</div>
+          <div className="grid-item"></div>
+          <div className="grid-item"></div>
+          <div className="grid-item-input">
             <form key="1" onSubmit={createUser}>
-              <div class="inner-grid"><input required ref={firstName} key="2" placeholder="First name" /></div>
+              <div className="inner-grid"><input required ref={firstName} key="2" placeholder="First name" /></div>
 
-              <div class="inner-grid"><input required ref={lastName} key="3" placeholder="Last name" /></div>
+              <div className="inner-grid"><input required ref={lastName} key="3" placeholder="Last name" /></div>
 
-              <div class="inner-grid"><input required ref={email} key="4" placeholder="email" /></div>
+              <div className="inner-grid"><input required ref={email} key="4" placeholder="email" /></div>
 
-              <div class="inner-grid"><input required ref={password} key="5" placeholder="password" /></div>
+              <div className="inner-grid"><input required ref={password} key="5" placeholder="password" /></div>
 
-              <div class="inner-grid"><input required ref={confirmPassword} key="6" placeholder="confirm password" /></div>
+              <div className="inner-grid"><input required ref={confirmPassword} key="6" placeholder="confirm password" /></div>
 
-              <div class="inner-grid">
+              <div className="inner-grid">
                 <button className="registerButton" key="7">Register</button>
               </div>
             </form>
           </div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
-          <div class="grid-item"></div>
+          <div className="grid-item"></div>
+          <div className="grid-item"></div>
+          <div className="grid-item"></div>
+          <div className="grid-item"></div>
         </div>
       </div>
     );
