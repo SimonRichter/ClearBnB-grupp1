@@ -26,6 +26,15 @@ const ResidenceDetails = () => {
     const differenceInTime = endDate.getTime() - startDate.getTime();
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
     setTotalPrice(differenceInDays * residence.price);
+
+    const booking = {
+      startDate: startDate,
+      endDate: endDate,
+      price: totalPrice,
+      userId: null,
+      residenceId: id,
+    }
+
   }
 
   const filterForStartDate = date => {
