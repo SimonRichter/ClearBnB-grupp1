@@ -17,7 +17,7 @@
 
 
 .form-for-login input{
-  width: 90%;
+  width: 100%;
   margin: 15px auto;
   border: none;
   border-radius: 5px;
@@ -26,7 +26,7 @@
 }
 
 .form-for-login button{
-  width: 95%;
+  width: 100%;
   display: block;
   margin: 0 auto;
   border: none;
