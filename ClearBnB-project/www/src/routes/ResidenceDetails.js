@@ -29,8 +29,12 @@ const ResidenceDetails = () => {
   }
 
   const filterForStartDate = date => {
+    if (endDate === null) {
+      return true;
+    }
     const day = Math.round(new Date(date).getTime() / 1000);
-    return day !== 1614639600
+    const departureDate = Math.round(new Date(endDate).getTime() / 1000)
+    return departureDate > day
   }
 
   const filterForEndDate = date => {
