@@ -1,5 +1,10 @@
 .wrapper{
-  height: 100px;
+  margin: 0;
+  height: 79px;
+}
+
+.App{
+  margin: 0;
 }
 
 a{
