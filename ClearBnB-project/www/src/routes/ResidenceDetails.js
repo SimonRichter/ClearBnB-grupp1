@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { BookingContext } from '../contexts/BookingContextProvider'
+import { FeatureContext } from '../contexts/FeatureContextProvider'
 import DatePicker from 'react-datepicker'
 import '../style/ResidenceDetails.css'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -11,8 +12,10 @@ const ResidenceDetails = () => {
   const { id } = useParams()
   const { residences } = useContext(ResidenceContext);
   const { addBooking } = useContext(BookingContext);
+  const { getSpecificFeature } = useContext(FeatureContext);
   const residence = residences.find(r => r._id === id);
 
+  const [features, setFeatures] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [totalPrice, setTotalPrice] = useState(null);
@@ -65,9 +68,13 @@ const ResidenceDetails = () => {
     } else {
       setTotalPrice(null);
     }
-
-
-  },[startDate,endDate])
+  }, [startDate, endDate])
+  
+  useEffect(() => {
+    setFeatures(...getSpecificFeature(residence.featuresId))
+    //features = getSpecificFeature(residence.featuresId)
+    console.log(features);
+  },[])
 
   return (
     <div className="residenceDetail">
@@ -76,13 +83,33 @@ const ResidenceDetails = () => {
         return (<img key={img} src={img} alt=""/>)
       })}
       </div>
-      <h1>{residence.title}</h1>
-      <p><span>Country: </span>{residence.country}</p>
-      <p><span>City: </span>{residence.city}</p>
-      <p><span>Address: </span>{residence.address}</p>
-      <p><span>Type: </span>{residence.type}</p>
-      <p><span>Price per night: </span>{residence.price}€</p>
-      <p><span>Description: </span>{residence.description}</p>
+      <div className="infoWrapper">
+        <div className="desc">
+        <h1>{residence.title}</h1>
+        <p><span>Country: </span>{residence.country}</p>
+        <p><span>City: </span>{residence.city}</p>
+        <p><span>Address: </span>{residence.address}</p>
+        <p><span>Type: </span>{residence.type}</p>
+        <p><span>Price per night: </span>{residence.price}€</p>
+        <p><span>Description: </span>{residence.description}</p>
+        </div>
+        {features && <div className="features">
+          <p className={features.shower ? '' : 'dontExist'}><i className="material-icons">shower</i> Shower</p>
+          <p className={features.firstAidKit ? '' : 'dontExist'}><i className="material-icons">healing</i> first aid kit</p>
+          <p className={features.parking ? '' : 'dontExist'}><i className="material-icons">local_parking</i> parking</p>
+          <p className={features.stove ? '' : 'dontExist'}><i className="material-icons">kitchen</i> stove</p>
+          <p className={features.oven ? '' : 'dontExist'}><i className="material-icons">kitchen</i> oven</p>
+          <p className={features.microwave ? '' : 'dontExist'}><i className="material-icons">kitchen</i> microwave</p>
+          <p className={features.tv ? '' : 'dontExist'}><i className="material-icons">tv</i> TV</p>
+          <p className={features.coffeeMaker ? '' : 'dontExist'}><i className="material-icons">free_breakfast</i> Coffee maker</p>
+          <p className={features.wifi ? '' : 'dontExist'}><i className="material-icons">wifi</i> WiFi</p>
+          <p className={features.balcony ? '' : 'dontExist'}><i className="material-icons">straighten</i> Balcony</p>
+          <p className={features.iron ? '' : 'dontExist'}><i className="material-icons">scanner</i> Iron</p>
+          <p className={features.pool ? '' : 'dontExist'}><i className="material-icons">pool</i> Pool</p>
+          <p className={features.fridge ? '' : 'dontExist'}><i className="material-icons">kitchen</i> Fridge</p>
+          <p className={features.dishwasher ? '' : 'dontExist'}><i className="material-icons">kitchen</i> Dishwasher</p>
+        </div>}
+      </div>
       <div className="dates">
         <DatePicker className="startDate"
           placeholderText="Arrival.."
