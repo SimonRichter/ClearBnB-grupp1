@@ -1,0 +1,18 @@
+.residenceItem{
+  margin-top: 20px;
+  padding: 20px;
+  background: #eee;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.residenceItem img{
+  width: 100%;
+  object-fit: cover;
+}
+
+.residenceItem:hover{
+  Transform: scale(1.03);
+  transition: 300ms;
+}

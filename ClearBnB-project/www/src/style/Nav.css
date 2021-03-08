@@ -1,0 +1,27 @@
+.nav-bar {
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  height: 10vh;
+  background: rgba(44, 29, 29, 0.822);
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  top: 0;
+}
+
+.nav-bar h4 {
+  margin: 0;
+  margin-left: 10px;
+  align-self: center;
+  color: white;
+}
+
+.links {
+  align-self: center;
+}
+
+.links a {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  margin: 20px;
+}
