@@ -4,6 +4,7 @@
   padding: 20px;
   background: #eee;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .residenceDetail > .images{
@@ -21,4 +22,42 @@
 
 .residenceDetail >  p > span{
   font-weight: bolder;
+}
+
+.dates{
+  display: grid;
+  grid-template-columns: 20%;
+}
+
+.startDate, .endDate{
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: large;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.book-btn{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 20%;
+  border: none;
+  color: white;
+  background: rgb(54, 54, 212);
+  font-size: large;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.book-btn:hover{
+Transform: scale(1.03);
+transition: 300ms;
+}
+
+.residenceDetail > .valCheck{
+  color: red;
 }
