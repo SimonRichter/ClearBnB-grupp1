@@ -47,11 +47,14 @@ const AddResidence = () => {
         <p>Advertisment title:</p>
         <input className="inputTitle" type="text" placeholder="exmaple: 'Luxuary Cabin with jazuzzi'" />
 
-        <div class="checkbox">
-      <label>
-        <input type="checkbox"/><i class="helper"></i>I'm the label from a checkbox
-      </label>
-    </div>
+      <div class="checkbox">
+        <label>
+            <input type="checkbox" /><i class="helper"></i>I'm the label from a checkbox
+        </label>
+          <label>
+            <input type="checkbox" /><i class="helper"></i>I'm the label from a checkbox
+        </label>
+      </div>
       </form>
     </div>
   )
