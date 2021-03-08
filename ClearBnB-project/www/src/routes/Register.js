@@ -28,11 +28,11 @@ const CreateUser = () => {
     return (
       <div className="register">
         <div class="grid-container">
-          <div class="grid-item">1</div>
+          <div class="grid-item"></div>
           <div class="grid-item">Register</div>
-          <div class="grid-item">3</div>
-          <div class="grid-item">4</div>
-          <div class="grid-item">
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item-input">
             <form key="1" onSubmit={createUser}>
               <div class="inner-grid"><input required ref={firstName} key="2" placeholder="First name" /></div>
 
@@ -49,10 +49,10 @@ const CreateUser = () => {
               </div>
             </form>
           </div>
-          <div class="grid-item">6</div>
-          <div class="grid-item">7</div>
-          <div class="grid-item">8</div>
-          <div class="grid-item">9</div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
+          <div class="grid-item"></div>
         </div>
       </div>
     );
