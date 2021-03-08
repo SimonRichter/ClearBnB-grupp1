@@ -14,15 +14,15 @@ const ResidenceDetails = () => {
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [totalPrice, setTotalPrice] = useState(null);
-  const [check, setCheck] = useState(null);
+  const [unFilledFields, setunFilledFields] = useState(null);
 
   const bookResidence = () => {
 
     if (startDate === null && endDate === null) {
-      setCheck(true);
+      setunFilledFields(true);
       return;
     }    
-    setCheck(false);
+    setunFilledFields(false);
     const differenceInTime = endDate.getTime() - startDate.getTime();
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
     setTotalPrice(differenceInDays * residence.price);
@@ -46,7 +46,7 @@ const ResidenceDetails = () => {
 
   useEffect(() => {    
     if (startDate !== null && endDate !== null) {
-      setCheck(false);
+      setunFilledFields(false);
       const differenceInTime = endDate.getTime() - startDate.getTime();
       const differenceInDays = differenceInTime / (1000 * 3600 * 24);
       setTotalPrice(differenceInDays * residence.price);
@@ -92,7 +92,7 @@ const ResidenceDetails = () => {
           />
       </div>
       {totalPrice && <p><span>Total price: </span>{totalPrice} €</p>}
-      {check && <p className="valCheck">You have to pick a start date and a end date to continue..</p>}
+      {unFilledFields && <p className="valCheck">You have to pick a start date and a end date to continue..</p>}
       <button onClick={bookResidence} class="book-btn">Book</button>
     </div>
   );
