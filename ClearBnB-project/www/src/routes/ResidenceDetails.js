@@ -36,7 +36,8 @@ const ResidenceDetails = () => {
       userId: null,
       residenceId: id,
     }
-    addBooking(bookingObj)
+    //Method to add bookingObj to DB via context.
+    //addBooking(bookingObj)
   }
 
   const filterForStartDate = date => {
