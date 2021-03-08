@@ -1,7 +1,6 @@
 .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: #2196F3;
   padding: 10px;
 }
 .grid-item {
@@ -36,4 +35,8 @@
 .register button:hover{
   Transform: scale(1.02);
   transition: 300ms;
+}
+.register{
+  min-height: 90vh;
+  background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
 }
