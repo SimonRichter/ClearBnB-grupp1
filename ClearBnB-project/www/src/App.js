@@ -9,6 +9,7 @@ import Residences from './routes/Residences';
 import ResidenceDetails from './routes/ResidenceDetails'
 import Login from './routes/Login';
 import Register from './routes/Register';
+import AddResidence from './routes/AddResidence';
 
 
 function App() {
@@ -26,7 +27,8 @@ function App() {
           <Route path="/residences" exact component={Residences} />  
           <Route path="/login" exact component={Login} />  
           <Route path="/register" exact component={Register} />
-          <Route path="/residence/:id" exact component={ResidenceDetails}/>    
+          <Route path="/residence/:id" exact component={ResidenceDetails} />   
+          <Route path="/addResidence" exact component={AddResidence} />    
       </Switch>
     </div>
     </Router>
