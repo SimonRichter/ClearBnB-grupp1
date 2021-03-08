@@ -12,7 +12,7 @@ export const BookingProvider = (props) => {
     setBookings([...data]);
   }
 
-  const addBooking = (bookingObj) => {
+  const addBooking = async (bookingObj) => {
     let res = await fetch('/rest/bookings', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
