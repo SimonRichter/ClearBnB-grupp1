@@ -20,13 +20,13 @@ const About = () => {
         {/* ----------------------------------------Grid test */}
         <div className="grid-container">
           <div className="grid-item"></div>
-          <div className="grid-item">About page</div>
+          <div className="grid-item-text">About page</div>
           <div className="grid-item"></div>
           <div className="grid-item"></div>
-          <div className="grid-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur aliquid ab excepturi possimus fugit animi porro et. Odit ipsam excepturi aspernatur tempora at quis et fuga expedita cupiditate voluptates.</div>
+          <div className="grid-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur aliquid ab excepturi possimus fugit animi porro et. Odit ipsam excepturi aspernatur tempora at quis et fuga expedita cupiditate voluptates.</div>
           <div className="grid-item"></div>
           <div className="grid-item"></div>
-          <div className="grid-item">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad doloremque blanditiis maiores eveniet, in nesciunt porro rerum id facilis laborum ex iusto nemo quaerat? Cupiditate sequi a reprehenderit fugit blanditiis!</div>
+          <div className="grid-item-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad doloremque blanditiis maiores eveniet, in nesciunt porro rerum id facilis laborum ex iusto nemo quaerat? Cupiditate sequi a reprehenderit fugit blanditiis!</div>
           <div className="grid-item"></div>
         </div>
       </div>

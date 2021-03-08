@@ -1,13 +1,21 @@
-/* > Wont work, not vailid syntax */
-*{
-  box-sizing: border-box;
+.about{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/83/Shaki_Waterfall2.jpg);
+  width: 100%;
+  min-height: 300vh;
 }
 .about h1{
   color: red;
   text-align: center;
 }
-.about body{
-  margin: 10px;
+
+.grid-item-text{
+  background-color: rgba(255, 255, 255, 0.315);
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  margin-top: 10px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 10px;
 }
 
 .upperDescription{
