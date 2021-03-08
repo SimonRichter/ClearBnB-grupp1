@@ -20,7 +20,7 @@ const About = () => {
         {/* ----------------------------------------Grid test */}
         <div className="grid-container">
           <div className="grid-item"></div>
-          <div className="grid-item-text">About page</div>
+          <div className="grid-item"></div>
           <div className="grid-item"></div>
           <div className="grid-item"></div>
           <div className="grid-item-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero consectetur aliquid ab excepturi possimus fugit animi porro et. Odit ipsam excepturi aspernatur tempora at quis et fuga expedita cupiditate voluptates.</div>

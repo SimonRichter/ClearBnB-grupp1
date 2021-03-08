@@ -1,23 +1,27 @@
-.grid-item-input{
-  background-color: rgba(128, 128, 128, 0.596);
+.register .grid-item-input{
+  width:80%;
+  margin: 0 auto;
+  opacity: 90%;
+  background: #eee;
   padding: 20px;
   font-size: 30px;
   text-align: center;
+  border-radius: 5px;
 }
-.grid-container {
+.register .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
   padding: 10px;
 }
-.grid-item {
+.register .grid-item {
   background-color: rgba(128, 128, 128, 0);
   padding: 20px;
   font-size: 30px;
   text-align: center;
 }
 
-.inner-grid input{
-  width: 100%;
+.register .inner-grid input{
+  width: 90%;
   margin: 15px auto;
   border: none;
   border-radius: 5px;
@@ -26,7 +30,7 @@
 }
 
 .register button{
-  width: 100%;
+  width: 95%;
   display: block;
   margin: 0 auto;
   border: none;

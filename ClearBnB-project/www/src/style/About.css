@@ -9,12 +9,12 @@
 }
 
 .grid-item-text{
-  background-color: rgba(255, 255, 255, 0.315);
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
-  margin-top: 10px;
+  opacity: 80%;
+  background: #eee;
   padding: 20px;
   font-size: 30px;
   text-align: center;
+  margin-top: 10px;
   border-radius: 10px;
 }
 
