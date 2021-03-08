@@ -56,3 +56,7 @@
 Transform: scale(1.03);
 transition: 300ms;
 }
+
+.residenceDetail > .valCheck{
+  color: red;
+}
