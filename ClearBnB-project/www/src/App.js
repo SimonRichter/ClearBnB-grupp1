@@ -18,7 +18,8 @@ function App() {
     <ResidenceProvider>
     <UserProvider>
     <Router>
-    <div className="App">
+          <div className="App">
+             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       <Nav />
         <div className="wrapper"></div>
       <Switch>
