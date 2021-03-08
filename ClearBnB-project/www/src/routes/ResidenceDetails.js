@@ -13,9 +13,9 @@ const ResidenceDetails = () => {
   const { residences } = useContext(ResidenceContext);
   const { addBooking } = useContext(BookingContext);
   const { getSpecificFeature } = useContext(FeatureContext);
-  let features = null;
   const residence = residences.find(r => r._id === id);
 
+  const [features, setFeatures] = useState(null);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
   const [totalPrice, setTotalPrice] = useState(null);
@@ -71,7 +71,8 @@ const ResidenceDetails = () => {
   }, [startDate, endDate])
   
   useEffect(() => {
-    features = getSpecificFeature(residence.featuresId)
+    setFeatures(...getSpecificFeature(residence.featuresId))
+    //features = getSpecificFeature(residence.featuresId)
     console.log(features);
   },[])
 
@@ -82,13 +83,33 @@ const ResidenceDetails = () => {
         return (<img key={img} src={img} alt=""/>)
       })}
       </div>
-      <h1>{residence.title}</h1>
-      <p><span>Country: </span>{residence.country}</p>
-      <p><span>City: </span>{residence.city}</p>
-      <p><span>Address: </span>{residence.address}</p>
-      <p><span>Type: </span>{residence.type}</p>
-      <p><span>Price per night: </span>{residence.price}€</p>
-      <p><span>Description: </span>{residence.description}</p>
+      <div className="infoWrapper">
+      <div className="desc">
+        <h1>{residence.title}</h1>
+        <p><span>Country: </span>{residence.country}</p>
+        <p><span>City: </span>{residence.city}</p>
+        <p><span>Address: </span>{residence.address}</p>
+        <p><span>Type: </span>{residence.type}</p>
+        <p><span>Price per night: </span>{residence.price}€</p>
+        <p><span>Description: </span>{residence.description}</p>
+      </div>
+      <div className="features">
+        <p>Shower</p>
+        <p>first aid kit</p>
+        <p>parking</p>
+        <p>stove</p>
+        <p>oven</p>
+        <p>microwave</p>
+        <p>TV</p>
+        <p>Coffee maker</p>
+        <p>WiFi</p>
+        <p>Balcony</p>
+        <p>Iron</p>
+        <p>Pool</p>
+        <p>Fridge</p>
+        <p>Dishwasher</p>
+      </div>
+      </div>
       <div className="dates">
         <DatePicker className="startDate"
           placeholderText="Arrival.."

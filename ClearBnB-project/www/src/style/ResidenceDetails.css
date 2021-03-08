@@ -21,7 +21,7 @@
   border-radius: 10px;
 }
 
-.residenceDetail >  p > span{
+.residenceDetail > .infoWrapper > .desc >  p > span{
   font-weight: bolder;
 }
 
@@ -61,4 +61,18 @@ transition: 300ms;
 
 .residenceDetail > .valCheck{
   color: red;
+}
+.residenceDetail > .infoWrapper >  .features{
+  margin-top: 20px;
+  width: 100%;
+  padding: 20px;
+  background: rgb(218, 218, 218);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+}
+
+.residenceDetail > .infoWrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
