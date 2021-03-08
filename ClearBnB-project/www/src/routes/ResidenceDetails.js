@@ -84,7 +84,7 @@ const ResidenceDetails = () => {
       })}
       </div>
       <div className="infoWrapper">
-      <div className="desc">
+        <div className="desc">
         <h1>{residence.title}</h1>
         <p><span>Country: </span>{residence.country}</p>
         <p><span>City: </span>{residence.city}</p>
@@ -92,8 +92,8 @@ const ResidenceDetails = () => {
         <p><span>Type: </span>{residence.type}</p>
         <p><span>Price per night: </span>{residence.price}€</p>
         <p><span>Description: </span>{residence.description}</p>
-      </div>
-      <div className="features">
+        </div>
+        <div className="features">
         <p>Shower</p>
         <p>first aid kit</p>
         <p>parking</p>
@@ -108,7 +108,7 @@ const ResidenceDetails = () => {
         <p>Pool</p>
         <p>Fridge</p>
         <p>Dishwasher</p>
-      </div>
+        </div>
       </div>
       <div className="dates">
         <DatePicker className="startDate"
