@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { BookingContext } from '../contexts/BookingContextProvider'
+import { FeatureContext } from '../contexts/FeatureContextProvider'
 import DatePicker from 'react-datepicker'
 import '../style/ResidenceDetails.css'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -11,6 +12,8 @@ const ResidenceDetails = () => {
   const { id } = useParams()
   const { residences } = useContext(ResidenceContext);
   const { addBooking } = useContext(BookingContext);
+  const { getSpecificFeature } = useContext(FeatureContext);
+  let features = null;
   const residence = residences.find(r => r._id === id);
 
   const [startDate, setStartDate] = useState(null);
@@ -65,9 +68,12 @@ const ResidenceDetails = () => {
     } else {
       setTotalPrice(null);
     }
-
-
-  },[startDate,endDate])
+  }, [startDate, endDate])
+  
+  useEffect(() => {
+    features = getSpecificFeature(residence.featuresId)
+    console.log(features);
+  },[])
 
   return (
     <div className="residenceDetail">

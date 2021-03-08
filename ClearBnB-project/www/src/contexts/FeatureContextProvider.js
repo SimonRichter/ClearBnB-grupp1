@@ -10,14 +10,25 @@ export const FeatureProvider = (props) => {
     let data = await fetch('/rest/features');
     data = await data.json();
     setFeatures([...data]);
-  } 
+  }
+  
+  const getSpecificFeature = (residenceFeatureId) => {
+    const filteredFeature = features.filter(f => f._id === residenceFeatureId)
+    return filteredFeature;
+  };
+
+  const values = {
+    features,
+    setFeatures,
+    getSpecificFeature
+  }
 
   useEffect(() => {
     fetchFeatures();
   },[])
 
   return (
-    <FeatureContext.Provider>
+    <FeatureContext.Provider value={values}>
       {props.children}
     </FeatureContext.Provider>
   );
