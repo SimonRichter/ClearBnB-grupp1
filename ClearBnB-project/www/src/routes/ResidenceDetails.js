@@ -93,22 +93,22 @@ const ResidenceDetails = () => {
         <p><span>Price per night: </span>{residence.price}€</p>
         <p><span>Description: </span>{residence.description}</p>
         </div>
-        <div className="features">
-        <p>Shower</p>
-        <p>first aid kit</p>
-        <p>parking</p>
-        <p>stove</p>
-        <p>oven</p>
-        <p>microwave</p>
-        <p>TV</p>
-        <p>Coffee maker</p>
-        <p>WiFi</p>
-        <p>Balcony</p>
-        <p>Iron</p>
-        <p>Pool</p>
-        <p>Fridge</p>
-        <p>Dishwasher</p>
-        </div>
+        {features && <div className="features">
+          <p className={features.shower ? '' : 'dontExist'}>Shower 🚿</p>
+          <p className={features.firstAidKit ? '' : 'dontExist'}>first aid kit 🏥</p>
+          <p className={features.parking ? '' : 'dontExist'}>parking 🅿️</p>
+          <p className={features.stove ? '' : 'dontExist'}>stove 🎛</p>
+          <p className={features.oven ? '' : 'dontExist'}>oven 🍳</p>
+          <p className={features.microwave ? '' : 'dontExist'}>microwave 🍳</p>
+          <p className={features.tv ? '' : 'dontExist'}>TV 📺</p>
+          <p className={features.coffeeMaker ? '' : 'dontExist'}>Coffee maker ☕</p>
+          <p className={features.wifi ? '' : 'dontExist'}>WiFi 📶</p>
+          <p className={features.balcony ? '' : 'dontExist'}>Balcony 🌇</p>
+          <p className={features.iron ? '' : 'dontExist'}>Iron 🥌</p>
+          <p className={features.pool ? '' : 'dontExist'}>Pool 🏊</p>
+          <p className={features.fridge ? '' : 'dontExist'}>Fridge 🥶</p>
+          <p className={features.dishwasher ? '' : 'dontExist'}>Dishwasher 🧺</p>
+        </div>}
       </div>
       <div className="dates">
         <DatePicker className="startDate"
