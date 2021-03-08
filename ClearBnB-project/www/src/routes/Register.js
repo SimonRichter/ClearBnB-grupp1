@@ -4,8 +4,8 @@ import { useRef, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContextProvider'
 
-
-const CreateUser = () => {
+// const CreateUser = () => {
+export default function CreateUser () {
   const history = useHistory();
   const { addUser } = useContext(UserContext);
 
@@ -25,8 +25,8 @@ const CreateUser = () => {
       password: password.current.value,
       confirmPassword: confirmPassword.current.value
     }
+    // await addUser(user)
     console.log(user)
-    await addUser(user)
 
     history.push('/user/' + user.id)
     
@@ -66,5 +66,5 @@ const CreateUser = () => {
   
 }
 
-export default CreateUser(CreateUser)
+// export default CreateUser(CreateUser)
 // export default CreateUser;
