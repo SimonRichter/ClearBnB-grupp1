@@ -44,6 +44,14 @@ const AddResidence = () => {
         <button className="decGuests" onClick={decGuestHanlder}>－</button>
         </div>
 
+        <p>Advertisment title:</p>
+        <input className="inputTitle" type="text" placeholder="exmaple: 'Luxuary Cabin with jazuzzi'" />
+
+        <div class="checkbox">
+      <label>
+        <input type="checkbox"/><i class="helper"></i>I'm the label from a checkbox
+      </label>
+    </div>
       </form>
     </div>
   )
