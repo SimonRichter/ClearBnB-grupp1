@@ -22,6 +22,7 @@ function App() {
     <UserProvider>
     <Router>
     <div className="App">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       <Nav />
         <div className="wrapper"></div>
       <Switch>
