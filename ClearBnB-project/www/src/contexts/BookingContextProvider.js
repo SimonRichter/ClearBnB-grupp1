@@ -16,13 +16,13 @@ export const BookingProvider = (props) => {
     bookings,
     setBookings
   }
-
+  
   useEffect(() => {
   fetchBookings();
   }, [])
   
   return (
-  <BookingContext.Provider>
+    <BookingContext.Provider value={values}>
       {props.children}
   </BookingContext.Provider>
   );
