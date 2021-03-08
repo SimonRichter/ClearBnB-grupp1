@@ -2,11 +2,12 @@ import React from 'react';
 import '../style/Register.css';
 import { useRef, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
-import {UserContext} from '../contexts/UserContextProvider'
+import { UserContext } from '../contexts/UserContextProvider'
+
 
 const CreateUser = () => {
   const history = useHistory();
-  // const { addUser } = useContext();
+  const { addUser } = useContext(UserContext);
 
   const firstName = useRef();
   const lastName = useRef();
@@ -25,9 +26,10 @@ const CreateUser = () => {
       confirmPassword: confirmPassword.current.value
     }
     console.log(user)
-    // await addUser(user)
+    await addUser(user)
 
-    // history.push('/user/' + user.id)
+    history.push('/user/' + user.id)
+    
   }
 
     return (
@@ -64,5 +66,5 @@ const CreateUser = () => {
   
 }
 
-// export default CreateUser(createUser)
-export default CreateUser;
+export default CreateUser(CreateUser)
+// export default CreateUser;
