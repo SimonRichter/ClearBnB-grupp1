@@ -92,13 +92,11 @@ const AddResidence = () => {
         </label>
         </div>
         
-        <p>Country</p>
+        <p>Location information</p>
         <input className="inputTitle" type="text" placeholder="Country" />
 
-        <p>City</p>
         <input className="inputTitle" type="text" placeholder="City" />
 
-        <p>Adress</p>
         <input className="inputTitle" type="text" placeholder="Adress" />
 
          <p>Upload image-links</p> 
@@ -117,6 +115,8 @@ const AddResidence = () => {
         
         <p>Price per night</p>
         <span>€</span><input className="inputPrice" type="number" step="20" placeholder="Price per night" />
+
+        <button className="createBtn">Create Residence</button>
       </form>
     </div>
   )
