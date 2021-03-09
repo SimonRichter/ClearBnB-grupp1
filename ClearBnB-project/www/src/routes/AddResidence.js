@@ -11,14 +11,19 @@ const AddResidence = () => {
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
 
-  const amountOfGuests = useRef(1);
-  const optType = useRef(null);
 
-  const incGuestHandler = () => {
+
+  const optType = useRef(null);
+  const adTitle = useRef(null);
+  const checkboxes = useRef(null);
+
+  const incGuestHandler = (e) => {
+    e.preventDefault();
       setGuests(guests + 1); 
   }
 
-  const decGuestHanlder = () => {
+  const decGuestHanlder = (e) => {
+    e.preventDefault();
     if (guests <= 1) {
       setGuests(1);
     } else {
@@ -26,23 +31,26 @@ const AddResidence = () => {
     }
   }
 
+
   const submitHandler = (e) => {
-    e.preventDefault();
-    let optType = e.target.value;
-    
+     e.preventDefault();
+    let optTyp = optType.current.value;
+    const theTitle = adTitle.current.value;
+
     const residence = {
-      type: optType,
-      residenceLimit: guests
-      
+      type: optTyp,
+      residenceLimit: guests,
+      title: theTitle
     }
-    console.log(residence.residenceLimit);
+    console.log(residence.type);
+    console.log(residence);
   }
 
   return (
     <div className="addResWrapper">
       <form onSubmit={submitHandler}>
       <h3>What type of recidense would you like to host?</h3>
-        <select onChange={submitHandler} className="optionBar">
+        <select className="optionBar">
         <option class="optValue" value="" disabled="disabled" selected="selected">Choose</option>
         <option ref={optType}>House</option>
         <option ref={optType}>Apartment</option>
@@ -61,7 +69,7 @@ const AddResidence = () => {
         </div>
 
         <p className="advTitle">Advertisment title</p>
-        <input className="inputTitle" type="text" placeholder="exmaple: 'Luxuary Cabin with jazuzzi'" />
+        <input ref={adTitle} className="inputTitle" type="text" placeholder="exmaple: 'Luxuary Cabin with jazuzzi'" />
 
       <div class="checkbox">
         <label>
