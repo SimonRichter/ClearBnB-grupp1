@@ -207,7 +207,21 @@
   transition-delay: 0.28s;
 }
 
-.datePickerDiv {
+.addResWrapper .datePickerDiv {
   display: block;
   margin: 0 auto;
+}
+
+.addResWrapper .react-datepicker__input-container input {
+  height: 150%;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-bottom: 1.5px solid rgb(0, 102, 149);
+}
+
+.addResWrapper .react-datepicker__close-icon button {
+  color: red;
+  background-color: red;
 }
