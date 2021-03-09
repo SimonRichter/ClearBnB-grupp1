@@ -25,8 +25,17 @@ const Residences = () => {
       const filter = residences.filter(r => r.country === country.current.value &&
       r.city === city.current.value);
       setFilteredList([...filter]);
+    }
+    else if (country.current.value !== '' && city.current.value === '') {
+      const filter = residences.filter(r => r.country === country.current.value);
+      setFilteredList([...filter]);
+    }
+    else if (country.current.value === '' && city.current.value !== '') {
+      const filter = residences.filter(r => r.city === city.current.value);
+      setFilteredList([...filter]);
       return;
     }
+    
   }
  
 
