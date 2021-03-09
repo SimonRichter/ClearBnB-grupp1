@@ -45,10 +45,7 @@ const ResidenceDetails = () => {
 
   const filterForStartDate = date => {
     if (endDate === null) {
-      const days = [1, 2, 3, 4];
-      const day = new Date(date).getDay();
-      console.log(day);
-      return day !== days.map(m)
+      return true;
     }
     const day = Math.round(new Date(date).getTime() / 1000);
     const departureDate = Math.round(new Date(endDate).getTime() / 1000)
