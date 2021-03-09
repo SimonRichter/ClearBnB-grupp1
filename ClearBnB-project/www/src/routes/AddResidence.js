@@ -9,9 +9,9 @@ const AddResidence = () => {
 
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
-  const [type, setType] = useState(null);
   const [guests, setGuests] = useState(1);
 
+  const amountOfGuests = useRef(1);
   const optType = useRef(null);
 
   const incGuestHandler = () => {
@@ -31,11 +31,11 @@ const AddResidence = () => {
     let optType = e.target.value;
     
     const residence = {
-      type: optType
+      type: optType,
+      residenceLimit: guests
       
-
     }
-    console.log(residence.type);
+    console.log(residence.residenceLimit);
   }
 
   return (
