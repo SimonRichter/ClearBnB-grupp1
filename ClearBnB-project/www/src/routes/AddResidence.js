@@ -1,10 +1,13 @@
 import React, { useState }from 'react';
 import '../style/AddResidenceStyle.css';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
 
 
 const AddResidence = () => {
 
+  const [selectedDate, setSelectedDate] = useState(null);
   const [guests, setGuests] = useState(1);
 
   const incGuestHandler = () => {
@@ -119,6 +122,8 @@ const AddResidence = () => {
         <p>Price per night</p>
         <span>€</span><input className="inputPrice" type="number" step="20" placeholder="Price per night" />
 
+        <DatePicker selected={selectedDate} onChange={date => setSelectedDate(date)} />
+        
         <button className="createBtn">Create Residence</button>
       </form>
     </div>
