@@ -15,7 +15,7 @@ const AddResidence = () => {
 
   const optType = useRef(null);
   const adTitle = useRef(null);
-  const checkboxes = useRef(null);
+  const checkboxes = useRef([]);
 
   const incGuestHandler = (e) => {
     e.preventDefault();
@@ -36,11 +36,13 @@ const AddResidence = () => {
      e.preventDefault();
     let optTyp = optType.current.value;
     const theTitle = adTitle.current.value;
+    const checkboxe = checkboxes.current.value; // [] array av features EJ KLAR
 
     const residence = {
       type: optTyp,
       residenceLimit: guests,
-      title: theTitle
+      title: theTitle,
+      features: checkboxe
     }
     console.log(residence.type);
     console.log(residence);
@@ -72,11 +74,11 @@ const AddResidence = () => {
         <input ref={adTitle} className="inputTitle" type="text" placeholder="exmaple: 'Luxuary Cabin with jazuzzi'" />
 
       <div class="checkbox">
-        <label>
-            <input type="checkbox" /><i class="helper"></i>First-Aid Kit
+        <label ref={checkboxes}>
+            <input  type="checkbox" /><i class="helper"></i>First-Aid Kit
         </label>
-          <label>
-            <input type="checkbox" /><i class="helper"></i>Shower
+          <label ref={checkboxes}>
+            <input  type="checkbox" /><i class="helper"></i>Shower
         </label>
           <label>
             <input type="checkbox" /><i class="helper"></i>Parking
