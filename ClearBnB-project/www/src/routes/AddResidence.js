@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState, useRef }from 'react';
 import '../style/AddResidenceStyle.css';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
@@ -9,7 +9,10 @@ const AddResidence = () => {
 
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
+  const [type, setType] = useState(null);
   const [guests, setGuests] = useState(1);
+
+  const optType = useRef(null);
 
   const incGuestHandler = () => {
       setGuests(guests + 1); 
@@ -25,23 +28,29 @@ const AddResidence = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-  
+    let optType = e.target.value;
+    
+    const residence = {
+      type: optType
+      
+
+    }
+    console.log(residence.type);
   }
 
   return (
     <div className="addResWrapper">
       <form onSubmit={submitHandler}>
       <h3>What type of recidense would you like to host?</h3>
-      <select className="optionBar">
-      <option class="optValue" value="" disabled="disabled" selected="selected">Choose</option>
-        <option value="1">House</option>
-        <option value="2">Apartment</option>
-        <option value="3">Cabin</option>
-        <option value="4">Tent</option>
-        <option value="5">Mansion</option>
-          <option value="6">Igloo</option>
-          <option value="7">Trailer</option>
-          <option value="8">Unique/Other</option>
+        <select onChange={submitHandler} className="optionBar">
+        <option class="optValue" value="" disabled="disabled" selected="selected">Choose</option>
+        <option ref={optType}>House</option>
+        <option ref={optType}>Apartment</option>
+        <option ref={optType}>Cabin</option>
+        <option ref={optType}>Tent</option>
+        <option ref={optType}>Mansion</option>
+        <option ref={optType}>Iglo</option>
+        <option ref={optType}>Trailer</option>
       </select>
      
       
@@ -101,20 +110,14 @@ const AddResidence = () => {
         
         <p>Location information</p>
         <input className="inputTitle" type="text" placeholder="Country" />
-
         <input className="inputTitle" type="text" placeholder="City" />
-
         <input className="inputTitle" type="text" placeholder="Adress" />
 
          <p>Upload image-links</p> 
         <input className="inputTitle" type="text" placeholder="image 1" />
-
         <input className="inputTitle" type="text" placeholder="image 2" />
-
         <input className="inputTitle" type="text" placeholder="image 3" />
-
         <input className="inputTitle" type="text" placeholder="image 4" />
-
         <input className="inputTitle" type="text" placeholder="image 5" />
 
         <p>Description</p> 
