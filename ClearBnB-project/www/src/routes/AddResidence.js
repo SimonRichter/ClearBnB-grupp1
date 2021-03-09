@@ -124,16 +124,19 @@ const AddResidence = () => {
         <span>€</span><input className="inputPrice" type="number" step="20" placeholder="Price per night" />
 
         <div className="datePickerDiv">
+          <p>Select hosting date</p>
           <DatePicker
-            selected={selectedEndDate}
-            onChange={date => setSelectedEndDate(date)}
+            placeholderText={'Start Date'}
+            selected={selectedStartDate}
+            onChange={date => setSelectedStartDate(date)}
             minDate={new Date()}
             isClearable
           />
           <DatePicker
-            selected={selectedStartDate}
-            onChange={date => setSelectedStartDate(date)}
-            minDate={new Date()}
+            placeholderText={'End Date'}
+            selected={selectedEndDate}
+            onChange={date => setSelectedEndDate(date)}
+            minDate={selectedStartDate}
             isClearable
             
           />
