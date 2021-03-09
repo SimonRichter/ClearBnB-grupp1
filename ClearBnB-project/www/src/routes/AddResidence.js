@@ -7,7 +7,8 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const AddResidence = () => {
 
-  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedStartDate, setSelectedStartDate] = useState(null);
+  const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
 
   const incGuestHandler = () => {
@@ -122,7 +123,21 @@ const AddResidence = () => {
         <p>Price per night</p>
         <span>€</span><input className="inputPrice" type="number" step="20" placeholder="Price per night" />
 
-        <DatePicker selected={selectedDate} onChange={date => setSelectedDate(date)} />
+        <div className="datePickerDiv">
+          <DatePicker
+            selected={selectedEndDate}
+            onChange={date => setSelectedEndDate(date)}
+            minDate={new Date()}
+            isClearable
+          />
+          <DatePicker
+            selected={selectedStartDate}
+            onChange={date => setSelectedStartDate(date)}
+            minDate={new Date()}
+            isClearable
+            
+          />
+        </div>
         
         <button className="createBtn">Create Residence</button>
       </form>

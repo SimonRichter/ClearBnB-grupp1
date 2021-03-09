@@ -206,3 +206,8 @@
   -webkit-transition-delay: 0.28s;
   transition-delay: 0.28s;
 }
+
+.datePickerDiv {
+  display: block;
+  margin: 0 auto;
+}
