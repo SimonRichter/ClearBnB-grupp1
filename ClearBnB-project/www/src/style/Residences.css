@@ -1,20 +1,55 @@
-.residences > form > input{
+.residences > .searchFields > form > input{
+  border: none;
+  border-radius: 10px;
+  text-align: center;
   display: block;
+  font-size: large;
   margin: 15px auto;
-  padding: 15px;
+  padding: 5px;
   width: 40%;
 }
 
-.residences > form > button{
+.residences > .searchFields > form > button{
+  border: none;
+  border-radius: 10px;
+  background: rgb(68, 68, 248);
+  color: white;
+  font-size: large;
   display: block;
   margin: 10px auto;
-  width: 42.5%;
-  padding: 15px;
+  width: 41%;
+  padding: 5px;
+  cursor: pointer;
 }
 
-.residences > button{
+.residences > .searchFields  > button{
+  border: none;
+  border-radius: 10px;
+  background: rgb(68, 68, 248);
+  color: white;
+  font-size: large;
   display: block;
   margin: 10px auto;
-  width: 42.5%;
-  padding: 15px;
+  width: 41%;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.residences > .searchFields > form > button:hover{
+  Transform: scale(1.02);
+  transition: 300ms;
+}
+
+.residences > .searchFields  > button:hover{
+  Transform: scale(1.02);
+  transition: 300ms;
+}
+
+
+.residences > .searchFields{
+  margin: 10px auto;
+  border-radius: 10px;
+  width: 95%;
+  padding: 20px;
+  background: rgb(224, 220, 220);
 }
