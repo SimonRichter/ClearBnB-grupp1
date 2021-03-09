@@ -21,6 +21,7 @@ const AddResidence = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+  
   }
 
   return (
@@ -34,7 +35,9 @@ const AddResidence = () => {
         <option value="3">Cabin</option>
         <option value="4">Tent</option>
         <option value="5">Mansion</option>
-        <option value="6">Igloo</option>
+          <option value="6">Igloo</option>
+          <option value="7">Trailer</option>
+          <option value="8">Unique/Other</option>
       </select>
      
       
@@ -110,7 +113,7 @@ const AddResidence = () => {
 
         <input className="inputTitle" type="text" placeholder="image 5" />
 
-         <p>Description</p> 
+        <p>Description</p> 
         <textarea className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
         
         <p>Price per night</p>
