@@ -118,3 +118,57 @@
   font-size: 30px;
   color: rgba(255, 255, 255, 0.726);
 }
+@media (max-width: 480px) {
+ .divImgs {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 77%;
+  grid-gap: 40px;
+  margin-top: 20px;
+  background-color: rgba(245, 240, 240, 0.527);
+  height: 250vh;
+  padding: 80px 10px 10px 10px;
+  }
+  .divImgs p {
+  text-align: center;
+  font-size: 19px;
+  margin-left: 80px;
+  font-weight: bolder;
+  } 
+  .startTravel {
+  margin-left: 16vh;
+  font-family: "Montserrat", sans-serif;
+  }
+  .startTravel p {
+  font-size: 30px;
+  margin: 50px 0 5px 0;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 6.2px;
+  }
+  .arrow {
+  position: relative;
+  bottom: -18rem;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+  }
+  .exploreText {
+  margin-top: 360px;
+  text-align: center;
+  z-index: 1;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.726);
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
+@media (max-width: 1025px) {
+
+}
