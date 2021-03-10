@@ -46,8 +46,14 @@ app.put('/rest/residences/:id', async (req, res) => {
 
   let residence = await model.findById(req.params.id)
 
-  if(req.body.bookedDays) {
-    residence.bookedDays = [...residence.bookedDays, ...req.body.bookedDays];
+  if (req.body.bookedDays) {
+    
+    if (residence.bookedDays === null) {
+      residence.bookedDays = [...req.body.bookedDays];
+    }
+    else {
+      residence.bookedDays = [...residence.bookedDays, ...req.body.bookedDays];
+    }
     delete req.body.bookedDays
   }
 
