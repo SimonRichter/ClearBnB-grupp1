@@ -60,7 +60,7 @@ const ResidenceDetails = () => {
     }
     const day = Math.round(new Date(date).getTime() / 1000);
     const departureDate = Math.round(new Date(endDate).getTime() / 1000)
-    return departureDate > day
+    return departureDate > day && !residence.bookedDays.includes(day)
   }
 
   const filterForEndDate = date => {
@@ -82,6 +82,7 @@ const ResidenceDetails = () => {
   }, [startDate, endDate])
   
   useEffect(() => {
+    console.log('here',residence.bookedDays);
     setFeatures(...getSpecificFeature(residence.featuresId))
     //features = getSpecificFeature(residence.featuresId)
     console.log(features);
