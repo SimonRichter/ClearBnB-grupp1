@@ -1,5 +1,5 @@
 import React, {useContext, useEffect, useState} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams,useHistory } from 'react-router-dom'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { BookingContext } from '../contexts/BookingContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider'
@@ -9,7 +9,8 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 const ResidenceDetails = () => {
 
-  const { id } = useParams()
+  const history = useHistory();
+  const { id } = useParams();
   const { residences,updateResidence } = useContext(ResidenceContext);
   const { addBooking } = useContext(BookingContext);
   const { getSpecificFeature } = useContext(FeatureContext);
@@ -21,7 +22,6 @@ const ResidenceDetails = () => {
   const [totalPrice, setTotalPrice] = useState(null);
   const [unFilledFields, setunFilledFields] = useState(null);
   const [showConfirmPage, setShowConfirmPage] = useState(false);
-
   const bookResidence = () => {
 
     if (startDate === null && endDate === null) {
@@ -162,7 +162,7 @@ const ResidenceDetails = () => {
         <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
         <p><span>Total price: </span>{totalPrice} €</p>
         <div className="btns">
-          <button>Homepage</button>
+          <button onClick={() => history.push("/")}>Homepage</button>
           <button>My bookings</button>
         </div>  
       </div>}
