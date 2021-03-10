@@ -47,6 +47,7 @@ app.post("/rest/:model", async (req, res) => {
 })
 
 app.post('/api/login', async (req, res) => {
+  console.log('inne');
     // note: req.session is unique per user/browser
   if(req.session.user){
     res.json({error: 'Someone is already logged in'});
@@ -56,7 +57,8 @@ app.post('/api/login', async (req, res) => {
   const hash = crypto.createHmac('sha256', secret)
     .update(req.body.password).digest('hex');
   // Search for user
-  let user = await models['users'].findOne({email: req.body.email, password: hash});
+  let model = models['users'];
+  let user = await model.findOne({ email: req.body.email, password: hash });
   if(user){
     // succesful login, save the user to the session object
     req.session.user = user;
