@@ -17,6 +17,12 @@ const AddResidence = () => {
   const cityRef = useRef(null);
   const adressRef = useRef(null);
 
+  const imageRef1 = useRef(null);
+  const imageRef2 = useRef(null);
+  const imageRef3 = useRef(null);
+  const imageRef4 = useRef(null);
+  const imageRef5 = useRef(null);
+
   
 
   const incGuestHandler = (e) => {
@@ -38,7 +44,12 @@ const AddResidence = () => {
      e.preventDefault();
     let optTyp = optType.current.value;
     const theTitle = adTitle.current.value;
-
+    const images =
+    [imageRef1.current.value,
+    imageRef2.current.value,
+    imageRef3.current.value,
+    imageRef4.current.value,
+    imageRef5.current.value];
 
     const residence = {
       type: optTyp,
@@ -46,7 +57,8 @@ const AddResidence = () => {
       title: theTitle,
       country: countryRef.current.value,
       city: cityRef.current.value,
-      adress: adressRef.current.value
+      adress: adressRef.current.value,
+      imageURLs: [images]
     }
     console.log(residence);
   }
@@ -129,11 +141,11 @@ const AddResidence = () => {
         <input ref={adressRef} className="inputTitle" type="text" placeholder="Adress" />
 
          <p>Upload image-links</p> 
-        <input className="inputTitle" type="text" placeholder="image 1" />
-        <input className="inputTitle" type="text" placeholder="image 2" />
-        <input className="inputTitle" type="text" placeholder="image 3" />
-        <input className="inputTitle" type="text" placeholder="image 4" />
-        <input className="inputTitle" type="text" placeholder="image 5" />
+        <input ref={imageRef1} className="inputTitle" type="text" placeholder="image 1" />
+        <input ref={imageRef2} className="inputTitle" type="text" placeholder="image 2" />
+        <input ref={imageRef3} className="inputTitle" type="text" placeholder="image 3" />
+        <input ref={imageRef4} className="inputTitle" type="text" placeholder="image 4" />
+        <input ref={imageRef5} className="inputTitle" type="text" placeholder="image 5" />
 
         <p>Description</p> 
         <textarea className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
