@@ -61,18 +61,35 @@ const ResidenceDetails = () => {
 
   const filterForStartDate = date => {
     if (endDate === null) {
-      const day = Math.round(new Date(date).getTime() / 1000);
-      return !residence.bookedDays.includes(day);
+      if (residence.bookedDays !== null) {
+        const day = Math.round(new Date(date).getTime() / 1000);
+        return !residence.bookedDays.includes(day);
+      }
+      else {
+        return true;
+      }
     }
-    const day = Math.round(new Date(date).getTime() / 1000);
-    const departureDate = Math.round(new Date(endDate).getTime() / 1000)
-    return departureDate > day && !residence.bookedDays.includes(day)
+    if (residence.bookedDays !== null) {
+      const day = Math.round(new Date(date).getTime() / 1000);
+      const departureDate = Math.round(new Date(endDate).getTime() / 1000)
+      return departureDate > day && !residence.bookedDays.includes(day)
+    } else {
+      const day = Math.round(new Date(date).getTime() / 1000);
+      const departureDate = Math.round(new Date(endDate).getTime() / 1000)
+      return departureDate > day;
+    }  
   }
 
   const filterForEndDate = date => {
-    const day = Math.round(new Date(date).getTime() / 1000);
-    const arrivalDate = Math.round(new Date(startDate).getTime() / 1000)
-    return arrivalDate < day && !residence.bookedDays.includes(day)
+    if (residence.bookedDays !== null) {
+      const day = Math.round(new Date(date).getTime() / 1000);
+      const arrivalDate = Math.round(new Date(startDate).getTime() / 1000)
+      return arrivalDate < day && !residence.bookedDays.includes(day)
+    } else {
+      const day = Math.round(new Date(date).getTime() / 1000);
+      const arrivalDate = Math.round(new Date(startDate).getTime() / 1000)
+      return arrivalDate < day;
+    }  
   }
 
 
