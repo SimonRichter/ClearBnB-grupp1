@@ -25,8 +25,41 @@
   color: white;
   margin: 20px;
 }
-@media (max-width: 992px) {
-  .nav-bar {
+
+@media (max-width:320px)  { 
+  /* smartphones, iPhone, portrait 480x320 phones */ 
+}
+@media (max-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ 
+.nav-bar {
+  display: grid;
+  grid-template-columns: 50% 1fr;
+  height: 10vh;
+  background: rgba(44, 29, 29, 0.822);
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  top: 0;
+}
+
+.nav-bar h4 {
+  display: none !important;
+
+}
+
+.links {
+  align-self: center;
+}
+
+.links a {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  margin: 20px;
+}
+}
+@media (max-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (max-width:961px)  { 
+  /* tablet, landscape iPad, lo-res laptops ands desktops */ 
+.nav-bar {
   display: grid;
   grid-template-columns: 25% 1fr;
   height: 10vh;
@@ -54,29 +87,9 @@
   margin: 20px;
 }
 }
-@media (max-width: 600px) {
-  .nav-bar {
-  display: grid;
-  grid-template-columns: 15% 1fr;
-  height: 10vh;
-  background: rgba(44, 29, 29, 0.822);
-  position: fixed;
-  width: 100%;
-  margin: 0;
-  top: 0;
+@media (max-width:1025px) { 
+  /* big landscape tablets, laptops, and desktops */ 
 }
+@media (max-width:1281px) { /* hi-res laptops and desktops */ 
 
-.nav-bar h4 {
-  display: none !important;
-}
-
-.links {
-  align-self: center;
-}
-
-.links a {
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  margin: 20px;
-}
 }
