@@ -1,4 +1,4 @@
-import React, { useState, useRef }from 'react';
+import React, { useState, useRef, useEffect }from 'react';
 import '../style/AddResidenceStyle.css';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
@@ -10,6 +10,20 @@ const AddResidence = () => {
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
+  const [featureState, setFeature] = useState([]);
+
+
+  useEffect(() => {
+    let featureState = [
+      { id: 1, name: 'firstAidKit' },
+      { id: 2, name: 'Shower' },
+      { id: 3, name: 'Parking'}
+    ]
+    
+    setFeature(featureState.map((f) => {
+      return{"select": false, name: f.name}
+    }))
+  }, []);
 
   const optType = useRef(null);
   const adTitle = useRef(null);
@@ -39,7 +53,7 @@ const AddResidence = () => {
       setGuests(guests-1);
     }
   }
-  
+
 
 
   const submitHandler = (e) => {
@@ -71,8 +85,10 @@ const AddResidence = () => {
       description: theDescription,
       startDate: theStartDate,
       endDate: theEndDate
-
     }
+   
+    
+    
    
     console.log(residence);
   }
@@ -103,16 +119,30 @@ const AddResidence = () => {
         <input ref={adTitle} className="inputTitle" type="text" placeholder="exmaple: 'Luxuary Cabin with jazuzzi'" />
 
       
+     
+        <label key={f.id}>
+          <input onChange={event => {
+            let checked = event.target.checked;
+            setFeature(featureState.map(data => {
+              if (f.id == data.id) {
+                data.select = true;
+              }
+              return data;
+            }
+          }} type = "checkbox" checked = { f.select } /> <i className="helper" ></i>
         
-      <div className="checkbox">
+        </label>
+        <div className="checkbox">
+
+
         <label>
-            <input type="checkbox"  /><i className="helper"></i>First-Aid Kit
+            <input type="checkbox"/><i className="helper" ></i>First-Aid Kit
         </label>
           <label>
-            <input type="checkbox" /><i className="helper"></i>Shower
+            <input type="checkbox"/><i className="helper" ></i>Shower
         </label>
           <label>
-            <input type="checkbox" /><i className="helper"></i>Parking
+            <input type="checkbox"/><i className="helper" ></i>Parking
         </label>
           <label>
             <input type="checkbox" /><i className="helper"></i>Stove
