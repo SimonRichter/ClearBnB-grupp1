@@ -56,8 +56,27 @@
 }
 @media (max-width: 600px) {
   .nav-bar {
-          display: none !important;
-
+  display: grid;
+  grid-template-columns: 15% 1fr;
+  height: 10vh;
+  background: rgba(44, 29, 29, 0.822);
+  position: fixed;
+  width: 100%;
+  margin: 0;
+  top: 0;
 }
 
+.nav-bar h4 {
+  display: none !important;
+}
+
+.links {
+  align-self: center;
+}
+
+.links a {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  margin: 20px;
+}
 }
