@@ -29,6 +29,7 @@ const Residences = mongoose.model('residence', {
   featuresId: { type: String, unique: true, required: false },
   userId: { type: String, required: true },
   residenceLimit: { type: Number, required: true },
+  bookedDays: { type: Array }
 });
 
 const Features = mongoose.model('feature', {
