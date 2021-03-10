@@ -14,7 +14,8 @@ const AddResidence = () => {
   const optType = useRef(null);
   const adTitle = useRef(null);
   const countryRef = useRef(null);
-
+  const cityRef = useRef(null);
+  const adressRef = useRef(null);
 
   
 
@@ -38,11 +39,14 @@ const AddResidence = () => {
     let optTyp = optType.current.value;
     const theTitle = adTitle.current.value;
 
+
     const residence = {
       type: optTyp,
       residenceLimit: guests,
       title: theTitle,
-      country: countryRef.current.value
+      country: countryRef.current.value,
+      city: cityRef.current.value,
+      adress: adressRef.current.value
     }
     console.log(residence);
   }
@@ -121,8 +125,8 @@ const AddResidence = () => {
         
         <p>Location information</p>
         <input ref={countryRef} className="inputTitle" type="text" placeholder="Country" />
-        <input className="inputTitle" type="text" placeholder="City" />
-        <input className="inputTitle" type="text" placeholder="Adress" />
+        <input ref={cityRef} className="inputTitle" type="text" placeholder="City" />
+        <input ref={adressRef} className="inputTitle" type="text" placeholder="Adress" />
 
          <p>Upload image-links</p> 
         <input className="inputTitle" type="text" placeholder="image 1" />
