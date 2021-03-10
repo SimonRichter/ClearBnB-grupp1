@@ -32,6 +32,17 @@ const ResidenceDetails = () => {
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
     setTotalPrice(differenceInDays * residence.price);
 
+    const startDateInMillis = Math.round(new Date(startDate).getTime() / 1000);
+    const endDateInMillis = Math.round(new Date(endDate).getTime() / 1000);
+    const oneDayInMillis = 86400000 / 1000;
+    const allTheDaysBooked = [];
+
+    for (let i = startDateInMillis; i <= endDateInMillis; i += oneDayInMillis){
+      allTheDaysBooked.push(i);
+    }
+
+    console.log(allTheDaysBooked);
+
     const bookingObj = {
       startDate: startDate,
       endDate: endDate,
