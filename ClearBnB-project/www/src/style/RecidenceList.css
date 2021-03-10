@@ -5,3 +5,30 @@
   width: 90%;
   margin: 0 auto;
 }
+@media (max-width: 992px) {
+  .residenceList{
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 10px;
+  width: 90%;
+  margin: 0 auto;
+}
+}
+@media (max-width: 600px) {
+  .residenceList{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 10px;
+  width: 90%;
+  margin: 0 auto;
+  }
+}
+@media (max-width: 400px) {
+  .residenceList{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 10px;
+  width: 90%;
+  margin: 0 auto;
+  }
+}
