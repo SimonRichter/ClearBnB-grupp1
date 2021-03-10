@@ -158,7 +158,7 @@ const AddResidence = () => {
         <textarea ref={descriptionRef} className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
         
         <p>Price per night</p>
-        <span>€</span><input className="inputPrice" type="number" step="20" placeholder="Price per night" />
+        <span>€</span><input className="inputPrice" type="number" step="20" min="20" placeholder="Price per night(min 20€)" />
 
         <div className="datePickerDiv">
           <p>Select hosting date</p>
