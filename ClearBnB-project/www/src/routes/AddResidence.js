@@ -16,6 +16,7 @@ const AddResidence = () => {
   const countryRef = useRef(null);
   const cityRef = useRef(null);
   const adressRef = useRef(null);
+  const descriptionRef = useRef(null);
 
   const imageRef1 = useRef(null);
   const imageRef2 = useRef(null);
@@ -44,6 +45,10 @@ const AddResidence = () => {
      e.preventDefault();
     let optTyp = optType.current.value;
     const theTitle = adTitle.current.value;
+    const theCountry = countryRef.current.value;
+    const theCity = cityRef.current.value;
+    const theAdress = adressRef.current.value;
+    const theDescription = descriptionRef.current.value;
     const images =
     [imageRef1.current.value,
     imageRef2.current.value,
@@ -55,11 +60,13 @@ const AddResidence = () => {
       type: optTyp,
       residenceLimit: guests,
       title: theTitle,
-      country: countryRef.current.value,
-      city: cityRef.current.value,
-      adress: adressRef.current.value,
-      imageURLs: [images]
+      country: theCountry,
+      city: theCity,
+      adress: theAdress,
+      imageURLs: [images],
+      description: theDescription
     }
+
     console.log(residence);
   }
 
@@ -148,7 +155,7 @@ const AddResidence = () => {
         <input ref={imageRef5} className="inputTitle" type="text" placeholder="image 5" />
 
         <p>Description</p> 
-        <textarea className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
+        <textarea ref={descriptionRef} className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
         
         <p>Price per night</p>
         <span>€</span><input className="inputPrice" type="number" step="20" placeholder="Price per night" />
