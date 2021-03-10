@@ -41,5 +41,21 @@ app.delete('/rest/:model/:id', async (req, res) => {
   res.json(doc);
 });
 
+app.put('/rest/residences/:id', async (req, res) => {
+  let model = models['residences']
+
+  let residence = await model.findById(req.params.id)
+
+  if(req.body.bookedDays) {
+    residence.bookedDays = [...residence.bookedDays, ...req.body.bookedDays];
+    delete req.body.bookedDays
+  }
+
+  Object.assign(residence, req.body)
+  await residence.save()
+
+  res.json(residence)
+})
+
 
 app.listen(3001, () => console.log("server started on port 3001"));
