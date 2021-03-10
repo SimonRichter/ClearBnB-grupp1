@@ -36,7 +36,7 @@ const AddResidence = () => {
      e.preventDefault();
     let optTyp = optType.current.value;
     const theTitle = adTitle.current.value;
-    const checkboxe = checkboxes.current.value; // [] array av features EJ KLAR
+    const checkboxe = checkboxes.current.value; 
 
     const residence = {
       type: optTyp,
@@ -44,7 +44,7 @@ const AddResidence = () => {
       title: theTitle,
       features: checkboxe
     }
-    console.log(residence.type);
+    console.log('här', checkboxes.current.value );
     console.log(residence);
   }
 
@@ -73,48 +73,48 @@ const AddResidence = () => {
         <p className="advTitle">Advertisment title</p>
         <input ref={adTitle} className="inputTitle" type="text" placeholder="exmaple: 'Luxuary Cabin with jazuzzi'" />
 
-      <div class="checkbox">
-        <label ref={checkboxes}>
-            <input  type="checkbox" /><i class="helper"></i>First-Aid Kit
+      <div className="checkbox">
+        <label ref={checkboxes} value="firstAidKit">
+            <input type="checkbox" /><i className="helper"></i>First-Aid Kit
         </label>
           <label ref={checkboxes}>
-            <input  type="checkbox" /><i class="helper"></i>Shower
+            <input type="checkbox" /><i className="helper"></i>Shower
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Parking
+            <input type="checkbox" /><i className="helper"></i>Parking
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Stove
+            <input type="checkbox" /><i className="helper"></i>Stove
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Oven
+            <input type="checkbox" /><i className="helper"></i>Oven
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Microwave
+            <input type="checkbox" /><i className="helper"></i>Microwave
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Tv
+            <input type="checkbox" /><i className="helper"></i>Tv
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Coffee maker
+            <input type="checkbox" /><i className="helper"></i>Coffee maker
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>WIFI
+            <input type="checkbox" /><i className="helper"></i>WIFI
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Balcony
+            <input type="checkbox" /><i className="helper"></i>Balcony
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Iron
+            <input type="checkbox" /><i className="helper"></i>Iron
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Pool
+            <input type="checkbox" /><i className="helper"></i>Pool
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Fridge
+            <input type="checkbox" /><i className="helper"></i>Fridge
         </label>
           <label>
-            <input type="checkbox" /><i class="helper"></i>Dishwasher
+            <input type="checkbox" /><i className="helper"></i>Dishwasher
         </label>
         </div>
         
