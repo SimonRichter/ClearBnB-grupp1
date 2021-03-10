@@ -161,6 +161,10 @@ const ResidenceDetails = () => {
         <p><span>Start date: </span>{new Date(startDate).toString().substr(0,15)}</p>
         <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
         <p><span>Total price: </span>{totalPrice} €</p>
+        <div className="btns">
+          <button>Homepage</button>
+          <button>My bookings</button>
+        </div>  
       </div>}
     </div>
   );

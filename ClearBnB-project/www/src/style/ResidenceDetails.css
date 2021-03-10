@@ -124,3 +124,26 @@ transition: 300ms;
 .residenceDetail > .confirm > p{
   text-align: center;
 }
+
+.residenceDetail > .confirm > .btns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+.residenceDetail > .confirm > .btns > button{
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  background: rgb(68, 68, 248);
+  color: white;
+  font-size: large;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.residenceDetail > .confirm > .btns > button:hover{
+  Transform: scale(1.02);
+  transition: 300ms;
+}
