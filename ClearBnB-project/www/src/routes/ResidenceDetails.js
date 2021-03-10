@@ -56,7 +56,8 @@ const ResidenceDetails = () => {
 
   const filterForStartDate = date => {
     if (endDate === null) {
-      return true;
+      const day = Math.round(new Date(date).getTime() / 1000);
+      return !residence.bookedDays.includes(day);
     }
     const day = Math.round(new Date(date).getTime() / 1000);
     const departureDate = Math.round(new Date(endDate).getTime() / 1000)
@@ -66,7 +67,7 @@ const ResidenceDetails = () => {
   const filterForEndDate = date => {
     const day = Math.round(new Date(date).getTime() / 1000);
     const arrivalDate = Math.round(new Date(startDate).getTime() / 1000)
-    return arrivalDate < day
+    return arrivalDate < day && !residence.bookedDays.includes(day)
   }
 
 
