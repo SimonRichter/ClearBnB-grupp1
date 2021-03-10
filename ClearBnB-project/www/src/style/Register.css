@@ -50,3 +50,12 @@
   min-height: 90vh;
   background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
 }
+@media (max-width: 480px) {
+  
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
