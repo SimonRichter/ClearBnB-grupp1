@@ -11,11 +11,12 @@ const AddResidence = () => {
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
 
-
-
   const optType = useRef(null);
   const adTitle = useRef(null);
-  const checkboxes = useRef([]);
+  const countryRef = useRef(null);
+
+
+  
 
   const incGuestHandler = (e) => {
     e.preventDefault();
@@ -36,15 +37,13 @@ const AddResidence = () => {
      e.preventDefault();
     let optTyp = optType.current.value;
     const theTitle = adTitle.current.value;
-    const checkboxe = checkboxes.current.value; 
 
     const residence = {
       type: optTyp,
       residenceLimit: guests,
       title: theTitle,
-      features: checkboxe
+      country: countryRef.current.value
     }
-    console.log('här', checkboxes.current.value );
     console.log(residence);
   }
 
@@ -73,11 +72,13 @@ const AddResidence = () => {
         <p className="advTitle">Advertisment title</p>
         <input ref={adTitle} className="inputTitle" type="text" placeholder="exmaple: 'Luxuary Cabin with jazuzzi'" />
 
+      
+        
       <div className="checkbox">
-        <label ref={checkboxes} value="firstAidKit">
-            <input type="checkbox" /><i className="helper"></i>First-Aid Kit
+        <label>
+            <input type="checkbox"  /><i className="helper"></i>First-Aid Kit
         </label>
-          <label ref={checkboxes}>
+          <label>
             <input type="checkbox" /><i className="helper"></i>Shower
         </label>
           <label>
@@ -119,7 +120,7 @@ const AddResidence = () => {
         </div>
         
         <p>Location information</p>
-        <input className="inputTitle" type="text" placeholder="Country" />
+        <input ref={countryRef} className="inputTitle" type="text" placeholder="Country" />
         <input className="inputTitle" type="text" placeholder="City" />
         <input className="inputTitle" type="text" placeholder="Adress" />
 
