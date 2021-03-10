@@ -14,13 +14,13 @@ export const ResidenceProvider = (props) => {
   }
 
   const updateResidence = async (id) => {
-     let res = await fetch('/rest/residences/' + id, {
-      method: 'PUT',
-      headers: {'content-type': 'application/json'},
-      body: JSON.stringify(recipe)
-     })
+    //  let res = await fetch('/rest/residences/' + id, {
+    //   method: 'PUT',
+    //   headers: {'content-type': 'application/json'},
+    //   body: JSON.stringify(recipe)
+    //  })
     
-    res = await res.json()
+    // res = await res.json()
   }
 
   useEffect(() => {
