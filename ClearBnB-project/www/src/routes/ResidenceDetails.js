@@ -105,15 +105,15 @@ const ResidenceDetails = () => {
   }, [startDate, endDate])
   
   useEffect(() => {
-    console.log('here',residence.bookedDays);
-    setFeatures(...getSpecificFeature(residence.featuresId))
-    //features = getSpecificFeature(residence.featuresId)
-    console.log(features);
-  },[])
+    console.log(residence);
+    if (residence) {
+      setFeatures(...getSpecificFeature(residence.featuresId))  
+    };    
+  },[residence])
 
   return (
     <div className="residenceDetail">
-      {!showConfirmPage && <div className="inner">
+      {!showConfirmPage && residence && <div className="inner">
         <div className="images">
           {residence.imageURLs.map((img) => {
             return (<img key={img} src={img} alt="" />)
