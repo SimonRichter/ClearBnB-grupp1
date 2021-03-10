@@ -29,7 +29,8 @@ export const ResidenceProvider = (props) => {
   
   const values = {
     residences,
-    setResidences
+    setResidences,
+    updateResidence
   }
 
   return (

@@ -10,7 +10,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 const ResidenceDetails = () => {
 
   const { id } = useParams()
-  const { residences } = useContext(ResidenceContext);
+  const { residences,updateResidence } = useContext(ResidenceContext);
   const { addBooking } = useContext(BookingContext);
   const { getSpecificFeature } = useContext(FeatureContext);
   const residence = residences.find(r => r._id === id);
@@ -41,7 +41,11 @@ const ResidenceDetails = () => {
       allTheDaysBooked.push(i);
     }
 
-    console.log(allTheDaysBooked);
+    const bookedDaysObj = {
+      bookedDays: allTheDaysBooked
+    }
+
+    updateResidence(residence._id, bookedDaysObj);
 
     const bookingObj = {
       startDate: startDate,
