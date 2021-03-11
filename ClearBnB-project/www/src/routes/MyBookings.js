@@ -1,11 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { ResidenceContext } from '../contexts/ResidenceContextProvider';
+import MyBookingItem from '../components/MyBookingItem';
 import { BookingContext } from '../contexts/BookingContextProvider'
 import { UserContext } from '../contexts/UserContextProvider'
 
 const MyBookings = () => {
 
-  const { residences } = useContext(ResidenceContext);
   const { bookings } = useContext(BookingContext);
   const { whoAmI } = useContext(UserContext);
 
@@ -16,13 +15,15 @@ const MyBookings = () => {
     if (bookings) {
       const booked = bookings.filter(b => b.userId === whoAmI._id);
       setMyResidences([...booked]);
-      console.log(myResidences);
     } 
-  },[bookings])
+  },[bookings,whoAmI])
 
   return (
     <div className="myBookings">
-      <h1>My bookings..</h1>
+      {myResidences && <div className="wrapper">
+        <h1>My bookings..</h1>
+        {myResidences.map(r => (<MyBookingItem key={r._id} booked={r} />))}
+      </div>}
     </div>
   );
 }
