@@ -59,3 +59,32 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   
 }
+@media (max-width: 480px) {
+  .register .grid-item-input{
+  width:85%;
+  margin: 0 auto;
+  opacity: 90%;
+  background: #eee;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+ .register .grid-item {
+  background-color: rgba(128, 128, 128, 0);
+  padding: 20px 0px 20px 0px;
+  font-size: 30px;
+  text-align: center;
+}
+.register button{
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  padding: 10px;
+  color: white;
+  background: rgb(68, 68, 248);
+  border-radius: 10px;
+  cursor: pointer;
+} 
+}

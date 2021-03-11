@@ -15,7 +15,6 @@
   padding: 20px;
 }
 
-
 .form-for-login > form > input{
   width: 90%;
   margin: 15px auto;
@@ -44,10 +43,10 @@
 @media (max-width: 480px) {
   .login{
   width: 100%;
-  height: 55vh;
+  height: 75vh;
   background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
   object-fit: cover;
-  padding-top: 200px;
+  padding-top: 100px;
 }
 .login > .form-for-login {
   opacity: 90%;
@@ -56,5 +55,15 @@
   background: #eee;
   border-radius: 5px;
   padding: 20px;
+}
+.form-for-login button{
+  width: 100%;
+  font-size: 40px;
+}
+.login input[type="email"]{
+  font-size: 40px;
+}
+.login input[type="password"]{
+  font-size: 40px;
 }
 }
