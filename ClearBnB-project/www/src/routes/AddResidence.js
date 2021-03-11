@@ -120,7 +120,7 @@ const AddResidence = () => {
 
       
      
-        <label key={f.id}>
+        {/* <label key={f.id}>
           <input onChange={event => {
             let checked = event.target.checked;
             setFeature(featureState.map(data => {
@@ -131,7 +131,7 @@ const AddResidence = () => {
             }
           }} type = "checkbox" checked = { f.select } /> <i className="helper" ></i>
         
-        </label>
+        </label> */}
         <div className="checkbox">
 
 
