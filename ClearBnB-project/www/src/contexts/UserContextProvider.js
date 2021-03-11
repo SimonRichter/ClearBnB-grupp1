@@ -16,6 +16,7 @@ export const UserProvider = (props) => {
 
   useEffect(() => {
     fetchUsers();
+    whoIsOnline();
   }, []);
 
   const addUser = async user => {
@@ -35,7 +36,16 @@ export const UserProvider = (props) => {
       body: JSON.stringify(user)
     })
     res = await res.json();
-    console.log('here',res);
+    return res;
+  }
+
+  const logOut = async () => {
+    let res = await fetch('/api/login', {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+    })
+    res = await res.json();
+    console.log(res);
   }
 
   const whoIsOnline = async() => {
@@ -49,7 +59,9 @@ export const UserProvider = (props) => {
     setUsers,
     addUser,
     login,
-    whoIsOnline
+    whoIsOnline,
+    whoAmI,
+    logOut
   }
 
   return (
