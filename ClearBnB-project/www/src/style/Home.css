@@ -127,17 +127,17 @@
   grid-gap: 40px;
   margin-top: 20px;
   background-color: rgba(245, 240, 240, 0.527);
-  height: 250vh;
-  padding: 80px 10px 10px 10px;
+  height: 160vh;
+  padding: 80px 10px 10px 0px;
   }
   .divImgs p {
   text-align: center;
-  font-size: 19px;
+  font-size: 15px;
   margin-left: 80px;
   font-weight: bolder;
   } 
   .startTravel {
-  margin-left: 16vh;
+  margin-left: 3vh;
   font-family: "Montserrat", sans-serif;
   }
   .startTravel p {
@@ -218,7 +218,7 @@
   grid-gap: 40px;
   margin-top: 20px;
   background-color: rgba(245, 240, 240, 0.527);
-  height: 63vh;
+  height: 50vh;
   padding: 80px 10px 10px 10px;
   }
   .divImgs p {
