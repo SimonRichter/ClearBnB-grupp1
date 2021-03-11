@@ -1,24 +1,149 @@
-.residenceDetail {
+.residenceDetail > .inner {
   width: 90%;
   margin: 0 auto;
+  margin-top: 20px;
   padding: 20px;
   background: #eee;
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-.residenceDetail > .images{
+.residenceDetail > .inner > .infoWrapper{
+  padding-right: 40px;
+}
+
+.residenceDetail > .inner > .images{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
 }
 
-.residenceDetail > .images img{
+.residenceDetail > .inner >  .images img{
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
 }
 
-.residenceDetail >  p > span{
+.residenceDetail > .inner > .infoWrapper > .desc{
+  width: 90%;
+}
+
+.residenceDetail > .inner >  .infoWrapper > .desc >  p > span{
   font-weight: bolder;
+}
+
+.dates{
+  display: grid;
+  grid-template-columns: 20%;
+}
+
+.startDate, .endDate{
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: large;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.book-btn{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 21.5%;
+  border: none;
+  color: white;
+  background: rgb(54, 54, 212);
+  font-size: large;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.book-btn:hover{
+Transform: scale(1.03);
+transition: 300ms;
+}
+
+.residenceDetail > .inner >  .valCheck{
+  color: red;
+}
+
+
+.residenceDetail > .inner >  .infoWrapper >  .features{
+  margin-top: 20px;
+  width: 100%;
+  max-height: 50vh;
+  padding: 20px;
+  background: rgb(218, 218, 218);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  justify-items: center;
+}
+
+.residenceDetail > .inner >  .infoWrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+
+.residenceDetail > .inner >  .infoWrapper >  .features > .dontExist{
+  color: rgb(158, 151, 151);
+  text-decoration: line-through;
+}
+
+.residenceDetail > .confirm{
+  background: #eee;
+  width: 40%;
+  margin: 20px auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.residenceDetail > .confirm > h1,h4{
+  text-align: center;
+}
+
+.residenceDetail > .confirm > img{
+  display: block;
+  width: 70%;
+  height: 30%;
+  object-fit: cover;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+.residenceDetail > .confirm > p > span{
+  font-weight: bolder;
+}
+
+.residenceDetail > .confirm > p{
+  text-align: center;
+}
+
+.residenceDetail > .confirm > .btns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+.residenceDetail > .confirm > .btns > button{
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  background: rgb(68, 68, 248);
+  color: white;
+  font-size: large;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.residenceDetail > .confirm > .btns > button:hover{
+  Transform: scale(1.02);
+  transition: 300ms;
 }

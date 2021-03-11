@@ -5,6 +5,7 @@ export const UserContext = createContext();
 export const UserProvider = (props) => {
 
   const [users, setUsers] = useState([]);
+  const [whoAmI, setWhoAmI] = useState(null);
 
   
   const fetchUsers = async() => {
@@ -15,11 +16,57 @@ export const UserProvider = (props) => {
 
   useEffect(() => {
     fetchUsers();
+    whoIsOnline();
   }, []);
-  
+
+  const addUser = async user => {
+    let res = await fetch('/api/users', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user)
+    })
+    res = await res.json();
+    setUsers([...users, user])
+  }
+
+  const login = async user => {
+    let res = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user)
+    })
+    res = await res.json();
+    return res;
+  }
+
+  const logOut = async () => {
+    let res = await fetch('/api/login', {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+    })
+    res = await res.json();
+    setWhoAmI(null);
+    console.log(res);
+  }
+
+  const whoIsOnline = async() => {
+    let data = await fetch('/api/login')
+    data = await data.json();
+    if (!data) {
+      setWhoAmI(null);
+    } else {
+      setWhoAmI({...data});
+    }
+  }
+
   const values = {
     users,
-    setUsers
+    setUsers,
+    addUser,
+    login,
+    whoIsOnline,
+    whoAmI,
+    logOut
   }
 
   return (

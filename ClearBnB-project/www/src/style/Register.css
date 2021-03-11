@@ -1,0 +1,52 @@
+.register .grid-item-input{
+  width:80%;
+  margin: 0 auto;
+  opacity: 90%;
+  background: #eee;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 5px;
+}
+.register .grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.register .grid-item {
+  background-color: rgba(128, 128, 128, 0);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.register .inner-grid input{
+  width: 90%;
+  margin: 15px auto;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  display: block;
+}
+
+.register button{
+  width: 95%;
+  display: block;
+  margin: 0 auto;
+  border: none;
+  padding: 10px;
+  color: white;
+  background: rgb(68, 68, 248);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.register button:hover{
+  Transform: scale(1.02);
+  transition: 300ms;
+}
+.register{
+  width: 100%;
+  min-height: 90vh;
+  background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
+}
