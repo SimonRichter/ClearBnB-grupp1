@@ -12,7 +12,8 @@ const AddResidence = () => {
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
   const [isChecked, setIsChecked] = useState(false);
-   const [isChecked2, setIsChecked2] = useState(false);
+  const [isChecked2, setIsChecked2] = useState(false);
+  const [isChecked3, setIsChecked3] = useState(false);
 
   const optType = useRef(null);
   const adTitle = useRef(null);
@@ -94,7 +95,8 @@ const AddResidence = () => {
 
     const features = {
       firstAidKit: feature1.current.value,
-      shower: feature2.current.value
+      shower: feature2.current.value,
+      parking: feature3.current.value
     }
     console.log("object", features);
   }
@@ -119,8 +121,15 @@ const AddResidence = () => {
    console.log("on click", e.target.value);
   }
 
-
-
+   const addFeatureHandler3 = (e) => {
+    if (isChecked3 === false) {
+      setIsChecked3(true)
+    } 
+    if (isChecked3 === true) {
+      setIsChecked3(false);
+  }
+   console.log("on click", e.target.value);
+  }
 
 
 
@@ -160,7 +169,7 @@ const AddResidence = () => {
             <input type="checkbox" onClick={addFeatureHandler2} ref={feature2} value={isChecked2} /><i className="helper" ></i>Shower
         </label>
           <label>
-            <input type="checkbox" onClick={addFeatureHandler} ref={feature3} value="Parking" /><i className="helper" ></i>Parking
+            <input type="checkbox" onClick={addFeatureHandler3} ref={feature3} value={isChecked3} /><i className="helper" ></i>Parking
         </label>
           <label>
             <input type="checkbox" onClick={addFeatureHandler} ref={feature4} value="Stove" /><i className="helper"></i>Stove
