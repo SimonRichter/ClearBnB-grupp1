@@ -13,13 +13,24 @@ export const ResidenceProvider = (props) => {
     setResidences([...data]);
   }
 
+  const updateResidence = async (id, residence) => {
+     let res = await fetch('/rest/residences/' + id, {
+      method: 'PUT',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify(residence)
+     })
+    
+    res = await res.json()
+  }
+
   useEffect(() => {
     fetchResidences();
   }, []);
   
   const values = {
     residences,
-    setResidences
+    setResidences,
+    updateResidence
   }
 
   return (

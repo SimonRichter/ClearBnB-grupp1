@@ -1,11 +1,8 @@
-import React, { useContext } from 'react';
-import { ResidenceContext } from '../contexts/ResidenceContextProvider';
+import React from 'react';
 import ResidenceItem from './ResidenceItem';
 import '../style/RecidenceList.css'
 
-const ResidenceList = () => {
-
-  const { residences } = useContext(ResidenceContext);
+const ResidenceList = ({residences}) => {
 
   return (
     <div className="residenceList">

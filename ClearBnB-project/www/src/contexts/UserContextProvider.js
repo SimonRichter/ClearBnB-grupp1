@@ -5,6 +5,7 @@ export const UserContext = createContext();
 export const UserProvider = (props) => {
 
   const [users, setUsers] = useState([]);
+  const [whoAmI, setWhoAmI] = useState({});
 
   
   const fetchUsers = async() => {
@@ -16,21 +17,38 @@ export const UserProvider = (props) => {
   useEffect(() => {
     fetchUsers();
   }, []);
-  // -------------
+
   const addUser = async user => {
-    let res = await fetch('/rest/users', {
+    let res = await fetch('/api/users', {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify(user)
     })
     res = await res.json();
-    user.id = res.id;
     setUsers([...users, user])
   }
-// --------------
+
+  const login = async user => {
+    let res = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user)
+    })
+    res = await res.json();
+  }
+
+  const whoIsOnline = async() => {
+    let data = await fetch('/api/login')
+    data = await data.json();
+    setWhoAmI({...data});
+  }
+
   const values = {
     users,
-    setUsers
+    setUsers,
+    addUser,
+    login,
+    whoIsOnline
   }
 
   return (

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { UserProvider } from './contexts/UserContextProvider';
 import { ResidenceProvider } from './contexts/ResidenceContextProvider';
 import { BookingProvider } from './contexts/BookingContextProvider';
+import { FeatureProvider } from './contexts/FeatureContextProvider'
 import Home from './routes/Home';
 import About from './routes/About';
 import Residences from './routes/Residences';
@@ -15,11 +16,13 @@ import Register from './routes/Register';
 function App() {
 
   return (
+    <FeatureProvider>
     <BookingProvider>
     <ResidenceProvider>
     <UserProvider>
     <Router>
     <div className="App">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       <Nav />
         <div className="wrapper"></div>
       <Switch>
@@ -35,6 +38,7 @@ function App() {
     </UserProvider>
     </ResidenceProvider>
     </BookingProvider>
+    </FeatureProvider>
   );
 }
 

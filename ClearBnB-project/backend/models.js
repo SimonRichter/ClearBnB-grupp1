@@ -10,7 +10,7 @@ const Users = mongoose.model('user', {
 const Bookings = mongoose.model('booking', {
   startDate: { type: Number, required: true },
   endDate: { type: Number, required: true },
-  userId: { type: String, unique: true, required: true },
+  userId: { type: String, required: true },
   residenceId: { type: String, required: true },
   price: { type: Number, required: true },
 });
@@ -29,6 +29,7 @@ const Residences = mongoose.model('residence', {
   featuresId: { type: String, unique: true, required: false },
   userId: { type: String, required: true },
   residenceLimit: { type: Number, required: true },
+  bookedDays: { type: Array }
 });
 
 const Features = mongoose.model('feature', {
