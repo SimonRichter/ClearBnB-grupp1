@@ -52,16 +52,18 @@ const ResidenceDetails = () => {
 
     updateResidence(residence._id, bookedDaysObj);
     
-    setShowConfirmPage(true);
     const bookingObj = {
-      startDate: startDate,
-      endDate: endDate,
-      price: totalPrice,
-      userId: null,
+      startDate: startDateInMillis,
+      endDate: endDateInMillis,
+      userId: whoAmI._id,
       residenceId: id,
+      price: totalPrice
     }
+
     //Method to add bookingObj to DB via context.
-    //addBooking(bookingObj)
+    addBooking(bookingObj)
+
+    setShowConfirmPage(true);
   }
 
   const filterForStartDate = date => {

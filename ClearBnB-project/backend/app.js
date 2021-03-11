@@ -40,10 +40,12 @@ app.get("/rest/:model/:id", async (req, res) => {
   res.json(doc);
 })
 
+
 app.post("/rest/:model", async (req, res) => {
   let model = models[req.params.model]
   let doc = new model(req.body);
-  doc.save().then(res.json(doc))
+  await doc.save();
+  res.json(doc);
 })
 
 app.post('/api/users', async (req, res) => {
