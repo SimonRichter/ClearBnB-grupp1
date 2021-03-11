@@ -50,15 +50,7 @@
   min-height: 90vh;
   background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
 }
-@media (max-width: 480px) {
-  
-}
-@media (min-width: 481px) and (max-width: 767px) {
-  
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-}
+
 @media (max-width: 480px) {
   .register .grid-item-input{
   width:85%;
@@ -92,3 +84,21 @@
   font-size: 29px;
 } 
 }
+@media (min-width: 481px) and (max-width: 767px) {
+  .register button{
+  width: 95%;
+  font-size: 40px;
+}
+  .register input[placeholder="First name"],[placeholder="Last name"],[placeholder="email"],[placeholder="password"],[placeholder="confirm password"]{
+  font-size: 40px;
+} 
+}
+/* @media (max-width: 480px) {
+  
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+} */

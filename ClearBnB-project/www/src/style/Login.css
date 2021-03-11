@@ -61,9 +61,26 @@
   font-size: 40px;
 }
 .login input[type="email"]{
-  font-size: 40px;
+  font-size: 30px;
 }
 .login input[type="password"]{
+  font-size: 30px;
+}
+}
+@media (min-width: 481px) and (max-width: 767px) {
+ .login > .form-for-login {
+  opacity: 90%;
+  width: 70%;
+  margin: 0 auto;
+  background: #eee;
+  border-radius: 5px;
+  padding: 20px;
+ }
+  .login input[type="email"],[type="password"]{
+  font-size: 40px;
+}
+.form-for-login button{
+  width: 95%;
   font-size: 40px;
 }
 }
