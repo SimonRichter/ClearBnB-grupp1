@@ -72,7 +72,7 @@
 }
  .register .grid-item {
   background-color: rgba(128, 128, 128, 0);
-  padding: 20px 0px 20px 0px;
+  padding: 0px 0px 20px 0px;
   font-size: 30px;
   text-align: center;
 }
@@ -86,5 +86,9 @@
   background: rgb(68, 68, 248);
   border-radius: 10px;
   cursor: pointer;
+  font-size: 40px;
+}
+.register input[placeholder="First name"],[placeholder="Last name"],[placeholder="email"],[placeholder="password"],[placeholder="confirm password"]{
+  font-size: 29px;
 } 
 }
