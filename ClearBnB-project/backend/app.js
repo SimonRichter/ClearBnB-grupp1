@@ -78,7 +78,7 @@ app.post('/api/login', async (req, res) => {
     res.json({success: 'Logged in'});
   }
   else {
-    res.json({error: 'No match.'});
+    res.json('');
   }
 });
 
