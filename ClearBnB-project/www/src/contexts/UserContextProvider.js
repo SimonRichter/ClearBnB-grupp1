@@ -35,6 +35,7 @@ export const UserProvider = (props) => {
       body: JSON.stringify(user)
     })
     res = await res.json();
+    console.log('here',res);
   }
 
   const whoIsOnline = async() => {

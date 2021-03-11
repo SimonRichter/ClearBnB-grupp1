@@ -15,8 +15,8 @@ const Login = () => {
       email: email.current.value,
       password: password.current.value
     };
-    console.log(user);
-
+    
+    login(user);
     //Code to login with DB
   }
 
