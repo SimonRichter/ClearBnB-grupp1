@@ -6,10 +6,10 @@ import '../style/Login.css'
 const Login = () => {
 
   const history = useHistory();
-  const { login } = useContext(UserContext);
+  const { login,whoIsOnline } = useContext(UserContext);
   const [failed, setFailed] = useState(false);
 
-  
+
   const email = useRef()
   const password = useRef()
 
@@ -27,12 +27,9 @@ const Login = () => {
       setFailed(true);
     } else {
       setFailed(false);
+      whoIsOnline();
       history.push("/")
     }
-  }
-
-  const logout = () => {
-  logOut()
   }
 
 

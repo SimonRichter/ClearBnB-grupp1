@@ -99,7 +99,7 @@ app.get('/api/login', (req, res) => {
     res.json(user);
   }
   else {
-    res.json({error: 'Not logged in'});
+    res.json('');
   }
 });
 

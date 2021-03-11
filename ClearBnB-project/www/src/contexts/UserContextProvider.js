@@ -5,7 +5,7 @@ export const UserContext = createContext();
 export const UserProvider = (props) => {
 
   const [users, setUsers] = useState([]);
-  const [whoAmI, setWhoAmI] = useState({});
+  const [whoAmI, setWhoAmI] = useState(null);
 
   
   const fetchUsers = async() => {
@@ -45,13 +45,18 @@ export const UserProvider = (props) => {
       headers: { 'content-type': 'application/json' },
     })
     res = await res.json();
+    setWhoAmI(null);
     console.log(res);
   }
 
   const whoIsOnline = async() => {
     let data = await fetch('/api/login')
     data = await data.json();
-    setWhoAmI({...data});
+    if (!data) {
+      setWhoAmI(null);
+    } else {
+      setWhoAmI({...data});
+    }
   }
 
   const values = {
