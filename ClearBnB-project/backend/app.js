@@ -46,6 +46,20 @@ app.post("/rest/:model", async (req, res) => {
   doc.save().then(res.json(doc))
 })
 
+app.post('/api/users', async (req, res) => {
+  // Encrypt password
+  const hash = crypto.createHmac('sha256', secret)
+    .update(req.body.password).digest('hex');
+  // Create new user
+  let model = models['users'];
+  let user = new model({...req.body, password: hash});
+  // NOTE: This system is unsafe since you can 
+  // choose your own role on registration!
+  await user.save();
+  res.json({success: true});
+});
+
+
 app.post('/api/login', async (req, res) => {
   console.log('inne');
     // note: req.session is unique per user/browser
@@ -66,6 +80,27 @@ app.post('/api/login', async (req, res) => {
   }
   else {
     res.json({error: 'No match.'});
+  }
+});
+
+app.delete('/api/login', (req, res) => {
+  if(req.session.user){
+    delete req.session.user;
+    res.json({success: 'Logged out'});
+  }
+  else {
+    res.json({error: 'Was not logged in'});
+  }
+});
+
+app.get('/api/login', (req, res) => {
+  if(req.session.user){
+    let user = {...req.session.user};
+    delete user.password; // remove password in answer
+    res.json(user);
+  }
+  else {
+    res.json({error: 'Not logged in'});
   }
 });
 

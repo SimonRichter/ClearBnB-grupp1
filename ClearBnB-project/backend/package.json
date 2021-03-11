@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "connect-mongo": "^4.3.1",
+    "connect-mongo": "^3.2.0",
     "connect-mongodb-session": "^2.4.1",
     "crypto": "^1.0.1",
     "express": "^4.17.1",
