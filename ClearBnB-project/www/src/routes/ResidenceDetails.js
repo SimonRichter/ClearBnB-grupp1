@@ -22,6 +22,8 @@ const ResidenceDetails = () => {
   const [totalPrice, setTotalPrice] = useState(null);
   const [unFilledFields, setunFilledFields] = useState(null);
   const [showConfirmPage, setShowConfirmPage] = useState(false);
+
+
   const bookResidence = () => {
 
     if (startDate === null && endDate === null) {
@@ -46,7 +48,8 @@ const ResidenceDetails = () => {
       bookedDays: allTheDaysBooked
     }
 
-    //updateResidence(residence._id, bookedDaysObj);
+    updateResidence(residence._id, bookedDaysObj);
+    
     setShowConfirmPage(true);
     const bookingObj = {
       startDate: startDate,
