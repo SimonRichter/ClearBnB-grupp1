@@ -46,7 +46,9 @@ export const UserProvider = (props) => {
   const values = {
     users,
     setUsers,
-    addUser
+    addUser,
+    login,
+    whoIsOnline
   }
 
   return (
