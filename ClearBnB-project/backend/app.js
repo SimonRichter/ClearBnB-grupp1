@@ -43,7 +43,6 @@ app.get("/rest/:model/:id", async (req, res) => {
 
 app.post("/rest/:model", async (req, res) => {
   let model = models[req.params.model]
-  console.log('here man',model);
   let doc = new model(req.body);
   await doc.save();
   res.json(doc);

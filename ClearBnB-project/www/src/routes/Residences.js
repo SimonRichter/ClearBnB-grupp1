@@ -1,4 +1,4 @@
-import React, { useContext,useRef,useState } from 'react';
+import React, { useContext,useEffect,useRef,useState } from 'react';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import ResidenceList from '../components/ResidenceList'
 import '../style/Residences.css';
@@ -34,6 +34,10 @@ const Residences = () => {
       setFilteredList([...filter]);
     }
   }
+
+  useEffect(() => {
+    setFilteredList([...residences]);
+  },[residences])
   
  
 
