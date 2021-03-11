@@ -61,7 +61,6 @@ app.post('/api/users', async (req, res) => {
 
 
 app.post('/api/login', async (req, res) => {
-  console.log('inne');
     // note: req.session is unique per user/browser
   if(req.session.user){
     res.json({error: 'Someone is already logged in'});
