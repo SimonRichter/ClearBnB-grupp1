@@ -3,6 +3,7 @@ import { useParams,useHistory } from 'react-router-dom'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { BookingContext } from '../contexts/BookingContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider'
+import { UserContext } from '../contexts/UserContextProvider'
 import DatePicker from 'react-datepicker'
 import '../style/ResidenceDetails.css'
 import 'react-datepicker/dist/react-datepicker.css'
@@ -11,7 +12,8 @@ const ResidenceDetails = () => {
 
   const history = useHistory();
   const { id } = useParams();
-  const { residences,updateResidence } = useContext(ResidenceContext);
+  const { residences, updateResidence } = useContext(ResidenceContext);
+  const { whoAmI } = useContext(UserContext);
   const { addBooking } = useContext(BookingContext);
   const { getSpecificFeature } = useContext(FeatureContext);
   const residence = residences.find(r => r._id === id);
@@ -149,7 +151,7 @@ const ResidenceDetails = () => {
             <p className={features.dishwasher ? '' : 'dontExist'}><i className="material-icons">kitchen</i> Dishwasher</p>
           </div>}
         </div>
-        <div className="dates">
+        {whoAmI && <div className="dates">
           <DatePicker className="startDate"
             placeholderText="Arrival.."
             selected={startDate}
@@ -168,10 +170,11 @@ const ResidenceDetails = () => {
             filterDate={filterForEndDate}
             isClearable
           />
-        </div>
+        </div>}
         {totalPrice && <p><span>Total price: </span>{totalPrice} €</p>}
         {unFilledFields && <p className="valCheck">You have to pick a start date and a end date to continue..</p>}
-        <button onClick={bookResidence} class="book-btn">Book</button>
+        {whoAmI && <button onClick={bookResidence} className="book-btn">Book</button>}
+        {!whoAmI && <button className="book-btn" onClick={() => history.push("/login")}>Login to book</button>}
       </div>}
       {showConfirmPage && <div className="confirm">
         <h1>Thank you.</h1>
