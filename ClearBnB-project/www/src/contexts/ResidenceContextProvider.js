@@ -26,6 +26,10 @@ export const ResidenceProvider = (props) => {
   useEffect(() => {
     fetchResidences();
   }, []);
+
+  useEffect(() => {
+    fetchResidences();
+  }, [updateResidence]);
   
   const values = {
     residences,
