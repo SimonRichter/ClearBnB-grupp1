@@ -16,7 +16,7 @@ const ResidenceDetails = () => {
   const { whoAmI } = useContext(UserContext);
   const { addBooking } = useContext(BookingContext);
   const { getSpecificFeature } = useContext(FeatureContext);
-  const residence = residences.find(r => r._id === id);
+  let residence = residences.find(r => r._id === id);
 
   const [features, setFeatures] = useState(null);
   const [startDate, setStartDate] = useState(null);
@@ -60,7 +60,6 @@ const ResidenceDetails = () => {
       price: totalPrice
     }
 
-    console.log(bookingObj);
 
     //Method to add bookingObj to DB via context.
     addBooking(bookingObj)
@@ -118,7 +117,7 @@ const ResidenceDetails = () => {
       setFeatures(...getSpecificFeature(residence.featuresId))  
     };    
   }, [residence])
-  
+
 
   return (
     <div className="residenceDetail">
