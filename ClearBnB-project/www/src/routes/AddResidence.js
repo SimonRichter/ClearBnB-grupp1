@@ -14,6 +14,7 @@ const AddResidence = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isChecked3, setIsChecked3] = useState(false);
+  const [isChecked4, setIsChecked4] = useState(false);
 
   const optType = useRef(null);
   const adTitle = useRef(null);
@@ -129,6 +130,16 @@ const AddResidence = () => {
       setIsChecked3(false);
   }
    console.log("on click", e.target.value);
+   }
+  
+    const addFeatureHandler4 = (e) => {
+    if (isChecked4 === false) {
+      setIsChecked4(true)
+    } 
+    if (isChecked4 === true) {
+      setIsChecked4(false);
+  }
+   console.log("on click", e.target.value);
   }
 
 
@@ -172,7 +183,7 @@ const AddResidence = () => {
             <input type="checkbox" onClick={addFeatureHandler3} ref={feature3} value={isChecked3} /><i className="helper" ></i>Parking
         </label>
           <label>
-            <input type="checkbox" onClick={addFeatureHandler} ref={feature4} value="Stove" /><i className="helper"></i>Stove
+            <input type="checkbox" onClick={addFeatureHandler4} ref={feature4} value={isChecked4} /><i className="helper"></i>Stove
         </label>
           <label>
             <input type="checkbox" onClick={addFeatureHandler} ref={feature5} value="Oven" /><i className="helper"></i>Oven
