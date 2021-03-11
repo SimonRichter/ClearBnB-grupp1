@@ -60,6 +60,8 @@ const ResidenceDetails = () => {
       price: totalPrice
     }
 
+    console.log(bookingObj);
+
     //Method to add bookingObj to DB via context.
     addBooking(bookingObj)
 
@@ -112,11 +114,11 @@ const ResidenceDetails = () => {
   }, [startDate, endDate])
   
   useEffect(() => {
-    console.log(residence);
     if (residence) {
       setFeatures(...getSpecificFeature(residence.featuresId))  
     };    
-  },[residence])
+  }, [residence])
+  
 
   return (
     <div className="residenceDetail">
