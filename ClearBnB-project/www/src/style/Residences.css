@@ -68,3 +68,17 @@
   }
   
 }
+@media (min-width: 481px) and (max-width: 767px) {
+  .residences > .searchFields > form > input{
+    font-size: 30px;
+    width: 90%;
+  }
+  .residences > .searchFields > form > button{
+    font-size: 30px;
+    width: 95%;
+  }
+  .residences > .searchFields  > button{
+    font-size: 30px;
+    width: 93%;
+  }
+}
