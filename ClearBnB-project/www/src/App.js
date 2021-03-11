@@ -10,19 +10,13 @@ import Home from './routes/Home';
 import About from './routes/About';
 import Residences from './routes/Residences';
 import ResidenceDetails from './routes/ResidenceDetails'
+import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
 import { useEffect, useContext } from 'react';
 
 
 function App() {
-
-
-
-  // useEffect(() => {
-  //   whoIsOnline();
-  //   console.log(whoAmI);
-  // },[])
 
   return (
     <FeatureProvider>
