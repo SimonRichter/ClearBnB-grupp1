@@ -18,7 +18,8 @@ const Nav = () => {
       <div className="links">
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
-      <Link to="/Residences">Residences</Link>
+        <Link to="/Residences">Residences</Link>
+      {whoAmI && <Link to="/addResidence">Host Residence</Link>} 
       {!whoAmI && <Link to="/login">Login</Link>}
       {!whoAmI && <Link to="/register">Register</Link>}
       {whoAmI && <Link to="/" onClick={() => logOut()}>Log out</Link>} 
