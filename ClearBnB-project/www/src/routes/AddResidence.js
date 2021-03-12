@@ -3,11 +3,13 @@ import '../style/AddResidenceStyle.css';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { UserContext } from '../contexts/UserContextProvider'
+import { FeatureContext } from '../contexts/FeatureContextProvider';
 
 
 
 const AddResidence = () => {
 
+  const {addFeature } = useContext(FeatureContext)
   const { whoAmI } = useContext(UserContext);
 
   const [selectedStartDate, setSelectedStartDate] = useState(null);
@@ -74,7 +76,7 @@ const AddResidence = () => {
   }
 
 
-  const submitHandler = (e) => {
+  const submitHandler = async(e) => {
      e.preventDefault();
     let optTyp = optType.current.value;
     const theTitle = adTitle.current.value;
@@ -127,14 +129,10 @@ const AddResidence = () => {
       fridge: feature13.current.value === "true" ? true : false,
       dishwasher: feature14.current.value === "true" ? true : false,
     }
+    const featureObj = await addFeature(features);
+    console.log('here',featureObj._id);
 
-    const test = {
-      haha: true
-    }
-    console.log('hereeee', feature1.current.value);
-
-    console.log("features här:", features);
-    console.log('here', test);
+  
   }
 
   const addFeatureHandler = ()=> {isChecked === false ? setIsChecked(true) : setIsChecked(false)}
@@ -273,7 +271,11 @@ const AddResidence = () => {
             isClearable
             
           />
+
+          
         </div>
+
+        
         
         <button className="createBtn">Host Residence</button>
         {/* whoAmI && <button className="createBtn">Login to host</button> --> */}
