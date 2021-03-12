@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
-import { UserContext } from '../contexts/UserContextProvider'
+import { UserContext } from '../contexts/UserContextProvider';
+import MyRentalItem from '../components/MyRentalItem';
 
 const MyRentals = () => {
 
@@ -11,13 +12,13 @@ const MyRentals = () => {
 
   useEffect(() => {
     const myRentals = residences.filter(r => r.userId === whoAmI._id);
-    console.log('id', whoAmI._id);
-    console.log('correct',myRentals);
+    setRentals([...myRentals]);
+    console.log(rentals);
   },[])
 
   return (
     <div className="myRentals">
-      <h1>My rentals</h1>
+      {rentals && rentals.map(r => (<MyRentalItem key={r._id} rental={r}/>))}
     </div>
   );
 }
