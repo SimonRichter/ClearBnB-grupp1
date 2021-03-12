@@ -1,0 +1,18 @@
+.myBookingItems{
+  box-sizing: border-box;
+}
+
+.wrapperInItem{
+  background: #eee;
+  margin: 10px auto;
+  padding: 10px;
+  min-height: 450px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.wrapperInItem > img{
+  border-radius: 5px;
+  height: 250px;
+  width: 250px;
+}

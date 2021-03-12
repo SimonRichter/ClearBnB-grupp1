@@ -21,7 +21,6 @@ const MyBookings = () => {
   return (
     <div className="myBookings">
       {myResidences && <div className="wrapper">
-        <h1>My bookings..</h1>
         {myResidences.map(r => (<MyBookingItem key={r._id} booked={r} />))}
       </div>}
     </div>

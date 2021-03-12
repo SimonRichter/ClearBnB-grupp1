@@ -4,6 +4,9 @@ import '../style/MyBookingItem.css'
 
 const MyBookingItem = ({ booked }) => {
 
+  const startDate = booked.startDate * 1000;
+  const endDate = booked.endDate * 1000;
+  const currentDate = new Date().getTime();
   const { residences } = useContext(ResidenceContext);
   const [myBooking, setMyBooking] = useState(null);
   
@@ -13,9 +16,13 @@ const MyBookingItem = ({ booked }) => {
   },[])
 
   return (
-    <div className="myBookingItem">
-      {myBooking && <div className="wrapper">
-        <h2>{myBooking.title}</h2>
+    <div className="myBookingItems">
+      {myBooking && <div className="wrapperInItem">
+          <h2>{myBooking.title}</h2>
+          <img src={myBooking.imageURLs[0]} alt="" />
+          <p><span>Start date: </span>{new Date(startDate).toString().substr(0, 15)}</p>
+          <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
+          <p><span>Total price: </span>{booked.price} €</p>
       </div>}
     </div>
   );
