@@ -41,7 +41,8 @@ const Nav = () => {
       <Link to="/Residences">Residences</Link>
       {!whoAmI && <Link to="/login">Login</Link>}
       {!whoAmI && <Link to="/register">Register</Link>}
-      {whoAmI && <Link to="/" onClick={() => logOut()}>Log out</Link>} 
+      {whoAmI && <Link to="/" onClick={() => logOut()}>Log out</Link>}
+      {whoAmI && <Link to="/myBookings">My bookings</Link>}  
       </div>
     </div>
   ); 

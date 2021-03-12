@@ -1,0 +1,23 @@
+.myBookings{
+  padding: 20px;
+  text-align: center;
+}
+
+.myBookings > .wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.myBookings > .wrapper > .future{
+  border-radius: 10px;
+  background: white;
+}
+
+.myBookings > .wrapper > .passed{
+  border-radius: 10px;
+  background: white;
+}
+
+
+
