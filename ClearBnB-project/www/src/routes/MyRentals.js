@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { UserContext } from '../contexts/UserContextProvider';
 import MyRentalItem from '../components/MyRentalItem';
+import '../style/MyRental.css'
 
 const MyRentals = () => {
 
