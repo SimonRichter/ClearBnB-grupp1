@@ -113,19 +113,19 @@ const AddResidence = () => {
 
     const features = {
       firstAidKit: feature1.current.value === "true" ? true : false,
-      shower: feature2.current.value,
-      parking: feature3.current.value,
-      stove: feature4.current.value,
-      oven: feature5.current.value,
-      microwave: feature6.current.value,
-      tv: feature7.current.value,
-      coffeeMaker: feature8.current.value,
-      wifi: feature9.current.value,
-      balcony: feature10.current.value,
-      iron: feature11.current.value,
-      pool: feature12.current.value,
-      fridge: feature13.current.value,
-      dishwasher: feature14.current.value
+      shower: feature2.current.value === "true" ? true : false,
+      parking: feature3.current.value === "true" ? true : false,
+      stove: feature4.current.value === "true" ? true : false,
+      oven: feature5.current.value === "true" ? true : false,
+      microwave: feature6.current.value === "true" ? true : false,
+      tv: feature7.current.value === "true" ? true : false,
+      coffeeMaker: feature8.current.value === "true" ? true : false,
+      wifi: feature9.current.value === "true" ? true : false,
+      balcony: feature10.current.value === "true" ? true : false,
+      iron: feature11.current.value === "true" ? true : false,
+      pool: feature12.current.value === "true" ? true : false,
+      fridge: feature13.current.value === "true" ? true : false,
+      dishwasher: feature14.current.value === "true" ? true : false,
     }
 
     const test = {
@@ -137,130 +137,33 @@ const AddResidence = () => {
     console.log('here', test);
   }
 
-  const addFeatureHandler = () => {
-   if (isChecked === false) {
-      setIsChecked(true)
-    } 
-    if (isChecked === true) {
-      setIsChecked(false);
-    }
-  }
+  const addFeatureHandler = ()=> {isChecked === false ? setIsChecked(true) : setIsChecked(false)}
 
-  const addFeatureHandler2 = () => {
-    
-    if (isChecked2 === false) {
-      setIsChecked2(true)
-    } 
-    if (isChecked2 === true) {
-      setIsChecked2(false);
-  }
-  }
+  const addFeatureHandler2 = ()=> {isChecked2 === false ? setIsChecked2(true) : setIsChecked2(false)}
 
-   const addFeatureHandler3 = () => {
-    if (isChecked3 === false) {
-      setIsChecked3(true)
-    } 
-    if (isChecked3 === true) {
-      setIsChecked3(false);
-  }
-   }
+  const addFeatureHandler3 = ()=> {isChecked3 === false ? setIsChecked3(true) : setIsChecked3(false)}
   
-    const addFeatureHandler4 = () => {
-    if (isChecked4 === false) {
-      setIsChecked4(true)
-    } 
-    if (isChecked4 === true) {
-      setIsChecked4(false);
-  }
-    }
+  const addFeatureHandler4 = ()=> {isChecked4 === false ? setIsChecked4(true) : setIsChecked4(false)}
   
-     const addFeatureHandler5 = () => {
-    if (isChecked5 === false) {
-      setIsChecked5(true)
-    } 
-    if (isChecked5 === true) {
-      setIsChecked5(false);
-  }
-     }
+  const addFeatureHandler5 = ()=> {isChecked5 === false ? setIsChecked5(true) : setIsChecked5(false)}
   
-  const addFeatureHandler6 = () => {
-    if (isChecked6 === false) {
-      setIsChecked6(true)
-    } 
-    if (isChecked6 === true) {
-      setIsChecked6(false);
-  }
-  }
+  const addFeatureHandler6 = ()=> {isChecked6 === false ? setIsChecked6(true) : setIsChecked6(false)}
   
-  const addFeatureHandler7 = () => {
-    if (isChecked7 === false) {
-      setIsChecked7(true)
-    }
-    if (isChecked7 === true) {
-      setIsChecked7(false);
-    }
-  }
+  const addFeatureHandler7 = ()=> {isChecked7 === false ? setIsChecked7(true) : setIsChecked7(false)}
 
-   const addFeatureHandler8 = () => {
-    if (isChecked8 === false) {
-      setIsChecked8(true)
-    }
-    if (isChecked8 === true) {
-      setIsChecked8(false);
-    }
-   }
+  const addFeatureHandler8 = ()=> {isChecked8 === false ? setIsChecked8(true) : setIsChecked8(false)}
   
-   const addFeatureHandler9 = () => {
-    if (isChecked9 === false) {
-      setIsChecked9(true)
-    }
-    if (isChecked9 === true) {
-      setIsChecked9(false);
-    }
-   }
+  const addFeatureHandler9 = ()=> {isChecked9 === false ? setIsChecked9(true) : setIsChecked9(false)}
   
-  const addFeatureHandler10 = () => {
-    if (isChecked10 === false) {
-      setIsChecked10(true)
-    }
-    if (isChecked10 === true) {
-      setIsChecked10(false);
-    }
-  }
+  const addFeatureHandler10 = ()=> {isChecked10 === false ? setIsChecked10(true) : setIsChecked10(false)}
 
-   const addFeatureHandler11 = () => {
-    if (isChecked11 === false) {
-      setIsChecked11(true)
-    }
-    if (isChecked11 === true) {
-      setIsChecked11(false);
-    }
-   }
-   const addFeatureHandler12 = () => {
-    if (isChecked12 === false) {
-      setIsChecked12(true)
-    }
-    if (isChecked12 === true) {
-      setIsChecked12(false);
-    }
-   }
-   const addFeatureHandler13 = () => {
-    if (isChecked13 === false) {
-      setIsChecked13(true)
-    }
-    if (isChecked13 === true) {
-      setIsChecked13(false);
-    }
-   }
+  const addFeatureHandler11 = ()=> {isChecked11 === false ? setIsChecked11(true) : setIsChecked11(false) }
+   
+  const addFeatureHandler12 = ()=> {isChecked12 === false ? setIsChecked12(true) : setIsChecked12(false)}
+  
+  const addFeatureHandler13 = ()=> {isChecked13 === false ? setIsChecked13(true) : setIsChecked13(false) }
 
-   const addFeatureHandler14 = () => {
-    if (isChecked14 === false) {
-      setIsChecked14(true)
-    }
-    if (isChecked14 === true) {
-      setIsChecked14(false);
-    }
-  }
+  const addFeatureHandler14 = ()=> {isChecked14 === false ? setIsChecked14(true) : setIsChecked14(false)}
 
   return (
     <div className="addResWrapper">
