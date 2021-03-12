@@ -5,7 +5,7 @@ import '../style/Residences.css';
 
 const Residences = () => {
 
-  const { residences } = useContext(ResidenceContext);
+  const { residences,fetchResidences } = useContext(ResidenceContext);
   const [filteredList, setFilteredList] = useState([...residences]);
 
 
@@ -36,8 +36,9 @@ const Residences = () => {
   }
 
   useEffect(() => {
-    setFilteredList([...residences]);
-  },[residences])
+    const data = fetchResidences().then(r => setFilteredList([...r]));
+    console.log(data);
+  },[])
   
  
 
