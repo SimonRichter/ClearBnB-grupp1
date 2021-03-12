@@ -8,7 +8,6 @@ const MyBookingItem = ({ booked }) => {
   const history = useHistory();
   const startDate = booked.startDate * 1000;
   const endDate = booked.endDate * 1000;
-  const currentDate = new Date().getTime();
   const { residences } = useContext(ResidenceContext);
   const [myBooking, setMyBooking] = useState(null);
 
