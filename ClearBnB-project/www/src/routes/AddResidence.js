@@ -94,25 +94,6 @@ const AddResidence = () => {
     imageRef4.current.value,
     imageRef5.current.value];
 
-    const residence = {
-      imageURLs: [images],
-      title: theTitle,
-      country: theCountry,
-      city: theCity,
-      adress: theAdress,
-      type: optTyp,
-      description: theDescription,
-      startDate: theStartDate,
-      endDate: theEndDate,
-      residenceLimit: guests,
-      price: +thePrice,
-      bookedDays: null
-      
-    }
-  
-   
-    console.log(residence);
-
     const features = {
       firstAidKit: feature1.current.value === "true" ? true : false,
       shower: feature2.current.value === "true" ? true : false,
@@ -130,7 +111,29 @@ const AddResidence = () => {
       dishwasher: feature14.current.value === "true" ? true : false,
     }
     const featureObj = await addFeature(features);
-    console.log('here',featureObj._id);
+  
+    
+    const residence = {
+      imageURLs: [images],
+      title: theTitle,
+      country: theCountry,
+      city: theCity,
+      adress: theAdress,
+      type: optTyp,
+      description: theDescription,
+      startDate: theStartDate,
+      endDate: theEndDate,
+      featuresId: featureObj._id,
+      residenceLimit: guests,
+      price: +thePrice,
+      bookedDays: null
+      
+    }
+  
+   
+    console.log(residence);
+
+ 
 
   
   }
