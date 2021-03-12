@@ -8,6 +8,7 @@ import Login from './Login';
 
 const AddResidence = () => {
 
+
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
@@ -100,7 +101,7 @@ const AddResidence = () => {
       startDate: theStartDate,
       endDate: theEndDate
     }
-    
+  
    
     console.log(residence);
 

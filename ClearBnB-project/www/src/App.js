@@ -6,6 +6,7 @@ import { UserContext } from './contexts/UserContextProvider';
 import { ResidenceProvider } from './contexts/ResidenceContextProvider';
 import { BookingProvider } from './contexts/BookingContextProvider';
 import { FeatureProvider } from './contexts/FeatureContextProvider'
+import { AddResidenceProvider } from './contexts/AddResidenceContextProvider';
 import Home from './routes/Home';
 import About from './routes/About';
 import Residences from './routes/Residences';
@@ -26,6 +27,7 @@ function App() {
   // },[])
 
   return (
+    <AddResidenceProvider>
     <FeatureProvider>
     <BookingProvider>
     <ResidenceProvider>
@@ -49,7 +51,8 @@ function App() {
     </UserProvider>
     </ResidenceProvider>
     </BookingProvider>
-    </FeatureProvider>
+      </FeatureProvider>
+      </AddResidenceProvider>
   );
 }
 
