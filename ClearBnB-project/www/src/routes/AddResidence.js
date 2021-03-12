@@ -119,7 +119,7 @@ const AddResidence = () => {
       price: +thePrice,
       country: theCountry,
       city: theCity,
-      adress: theAdress,
+      address: theAdress,
       type: optTyp,
       description: theDescription,
       startDate: theStartDate,
