@@ -1,14 +1,16 @@
 import React from 'react';
 import '../style/MyRentalItem.css'
+import { useHistory } from 'react-router-dom'
 
 const MyRentalItem = ({ rental }) => {
   
+  const history = useHistory();
   const startDate = rental.startDate * 1000;
   const endDate = rental.endDate * 1000;
 
 
   return (
-    <div className="myRentalItem">
+    <div className="myRentalItem" onClick={() => history.push("/residence/" + rental._id)}>
       <div className="img">
         <img src={rental.imageURLs[0]} alt=""/>
       </div>
