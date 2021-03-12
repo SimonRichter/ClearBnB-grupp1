@@ -38,7 +38,8 @@ function App() {
           <Route path="/login" exact component={Login} />  
           <Route path="/register" exact component={Register} />
           <Route path="/residence/:id" exact component={ResidenceDetails} />
-          <Route path="/myBookings" exact component={MyBookings}/>        
+          <Route path="/myBookings" exact component={MyBookings} />   
+          <Route path="/addResidence" exact component={AddResidence}/>        
       </Switch>
     </div>
     </Router>

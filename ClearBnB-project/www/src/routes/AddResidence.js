@@ -44,20 +44,20 @@ const AddResidence = () => {
   const imageRef4 = useRef(null);
   const imageRef5 = useRef(null);
   
-    const feature1 = useRef(false);
-    const feature2 = useRef(false);
-    const feature3 = useRef(false);
-    const feature4 = useRef(false);
-    const feature5= useRef(false);
-    const feature6 = useRef(false);
-    const feature7 = useRef(false);
-    const feature8 = useRef(false);
-    const feature9 = useRef(false);
-    const feature10 = useRef(false);
-    const feature11 = useRef(false);
-    const feature12 = useRef(false);
-    const feature13 = useRef(false);
-    const feature14 = useRef(false);
+    const feature1 = useRef();
+    const feature2 = useRef();
+    const feature3 = useRef();
+    const feature4 = useRef();
+    const feature5= useRef();
+    const feature6 = useRef();
+    const feature7 = useRef();
+    const feature8 = useRef();
+    const feature9 = useRef();
+    const feature10 = useRef();
+    const feature11 = useRef();
+    const feature12 = useRef();
+    const feature13 = useRef();
+    const feature14 = useRef();
 
   const incGuestHandler = (e) => {
     e.preventDefault();
@@ -71,16 +71,6 @@ const AddResidence = () => {
     } else {
       setGuests(guests-1);
     }
-  }
-
-
-    const addResidence = async (residenceObject) => {
-    let res = await fetch('/rest/addResidence', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(residenceObject)
-    });
-    res = await res.json(); 
   }
 
 
@@ -122,7 +112,7 @@ const AddResidence = () => {
     console.log(residence);
 
     const features = {
-      firstAidKit: feature1.current.value,
+      firstAidKit: feature1.current.value === "true" ? true : false,
       shower: feature2.current.value,
       parking: feature3.current.value,
       stove: feature4.current.value,
@@ -137,8 +127,14 @@ const AddResidence = () => {
       fridge: feature13.current.value,
       dishwasher: feature14.current.value
     }
-    console.log("object", features);
-    addResidence(residence);
+
+    const test = {
+      haha: true
+    }
+    console.log('hereeee', feature1.current.value);
+
+    console.log("features här:", features);
+    console.log('here', test);
   }
 
   const addFeatureHandler = () => {
@@ -151,6 +147,7 @@ const AddResidence = () => {
   }
 
   const addFeatureHandler2 = () => {
+    
     if (isChecked2 === false) {
       setIsChecked2(true)
     } 
