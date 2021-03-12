@@ -60,11 +60,11 @@
   }
   .residences > .searchFields > form > button{
     font-size: 30px;
-    width: 95%;
+    width: 94%;
   }
   .residences > .searchFields  > button{
     font-size: 30px;
-    width: 95%;
+    width: 94%;
   }
   
 }
@@ -79,7 +79,7 @@
   }
   .residences > .searchFields  > button{
     font-size: 30px;
-    width: 91%;
+    width: 93%;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -93,6 +93,6 @@
   }
   .residences > .searchFields  > button{
     font-size: 30px;
-    width: 90%;
+    width: 92%;
   }
 }
