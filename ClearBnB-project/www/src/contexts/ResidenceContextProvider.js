@@ -7,18 +7,18 @@ export const ResidenceProvider = (props) => {
   const [residences, setResidences] = useState([]);
 
   
-  const fetchResidences = async() => {
+  const fetchResidences = async () => {
     let data = await fetch('/rest/residences')
     data = await data.json();
     setResidences([...data]);
   }
 
   const updateResidence = async (id, residence) => {
-     let res = await fetch('/rest/residences/' + id, {
+    let res = await fetch('/rest/residences/' + id, {
       method: 'PUT',
-      headers: {'content-type': 'application/json'},
+      headers: { 'content-type': 'application/json' },
       body: JSON.stringify(residence)
-     })
+    })
     
     res = await res.json()
   }

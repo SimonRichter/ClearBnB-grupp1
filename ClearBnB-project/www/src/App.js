@@ -27,7 +27,7 @@ function App() {
   // },[])
 
   return (
-    <AddResidenceProvider>
+   
     <FeatureProvider>
     <BookingProvider>
     <ResidenceProvider>
@@ -52,7 +52,7 @@ function App() {
     </ResidenceProvider>
     </BookingProvider>
       </FeatureProvider>
-      </AddResidenceProvider>
+      
   );
 }
 

@@ -2,17 +2,18 @@ import React, { useState, useRef, useContext }from 'react';
 import '../style/AddResidenceStyle.css';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import { AddResidenceContext } from '../contexts/AddResidenceContextProvider';
+import { UserContext } from '../contexts/UserContextProvider'
 
 
 
 const AddResidence = () => {
 
+  const { whoAmI } = useContext(UserContext);
 
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
-  const { residence } = useContext(AddResidenceContext);
+
 
   const [isChecked, setIsChecked] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
@@ -73,6 +74,15 @@ const AddResidence = () => {
   }
 
 
+    const addResidence = async (residenceObject) => {
+    let res = await fetch('/rest/addResidence', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(residenceObject)
+    });
+    res = await res.json(); 
+  }
+
 
   const submitHandler = (e) => {
      e.preventDefault();
@@ -128,7 +138,7 @@ const AddResidence = () => {
       dishwasher: feature14.current.value
     }
     console.log("object", features);
-    AddResidence();
+    addResidence(residence);
   }
 
   const addFeatureHandler = () => {
@@ -365,7 +375,8 @@ const AddResidence = () => {
           />
         </div>
         
-        <button className="createBtn">Create Residence</button>
+        <button className="createBtn">Host Residence</button>
+        {/* whoAmI && <button className="createBtn">Login to host</button> --> */}
       </form>
     </div>
   )
