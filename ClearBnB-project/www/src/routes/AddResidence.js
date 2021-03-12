@@ -124,10 +124,10 @@ const AddResidence = () => {
       startDate: theStartDate,
       endDate: theEndDate,
       featuresId: featureObj._id,
+      userId: whoAmI._id,
       residenceLimit: guests,
       price: +thePrice,
       bookedDays: null
-      
     }
   
    
