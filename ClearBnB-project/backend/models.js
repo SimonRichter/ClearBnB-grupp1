@@ -1,7 +1,7 @@
 const mongoose = global.mongoose;
 
 const Users = mongoose.model('user', {
-  email: { type: String, unique: true, required: true },
+  email: { type: String, required: true },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   password: { type: String, required: true },
@@ -10,9 +10,9 @@ const Users = mongoose.model('user', {
 const Bookings = mongoose.model('booking', {
   startDate: { type: Number, required: true },
   endDate: { type: Number, required: true },
-  userId: { type: String, unique: true, required: true },
+  userId: { type: String, required: true },
   residenceId: { type: String, required: true },
-  price: { type: Number, required: true },
+  price: { type: Number, required: true }
 });
 
 const Residences = mongoose.model('residence', {
@@ -20,13 +20,13 @@ const Residences = mongoose.model('residence', {
   price: { type: Number, required: true },
   country: { type: String, required: true },
   city: {type: String, required: true},
-  address: { type: String, unique: true, required: true },
+  address: { type: String, required: true },
   type: { type: String, required: true },
   description: { type: String, required: true },
   startDate: { type: Number, required: true },
   endDate: { type: Number, required: true },
   imageURLs: { type: Array, required: true },
-  featuresId: { type: String, unique: true, required: false },
+  featuresId: { type: String, required: false },
   userId: { type: String, required: true },
   residenceLimit: { type: Number, required: true },
   bookedDays: { type: Array }

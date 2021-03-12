@@ -20,7 +20,11 @@ export const BookingProvider = (props) => {
     });
 
     res = await res.json();
-    setBookings([...bookings, bookingObj]);
+    if (bookings !== null) {
+      setBookings([...bookings, bookingObj]);
+    } else {
+      setBookings([bookingObj]);
+    }
   }
   
   const values = {

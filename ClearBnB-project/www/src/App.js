@@ -2,6 +2,7 @@ import Nav from './components/Nav';
 import './style/App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { UserProvider } from './contexts/UserContextProvider';
+import { UserContext } from './contexts/UserContextProvider';
 import { ResidenceProvider } from './contexts/ResidenceContextProvider';
 import { BookingProvider } from './contexts/BookingContextProvider';
 import { FeatureProvider } from './contexts/FeatureContextProvider'
@@ -11,9 +12,17 @@ import Residences from './routes/Residences';
 import ResidenceDetails from './routes/ResidenceDetails'
 import Login from './routes/Login';
 import Register from './routes/Register';
+import { useEffect, useContext } from 'react';
 
 
 function App() {
+
+
+
+  // useEffect(() => {
+  //   whoIsOnline();
+  //   console.log(whoAmI);
+  // },[])
 
   return (
     <FeatureProvider>
