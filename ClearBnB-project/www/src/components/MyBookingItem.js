@@ -18,11 +18,15 @@ const MyBookingItem = ({ booked }) => {
   return (
     <div className="myBookingItems">
       {myBooking && <div className="wrapperInItem">
-          <h2>{myBooking.title}</h2>
+          <div className="wrap">
           <img src={myBooking.imageURLs[0]} alt="" />
+          <div className="info">
+          <p><span>Title: </span>{myBooking.title}</p>
           <p><span>Start date: </span>{new Date(startDate).toString().substr(0, 15)}</p>
           <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
           <p><span>Total price: </span>{booked.price} €</p>
+          </div>  
+          </div>
       </div>}
     </div>
   );

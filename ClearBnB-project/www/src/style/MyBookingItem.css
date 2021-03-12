@@ -2,18 +2,25 @@
   box-sizing: border-box;
 }
 
-.wrapperInItem{
-  width: 80%;
+.wrapperInItem {
+  width: 70%;
   background: #eee;
   margin: 10px auto;
   padding: 10px;
-  min-height: 450px;
   border-radius: 10px;
-  text-align: center;
 }
 
-.wrapperInItem > img{
+.wrapperInItem > .wrap > img{
   border-radius: 5px;
-  height: 250px;
-  width: 250px;
+  height: 150px;
+  width: 150px;
+}
+
+.wrapperInItem  > .wrap {
+  display: grid;
+  grid-template-columns: 1fr 60%;
+}
+
+.wrapperInItem  > .wrap > .info > p > span{
+  font-weight: bolder;
 }

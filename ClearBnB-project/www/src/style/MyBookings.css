@@ -1,3 +1,8 @@
+.myBookings{
+  padding: 20px;
+  text-align: center;
+}
+
 .myBookings > .wrapper{
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -5,11 +10,13 @@
 }
 
 .myBookings > .wrapper > .future{
-  background: green;
+  border-radius: 10px;
+  background: white;
 }
 
 .myBookings > .wrapper > .passed{
-  background: rgb(128, 0, 0);
+  border-radius: 10px;
+  background: white;
 }
 
 
