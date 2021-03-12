@@ -12,22 +12,29 @@ const Nav = () => {
 
   useEffect(() => {
     whoIsOnline();
-  },[])
+  }, [])
+  
+  // const [isActive, setActive] = useState("false");
+
+  // const handleToggle = () => {
+  //   setActive(!isActive);
+  // };
+  
 
   return (
     <div className="nav-bar">
-      <Dropdown as={NavItem}>
-        <Dropdown.Toggle as={NavLink}>Hamburger Menu</Dropdown.Toggle>
-        <Dropdown.Menu>
-          <Dropdown.Item><Link to="/">Home</Link></Dropdown.Item>
+      <h4>ClearBnB</h4>
+      <Dropdown as={NavItem} className="hamburger-menu-opened">
+        <Dropdown.Toggle as={NavLink} className="hamburger-menu">☰</Dropdown.Toggle>
+        <Dropdown.Menu className="flex-column">
+          <Dropdown.Item><Link to="/" >Home</Link></Dropdown.Item>
           <Dropdown.Item><Link to="/about">About</Link></Dropdown.Item>
           <Dropdown.Item><Link to="/Residences">Residences</Link></Dropdown.Item>
-          <Dropdown.Item><Link to="/login">Login</Link></Dropdown.Item>
-          <Dropdown.Item><Link to="/register">Register</Link></Dropdown.Item>
+          <Dropdown.Item>{!whoAmI && <Link to="/login">Login</Link>}</Dropdown.Item>
+          <Dropdown.Item>{!whoAmI && <Link to="/register">Register</Link>}</Dropdown.Item>
+          <Dropdown.Item>{whoAmI && <Link to="/" onClick={() => logOut()}>Log out</Link>}</Dropdown.Item>
         </Dropdown.Menu>
-      </Dropdown>;
-
-      <h4>ClearBnB</h4>
+      </Dropdown>
       <div className="links">
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
