@@ -1,0 +1,16 @@
+.myBookings > .wrapper{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.myBookings > .wrapper > .future{
+  background: green;
+}
+
+.myBookings > .wrapper > .passed{
+  background: rgb(128, 0, 0);
+}
+
+
+
