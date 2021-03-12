@@ -123,64 +123,58 @@ const AddResidence = () => {
     console.log("object", features);
   }
 
-  const addFeatureHandler = (e) => {
+  const addFeatureHandler = () => {
    if (isChecked === false) {
       setIsChecked(true)
     } 
     if (isChecked === true) {
       setIsChecked(false);
     }
-   console.log("on click", e.target.value);
   }
 
-  const addFeatureHandler2 = (e) => {
+  const addFeatureHandler2 = () => {
     if (isChecked2 === false) {
       setIsChecked2(true)
     } 
     if (isChecked2 === true) {
       setIsChecked2(false);
   }
-   console.log("on click", e.target.value);
   }
 
-   const addFeatureHandler3 = (e) => {
+   const addFeatureHandler3 = () => {
     if (isChecked3 === false) {
       setIsChecked3(true)
     } 
     if (isChecked3 === true) {
       setIsChecked3(false);
   }
-   console.log("on click", e.target.value);
    }
   
-    const addFeatureHandler4 = (e) => {
+    const addFeatureHandler4 = () => {
     if (isChecked4 === false) {
       setIsChecked4(true)
     } 
     if (isChecked4 === true) {
       setIsChecked4(false);
   }
-   console.log("on click", e.target.value);
     }
   
-     const addFeatureHandler5 = (e) => {
+     const addFeatureHandler5 = () => {
     if (isChecked5 === false) {
       setIsChecked5(true)
     } 
     if (isChecked5 === true) {
       setIsChecked5(false);
   }
-   console.log("on click", e.target.value);
      }
   
-  const addFeatureHandler6 = (e) => {
+  const addFeatureHandler6 = () => {
     if (isChecked6 === false) {
       setIsChecked6(true)
     } 
     if (isChecked6 === true) {
       setIsChecked6(false);
   }
-   console.log("on click", e.target.value);
   }
   
   const addFeatureHandler7 = () => {
@@ -190,7 +184,6 @@ const AddResidence = () => {
     if (isChecked7 === true) {
       setIsChecked7(false);
     }
-    console.log("on click", e.target.value);
   }
 
    const addFeatureHandler8 = () => {
@@ -200,7 +193,6 @@ const AddResidence = () => {
     if (isChecked8 === true) {
       setIsChecked8(false);
     }
-     console.log("on click", e.target.value);
    }
   
    const addFeatureHandler9 = () => {
@@ -210,7 +202,6 @@ const AddResidence = () => {
     if (isChecked9 === true) {
       setIsChecked9(false);
     }
-     console.log("on click", e.target.value);
    }
   
   const addFeatureHandler10 = () => {
@@ -220,7 +211,6 @@ const AddResidence = () => {
     if (isChecked10 === true) {
       setIsChecked10(false);
     }
-    console.log("on click", e.target.value);
   }
 
    const addFeatureHandler11 = () => {
@@ -230,7 +220,6 @@ const AddResidence = () => {
     if (isChecked11 === true) {
       setIsChecked11(false);
     }
-     console.log("on click", e.target.value);
    }
    const addFeatureHandler12 = () => {
     if (isChecked12 === false) {
@@ -239,7 +228,6 @@ const AddResidence = () => {
     if (isChecked12 === true) {
       setIsChecked12(false);
     }
-     console.log("on click", e.target.value);
    }
    const addFeatureHandler13 = () => {
     if (isChecked13 === false) {
@@ -248,7 +236,6 @@ const AddResidence = () => {
     if (isChecked13 === true) {
       setIsChecked13(false);
     }
-     console.log("on click", e.target.value);
    }
 
    const addFeatureHandler14 = () => {
@@ -258,7 +245,6 @@ const AddResidence = () => {
     if (isChecked14 === true) {
       setIsChecked14(false);
     }
-     console.log("on click", e.target.value);
   }
 
   return (
