@@ -11,6 +11,7 @@ export const ResidenceProvider = (props) => {
     let data = await fetch('/rest/residences')
     data = await data.json();
     setResidences([...data]);
+    return data;
   }
 
   const updateResidence = async (id, residence) => {
@@ -34,7 +35,8 @@ export const ResidenceProvider = (props) => {
   const values = {
     residences,
     setResidences,
-    updateResidence
+    updateResidence,
+    fetchResidences
   }
 
   return (

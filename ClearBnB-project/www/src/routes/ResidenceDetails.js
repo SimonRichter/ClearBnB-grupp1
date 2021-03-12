@@ -189,7 +189,7 @@ const ResidenceDetails = () => {
         <p><span>Total price: </span>{totalPrice} €</p>
         <div className="btns">
           <button onClick={() => history.push("/")}>Homepage</button>
-          <button>My bookings</button>
+          <button onClick={() => history.push("/myBookings")}>My bookings</button>
         </div>  
       </div>}
     </div>
