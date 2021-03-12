@@ -4,12 +4,14 @@ import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { UserContext } from '../contexts/UserContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider';
+import { ResidenceContext } from '../contexts/ResidenceContextProvider'
 
 
 
 const AddResidence = () => {
 
-  const {addFeature } = useContext(FeatureContext)
+  const { addFeature } = useContext(FeatureContext)
+  const { addResidence } = useContext(ResidenceContext)
   const { whoAmI } = useContext(UserContext);
 
   const [selectedStartDate, setSelectedStartDate] = useState(null);
@@ -111,11 +113,10 @@ const AddResidence = () => {
       dishwasher: feature14.current.value === "true" ? true : false,
     }
     const featureObj = await addFeature(features);
-  
     
     const residence = {
-      imageURLs: [images],
       title: theTitle,
+      price: +thePrice,
       country: theCountry,
       city: theCity,
       adress: theAdress,
@@ -123,14 +124,13 @@ const AddResidence = () => {
       description: theDescription,
       startDate: theStartDate,
       endDate: theEndDate,
+      imageURLs: [images],
       featuresId: featureObj._id,
       userId: whoAmI._id,
       residenceLimit: guests,
-      price: +thePrice,
-      bookedDays: null
+      bookedDays: []
     }
-  
-   
+     addResidence(residence)
     console.log(residence);
 
  
