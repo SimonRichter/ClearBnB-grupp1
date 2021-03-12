@@ -1,14 +1,20 @@
 import React, { useEffect, useContext, useState } from 'react';
+import { useHistory } from 'react-router-dom'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import '../style/MyBookingItem.css'
 
 const MyBookingItem = ({ booked }) => {
 
+  const history = useHistory();
   const startDate = booked.startDate * 1000;
   const endDate = booked.endDate * 1000;
   const currentDate = new Date().getTime();
   const { residences } = useContext(ResidenceContext);
   const [myBooking, setMyBooking] = useState(null);
+
+  const toDetailPage = () => {
+    history.push('/residence/' + myBooking._id);
+  }
   
   useEffect(() => {
     const booke = residences.filter(r => r._id === booked.residenceId)
@@ -17,7 +23,7 @@ const MyBookingItem = ({ booked }) => {
 
   return (
     <div className="myBookingItems">
-      {myBooking && <div className="wrapperInItem">
+      {myBooking && <div onClick={toDetailPage} className="wrapperInItem">
           <div className="wrap">
           <img src={myBooking.imageURLs[0]} alt="" />
           <div className="info">
