@@ -1,5 +1,6 @@
 import React, { useEffect, useContext, useState } from 'react';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
+import '../style/MyBookingItem.css'
 
 const MyBookingItem = ({ booked }) => {
 
