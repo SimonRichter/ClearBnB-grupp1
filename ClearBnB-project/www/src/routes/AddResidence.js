@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect }from 'react';
+import React, { useState, useRef, useContext }from 'react';
 import '../style/AddResidenceStyle.css';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
-import Login from './Login';
+import { AddResidenceContext } from '../contexts/AddResidenceContextProvider';
 
 
 
@@ -12,6 +12,8 @@ const AddResidence = () => {
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
+  const { residence } = useContext(AddResidenceContext);
+
   const [isChecked, setIsChecked] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isChecked3, setIsChecked3] = useState(false);
@@ -33,6 +35,7 @@ const AddResidence = () => {
   const cityRef = useRef(null);
   const adressRef = useRef(null);
   const descriptionRef = useRef(null);
+  const priceRef = useRef(20);
 
   const imageRef1 = useRef(null);
   const imageRef2 = useRef(null);
@@ -81,7 +84,7 @@ const AddResidence = () => {
     const theDescription = descriptionRef.current.value;
     const theStartDate = Math.floor(selectedStartDate / 1000);
     const theEndDate = Math.floor(selectedEndDate / 1000);
-
+    const thePrice = priceRef.current.value;
     const images =
     [imageRef1.current.value,
     imageRef2.current.value,
@@ -90,16 +93,19 @@ const AddResidence = () => {
     imageRef5.current.value];
 
     const residence = {
-      type: optTyp,
-      residenceLimit: guests,
+      imageURLs: [images],
       title: theTitle,
       country: theCountry,
       city: theCity,
       adress: theAdress,
-      imageURLs: [images],
+      type: optTyp,
       description: theDescription,
       startDate: theStartDate,
-      endDate: theEndDate
+      endDate: theEndDate,
+      residenceLimit: guests,
+      price: +thePrice,
+      bookedDays: null
+      
     }
   
    
@@ -122,6 +128,7 @@ const AddResidence = () => {
       dishwasher: feature14.current.value
     }
     console.log("object", features);
+    AddResidence();
   }
 
   const addFeatureHandler = () => {
@@ -337,7 +344,7 @@ const AddResidence = () => {
         <textarea ref={descriptionRef} className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
         
         <p>Price per night</p>
-        <span>€</span><input className="inputPrice" type="number" step="20" min="20" placeholder="Price (min 20€)" />
+        <span>€</span><input ref={priceRef} className="inputPrice" type="number" required step="20" min="20" placeholder="Price (min 20€)" />
 
         <div className="datePickerDiv">
           <p>Select hosting date</p>

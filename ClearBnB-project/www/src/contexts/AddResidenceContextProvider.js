@@ -5,17 +5,20 @@ export const AddResidenceContext = createContext();
 export const AddResidenceProvider = (props) => {
 
   const [residence, setResidence] = useState(
-     {
-      type: null,
-      residenceLimit: 1,
+    {
+      imageURLs: [null],
       title: null,
       country: null,
       city: null,
       adress: null,
-      imageURLs: [null],
+      type: null,
       description: null,
       startDate: null,
-      endDate: null
+      endDate: null,
+      featuresId: null,
+      userId: null,
+      residenceLimit: 1,
+      bookedDays: null
     }
   );
 
@@ -36,7 +39,8 @@ export const AddResidenceProvider = (props) => {
   }
   
   
-const values = {
+  const values = {
+  residence,
   addResidence
 }
   
