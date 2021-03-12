@@ -6,8 +6,8 @@ export const ResidenceProvider = (props) => {
 
   const [residences, setResidences] = useState([]);
 
-  
-  const fetchResidences = async () => {
+
+  const fetchResidences = async() => {
     let data = await fetch('/rest/residences')
     data = await data.json();
     setResidences([...data]);
@@ -15,13 +15,23 @@ export const ResidenceProvider = (props) => {
   }
 
   const updateResidence = async (id, residence) => {
-    let res = await fetch('/rest/residences/' + id, {
+     let res = await fetch('/rest/residences/' + id, {
       method: 'PUT',
-      headers: { 'content-type': 'application/json' },
+      headers: {'content-type': 'application/json'},
       body: JSON.stringify(residence)
-    })
-    
+     })
+
     res = await res.json()
+  }
+
+  const addResidence = async (residenceObj) => {
+    let res = await fetch("/rest/residences", {
+      method: 'POST',
+      headers: { 'content-type': 'application/json'},
+      body: JSON.stringify(residenceObj)
+    })
+    res = await res.json();
+    return res;
   }
 
   useEffect(() => {
@@ -31,12 +41,13 @@ export const ResidenceProvider = (props) => {
   useEffect(() => {
     fetchResidences();
   }, [updateResidence]);
-  
+
   const values = {
     residences,
     setResidences,
     updateResidence,
-    fetchResidences
+    fetchResidences,
+    addResidence
   }
 
   return (
