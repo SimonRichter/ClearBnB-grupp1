@@ -17,6 +17,9 @@ const AddResidence = () => {
   const [isChecked4, setIsChecked4] = useState(false);
   const [isChecked5, setIsChecked5] = useState(false);
   const [isChecked6, setIsChecked6] = useState(false);
+  const [isChecked7, setIsChecked7] = useState(false);
+  const [isChecked8, setIsChecked8] = useState(false);
+  const [isChecked9, setIsChecked9] = useState(false);
 
   const optType = useRef(null);
   const adTitle = useRef(null);
@@ -164,9 +167,34 @@ const AddResidence = () => {
       setIsChecked6(false);
   }
    console.log("on click", e.target.value);
+  }
+  
+  const addFeatureHandler7 = () => {
+    if (isChecked7 === false) {
+      setIsChecked7(true)
+    }
+    if (isChecked7 === true) {
+      setIsChecked7(false);
+    }
+  }
+
+   const addFeatureHandler8 = () => {
+    if (isChecked8 === false) {
+      setIsChecked8(true)
+    }
+    if (isChecked8 === true) {
+      setIsChecked8(false);
+    }
    }
-
-
+  
+   const addFeatureHandler9 = () => {
+    if (isChecked9 === false) {
+      setIsChecked9(true)
+    }
+    if (isChecked9 === true) {
+      setIsChecked9(false);
+    }
+  }
 
   return (
     <div className="addResWrapper">
@@ -216,13 +244,13 @@ const AddResidence = () => {
             <input type="checkbox" onClick={addFeatureHandler6} ref={feature6} value={isChecked6} /><i className="helper"></i>Microwave
         </label>
           <label>
-            <input type="checkbox" onClick={addFeatureHandler} ref={feature7} value="TV" /><i className="helper"></i>Tv
+            <input type="checkbox" onClick={addFeatureHandler7} ref={feature7} value={isChecked7} /><i className="helper"></i>Tv
         </label>
           <label>
-            <input type="checkbox" onClick={addFeatureHandler} ref={feature8} value="Coffe maker" /><i className="helper"></i>Coffee maker
+            <input type="checkbox" onClick={addFeatureHandler8} ref={feature8} value={isChecked8} /><i className="helper"></i>Coffee maker
         </label>
           <label>
-            <input type="checkbox" onClick={addFeatureHandler} ref={feature9} value="WIFI" /><i className="helper"></i>WIFI
+            <input type="checkbox" onClick={addFeatureHandler9} ref={feature9} value={isChecked9} /><i className="helper"></i>WIFI
         </label>
           <label>
             <input type="checkbox" onClick={addFeatureHandler} ref={feature10} value="Balcony" /><i className="helper"></i>Balcony
