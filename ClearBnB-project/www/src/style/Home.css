@@ -54,13 +54,12 @@
 .startTravel {
   margin-left: 60px;
   font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
 }
 
 .startTravel p {
   font-size: 30px;
   margin: 200px 0 5px 0;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
   color: white;
   letter-spacing: 6.2px;
 }
@@ -70,15 +69,11 @@
   padding: 18px 24px;
   font-size: 14px;
   line-height: 40px;
-  text-transform: uppercase;
-  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   letter-spacing: 2px;
-  outline: none;
-  text-decoration: none;
-  background-color: rgba(255, 234, 234, 0);
+  background-color: rgba(245, 245, 245, 0.11);
   cursor: pointer;
-  overflow: hidden;
+  text-transform: uppercase;
 }
 
 .exploreBtn:hover {
@@ -120,40 +115,41 @@
 }
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
-  .exploreBtn {
-    background-color: rgba(245, 245, 245, 0.11);
+  .divImgs {
+    grid-template-columns: 77%;
+    height: 160vh;
   }
- .divImgs {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: 77%;
-  grid-gap: 40px;
-  margin-top: 20px;
-  background-color: rgba(245, 240, 240, 0.527);
-  height: 160vh;
-  padding: 80px 10px 10px 0px;
-  }
+  
   .divImgs p {
-  text-align: center;
-  font-size: 15px;
-  margin-left: 80px;
-  font-weight: bolder;
-  } 
-  .startTravel {
-  margin-left: 3vh;
-  font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    margin-left: 80px;
   }
-  .startTravel p {
-  font-size: 30px;
-  margin: 50px 0 5px 0;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 6.2px;
+  
+  .startTravel {
+    width: 95vw;
+    margin-left: 0;
+  }
+  
+  .startTravel div {
+    display: block;
+    text-align: center;
+    padding: auto;
+    font-size: 30px;
+    color: white;
+    letter-spacing: 6.2px;
+  }
+  
+  .startTravel div p{
+    display: block;
+    margin: 20vh 0 5px 0;
+  }
+  .exploreBtn {
+    display: block;
+    margin: 0 auto;
   }
   .arrow {
   position: relative;
-  bottom: -18rem;
+  bottom: -25vh;
   left: 50%;
   margin-left: -20px;
   width: 40px;
@@ -186,27 +182,37 @@
   font-weight: bolder;
   } 
   .startTravel {
-  margin-left: 25%;
-  font-family: "Montserrat", sans-serif;
+    width: 95vw;
+    margin-left: 0;
   }
-  .startTravel p {
-  font-size: 30px;
-  margin: 50px 0 5px 0;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 6.2px;
+  
+  .startTravel div {
+    display: block;
+    text-align: center;
+    padding: auto;
+    font-size: 30px;
+    color: white;
+    letter-spacing: 6.2px;
   }
+  
+  .startTravel div p{
+    display: block;
+    margin: 20vh 0 5px 0;
+  }
+  .exploreBtn {
+    display: block;
+    margin: 0 auto;
+  }  
   .arrow {
   position: relative;
-  bottom: -18rem;
+  bottom: -25vh;
   left: 50%;
   margin-left: -20px;
   width: 40px;
   height: 40px;
   }
   .exploreText {
-  margin-top: 360px;
+  margin-top: 450px;
   text-align: center;
   z-index: 1;
   font-size: 30px;

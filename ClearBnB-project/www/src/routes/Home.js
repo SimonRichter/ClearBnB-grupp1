@@ -16,7 +16,7 @@ const Home = () => {
       <img className="homeImage" src="https://i.postimg.cc/kXXSQpKb/bkpicture-1.png" alt="" />
 
       <div className="startTravel">
-        <p>Start Travel</p>
+        <div><p>Start Travel</p></div>
         <button onClick={exploreHandler}  className="exploreBtn" >Explore the residences</button>
       </div>
       <div class="arrow bounce"></div>
