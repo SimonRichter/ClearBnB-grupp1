@@ -11,6 +11,7 @@ import Home from './routes/Home';
 import About from './routes/About';
 import Residences from './routes/Residences';
 import ResidenceDetails from './routes/ResidenceDetails'
+import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
 import AddResidence from './routes/AddResidence';
@@ -18,13 +19,6 @@ import { useEffect, useContext } from 'react';
 
 
 function App() {
-
-
-
-  // useEffect(() => {
-  //   whoIsOnline();
-  //   console.log(whoAmI);
-  // },[])
 
   return (
    
@@ -43,8 +37,8 @@ function App() {
           <Route path="/residences" exact component={Residences} />  
           <Route path="/login" exact component={Login} />  
           <Route path="/register" exact component={Register} />
-          <Route path="/residence/:id" exact component={ResidenceDetails} />   
-          <Route path="/addResidence" exact component={AddResidence} />    
+          <Route path="/residence/:id" exact component={ResidenceDetails} />
+          <Route path="/myBookings" exact component={MyBookings}/>        
       </Switch>
     </div>
     </Router>

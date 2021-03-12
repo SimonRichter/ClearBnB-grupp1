@@ -5,12 +5,12 @@ import '../style/Residences.css';
 
 const Residences = () => {
 
-  const { residences } = useContext(ResidenceContext);
+  const { residences,fetchResidences } = useContext(ResidenceContext);
   const [filteredList, setFilteredList] = useState([...residences]);
 
 
-  const country = useRef();
-  const city = useRef();
+  const country = useRef('');
+  const city = useRef('');
 
 
   const showAll = () => {
@@ -19,6 +19,11 @@ const Residences = () => {
 
   const searchFor = (e) => {
     e.preventDefault();
+
+    if (!city.current.value && !country.current.value) { 
+      setFilteredList([...residences]);
+      return;
+    }
 
     if (city.current.value !== '' && country.current.value !== '') {
       const filter = residences.filter(r => r.country === country.current.value &&
@@ -33,11 +38,13 @@ const Residences = () => {
       const filter = residences.filter(r => r.city === city.current.value);
       setFilteredList([...filter]);
     }
+
+    console.log('here',country.current.value, city.current.value);
   }
 
   useEffect(() => {
-    setFilteredList([...residences]);
-  },[residences])
+    const data = fetchResidences().then(r => setFilteredList([...r]));
+  },[])
   
  
 
@@ -45,7 +52,7 @@ const Residences = () => {
     <div className="residences">
       <div className="searchFields">
       <form onSubmit={searchFor}>
-        <input ref={country} type="text" placeholder="Search by country.." />
+          <input ref={country} type="text" placeholder="Search by country.." />
         <input ref={city} type="text" placeholder="Search by city.." />
         <button>Search</button>
       </form>

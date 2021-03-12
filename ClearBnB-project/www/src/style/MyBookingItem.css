@@ -1,0 +1,33 @@
+.myBookingItems{
+  box-sizing: border-box;
+}
+
+.wrapperInItem {
+  width: 70%;
+  background: #eee;
+  margin: 15px auto;
+  padding: 10px;
+  border-radius: 1px;
+  box-shadow: 5px 10px 18px #888888;
+  cursor: pointer;
+}
+
+.wrapperInItem:hover{
+  Transform: scale(1.02);
+  transition: 300ms;
+}
+
+.wrapperInItem > .wrap > img{
+  border-radius: 5px;
+  height: 150px;
+  width: 150px;
+}
+
+.wrapperInItem  > .wrap {
+  display: grid;
+  grid-template-columns: 1fr 60%;
+}
+
+.wrapperInItem  > .wrap > .info > p > span{
+  font-weight: bolder;
+}
