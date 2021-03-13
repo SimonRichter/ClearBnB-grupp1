@@ -2,6 +2,7 @@ import React from 'react';
 import '../style/Home.css';
 import {Link, useHistory} from 'react-router-dom'
 
+
 const Home = () => {
   const history = useHistory();
   

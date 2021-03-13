@@ -36,6 +36,10 @@
   cursor: pointer;
 }
 
+.login .snackBarIndex{
+  z-index: 105;
+}
+
 .form-for-login button:hover{
   Transform: scale(1.02);
   transition: 300ms;
