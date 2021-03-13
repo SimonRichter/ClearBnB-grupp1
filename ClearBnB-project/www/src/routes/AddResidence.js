@@ -124,17 +124,14 @@ const AddResidence = () => {
       description: theDescription,
       startDate: theStartDate,
       endDate: theEndDate,
-      imageURLs: [images],
+      imageURLs: images,
       featuresId: featureObj._id,
       userId: whoAmI._id,
       residenceLimit: guests,
       bookedDays: null
     }
-     addResidence(residence)
+    addResidence(residence)
     console.log(residence);
-
- 
-
   
   }
 
