@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -36,11 +36,9 @@ const StyledMenu = withStyles({
 
 const StyledMenuItem = withStyles((theme) => ({
   root: {
-    '&:focus': {
-      backgroundColor: theme.palette.primary.main,
       '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
-        color: theme.palette.common.white,
-      },
+        color: theme.palette.common.black,
+        backgroundColor: theme.palette.common.white
     },
   },
 }))(MenuItem);
@@ -91,12 +89,12 @@ export default function CustomizedMenus(props) {
           </ListItemIcon>
           <ListItemText primary="My bookings" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        {props.whoAmI && <StyledMenuItem>
           <ListItemIcon>
             <InboxIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText  onClick={() => props.logOut()} primary="Log out" />
-        </StyledMenuItem>
+          <ListItemText onClick={() => props.logOut()} primary="Log out" />
+        </StyledMenuItem>}
       </StyledMenu>
     </div>
   );

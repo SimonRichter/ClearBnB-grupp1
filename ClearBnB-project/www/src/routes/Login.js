@@ -6,19 +6,6 @@ import '../style/Login.css'
 
 const Login = () => {
 
-  const [open, setOpen] = useState(false);
-
-
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
-    setOpen(false);
-  };
-    
-    
-
   const history = useHistory();
   const { login,whoIsOnline } = useContext(UserContext);
   const [failed, setFailed] = useState(false);

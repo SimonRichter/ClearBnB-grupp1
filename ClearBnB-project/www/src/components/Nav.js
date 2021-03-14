@@ -11,6 +11,7 @@ const Nav = () => {
 
   useEffect(() => {
     whoIsOnline();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   return (
@@ -22,9 +23,8 @@ const Nav = () => {
       <Link to="/Residences">Residences</Link>
       {!whoAmI && <Link to="/login">Login</Link>}
       {!whoAmI && <Link to="/register">Register</Link>}
-      {whoAmI && <Link to="/" onClick={() => logOut()}>Log out</Link>}
         {whoAmI && <Link to="/myBookings">My bookings</Link>}  
-        <ProfileMenu logOut={logOut}/>
+        <ProfileMenu logOut={logOut} whoAmI={whoAmI}/>
       </div>
        
     </div>
