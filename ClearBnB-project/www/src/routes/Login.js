@@ -1,14 +1,12 @@
 import React, { useRef, useContext, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContextProvider'
-import Snackbar from '@material-ui/core/Snackbar';
-import Button from '@material-ui/core/Button'
-import Alert from '@material-ui/lab/Alert';
+
 import '../style/Login.css'
 
 const Login = () => {
 
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
 
 
   const handleClose = (event, reason) => {
@@ -56,11 +54,7 @@ const Login = () => {
 
       <div className="snackBarIndex" >
 
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success">
-          Logged successed!
-        </Alert>
-      </Snackbar>
+      
     </div>
 
       <div className="form-for-login">

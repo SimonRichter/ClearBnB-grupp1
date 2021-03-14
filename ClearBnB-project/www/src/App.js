@@ -27,7 +27,7 @@ function App() {
     <div className="App">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       <Nav />
-        <div className="wrapper"></div>
+                <div className="wrapper"></div>
       <Switch>
           <Route path="/" exact component={Home} /> 
           <Route path="/about" exact component={About} />   

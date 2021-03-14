@@ -1,18 +1,43 @@
-import React from 'react';
+import React, { useEffect, useContext, useState} from 'react';
 import '../style/Home.css';
-import {Link, useHistory} from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { UserContext } from '../contexts/UserContextProvider'
+import Snackbar from '@material-ui/core/Snackbar';
+import Button from '@material-ui/core/Button'
+import Alert from '@material-ui/lab/Alert';
 
 
 const Home = () => {
   const history = useHistory();
+   const { whoAmI } = useContext(UserContext);
   
+  const [open, setOpen] = useState(false);
   const exploreHandler = () => {
     console.log('works');
     history.push("/residences")
   }
 
+  useEffect(() => {
+    whoAmI && setOpen(true)
+  },[whoAmI]);
+
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+  
+
   return (
     <div className="homeWrapper">
+      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success">
+          Logged successed!
+        </Alert>
+      </Snackbar>
       <div className="home">
       <img className="homeImage" src="https://i.postimg.cc/kXXSQpKb/bkpicture-1.png" alt="" />
 
