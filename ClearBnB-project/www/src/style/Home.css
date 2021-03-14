@@ -111,6 +111,10 @@
   font-weight: bolder;
 }
 
+.homeWrapper .toast {
+  margin-top: 4em;
+}
+
 .exploreText {
   margin-top: 430px;
   text-align: center;
@@ -123,129 +127,128 @@
   .exploreBtn {
     background-color: rgba(245, 245, 245, 0.11);
   }
- .divImgs {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: 77%;
-  grid-gap: 40px;
-  margin-top: 20px;
-  background-color: rgba(245, 240, 240, 0.527);
-  height: 160vh;
-  padding: 80px 10px 10px 0px;
+  .divImgs {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 77%;
+    grid-gap: 40px;
+    margin-top: 20px;
+    background-color: rgba(245, 240, 240, 0.527);
+    height: 160vh;
+    padding: 80px 10px 10px 0px;
   }
   .divImgs p {
-  text-align: center;
-  font-size: 15px;
-  margin-left: 80px;
-  font-weight: bolder;
-  } 
+    text-align: center;
+    font-size: 15px;
+    margin-left: 80px;
+    font-weight: bolder;
+  }
   .startTravel {
-  margin-left: 3vh;
-  font-family: "Montserrat", sans-serif;
+    margin-left: 3vh;
+    font-family: "Montserrat", sans-serif;
   }
   .startTravel p {
-  font-size: 30px;
-  margin: 50px 0 5px 0;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 6.2px;
+    font-size: 30px;
+    margin: 50px 0 5px 0;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 6.2px;
   }
   .arrow {
-  position: relative;
-  bottom: -18rem;
-  left: 50%;
-  margin-left: -20px;
-  width: 40px;
-  height: 40px;
+    position: relative;
+    bottom: -18rem;
+    left: 50%;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
   }
   .exploreText {
-  margin-top: 450px;
-  text-align: center;
-  z-index: 1;
-  font-size: 30px;
-  color: rgba(255, 255, 255, 0.726);
+    margin-top: 450px;
+    text-align: center;
+    z-index: 1;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.726);
   }
 }
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
   .divImgs {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: 85%;
-  grid-gap: 40px;
-  margin-top: 20px;
-  background-color: rgba(245, 240, 240, 0.527);
-  height: 320vh;
-  padding: 80px 10px 10px 10px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 85%;
+    grid-gap: 40px;
+    margin-top: 20px;
+    background-color: rgba(245, 240, 240, 0.527);
+    height: 320vh;
+    padding: 80px 10px 10px 10px;
   }
   .divImgs p {
-  text-align: center;
-  font-size: 19px;
-  margin-left: 80px;
-  font-weight: bolder;
-  } 
+    text-align: center;
+    font-size: 19px;
+    margin-left: 80px;
+    font-weight: bolder;
+  }
   .startTravel {
-  margin-left: 25%;
-  font-family: "Montserrat", sans-serif;
+    margin-left: 25%;
+    font-family: "Montserrat", sans-serif;
   }
   .startTravel p {
-  font-size: 30px;
-  margin: 50px 0 5px 0;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  color: white;
-  letter-spacing: 6.2px;
+    font-size: 30px;
+    margin: 50px 0 5px 0;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 6.2px;
   }
   .arrow {
-  position: relative;
-  bottom: -18rem;
-  left: 50%;
-  margin-left: -20px;
-  width: 40px;
-  height: 40px;
+    position: relative;
+    bottom: -18rem;
+    left: 50%;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
   }
   .exploreText {
-  margin-top: 360px;
-  text-align: center;
-  z-index: 1;
-  font-size: 30px;
-  color: rgba(255, 255, 255, 0.726);
+    margin-top: 360px;
+    text-align: center;
+    z-index: 1;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.726);
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .divImgs {
-  display: grid;
-  justify-items: center;
-  grid-template-columns: 27% 27% 27%;
-  grid-gap: 40px;
-  margin-top: 20px;
-  background-color: rgba(245, 240, 240, 0.527);
-  height: 50vh;
-  padding: 80px 10px 10px 10px;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 27% 27% 27%;
+    grid-gap: 40px;
+    margin-top: 20px;
+    background-color: rgba(245, 240, 240, 0.527);
+    height: 50vh;
+    padding: 80px 10px 10px 10px;
   }
   .divImgs p {
-  text-align: center;
-  font-size: 19px;
-  margin-left: 90px;
-  font-weight: bolder;
+    text-align: center;
+    font-size: 19px;
+    margin-left: 90px;
+    font-weight: bolder;
   }
   .arrow {
-  position: relative;
-  bottom: -18rem;
-  left: 50%;
-  margin-left: -20px;
-  width: 40px;
-  height: 40px;
+    position: relative;
+    bottom: -18rem;
+    left: 50%;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
   }
   .exploreText {
-  margin-top: 480px;
-  text-align: center;
-  z-index: 1;
-  font-size: 30px;
-  color: rgba(255, 255, 255, 0.726);
+    margin-top: 480px;
+    text-align: center;
+    z-index: 1;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.726);
   }
 }
 @media (max-width: 1025px) {
-
 }

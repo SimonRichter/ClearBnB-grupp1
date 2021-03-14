@@ -7,7 +7,7 @@ export const UserProvider = (props) => {
   const [users, setUsers] = useState([]);
   const [whoAmI, setWhoAmI] = useState(null);
   const [loginToast, setLoginToast] = useState(false);
-  
+  const [logoutToast, setLogoutToast] = useState(false);
   
   const fetchUsers = async() => {
     let data = await fetch('/rest/users')
@@ -48,6 +48,7 @@ export const UserProvider = (props) => {
     })
     res = await res.json();
     setWhoAmI(null);
+    setLogoutToast(true);
     console.log(res);
   }
 
@@ -70,7 +71,9 @@ export const UserProvider = (props) => {
     whoAmI,
     logOut,
     setLoginToast,
-    loginToast
+    loginToast,
+    logoutToast,
+    setLogoutToast
   }
 
   return (

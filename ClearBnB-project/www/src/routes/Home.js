@@ -9,30 +9,40 @@ import Alert from '@material-ui/lab/Alert';
 
 const Home = () => {
   const history = useHistory();
-   const { setLoginToast, loginToast } = useContext(UserContext);
+   const { setLoginToast, loginToast, setLogoutToast, logoutToast } = useContext(UserContext);
   
-
-
-
+  
   const exploreHandler = () => {
     history.push("/residences")
   }
 
-
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
+  const handleCloseLogin = (reason) => {
+    if (reason === 'clickaway') { return; }
     setLoginToast(false);
   };
-  
+
+  const handleCloseLogout = (reason) => {
+    if (reason === 'clickaway') { return; }
+    setLogoutToast(false);
+  };
+
+  const vertical = 'top'
+  const horizontal = 'right'
 
   return (
     <div className="homeWrapper">
-      <Snackbar open={loginToast} autoHideDuration={3000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success">
-          Login sucessfully
+      <Snackbar className="toast"
+        anchorOrigin={{ vertical, horizontal }}
+        open={loginToast} autoHideDuration={2000} onClose={handleCloseLogin}>
+        <Alert onClose={handleCloseLogin} severity="success">
+          Logged in.
+        </Alert>
+      </Snackbar>
+      <Snackbar className="toast"
+        anchorOrigin={{ vertical, horizontal }}
+        open={logoutToast} autoHideDuration={2000} onClose={handleCloseLogout}>
+        <Alert onClose={handleCloseLogout} severity="success">
+          Logged out.
         </Alert>
       </Snackbar>
 
