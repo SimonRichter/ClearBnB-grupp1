@@ -30,7 +30,6 @@ const Login = () => {
       setFailed(false);
       whoIsOnline();
       history.push("/")
-
     }
   }
 

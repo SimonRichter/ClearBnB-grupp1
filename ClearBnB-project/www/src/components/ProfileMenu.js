@@ -5,9 +5,6 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import '../style/ProfileMenu.css';
 import { useHistory } from 'react-router-dom'
@@ -34,8 +31,7 @@ const StyledMenu = withStyles({
     transformOrigin={{
       vertical: 'top',
       horizontal: 'center',
-    }}
-    {...props}
+    }} {...props}
   />
 ));
 
@@ -57,7 +53,6 @@ export default function CustomizedMenus(props) {
 
   useEffect(() => {
     whoIsOnline();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
   
 
@@ -79,21 +74,20 @@ export default function CustomizedMenus(props) {
       {whoAmI && <Button
         aria-controls="customized-menu"
         aria-haspopup="true"
-       
-        onClick={handleClick}
-      >
+        onClick={handleClick}>
+        
         <AccountCircleIcon
           color='secondary'
-          fontSize="large"
-        />
+          fontSize="large" />
       </Button>}
+      
       <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
-        onClick={handleClose}
-      >
+        onClick={handleClose}>
+        
         <StyledMenuItem onClick={() => history.push('/addResidence')}>
           <ListItemIcon>
             <HomeWorkRoundedIcon fontSize="small" />

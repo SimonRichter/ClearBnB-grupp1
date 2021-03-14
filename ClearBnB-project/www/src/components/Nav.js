@@ -6,12 +6,10 @@ import ProfileMenu from './ProfileMenu';
 
 const Nav = () => {
 
-  const { whoAmI, whoIsOnline } = useContext(UserContext);
+const { whoAmI, whoIsOnline } = useContext(UserContext);
   
-
   useEffect(() => {
     whoIsOnline();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   return (
@@ -21,15 +19,11 @@ const Nav = () => {
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
         <Link to="/Residences">Residences</Link>
-      {whoAmI && <Link to="/addResidence">Host Residence</Link>} 
       {!whoAmI && <Link to="/login">Login</Link>}
-      {!whoAmI && <Link to="/register">Register</Link>}
-        {whoAmI && <Link to="/myBookings">My bookings</Link>}  
+      {!whoAmI && <Link to="/register">Register</Link>} 
         <ProfileMenu/>
       </div>
-       
     </div>
-    
   ); 
 }
 
