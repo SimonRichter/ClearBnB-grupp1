@@ -6,7 +6,7 @@ import ProfileMenu from './ProfileMenu';
 
 const Nav = () => {
 
-  const { whoAmI, logOut, whoIsOnline } = useContext(UserContext);
+  const { whoAmI, whoIsOnline } = useContext(UserContext);
   
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Nav = () => {
       {!whoAmI && <Link to="/login">Login</Link>}
       {!whoAmI && <Link to="/register">Register</Link>}
         {whoAmI && <Link to="/myBookings">My bookings</Link>}  
-        <ProfileMenu logOut={logOut} whoAmI={whoAmI}/>
+        <ProfileMenu/>
       </div>
        
     </div>

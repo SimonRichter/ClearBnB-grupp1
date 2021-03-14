@@ -28,7 +28,6 @@ const Login = () => {
       setFailed(true);
     } else {
       setFailed(false);
-
       whoIsOnline();
       history.push("/")
 

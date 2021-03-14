@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect} from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -10,7 +10,8 @@ import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import '../style/ProfileMenu.css';
-
+import { useHistory } from 'react-router-dom'
+import { UserContext } from '../contexts/UserContextProvider'
 
 
 
@@ -46,7 +47,15 @@ const StyledMenuItem = withStyles((theme) => ({
 
 
 export default function CustomizedMenus(props) {
+   const { whoAmI, logOut, whoIsOnline } = useContext(UserContext);
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const history = useHistory();
+
+  useEffect(() => {
+    whoIsOnline();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[])
+  
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -54,12 +63,16 @@ export default function CustomizedMenus(props) {
 
   const handleClose = () => {
     setAnchorEl(null);
-
   };
+
+  const onLogOut = () => {
+    logOut();
+    history.push('/');
+  }
 
   return (
     <div className="profileMenu">
-      {props.whoAmI && <Button
+      {whoAmI && <Button
         aria-controls="customized-menu"
         aria-haspopup="true"
        
@@ -87,14 +100,14 @@ export default function CustomizedMenus(props) {
           <ListItemIcon>
             <DraftsIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText primary="My bookings" />
+          <ListItemText onClick={() => history.push('/myBookings')} primary="My bookings" />
         </StyledMenuItem>
-        {props.whoAmI && <StyledMenuItem>
+        <StyledMenuItem>
           <ListItemIcon>
             <InboxIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText onClick={() => props.logOut()} primary="Log out" />
-        </StyledMenuItem>}
+          <ListItemText onClick={() => onLogOut()} primary="Log out" />
+        </StyledMenuItem>
       </StyledMenu>
     </div>
   );

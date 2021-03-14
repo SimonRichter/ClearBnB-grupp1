@@ -1,9 +1,11 @@
 import React, { useState, createContext, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 
 export const UserContext = createContext();
 
 export const UserProvider = (props) => {
 
+  const history = useHistory();
   const [users, setUsers] = useState([]);
   const [whoAmI, setWhoAmI] = useState(null);
   const [loginToast, setLoginToast] = useState(false);
@@ -50,6 +52,7 @@ export const UserProvider = (props) => {
     setWhoAmI(null);
     setLogoutToast(true);
     console.log(res);
+    
   }
 
   const whoIsOnline = async() => {
