@@ -13,7 +13,8 @@ import '../style/ProfileMenu.css';
 import { useHistory } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContextProvider'
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
-
+import LibraryBooksRoundedIcon from '@material-ui/icons/LibraryBooksRounded';
+import HomeWorkRoundedIcon from '@material-ui/icons/HomeWorkRounded';
 
 
 
@@ -95,13 +96,13 @@ export default function CustomizedMenus(props) {
       >
         <StyledMenuItem>
           <ListItemIcon>
-            <SendIcon fontSize="small" />
+            <HomeWorkRoundedIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Host Residence" />
         </StyledMenuItem>
         <StyledMenuItem onClick={() => history.push('/myBookings')} >
           <ListItemIcon>
-            <DraftsIcon fontSize="small" />
+            <LibraryBooksRoundedIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="My bookings" />
         </StyledMenuItem>
