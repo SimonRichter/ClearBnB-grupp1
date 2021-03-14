@@ -39,7 +39,7 @@ const StyledMenuItem = withStyles((theme) => ({
   root: {
       '& .MuiListItemIcon-root, & .MuiListItemText-primary': {
         color: theme.palette.common.black,
-        backgroundColor: theme.palette.common.white
+        backgroundColor: theme.palette.common.main
     },
   },
 }))(MenuItem);
@@ -96,17 +96,17 @@ export default function CustomizedMenus(props) {
           </ListItemIcon>
           <ListItemText primary="Host Residence" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => history.push('/myBookings')} >
           <ListItemIcon>
             <DraftsIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText onClick={() => history.push('/myBookings')} primary="My bookings" />
+          <ListItemText primary="My bookings" />
         </StyledMenuItem>
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => onLogOut()} >
           <ListItemIcon>
             <InboxIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText onClick={() => onLogOut()} primary="Log out" />
+          <ListItemText primary="Log out" />
         </StyledMenuItem>
       </StyledMenu>
     </div>
