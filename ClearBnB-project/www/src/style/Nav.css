@@ -15,6 +15,10 @@
   align-self: center;
   color: white;
 }
+.links .profileMenu {
+  float: right;
+  margin-top: -17px;
+}
 
 .links {
   align-self: center;
@@ -26,60 +30,59 @@
   margin: 20px;
 }
 /* Media Query for Mobile Devices */
-@media (max-width: 619px)   { 
-.nav-bar {
-  display: grid;
-  grid-template-columns: 50% 1fr;
-  height: 10vh;
-  background: rgba(44, 29, 29, 0.822);
-  position: fixed;
-  width: 100%;
-  margin: 0;
-  top: 0;
-}
+@media (max-width: 619px) {
+  .nav-bar {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    height: 10vh;
+    background: rgba(44, 29, 29, 0.822);
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    top: 0;
+  }
 
-.nav-bar h4 {
-  display: none !important;
+  .nav-bar h4 {
+    display: none !important;
+  }
 
-}
+  .links {
+    align-self: center;
+  }
 
-.links {
-  align-self: center;
+  .links a {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin: 20px;
+  }
 }
-
-.links a {
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  margin: 20px;
-}
-}
- /* Media Query for low resolution  Tablets, Ipads   */
+/* Media Query for low resolution  Tablets, Ipads   */
 @media (min-width: 620px) and (max-width: 916px) {
-.nav-bar {
-  display: grid;
-  grid-template-columns: 25% 1fr;
-  height: 10vh;
-  background: rgba(44, 29, 29, 0.822);
-  position: fixed;
-  width: 100%;
-  margin: 0;
-  top: 0;
-}
+  .nav-bar {
+    display: grid;
+    grid-template-columns: 25% 1fr;
+    height: 10vh;
+    background: rgba(44, 29, 29, 0.822);
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    top: 0;
+  }
 
-.nav-bar h4 {
-  margin: 0;
-  margin-left: 10px;
-  align-self: center;
-  color: white;
-}
+  .nav-bar h4 {
+    margin: 0;
+    margin-left: 10px;
+    align-self: center;
+    color: white;
+  }
 
-.links {
-  align-self: center;
-}
+  .links {
+    align-self: center;
+  }
 
-.links a {
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  margin: 20px;
-}
+  .links a {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    margin: 20px;
+  }
 }

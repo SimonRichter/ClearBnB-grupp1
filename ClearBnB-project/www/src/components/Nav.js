@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from 'react'
 import { UserContext } from '../contexts/UserContextProvider'
 import '../style/Nav.css';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import ProfileMenu from './ProfileMenu';
 
 const Nav = () => {
 
@@ -22,9 +23,12 @@ const Nav = () => {
       {!whoAmI && <Link to="/login">Login</Link>}
       {!whoAmI && <Link to="/register">Register</Link>}
       {whoAmI && <Link to="/" onClick={() => logOut()}>Log out</Link>}
-      {whoAmI && <Link to="/myBookings">My bookings</Link>}  
+        {whoAmI && <Link to="/myBookings">My bookings</Link>}  
+        <ProfileMenu/>
       </div>
+       
     </div>
+    
   ); 
 }
 
