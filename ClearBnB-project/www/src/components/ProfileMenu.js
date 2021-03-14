@@ -59,7 +59,7 @@ export default function CustomizedMenus(props) {
 
   return (
     <div className="profileMenu">
-      <Button
+      {props.whoAmI && <Button
         aria-controls="customized-menu"
         aria-haspopup="true"
        
@@ -69,7 +69,7 @@ export default function CustomizedMenus(props) {
           color='secondary'
           fontSize="large"
         />
-      </Button>
+      </Button>}
       <StyledMenu
         id="customized-menu"
         anchorEl={anchorEl}
