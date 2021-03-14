@@ -9,13 +9,12 @@ import Alert from '@material-ui/lab/Alert';
 
 const Home = () => {
   const history = useHistory();
-   const { whoAmI, setOpen, open } = useContext(UserContext);
+   const { setLoginToast, loginToast } = useContext(UserContext);
   
 
 
 
   const exploreHandler = () => {
-    console.log('works');
     history.push("/residences")
   }
 
@@ -25,13 +24,13 @@ const Home = () => {
       return;
     }
 
-    setOpen(false);
+    setLoginToast(false);
   };
   
 
   return (
     <div className="homeWrapper">
-      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+      <Snackbar open={loginToast} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
           Login sucessfully
         </Alert>

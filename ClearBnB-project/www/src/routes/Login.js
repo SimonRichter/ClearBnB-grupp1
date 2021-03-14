@@ -47,16 +47,11 @@ const Login = () => {
 
     }
   }
-//        PROVA Göra allt i en Context(globalt) 
 
   return (  
     <div className="login">
-
       <div className="snackBarIndex" >
-
-      
     </div>
-
       <div className="form-for-login">
         <form onSubmit={tryToLogin}>
         <input ref={email} required placeholder="Email.." type="email" />
