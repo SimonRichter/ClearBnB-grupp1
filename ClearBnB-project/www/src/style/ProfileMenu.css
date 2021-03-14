@@ -1,8 +1,10 @@
-.profileMenu:hover {
+.MuiSvgIcon-root:hover {
   transform: scale(1.3);
   transition: 300ms;
+  border-radius: 40%;
 }
 
 .profileMenu {
   padding-top: 10px;
 }
+

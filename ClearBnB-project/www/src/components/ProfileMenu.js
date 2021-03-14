@@ -12,6 +12,9 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import '../style/ProfileMenu.css';
 import { useHistory } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContextProvider'
+import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
+
+
 
 
 
@@ -104,7 +107,7 @@ export default function CustomizedMenus(props) {
         </StyledMenuItem>
         <StyledMenuItem onClick={() => onLogOut()} >
           <ListItemIcon>
-            <InboxIcon fontSize="small" />
+            <ExitToAppRoundedIcon color="error" fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Log out" />
         </StyledMenuItem>
