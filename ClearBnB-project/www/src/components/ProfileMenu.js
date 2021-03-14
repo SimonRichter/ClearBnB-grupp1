@@ -94,19 +94,19 @@ export default function CustomizedMenus(props) {
         open={Boolean(anchorEl)}
         onClick={handleClose}
       >
-        <StyledMenuItem>
+        <StyledMenuItem onClick={() => history.push('/addResidence')}>
           <ListItemIcon>
             <HomeWorkRoundedIcon fontSize="small" />
           </ListItemIcon>
           <ListItemText primary="Host Residence" />
         </StyledMenuItem>
-        <StyledMenuItem onClick={() => history.push('/myBookings')} >
+        <StyledMenuItem onClick={() => history.push('/myBookings')}>
           <ListItemIcon>
-            <LibraryBooksRoundedIcon fontSize="small" />
+            <LibraryBooksRoundedIcon fontSize="small"/>
           </ListItemIcon>
-          <ListItemText primary="My bookings" />
+          <ListItemText primary="My bookings"/>
         </StyledMenuItem>
-        <StyledMenuItem onClick={() => onLogOut()} >
+        <StyledMenuItem onClick={() => onLogOut()}>
           <ListItemIcon>
             <ExitToAppRoundedIcon color="error" fontSize="small" />
           </ListItemIcon>
