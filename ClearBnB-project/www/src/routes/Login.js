@@ -44,7 +44,7 @@ const Login = () => {
 
       whoIsOnline();
       history.push("/")
-      setOpen(true)
+
     }
   }
 //        PROVA Göra allt i en Context(globalt) 

@@ -6,6 +6,7 @@ export const UserProvider = (props) => {
 
   const [users, setUsers] = useState([]);
   const [whoAmI, setWhoAmI] = useState(null);
+  const [open, setOpen] = useState(false);
 
   
   const fetchUsers = async() => {
@@ -55,7 +56,8 @@ export const UserProvider = (props) => {
     if (!data) {
       setWhoAmI(null);
     } else {
-      setWhoAmI({...data});
+      setWhoAmI({ ...data });
+      setOpen(true);
     }
   }
 
@@ -66,7 +68,9 @@ export const UserProvider = (props) => {
     login,
     whoIsOnline,
     whoAmI,
-    logOut
+    logOut,
+    setOpen,
+    open
   }
 
   return (

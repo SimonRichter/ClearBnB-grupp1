@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState} from 'react';
+import React, { useEffect, useContext, useState, useRef} from 'react';
 import '../style/Home.css';
 import { Link, useHistory } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContextProvider'
@@ -9,17 +9,15 @@ import Alert from '@material-ui/lab/Alert';
 
 const Home = () => {
   const history = useHistory();
-   const { whoAmI } = useContext(UserContext);
+   const { whoAmI, setOpen, open } = useContext(UserContext);
   
-  const [open, setOpen] = useState(false);
+
+
+
   const exploreHandler = () => {
     console.log('works');
     history.push("/residences")
   }
-
-  useEffect(() => {
-    whoAmI && setOpen(true)
-  },[whoAmI]);
 
 
   const handleClose = (event, reason) => {
@@ -33,11 +31,12 @@ const Home = () => {
 
   return (
     <div className="homeWrapper">
-      <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
         <Alert onClose={handleClose} severity="success">
-          Logged successed!
+          Login sucessfully
         </Alert>
       </Snackbar>
+
       <div className="home">
       <img className="homeImage" src="https://i.postimg.cc/kXXSQpKb/bkpicture-1.png" alt="" />
 
