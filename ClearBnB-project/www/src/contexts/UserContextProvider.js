@@ -37,6 +37,7 @@ export const UserProvider = (props) => {
       body: JSON.stringify(user)
     })
     res = await res.json();
+    setOpen(true);
     return res;
   }
 
@@ -57,7 +58,6 @@ export const UserProvider = (props) => {
       setWhoAmI(null);
     } else {
       setWhoAmI({ ...data });
-      setOpen(true);
     }
   }
 
