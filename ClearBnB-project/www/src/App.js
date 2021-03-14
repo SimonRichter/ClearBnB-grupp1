@@ -6,6 +6,7 @@ import { UserContext } from './contexts/UserContextProvider';
 import { ResidenceProvider } from './contexts/ResidenceContextProvider';
 import { BookingProvider } from './contexts/BookingContextProvider';
 import { FeatureProvider } from './contexts/FeatureContextProvider'
+import { AddResidenceProvider } from './contexts/AddResidenceContextProvider';
 import Home from './routes/Home';
 import About from './routes/About';
 import Residences from './routes/Residences';
@@ -13,12 +14,14 @@ import ResidenceDetails from './routes/ResidenceDetails'
 import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
+import AddResidence from './routes/AddResidence';
 import { useEffect, useContext } from 'react';
 
 
 function App() {
 
   return (
+   
     <FeatureProvider>
     <BookingProvider>
     <ResidenceProvider>
@@ -35,14 +38,16 @@ function App() {
           <Route path="/login" exact component={Login} />  
           <Route path="/register" exact component={Register} />
           <Route path="/residence/:id" exact component={ResidenceDetails} />
-          <Route path="/myBookings" exact component={MyBookings}/>        
+          <Route path="/myBookings" exact component={MyBookings} />   
+          <Route path="/addResidence" exact component={AddResidence}/>        
       </Switch>
     </div>
     </Router>
     </UserProvider>
     </ResidenceProvider>
     </BookingProvider>
-    </FeatureProvider>
+      </FeatureProvider>
+      
   );
 }
 
