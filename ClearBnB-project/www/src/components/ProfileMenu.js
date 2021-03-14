@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
@@ -10,6 +10,9 @@ import DraftsIcon from '@material-ui/icons/Drafts';
 import SendIcon from '@material-ui/icons/Send';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import '../style/ProfileMenu.css';
+
+
+
 
 const StyledMenu = withStyles({
   paper: {
@@ -42,7 +45,9 @@ const StyledMenuItem = withStyles((theme) => ({
   },
 }))(MenuItem);
 
-export default function CustomizedMenus() {
+
+
+export default function CustomizedMenus(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -51,6 +56,7 @@ export default function CustomizedMenus() {
 
   const handleClose = () => {
     setAnchorEl(null);
+
   };
 
   return (
@@ -71,7 +77,7 @@ export default function CustomizedMenus() {
         anchorEl={anchorEl}
         keepMounted
         open={Boolean(anchorEl)}
-        onClose={handleClose}
+        onClick={handleClose}
       >
         <StyledMenuItem>
           <ListItemIcon>
@@ -89,7 +95,7 @@ export default function CustomizedMenus() {
           <ListItemIcon>
             <InboxIcon fontSize="small" />
           </ListItemIcon>
-          <ListItemText primary="Logout" />
+          <ListItemText  onClick={() => props.logOut()} primary="Log out" />
         </StyledMenuItem>
       </StyledMenu>
     </div>
