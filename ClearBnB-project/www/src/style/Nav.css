@@ -6,28 +6,32 @@
   display: grid;
   grid-template-columns: 50% 1fr;
   height: 10vh;
-  background: rgb(44, 29, 29);
+  background: #eee;
   position: fixed;
   width: 100%;
   margin: 0;
   top: 0;
   user-select: none;
+  -webkit-box-shadow: inset 0px -4px 10px 0px rgba(0,0,0,0.45);
+  -moz-box-shadow: inset 0px -4px 10px 0px rgba(0,0,0,0.45);
+  box-shadow: inset 0px -4px 10px 0px rgba(0,0,0,0.45);
 }
 
 .nav-bar h4 {
   margin: 0;
   margin-left: 20px;
   align-self: center;
-  color: white;
+  color: black;
 }
 
 .links {
   align-self: center;
+  font-size: larger;
 }
 
 .nav-bar a {
   font-family: "Montserrat", sans-serif;
-  color: white;
+  color: black;
   margin: 20px;
 }
 /* Media Query for Mobile Devices */
@@ -35,7 +39,7 @@
   
 .hamburger-menu-opened {
   width: 100%;
-  color: white;
+  color: black;
   display: flex;
   align-self: center;
   justify-content: flex-end;
@@ -99,7 +103,7 @@
   
 .hamburger-menu-opened {
   width: 100%;
-  color: white;
+  color: black;
   display: flex;
   align-self: center;
   justify-content: flex-end;
@@ -164,11 +168,5 @@
 .nav-bar {
   display: grid;
   grid-template-columns: 25% 1fr;
-  height: 10vh;
-  background: rgba(44, 29, 29, 0.822);
-  position: fixed;
-  width: 100%;
-  margin: 0;
-  top: 0;
 }
 }

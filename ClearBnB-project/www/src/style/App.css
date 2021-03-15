@@ -20,3 +20,20 @@ a{
 @media (min-width: 768px) and (max-width: 1024px) {
   
 }
+
+::-webkit-scrollbar {
+ width: 13px;
+ height: 13px;
+}
+::-webkit-scrollbar-thumb {
+ background: #c2c2c22d;
+ border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+ background: #a3a3a313;
+}
+::-webkit-scrollbar-track{
+ background: #ffffff;
+ border-radius: 10px;
+ box-shadow: inset 7px 10px 12px #f0f0f0;
+}
