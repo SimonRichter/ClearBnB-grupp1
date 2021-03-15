@@ -17,6 +17,9 @@ import { useEffect, useContext } from 'react';
 
 
 function App() {
+  const page404 = () => (
+    <h1>Page does not exist {window.location.pathname}</h1>
+  )
 
   return (
     <FeatureProvider>
@@ -35,7 +38,8 @@ function App() {
           <Route path="/login" exact component={Login} />  
           <Route path="/register" exact component={Register} />
           <Route path="/residence/:id" exact component={ResidenceDetails} />
-          <Route path="/myBookings" exact component={MyBookings}/>        
+          <Route path="/myBookings" exact component={MyBookings}/>
+          <Route path="*" component={page404}/>
       </Switch>
     </div>
     </Router>
