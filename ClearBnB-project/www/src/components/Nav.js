@@ -1,10 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { UserContext } from '../contexts/UserContextProvider'
 import '../style/Nav.css';
 import { Link } from 'react-router-dom'
 import ProfileMenu from './ProfileMenu';
-import { Dropdown, NavItem, NavLink } from 'react-bootstrap'
-
 
 const Nav = () => {
 
@@ -12,14 +10,7 @@ const { whoAmI, whoIsOnline } = useContext(UserContext);
   
   useEffect(() => {
     whoIsOnline();
-  }, [])
-  
-  const [isActive, setActive] = useState("false");
-
-  const handleToggle = () => {
-    setActive(!isActive);
-  };
-  
+  },[])
 
   return (
     <div className="nav-bar">
