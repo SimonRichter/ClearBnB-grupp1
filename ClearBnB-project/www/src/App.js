@@ -2,11 +2,9 @@ import Nav from './components/Nav';
 import './style/App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { UserProvider } from './contexts/UserContextProvider';
-import { UserContext } from './contexts/UserContextProvider';
 import { ResidenceProvider } from './contexts/ResidenceContextProvider';
 import { BookingProvider } from './contexts/BookingContextProvider';
 import { FeatureProvider } from './contexts/FeatureContextProvider'
-import { AddResidenceProvider } from './contexts/AddResidenceContextProvider';
 import Home from './routes/Home';
 import About from './routes/About';
 import Residences from './routes/Residences';
@@ -16,7 +14,6 @@ import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
 import AddResidence from './routes/AddResidence';
-import { useEffect, useContext } from 'react';
 
 
 function App() {

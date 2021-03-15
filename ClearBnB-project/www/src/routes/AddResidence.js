@@ -167,8 +167,8 @@ const AddResidence = () => {
     <div className="addResWrapper">
       <form onSubmit={submitHandler}>
       <h3>What type of recidense would you like to host?</h3>
-        <select className="optionBar">
-        <option class="optValue" value="" disabled="disabled" selected="selected">Choose</option>
+        <select className="optionBar" defaultValue={"DEFAULT"}>
+        <option className="optValue" value="DEFAULT" disabled="disabled">Choose</option>
         <option ref={optType}>House</option>
         <option ref={optType}>Apartment</option>
         <option ref={optType}>Cabin</option>

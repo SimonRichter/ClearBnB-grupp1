@@ -1,9 +1,8 @@
-import React, { useEffect, useContext, useState, useRef} from 'react';
+import React, { useContext} from 'react';
 import '../style/Home.css';
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContextProvider'
 import Snackbar from '@material-ui/core/Snackbar';
-import Button from '@material-ui/core/Button'
 import Alert from '@material-ui/lab/Alert';
 
 
@@ -53,7 +52,7 @@ const Home = () => {
         <div><p>Start Travel</p></div>
         <button onClick={exploreHandler}  className="exploreBtn" >Explore the residences</button>
       </div>
-      <div class="arrow bounce"></div>
+      <div className="arrow bounce"></div>
       </div>
        <p className="exploreText">EXPLORE THE WORLD</p>
       <div className="divImgs">
