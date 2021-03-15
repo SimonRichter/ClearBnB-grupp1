@@ -43,15 +43,6 @@ const ResidenceDetails = () => {
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
     setTotalPrice(differenceInDays * residence.price);
 
-    let howManyDaysBooked = 0;
-    residence.bookedDays.forEach(r => {
-      if (r > startDateInMillis && r < endDateInMillis) {
-        howManyDaysBooked++;
-      }
-    });
-    const reducedPrice = totalPrice - (residence.price * howManyDaysBooked);
-    setTotalPrice(reducedPrice);
-
     for (let i = startDateInMillis; i <= endDateInMillis; i += oneDayInMillis){
       allTheDaysBooked.push(i);
     }
@@ -67,7 +58,7 @@ const ResidenceDetails = () => {
       endDate: endDateInMillis,
       userId: whoAmI._id,
       residenceId: id,
-      price: reducedPrice
+      price: totalPrice
     }
 
     addBooking(bookingObj)
@@ -112,20 +103,28 @@ const ResidenceDetails = () => {
   useEffect(() => { 
     const startDateInMillis = Math.round(new Date(startDate).getTime() / 1000);
     const endDateInMillis = Math.round(new Date(endDate).getTime() / 1000);
+    const oneDayInMillis = 86400000 / 1000;
 
     if (startDate !== null && endDate !== null) {
       setunFilledFields(false);
-      const differenceInTime = endDate.getTime() - startDate.getTime();
-      let differenceInDays = differenceInTime / (1000 * 3600 * 24);
-
-    let howManyDaysBooked = 0;
-    residence.bookedDays.forEach(r => {
-      if (r > startDateInMillis && r < endDateInMillis) {
-        howManyDaysBooked++;
+      // const differenceInTime = endDate.getTime() - startDate.getTime();
+      // let differenceInDays = differenceInTime / (1000 * 3600 * 24);
+      let differenceInDays = 0;
+      for (let i = startDateInMillis; i < endDateInMillis; i += oneDayInMillis){
+        differenceInDays++;
       }
-    });
       
-      differenceInDays = differenceInDays - howManyDaysBooked;
+      if (residence.bookedDays) {
+        let howManyDaysBooked = 0;
+        residence.bookedDays.forEach(r => {
+          if (r > startDateInMillis && r < endDateInMillis) {
+            howManyDaysBooked++;
+          }
+        });
+        console.log(howManyDaysBooked);
+        differenceInDays = differenceInDays - howManyDaysBooked;
+      }
+      console.log('difference in days', differenceInDays);
       setTotalPrice(differenceInDays * residence.price);
     } else {
       setTotalPrice(null);
