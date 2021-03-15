@@ -17,6 +17,16 @@
   transition: 300ms;
 }
 
+.residences > .searchFields > p{
+  margin: 0;
+  cursor: pointer;
+  color: #f50057;
+  background: white;
+  display: inline;
+  padding: 5px;
+  border-radius: 50%;
+}
+
 .residences > .searchFields > form > input{
   border: none;
   border-radius: 10px;
