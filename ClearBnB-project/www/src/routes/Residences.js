@@ -27,20 +27,19 @@ const Residences = (props) => {
     }
 
     if (city.current.value !== '' && country.current.value !== '') {
-      const filter = residences.filter(r => r.country === country.current.value &&
-      r.city === city.current.value);
+      const filter = residences.filter(r => r.country.toUpperCase() === country.current.value.toUpperCase() &&
+      r.city.toUpperCase() === city.current.value.toUpperCase());
       setFilteredList([...filter]);
     }
     else if (country.current.value !== '' && city.current.value === '') {
-      const filter = residences.filter(r => r.country === country.current.value);
+      const filter = residences.filter(r => r.country.toUpperCase() === country.current.value.toUpperCase());
       setFilteredList([...filter]);
     }
     else if (country.current.value === '' && city.current.value !== '') {
-      const filter = residences.filter(r => r.city === city.current.value);
+      const filter = residences.filter(r => r.city.toUpperCase() === city.current.value.toUpperCase());
       setFilteredList([...filter]);
     }
 
-    console.log('here',country.current.value, city.current.value);
   }
 
   useEffect(() => {
