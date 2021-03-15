@@ -13,13 +13,14 @@ import ResidenceDetails from './routes/ResidenceDetails'
 import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
+import Page404 from './routes/Page404'
 import { useEffect, useContext } from 'react';
 
 
 function App() {
-  const page404 = () => (
-    <h1>Page does not exist {window.location.pathname}</h1>
-  )
+  // const page404 = () => (
+  //   <h1>Page does not exist {window.location.pathname}</h1>
+  // )
 
   return (
     <FeatureProvider>
@@ -39,7 +40,7 @@ function App() {
           <Route path="/register" exact component={Register} />
           <Route path="/residence/:id" exact component={ResidenceDetails} />
           <Route path="/myBookings" exact component={MyBookings}/>
-          <Route path="*" component={page404}/>
+          <Route path="*" component={Page404}/>
       </Switch>
     </div>
     </Router>

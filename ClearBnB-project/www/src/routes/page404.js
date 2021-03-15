@@ -1,6 +1,9 @@
 import React from 'react'
 import '../style/About.css'
 
-const page404 = () =>{
-  
+const Page404 = () =>{
+  <div className="page404">
+
+  </div>
 }
+export default Page404;
