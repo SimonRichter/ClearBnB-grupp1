@@ -7,7 +7,7 @@ const Residences = (props) => {
 
   const category = props.location.param1
   const { residences,fetchResidences } = useContext(ResidenceContext);
-  const [filteredList, setFilteredList] = useState([...residences]);
+  const [filteredList, setFilteredList] = useState(null);
 
 
   const country = useRef('');
@@ -44,7 +44,14 @@ const Residences = (props) => {
   }
 
   useEffect(() => {
-    const data = fetchResidences().then(r => setFilteredList([...r]));
+    fetchResidences().then(r => {
+    if (category) {
+      const filter = residences.filter(r => r.country === category);
+      setFilteredList([...filter]);
+    } else {
+      setFilteredList([...r]);
+    }
+    });
   },[])
   
  
@@ -59,8 +66,7 @@ const Residences = (props) => {
       </form>
       <button onClick={showAll}>Show all</button>
       </div>
-      <ResidenceList residences={filteredList} />
-      {category && console.log(category)}
+      {filteredList && <ResidenceList residences={filteredList} />}
     </div>
   );
 }
