@@ -67,7 +67,6 @@ const Residences = (props) => {
       <button onClick={showAll}>Show all</button>
       </div>
       {filteredList && <ResidenceList residences={filteredList} />}
-      {console.log('times')}
     </div>
   );
 }
