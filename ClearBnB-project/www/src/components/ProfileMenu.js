@@ -100,6 +100,14 @@ export default function CustomizedMenus(props) {
           </ListItemIcon>
           <ListItemText primary="My bookings"/>
         </StyledMenuItem>
+
+        <StyledMenuItem onClick={() => history.push('/myRentals')}>
+          <ListItemIcon>
+            <LibraryBooksRoundedIcon fontSize="small"/>
+          </ListItemIcon>
+          <ListItemText primary="My Rentals"/>
+        </StyledMenuItem>
+
         <StyledMenuItem onClick={() => onLogOut()}>
           <ListItemIcon>
             <ExitToAppRoundedIcon color="error" fontSize="small" />
