@@ -50,6 +50,7 @@ export const UserProvider = (props) => {
     setWhoAmI(null);
     setLogoutToast(true);
     console.log(res);
+    
   }
 
   const whoIsOnline = async() => {
