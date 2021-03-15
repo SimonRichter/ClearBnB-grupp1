@@ -11,12 +11,22 @@ const Home = () => {
 
   const toSweden = { 
   pathname: "/residences", 
-  param1: "Sweden" 
+  country: "Sweden" 
   };
 
   const toDenmark = { 
   pathname: "/residences", 
-  param1: "Denmark" 
+  country: "Denmark" 
+  };
+
+  const toFinland = { 
+  pathname: "/residences", 
+  country: "Finland" 
+  };
+
+  const toIceland = { 
+  pathname: "/residences", 
+  country: "Iceland" 
   };
 
 
@@ -70,7 +80,7 @@ const Home = () => {
        <p className="exploreText">EXPLORE THE WORLD</p>
       <div className="divImgs">
         <div>
-        <img src="https://cdn.shopify.com/s/files/1/1824/2601/files/photo_2020-10-12_10-45-26_480x480.jpg?v=1602524781" alt="" />
+        <img src="https://www.sweden.org.za/images/swedens-flag.jpg" alt="" />
         <p>Begin a adventure you've allways dreamed about.</p>
         </div>
         <div>

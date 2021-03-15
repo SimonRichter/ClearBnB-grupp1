@@ -5,7 +5,7 @@ import '../style/Residences.css';
 
 const Residences = (props) => {
 
-  const category = props.location.param1
+  const category = props.location.country;
   const { residences,fetchResidences } = useContext(ResidenceContext);
   const [filteredList, setFilteredList] = useState(null);
 
