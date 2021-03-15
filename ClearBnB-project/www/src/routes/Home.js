@@ -84,16 +84,17 @@ const Home = () => {
         <p>Begin a adventure you've allways dreamed about.</p>
         </div>
         <div>
-        <img src="https://cdn.shopify.com/s/files/1/1824/2601/files/photo_2020-10-12_10-45-26_480x480.jpg?v=1602524781" alt="" />
+        <img src="https://c4.wallpaperflare.com/wallpaper/3/770/559/flags-flag-of-denmark-danish-flag-flag-hd-wallpaper-preview.jpg" alt="" />
           <Link to={toSweden}><p>Begin a adventure you've allways dreamed about.</p></Link>
         </div>
         <div>
-        <img src="https://cdn.shopify.com/s/files/1/1824/2601/files/photo_2020-10-12_10-45-26_480x480.jpg?v=1602524781" alt="" />
+        <img src="https://www.countryflags.com/wp-content/uploads/finland-flag-png-large.png" alt="" />
           <Link to={toDenmark}><p>Begin a adventure you've allways dreamed about.</p></Link>
         </div>
-        
-        
-        
+        <div>
+        <img src="https://www.countryflags.com/wp-content/uploads/iceland-flag-png-large.png" alt="" />
+          <Link to={toDenmark}><p>Begin a adventure you've allways dreamed about.</p></Link>
+        </div>
         </div>
     </div>
 
