@@ -1,4 +1,5 @@
-import React, { useState, useRef, useContext }from 'react';
+import React, { useState, useRef, useContext } from 'react';
+import { useHistory } from 'react-router-dom'
 import '../style/AddResidenceStyle.css';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
@@ -9,7 +10,7 @@ import { ResidenceContext } from '../contexts/ResidenceContextProvider'
 
 
 const AddResidence = () => {
-
+  const history = useHistory();
   const { addFeature } = useContext(FeatureContext)
   const { addResidence } = useContext(ResidenceContext)
   const { whoAmI } = useContext(UserContext);
@@ -132,6 +133,8 @@ const AddResidence = () => {
     }
     addResidence(residence)
     console.log(residence);
+    history.push('/myRentals');
+    
   
   }
 

@@ -42,12 +42,14 @@
   cursor: pointer;
   font-weight: bolder;
   font-size: 18px;
-  background-color: #4699e0;
+  color: #f50056e7;
+  background-color: #c2c2c2;
+  opacity: 80%;
 }
 
 .addResWrapper .incGuests:hover,
 .addResWrapper .decGuests:hover {
-  background-color: #79bffc;
+  opacity: 100%;
 }
 
 .addResWrapper .numberOfGuests {
@@ -63,7 +65,7 @@
   width: 300px;
   font-size: 17px;
   border: none;
-  border-bottom: 1px solid rgb(0, 97, 153);
+  border-bottom: 1px solid #006199;
   margin-bottom: 30px;
 }
 
@@ -163,7 +165,7 @@
   position: absolute;
   height: 0;
   width: 0.2rem;
-  background-color: #337ab7;
+  background-color: #f50056e7;
   display: block;
   -webkit-transform-origin: left top;
   transform-origin: left top;
@@ -219,9 +221,4 @@
   border: none;
   outline: none;
   border-bottom: 1.5px solid rgb(0, 102, 149);
-}
-
-.addResWrapper .react-datepicker__close-icon button {
-  color: red;
-  background-color: red;
 }
