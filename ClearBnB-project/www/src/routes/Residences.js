@@ -8,6 +8,7 @@ const Residences = (props) => {
   const category = props.location.country;
   const { residences,fetchResidences } = useContext(ResidenceContext);
   const [filteredList, setFilteredList] = useState(null);
+  const [showSearchFields, setShowSearchFields] = useState(false);
 
 
   const country = useRef('');
@@ -53,13 +54,14 @@ const Residences = (props) => {
 
   return (  
     <div className="residences">
-      <div className="searchFields">
-      <form onSubmit={searchFor}>
-        <input ref={country} type="text" placeholder="Search by country.." />
-        <input ref={city} type="text" placeholder="Search by city.." />
-        <button>Search</button>
-      </form>
-      </div>
+      {!showSearchFields && <span onClick={() => setShowSearchFields(true)}>🔍</span>}
+      {showSearchFields && <div className="searchFields">
+        <form onSubmit={searchFor}>
+          <input ref={country} type="text" placeholder="Search by country.." />
+          <input ref={city} type="text" placeholder="Search by city.." />
+          <button>Search</button>
+        </form>
+      </div>}
       {filteredList && <ResidenceList residences={filteredList} />}
     </div>
   );
