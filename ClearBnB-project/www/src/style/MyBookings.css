@@ -14,10 +14,27 @@
   background: white;
 }
 
+.myBookings > .wrapper > .future > p{
+  margin: 5px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #f50057;
+  letter-spacing: 6.2px;
+}
+
 .myBookings > .wrapper > .passed{
   border-radius: 10px;
   background: white;
 }
 
+.myBookings > .wrapper > .passed > p{
+  margin: 5px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #f50057;
+  letter-spacing: 6.2px;
+}
 
 
