@@ -9,6 +9,11 @@
   top: 0;
 }
 
+.logoImg{
+ width: 9em;
+ margin: 17px 0 5px 5px;
+}
+
 .nav-bar h4 {
   margin: 0;
   margin-left: 10px;
