@@ -8,3 +8,10 @@
   padding-top: 10px;
 }
 
+.MuiButton-label {
+  background: white;
+}
+
+.MuiButtonBase-root .MuiButton-root .MuiButton-text {
+  padding: 0;
+}

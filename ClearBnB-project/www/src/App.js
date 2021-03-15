@@ -13,6 +13,7 @@ import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
 import AddResidence from './routes/AddResidence';
+import MyRentals from './routes/MyRentals'
 
 
 function App() {
@@ -36,7 +37,8 @@ function App() {
           <Route path="/register" exact component={Register} />
           <Route path="/residence/:id" exact component={ResidenceDetails} />
           <Route path="/myBookings" exact component={MyBookings} />   
-          <Route path="/addResidence" exact component={AddResidence}/>        
+                  <Route path="/addResidence" exact component={AddResidence} />     
+          <Route path="/myRentals" exact component={MyRentals}/>          
       </Switch>
     </div>
     </Router>
