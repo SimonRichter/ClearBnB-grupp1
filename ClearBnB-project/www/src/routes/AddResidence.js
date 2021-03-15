@@ -167,7 +167,7 @@ const AddResidence = () => {
     <div className="addResWrapper">
       <form onSubmit={submitHandler}>
       <h3>What type of recidense would you like to host?</h3>
-        <select className="optionBar">
+        <select required className="optionBar">
         <option class="optValue" value="" disabled="disabled" selected="selected">Choose</option>
         <option ref={optType}>House</option>
         <option ref={optType}>Apartment</option>
@@ -186,7 +186,7 @@ const AddResidence = () => {
         </div>
 
         <p className="advTitle">Advertisment title</p>
-        <input ref={adTitle} className="inputTitle" type="text" placeholder="exmaple: 'Luxuary Cabin with jazuzzi'" />
+        <input required ref={adTitle} className="inputTitle" type="text" placeholder="exmaple: 'Luxuary Cabin with jazuzzi'" />
 
       
      
@@ -237,19 +237,19 @@ const AddResidence = () => {
         </div>
         
         <p>Location information</p>
-        <input ref={countryRef} className="inputTitle" type="text" placeholder="Country" />
-        <input ref={cityRef} className="inputTitle" type="text" placeholder="City" />
-        <input ref={adressRef} className="inputTitle" type="text" placeholder="Adress" />
+        <input required ref={countryRef} className="inputTitle" type="text" placeholder="Country" />
+        <input required ref={cityRef} className="inputTitle" type="text" placeholder="City" />
+        <input required ref={adressRef} className="inputTitle" type="text" placeholder="Adress" />
 
          <p>Upload image-links</p> 
-        <input ref={imageRef1} className="inputTitle" type="text" placeholder="image 1" />
-        <input ref={imageRef2} className="inputTitle" type="text" placeholder="image 2" />
-        <input ref={imageRef3} className="inputTitle" type="text" placeholder="image 3" />
-        <input ref={imageRef4} className="inputTitle" type="text" placeholder="image 4" />
-        <input ref={imageRef5} className="inputTitle" type="text" placeholder="image 5" />
+        <input required ref={imageRef1} className="inputTitle" type="text" placeholder="image 1" />
+        <input ref={imageRef2} className="inputTitle" type="text" placeholder="image 2 (optional)" />
+        <input ref={imageRef3} className="inputTitle" type="text" placeholder="image 3 (optional)" />
+        <input ref={imageRef4} className="inputTitle" type="text" placeholder="image 4 (optional)" />
+        <input ref={imageRef5} className="inputTitle" type="text" placeholder="image 5 (optional)" />
 
         <p>Description</p> 
-        <textarea ref={descriptionRef} className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
+        <textarea required ref={descriptionRef} className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
         
         <p>Price per night</p>
         <span>€</span><input ref={priceRef} className="inputPrice" type="number" required step="20" min="20" placeholder="Price (min 20€)" />
@@ -257,6 +257,7 @@ const AddResidence = () => {
         <div className="datePickerDiv">
           <p>Select hosting date</p>
           <DatePicker
+            required
             placeholderText={'Start Date'}
             selected={selectedStartDate}
             onChange={date => setSelectedStartDate(date)}
@@ -264,6 +265,7 @@ const AddResidence = () => {
             isClearable
           />
           <DatePicker
+            required
             placeholderText={'End Date'}
             selected={selectedEndDate}
             onChange={date => setSelectedEndDate(date)}

@@ -14,7 +14,7 @@ const { whoAmI, whoIsOnline } = useContext(UserContext);
 
   return (
     <div className="nav-bar">
-      <h4>ClearBnB</h4>
+      <img src="../Images/logo_transparent.png" alt=""/>
       <div className="links">
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
