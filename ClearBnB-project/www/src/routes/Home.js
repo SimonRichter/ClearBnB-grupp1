@@ -80,20 +80,16 @@ const Home = () => {
        <p className="exploreText">EXPLORE THE WORLD</p>
       <div className="divImgs">
         <div>
-        <img src="https://www.sweden.org.za/images/swedens-flag.jpg" alt="" />
-        <p>Begin a adventure you've allways dreamed about.</p>
+          <Link to={toSweden}><img src="https://www.sweden.org.za/images/swedens-flag.jpg" alt="" /></Link>
         </div>
         <div>
-        <img src="https://c4.wallpaperflare.com/wallpaper/3/770/559/flags-flag-of-denmark-danish-flag-flag-hd-wallpaper-preview.jpg" alt="" />
-          <Link to={toSweden}><p>Begin a adventure you've allways dreamed about.</p></Link>
+          <Link to={toDenmark}><img src="https://c4.wallpaperflare.com/wallpaper/3/770/559/flags-flag-of-denmark-danish-flag-flag-hd-wallpaper-preview.jpg" alt="" /></Link>
         </div>
         <div>
-        <img src="https://www.countryflags.com/wp-content/uploads/finland-flag-png-large.png" alt="" />
-          <Link to={toDenmark}><p>Begin a adventure you've allways dreamed about.</p></Link>
+          <Link to={toFinland}><img src="https://www.countryflags.com/wp-content/uploads/finland-flag-png-large.png" alt="" /></Link>
         </div>
         <div>
-        <img src="https://www.countryflags.com/wp-content/uploads/iceland-flag-png-large.png" alt="" />
-          <Link to={toDenmark}><p>Begin a adventure you've allways dreamed about.</p></Link>
+          <Link to={toIceland}><img src="https://www.countryflags.com/wp-content/uploads/iceland-flag-png-large.png" alt="" /></Link>
         </div>
         </div>
     </div>
