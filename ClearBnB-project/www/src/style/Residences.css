@@ -1,3 +1,22 @@
+.residences > button{
+  margin: 10px;
+  margin-bottom: 0;
+  margin-left: 55px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 6.2px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.residences > button:hover{
+  Transform: scale(1.1);
+  transition: 300ms;
+}
+
 .residences > .searchFields > form > input{
   border: none;
   border-radius: 10px;
