@@ -43,7 +43,6 @@ const ResidenceDetails = () => {
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
     setTotalPrice(differenceInDays * residence.price);
 
-    console.log('before', totalPrice);
     let howManyDaysBooked = 0;
     residence.bookedDays.forEach(r => {
       if (r > startDateInMillis && r < endDateInMillis) {
@@ -52,32 +51,28 @@ const ResidenceDetails = () => {
     });
     const reducedPrice = totalPrice - (residence.price * howManyDaysBooked);
     setTotalPrice(reducedPrice);
-    console.log('after', totalPrice);
-
 
     for (let i = startDateInMillis; i <= endDateInMillis; i += oneDayInMillis){
       allTheDaysBooked.push(i);
     }
-    
+
     const bookedDaysObj = {
       bookedDays: allTheDaysBooked
     }
 
-    //updateResidence(residence._id, bookedDaysObj);
+    updateResidence(residence._id, bookedDaysObj);
     
     const bookingObj = {
       startDate: startDateInMillis,
       endDate: endDateInMillis,
       userId: whoAmI._id,
       residenceId: id,
-      price: totalPrice
+      price: reducedPrice
     }
 
+    addBooking(bookingObj)
 
-    //Method to add bookingObj to DB via context.
-    //addBooking(bookingObj)
-
-    //setShowConfirmPage(true);
+    setShowConfirmPage(true);
   }
 
   const filterForStartDate = date => {
@@ -114,7 +109,7 @@ const ResidenceDetails = () => {
   }
 
 
-  useEffect(() => {    
+  useEffect(() => { 
     if (startDate !== null && endDate !== null) {
       setunFilledFields(false);
       const differenceInTime = endDate.getTime() - startDate.getTime();
