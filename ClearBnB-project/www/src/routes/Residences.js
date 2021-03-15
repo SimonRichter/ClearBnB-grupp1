@@ -3,8 +3,9 @@ import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import ResidenceList from '../components/ResidenceList'
 import '../style/Residences.css';
 
-const Residences = () => {
+const Residences = (props) => {
 
+  const category = props.location.param1
   const { residences,fetchResidences } = useContext(ResidenceContext);
   const [filteredList, setFilteredList] = useState([...residences]);
 
@@ -59,6 +60,7 @@ const Residences = () => {
       <button onClick={showAll}>Show all</button>
       </div>
       <ResidenceList residences={filteredList} />
+      {category && console.log(category)}
     </div>
   );
 }

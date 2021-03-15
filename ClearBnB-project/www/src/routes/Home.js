@@ -8,6 +8,18 @@ import Alert from '@material-ui/lab/Alert';
 
 
 const Home = () => {
+
+  const toSweden = { 
+  pathname: "/residences", 
+  param1: "Sweden" 
+  };
+
+  const toDenmark = { 
+  pathname: "/residences", 
+  param1: "Denmark" 
+  };
+
+
   const history = useHistory();
    const { setLoginToast, loginToast, setLogoutToast, logoutToast } = useContext(UserContext);
   
@@ -63,11 +75,11 @@ const Home = () => {
         </div>
         <div>
         <img src="https://cdn.shopify.com/s/files/1/1824/2601/files/photo_2020-10-12_10-45-26_480x480.jpg?v=1602524781" alt="" />
-        <p>Begin a adventure you've allways dreamed about.</p>
+          <Link to={toSweden}><p>Begin a adventure you've allways dreamed about.</p></Link>
         </div>
         <div>
         <img src="https://cdn.shopify.com/s/files/1/1824/2601/files/photo_2020-10-12_10-45-26_480x480.jpg?v=1602524781" alt="" />
-        <p>Begin a adventure you've allways dreamed about.</p>
+          <Link to={toDenmark}><p>Begin a adventure you've allways dreamed about.</p></Link>
         </div>
         
         
