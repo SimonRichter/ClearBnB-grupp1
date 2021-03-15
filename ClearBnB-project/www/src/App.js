@@ -11,6 +11,7 @@ import Home from './routes/Home';
 import About from './routes/About';
 import Residences from './routes/Residences';
 import ResidenceDetails from './routes/ResidenceDetails'
+import MyRentals from './routes/MyRentals'
 import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
@@ -30,16 +31,17 @@ function App() {
     <div className="App">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       <Nav />
-        <div className="wrapper"></div>
+                <div className="wrapper"></div>
       <Switch>
           <Route path="/" exact component={Home} /> 
           <Route path="/about" exact component={About} />   
           <Route path="/residences" exact component={Residences} />  
           <Route path="/login" exact component={Login} />  
           <Route path="/register" exact component={Register} />
-          <Route path="/residence/:id" exact component={ResidenceDetails} />
-          <Route path="/myBookings" exact component={MyBookings} />   
+          <Route path="/residence/:id" exact component={ResidenceDetails} /> 
           <Route path="/addResidence" exact component={AddResidence}/>        
+          <Route path="/myBookings" exact component={MyBookings} /> 
+          <Route path="/myRentals" exact component={MyRentals} />        
       </Switch>
     </div>
     </Router>

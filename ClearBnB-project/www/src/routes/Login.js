@@ -1,9 +1,23 @@
 import React, { useRef, useContext, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContextProvider'
+
 import '../style/Login.css'
 
 const Login = () => {
+
+  const [open, setOpen] = useState(false);
+
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
+    
+    
 
   const history = useHistory();
   const { login,whoIsOnline } = useContext(UserContext);
@@ -27,21 +41,27 @@ const Login = () => {
       setFailed(true);
     } else {
       setFailed(false);
+
       whoIsOnline();
       history.push("/")
+
     }
   }
 
-
   return (  
     <div className="login">
+      <div className="snackBarIndex" >
+    </div>
       <div className="form-for-login">
         <form onSubmit={tryToLogin}>
         <input ref={email} required placeholder="Email.." type="email" />
           <input ref={password} required placeholder="Password.." type="password" />
           {failed && <p>Wrong username/password</p>}
-          <button>Login</button>
+          <button >Login</button>
+          <div>  
+    </div>
         </form>
+        
       </div>
     </div>
   );
