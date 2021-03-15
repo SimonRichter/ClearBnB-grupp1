@@ -1,10 +1,12 @@
 import React from 'react'
-import '../style/About.css'
+import '../style/Page404.css'
 
 const Page404 = () => {
   return (
-  <div className="page404">
-     <h1>Page does not exist {window.location.pathname}</h1>
+    <div className="page404">
+      <div className="container">
+        <h1>Page does not exist {window.location.pathname}</h1>
+      </div>
   </div>
   )
 }

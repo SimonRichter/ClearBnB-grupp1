@@ -18,10 +18,6 @@ import { useEffect, useContext } from 'react';
 
 
 function App() {
-  // const page404 = () => (
-  //   <h1>Page does not exist {window.location.pathname}</h1>
-  // )
-
   return (
     <FeatureProvider>
     <BookingProvider>
