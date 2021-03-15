@@ -28,19 +28,27 @@ const ResidenceDetails = () => {
 
   const bookResidence = () => {
 
-    if (startDate === null && endDate === null) {
-      setunFilledFields(true);
-      return;
-    }    
-    setunFilledFields(false);
-    const differenceInTime = endDate.getTime() - startDate.getTime();
-    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-    setTotalPrice(differenceInDays * residence.price);
-
     const startDateInMillis = Math.round(new Date(startDate).getTime() / 1000);
     const endDateInMillis = Math.round(new Date(endDate).getTime() / 1000);
     const oneDayInMillis = 86400000 / 1000;
     const allTheDaysBooked = [];
+
+    if (startDate === null && endDate === null) {
+      setunFilledFields(true);
+      return;
+    }
+    
+    residence.bookedDays.forEach(r => {
+      if (r > startDateInMillis && r < endDateInMillis) {
+        console.log('yes');
+      }
+    })
+    
+
+    setunFilledFields(false);
+    const differenceInTime = endDate.getTime() - startDate.getTime();
+    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    setTotalPrice(differenceInDays * residence.price);
 
     for (let i = startDateInMillis; i <= endDateInMillis; i += oneDayInMillis){
       allTheDaysBooked.push(i);
@@ -50,7 +58,7 @@ const ResidenceDetails = () => {
       bookedDays: allTheDaysBooked
     }
 
-    updateResidence(residence._id, bookedDaysObj);
+    //updateResidence(residence._id, bookedDaysObj);
     
     const bookingObj = {
       startDate: startDateInMillis,
@@ -62,9 +70,9 @@ const ResidenceDetails = () => {
 
 
     //Method to add bookingObj to DB via context.
-    addBooking(bookingObj)
+    //addBooking(bookingObj)
 
-    setShowConfirmPage(true);
+    //setShowConfirmPage(true);
   }
 
   const filterForStartDate = date => {
