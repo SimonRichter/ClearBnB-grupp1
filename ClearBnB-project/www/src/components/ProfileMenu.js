@@ -94,6 +94,7 @@ export default function CustomizedMenus(props) {
           </ListItemIcon>
           <ListItemText primary="Host Residence" />
         </StyledMenuItem>
+        
         <StyledMenuItem onClick={() => history.push('/myBookings')}>
           <ListItemIcon>
             <LibraryBooksRoundedIcon fontSize="small"/>
