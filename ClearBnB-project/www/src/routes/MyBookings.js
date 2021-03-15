@@ -31,7 +31,7 @@ const MyBookings = () => {
           })}
         </div>  
         <div className="passed">
-          <h1>Passed bookings</h1>
+          <h1>Booking history</h1>
           {myResidences.map(r => {
             if (r.startDate * 1000 < currentDate) {
             return( <div className="passedBookings"><MyBookingItem key={r._id} booked={r} /></div>)
