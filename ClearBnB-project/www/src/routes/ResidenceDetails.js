@@ -38,22 +38,27 @@ const ResidenceDetails = () => {
       return;
     }
     
-    residence.bookedDays.forEach(r => {
-      if (r > startDateInMillis && r < endDateInMillis) {
-        console.log('yes');
-      }
-    })
-    
-
     setunFilledFields(false);
     const differenceInTime = endDate.getTime() - startDate.getTime();
     const differenceInDays = differenceInTime / (1000 * 3600 * 24);
     setTotalPrice(differenceInDays * residence.price);
 
+    console.log('before', totalPrice);
+    let howManyDaysBooked = 0;
+    residence.bookedDays.forEach(r => {
+      if (r > startDateInMillis && r < endDateInMillis) {
+        howManyDaysBooked++;
+      }
+    });
+    const reducedPrice = totalPrice - (residence.price * howManyDaysBooked);
+    setTotalPrice(reducedPrice);
+    console.log('after', totalPrice);
+
+
     for (let i = startDateInMillis; i <= endDateInMillis; i += oneDayInMillis){
       allTheDaysBooked.push(i);
     }
-
+    
     const bookedDaysObj = {
       bookedDays: allTheDaysBooked
     }
