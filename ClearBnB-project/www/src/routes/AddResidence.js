@@ -177,7 +177,6 @@ const AddResidence = () => {
         <option ref={optType}>Cabin</option>
         <option ref={optType}>Tent</option>
         <option ref={optType}>Mansion</option>
-        <option ref={optType}>Iglo</option>
         <option ref={optType}>Trailer</option>
       </select>
      

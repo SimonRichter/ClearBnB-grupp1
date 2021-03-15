@@ -16,7 +16,7 @@
 
 .logoImg {
   width: 9em;
-  margin: 17px 0 5px 5px;
+  margin: 25px 0 5px 5px;
 }
 
 .nav-bar h4 {
@@ -32,14 +32,18 @@
 }
 
 .links {
+  margin-top: 8px;
   align-self: center;
   font-size: larger;
 }
 
 .links a {
+  margin: 15px;
+  text-align: center;
   font-family: "Montserrat", sans-serif;
-  color: black;
-  margin: 20px;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.2px;
 }
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {

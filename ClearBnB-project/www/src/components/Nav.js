@@ -16,12 +16,12 @@ const { whoAmI, whoIsOnline } = useContext(UserContext);
     <div className="nav-bar">
       <img className="logoImg" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt=""/>
       <div className="links">
-      <Link to="/">Home</Link>
-      <Link to="/about">About</Link>
-        <Link to="/Residences">Residences</Link>
-      {!whoAmI && <Link to="/login">Login</Link>}
-      {!whoAmI && <Link to="/register">Register</Link>} 
-        <ProfileMenu/>
+      <Link to="/">HOME</Link>
+      <Link to="/about">ABOUT</Link>
+        <Link to="/Residences">RESIDENCES</Link>
+      {!whoAmI && <Link to="/login">LOGIN</Link>}
+      {!whoAmI && <Link to="/register">REGISTER</Link>} 
+         <ProfileMenu/>
       </div>
     </div>
   ); 
