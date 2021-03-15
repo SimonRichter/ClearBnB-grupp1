@@ -24,11 +24,7 @@
   margin-bottom: 30px;
   cursor: pointer;
   border-radius: 0;
-}
-.addResWrapper .optionBar:hover,
-.addResWrapper .optValue:hover {
-  background-color: rgba(0, 0, 0, 0.712);
-  color: rgb(245, 245, 245);
+  font-size: 15px;
 }
 
 .addResWrapper .incGuests,

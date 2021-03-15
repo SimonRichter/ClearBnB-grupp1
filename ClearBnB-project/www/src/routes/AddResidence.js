@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { UserContext } from '../contexts/UserContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider'
+import HomeIcon from '@material-ui/icons/Home';
 
 
 
@@ -177,8 +178,9 @@ const AddResidence = () => {
         <option ref={optType}>Cabin</option>
         <option ref={optType}>Tent</option>
         <option ref={optType}>Mansion</option>
-        <option ref={optType}>Trailer</option>
-      </select>
+          <option ref={optType}>Trailer</option>
+        </select>
+        
      
       
         <div className="guestDiv">
