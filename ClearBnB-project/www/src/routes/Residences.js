@@ -14,10 +14,6 @@ const Residences = (props) => {
   const city = useRef('');
 
 
-  const showAll = () => {
-    setFilteredList([...residences]);
-  }
-
   const searchFor = (e) => {
     e.preventDefault();
 
@@ -59,11 +55,10 @@ const Residences = (props) => {
     <div className="residences">
       <div className="searchFields">
       <form onSubmit={searchFor}>
-          <input ref={country} type="text" placeholder="Search by country.." />
+        <input ref={country} type="text" placeholder="Search by country.." />
         <input ref={city} type="text" placeholder="Search by city.." />
         <button>Search</button>
       </form>
-      <button onClick={showAll}>Show all</button>
       </div>
       {filteredList && <ResidenceList residences={filteredList} />}
     </div>
