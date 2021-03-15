@@ -110,10 +110,22 @@ const ResidenceDetails = () => {
 
 
   useEffect(() => { 
+    const startDateInMillis = Math.round(new Date(startDate).getTime() / 1000);
+    const endDateInMillis = Math.round(new Date(endDate).getTime() / 1000);
+
     if (startDate !== null && endDate !== null) {
       setunFilledFields(false);
       const differenceInTime = endDate.getTime() - startDate.getTime();
-      const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+      let differenceInDays = differenceInTime / (1000 * 3600 * 24);
+
+    let howManyDaysBooked = 0;
+    residence.bookedDays.forEach(r => {
+      if (r > startDateInMillis && r < endDateInMillis) {
+        howManyDaysBooked++;
+      }
+    });
+      
+      differenceInDays = differenceInDays - howManyDaysBooked;
       setTotalPrice(differenceInDays * residence.price);
     } else {
       setTotalPrice(null);
