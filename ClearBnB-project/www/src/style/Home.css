@@ -103,6 +103,15 @@
   padding: 10px;
 }
 
+.divImgs > div > p{
+  margin: 5px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: white;
+  letter-spacing: 6.2px;
+}
+
 .divImgs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -113,8 +122,8 @@
 }
 
 .divImgs img {
+  margin-left: 20%;
   opacity: 80%;
-  margin-left: 10%;
   object-fit: cover;
   width: 60%;
   height: 30%;

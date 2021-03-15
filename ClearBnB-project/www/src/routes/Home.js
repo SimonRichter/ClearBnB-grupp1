@@ -82,10 +82,22 @@ const Home = () => {
         <p>FILTER RESIDENCES BY COUNTRY</p>
       </div>
       <div className="divImgs">
+        <div>
           <Link to={toSweden}><img src="https://www.sweden.org.za/images/swedens-flag.jpg" alt="" /></Link>
+          <p>SWEDEN</p>
+        </div>
+        <div>
           <Link to={toDenmark}><img src="https://c4.wallpaperflare.com/wallpaper/3/770/559/flags-flag-of-denmark-danish-flag-flag-hd-wallpaper-preview.jpg" alt="" /></Link>
+          <p>DENMARK</p>
+        </div>
+        <div>
           <Link to={toFinland}><img src="https://www.countryflags.com/wp-content/uploads/finland-flag-png-large.png" alt="" /></Link>
+          <p>FINLAND</p>
+        </div>
+        <div>
           <Link to={toIceland}><img src="https://www.countryflags.com/wp-content/uploads/iceland-flag-png-large.png" alt="" /></Link>
+          <p>ICELAND</p>
+        </div>
         </div>
     </div>
 
