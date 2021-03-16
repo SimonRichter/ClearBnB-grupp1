@@ -21,10 +21,14 @@
   margin: 0;
   cursor: pointer;
   color: #f50057;
-  background: white;
   display: inline;
   padding: 5px;
   border-radius: 50%;
+}
+
+.residences > .searchFields > p:hover{
+  Transform: scale(1.1);
+  transition: 300ms;
 }
 
 .residences > .searchFields > form > input{

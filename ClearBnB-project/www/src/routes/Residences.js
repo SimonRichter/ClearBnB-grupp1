@@ -56,7 +56,7 @@ const Residences = (props) => {
     <div className="residences">
       {!showSearchFields && <button onClick={() => setShowSearchFields(true)}>SEARCH 🔍</button>}
       {showSearchFields && <div className="searchFields">
-        <p onClick={() => setShowSearchFields(false)}>X</p>
+        <p onClick={() => setShowSearchFields(false)}>❌</p>
         <form onSubmit={searchFor}>
           <input ref={country} type="text" placeholder="Search by country.." />
           <input ref={city} type="text" placeholder="Search by city.." />
