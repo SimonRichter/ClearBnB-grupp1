@@ -66,27 +66,12 @@
 }
 
 .links a {
-  /* margin: 30px; */
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   color: #f50057;
   letter-spacing: 2.2px;
   padding-bottom: 5px;
-}
-
-.shadow {
-  -webkit-box-shadow: inset 0px -5px 5px rgba(0,0,0,0.45);
-  -moz-box-shadow: inset 0px -5px 5px rgba(0,0,0,0.45);
-  box-shadow: inset 0px -5px 5px rgba(0,0,0,0.45);
-  transition: 1000ms;
-}
-
-.no-shadow {
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  transition: 300ms;
 }
 
 .profileMenu {
@@ -157,10 +142,7 @@
   align-content: center;
   justify-content: center;
   font-size: 36px;
-  background: #eee;
-  -webkit-box-shadow: inset 0px -5px 5px rgba(0,0,0,0.45);
-  -moz-box-shadow: inset 0px -5px 5px rgba(0,0,0,0.45);
-  box-shadow: inset 0px -5px 5px rgba(0,0,0,0.45);
+  background: #fff;
   transform:translateY(1.0);
   transition: 300ms;
 }
@@ -232,9 +214,6 @@
   justify-content: center;
   font-size: 36px;
   background: #fff;
-  -webkit-box-shadow: inset 0px -5px 5px rgba(0,0,0,0.45);
-  -moz-box-shadow: inset 0px -5px 5px rgba(0,0,0,0.45);
-  box-shadow: inset 0px -5px 5px rgba(0,0,0,0.45);
   transform:translateY(1.0);
   transition: 300ms;
 }
