@@ -69,7 +69,7 @@ const Home = () => {
       </Snackbar>
 
       <div className="home">
-      <img className="homeImage" src="https://i.postimg.cc/kXXSQpKb/bkpicture-1.png" alt="" />
+      <img className="homeImage" src="https://i.postimg.cc/DwGYFD3x/New-Project-1.png" alt="" />
 
       <div className="startTravel">
         <p>Start Travel</p>

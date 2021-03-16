@@ -61,7 +61,7 @@
   margin: 200px 0 5px 0;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  color: white;
+  color: #f50057;
   letter-spacing: 6.2px;
 }
 .exploreBtn {
@@ -87,28 +87,28 @@
   transition: 500ms;
 }
 
-.homeWrapper .information{
+.homeWrapper .information {
   margin-top: 20px;
   margin-bottom: 0;
   background-color: rgba(245, 240, 240, 0.527);
 }
 
-.homeWrapper .information{
-    padding-top: 60px;
+.homeWrapper .information {
+  padding-top: 60px;
 }
 
-.homeWrapper .information > P{
+.homeWrapper .information > P {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   margin: 200px 0 5px 0;
-  color: white;
+  color: rgb(0, 0, 0);
   letter-spacing: 6.2px;
   margin: 0;
   padding: 10px;
 }
 
-.divImgs > div > p{
+.divImgs > div > p {
   margin: 5px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -136,10 +136,9 @@
 }
 
 .divImgs img:hover {
-  Transform: scale(1.1);
+  transform: scale(1.1);
   transition: 300ms;
 }
-
 
 .homeWrapper .toast {
   margin-top: 4em;
@@ -150,7 +149,7 @@
   text-align: center;
   z-index: 1;
   font-size: 30px;
-  color: rgba(255, 255, 255, 0.726);
+  color: black;
 }
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {
