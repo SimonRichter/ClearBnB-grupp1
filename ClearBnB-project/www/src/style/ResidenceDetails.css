@@ -154,7 +154,7 @@ transition: 300ms;
   .residenceDetail > .inner > .infoWrapper > .desc{
     width: 100%;
   }
-  .book-btn{
+  .residenceDetail .book-btn{
     width: 100%;
     text-align: center;
   }
@@ -166,7 +166,7 @@ transition: 300ms;
   .residenceDetail > .inner > .infoWrapper > .desc{
     width: 100%;
   }
-  .book-btn{
+  .residenceDetail .book-btn{
     width: 100%;
     text-align: center;
   }
@@ -178,7 +178,7 @@ transition: 300ms;
   .residenceDetail > .inner > .infoWrapper > .desc{
     width: 100%;
   }
-  .book-btn{
+  .residenceDetail .book-btn{
     width: 100%;
     text-align: center;
   }
