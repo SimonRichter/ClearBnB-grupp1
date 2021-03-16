@@ -7,7 +7,7 @@ const ResidenceList = ({residences}) => {
   return (
     <div className="residenceList">
       {residences.map(residence => (
-        <ResidenceItem key={residence.id} residence={residence}/>
+        <ResidenceItem key={residence._id} residence={residence}/>
       ))}
     </div>
   );
