@@ -74,14 +74,14 @@ const Home = () => {
     <div className="homeWrapper">
       <Snackbar className="toast"
         anchorOrigin={{ vertical, horizontal }}
-        open={loginToast} autoHideDuration={1000} onClose={handleCloseLogin}>
+        open={loginToast} autoHideDuration={2000} onClose={handleCloseLogin}>
         <Alert onClose={handleCloseLogin} severity="success">
           Logged in.
         </Alert>
       </Snackbar>
       <Snackbar className="toast"
         anchorOrigin={{ vertical, horizontal }}
-        open={logoutToast} autoHideDuration={1000} onClose={handleCloseLogout}>
+        open={logoutToast} autoHideDuration={2000} onClose={handleCloseLogout}>
         <Alert onClose={handleCloseLogout} severity="success">
           Logged out.
         </Alert>
