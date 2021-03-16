@@ -10,7 +10,7 @@
   z-index: 999;
 }
 
-a {
+.links a {
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 50% 100%;
@@ -20,8 +20,8 @@ a {
   padding-bottom: 5px;
 }
 
-a:hover,
-a:focus {
+.links a:hover,
+.links a:focus {
   background-size: 100% 2px;
 }
 
