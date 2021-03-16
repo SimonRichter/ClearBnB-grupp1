@@ -13,11 +13,12 @@ import MyRentals from './routes/MyRentals'
 import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
+import Page404 from './routes/Page404'
+import { useEffect, useContext } from 'react';
 import AddResidence from './routes/AddResidence';
 
 
 function App() {
-
   return (
    
     <FeatureProvider>
@@ -39,6 +40,7 @@ function App() {
           <Route path="/addResidence" exact component={AddResidence}/>        
           <Route path="/myBookings" exact component={MyBookings} /> 
           <Route path="/myRentals" exact component={MyRentals} />        
+          <Route path="*" component={Page404}/>
       </Switch>
     </div>
     </Router>

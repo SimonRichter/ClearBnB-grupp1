@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import '../style/Home.css';
+import {Link} from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContextProvider'
 import Snackbar from '@material-ui/core/Snackbar';
