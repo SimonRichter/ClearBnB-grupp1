@@ -6,6 +6,14 @@
   padding-top: 200px;
 }
 
+.form-for-login > form > p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.2px;
+  text-align: center;
+}
+
 .login > .form-for-login {
   opacity: 90%;
   width: 30%;

@@ -10,6 +10,7 @@
 .page404 img {
   width: 100%;
   margin-top: 10vh;
+  max-width: 600px;
 }
 .page404 .container{
   text-align: center;
