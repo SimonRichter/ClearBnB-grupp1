@@ -2,7 +2,6 @@ import Nav from './components/Nav';
 import './style/App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { UserProvider } from './contexts/UserContextProvider';
-import { UserContext } from './contexts/UserContextProvider';
 import { ResidenceProvider } from './contexts/ResidenceContextProvider';
 import { BookingProvider } from './contexts/BookingContextProvider';
 import { FeatureProvider } from './contexts/FeatureContextProvider'
@@ -16,10 +15,12 @@ import Login from './routes/Login';
 import Register from './routes/Register';
 import Page404 from './routes/Page404'
 import { useEffect, useContext } from 'react';
+import AddResidence from './routes/AddResidence';
 
 
 function App() {
   return (
+   
     <FeatureProvider>
     <BookingProvider>
     <ResidenceProvider>
@@ -35,7 +36,8 @@ function App() {
           <Route path="/residences" exact component={Residences} />  
           <Route path="/login" exact component={Login} />  
           <Route path="/register" exact component={Register} />
-          <Route path="/residence/:id" exact component={ResidenceDetails} />
+          <Route path="/residence/:id" exact component={ResidenceDetails} /> 
+          <Route path="/addResidence" exact component={AddResidence}/>        
           <Route path="/myBookings" exact component={MyBookings} /> 
           <Route path="/myRentals" exact component={MyRentals} />        
           <Route path="*" component={Page404}/>
@@ -45,7 +47,8 @@ function App() {
     </UserProvider>
     </ResidenceProvider>
     </BookingProvider>
-    </FeatureProvider>
+      </FeatureProvider>
+      
   );
 }
 
