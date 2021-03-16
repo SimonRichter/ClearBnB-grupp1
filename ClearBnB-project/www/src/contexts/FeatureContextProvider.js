@@ -31,7 +31,8 @@ export const FeatureProvider = (props) => {
     features,
     setFeatures,
     getSpecificFeature,
-    addFeature
+    addFeature,
+    fetchFeatures
   }
 
   useEffect(() => {
