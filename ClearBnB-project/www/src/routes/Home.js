@@ -29,6 +29,10 @@ const Home = () => {
   country: "Iceland" 
   };
 
+  const toHouse = { 
+  pathname: "/residences", 
+  type: "House" 
+  };
 
   const history = useHistory();
    const { setLoginToast, loginToast, setLogoutToast, logoutToast } = useContext(UserContext);
@@ -112,7 +116,7 @@ const Home = () => {
           <p>TRAILER</p>
         </div>
         <div>
-          <Link><img src="https://cdn2.vectorstock.com/i/1000x1000/83/06/funny-house-cartoon-vector-618306.jpg" alt="" /></Link>
+          <Link to={toHouse}><img src="https://cdn2.vectorstock.com/i/1000x1000/83/06/funny-house-cartoon-vector-618306.jpg" alt="" /></Link>
           <p>HOUSE</p>
         </div>
         <div>
