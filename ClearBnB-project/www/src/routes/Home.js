@@ -33,6 +33,21 @@ const Home = () => {
   pathname: "/residences", 
   type: "House" 
   };
+  
+  const toApartment = { 
+  pathname: "/residences", 
+  type: "Apartment" 
+  };
+  
+  const toTent = { 
+  pathname: "/residences", 
+  type: "Tent" 
+  };
+  
+  const toTrailer = { 
+  pathname: "/residences", 
+  type: "Trailer" 
+  };
 
   const history = useHistory();
    const { setLoginToast, loginToast, setLogoutToast, logoutToast } = useContext(UserContext);
@@ -108,11 +123,11 @@ const Home = () => {
       </div>
       <div className="typeImgs">
         <div>
-          <Link><img src="https://image.freepik.com/free-vector/camping-travel-tent-equipment-cartoon_18591-53394.jpg" alt="" /></Link>
+          <Link to={toTent}><img src="https://image.freepik.com/free-vector/camping-travel-tent-equipment-cartoon_18591-53394.jpg" alt="" /></Link>
           <p>TENT</p>
         </div>
         <div>
-          <Link><img src="https://previews.123rf.com/images/blamb/blamb1407/blamb140700941/29718891-a-retro-cartoon-steel-trailer-on-a-hill-.jpg" alt="" /></Link>
+          <Link to={toTrailer}><img src="https://previews.123rf.com/images/blamb/blamb1407/blamb140700941/29718891-a-retro-cartoon-steel-trailer-on-a-hill-.jpg" alt="" /></Link>
           <p>TRAILER</p>
         </div>
         <div>
@@ -120,7 +135,7 @@ const Home = () => {
           <p>HOUSE</p>
         </div>
         <div>
-          <Link><img src="https://as1.ftcdn.net/jpg/01/99/19/08/500_F_199190851_2trNihIOmqkfmUbJtjeKtATsYmE53gMw.jpg" alt="" /></Link>
+          <Link to={toApartment}><img src="https://as1.ftcdn.net/jpg/01/99/19/08/500_F_199190851_2trNihIOmqkfmUbJtjeKtATsYmE53gMw.jpg" alt="" /></Link>
           <p>APARTMENT</p>
         </div>
       </div>      
