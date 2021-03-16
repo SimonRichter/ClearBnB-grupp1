@@ -85,6 +85,9 @@
   width: 30vh;
   height: 30vh;
 }
+.flip-card-front > p{
+  font-size: 10px;
+}
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .flip-card{
@@ -92,5 +95,8 @@
   padding: 1vh;
   width: 20vh;
   height: 20vh;
+}
+.flip-card-front > p{
+  font-size: 1vh;
 }
 }
