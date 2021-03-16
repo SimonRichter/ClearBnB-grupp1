@@ -1,7 +1,8 @@
 .about{
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/83/Shaki_Waterfall2.jpg);
+  background-image: url(https://i.pinimg.com/originals/1e/7f/b2/1e7fb2cd8daf7c3dab51a60ef28099d7.jpg);
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
+  margin-top: -10vh;
 }
 
 .about .grid-item{
@@ -19,4 +20,28 @@
   display: grid;
   grid-template-columns: 15% 1fr 15%;
   padding: 10px;
+}
+
+@media (max-width: 650px){
+.about .grid-container {
+  display: grid;
+  grid-template-columns: 10% 1fr 10%;
+  padding: 10px;
+}
+}
+
+@media (max-width: 550px){
+.about .grid-container {
+  display: grid;
+  grid-template-columns: 2% 1fr 2%;
+  padding: 10px;
+}
+}
+
+@media (max-width: 450px){
+.about .grid-container {
+  display: grid;
+  grid-template-columns: 1% 1fr 1%;
+  padding: 10px;
+}
 }
