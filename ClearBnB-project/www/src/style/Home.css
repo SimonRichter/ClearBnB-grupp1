@@ -61,7 +61,7 @@
   margin: 200px 0 5px 0;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
-  color: white;
+  color: #f50057;
   letter-spacing: 6.2px;
 }
 .exploreBtn {
@@ -87,33 +87,58 @@
   transition: 500ms;
 }
 
-.homeWrapper .information{
+.homeWrapper .information {
   margin-top: 20px;
   margin-bottom: 0;
   background-color: rgba(245, 240, 240, 0.527);
+}
+
+.homeWrapper .information2{
+  padding-top: 60px;
+  background-color: rgba(245, 240, 240, 0.527);
+}
+
+.homeWrapper .information2 > P{
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  margin: 200px 0 5px 0;
+  color: black;
+  letter-spacing: 6.2px;
+  margin: 0;
+  padding: 10px;
 }
 
 .homeWrapper .information{
     padding-top: 60px;
 }
 
-.homeWrapper .information > P{
+.homeWrapper .information > P {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   margin: 200px 0 5px 0;
-  color: white;
+  color: black;
   letter-spacing: 6.2px;
   margin: 0;
   padding: 10px;
 }
 
-.divImgs > div > p{
+.divImgs > div > p {
   margin: 5px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
-  color: white;
+  color: black;
+  letter-spacing: 6.2px;
+}
+
+.typeImgs > div > p{
+  margin: 5px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: blck;
   letter-spacing: 6.2px;
 }
 
@@ -122,20 +147,43 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 40px;
   background-color: rgba(245, 240, 240, 0.527);
-  height: 647px;
   padding: 20px 20px 20px 20px;
+}
+
+.typeImgs{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px;
+  background-color: rgba(245, 240, 240, 0.527);
+  height: 270px;
+}
+
+.typeImgs img{
+  margin-left: 20%;
+  opacity: 60%;
+  object-fit: cover;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
 }
 
 .divImgs img {
   margin-left: 20%;
-  opacity: 80%;
+  opacity: 60%;
   object-fit: cover;
   width: 60%;
-  height: 30%;
+  height: 90%;
   border-radius: 50%;
 }
 
 .divImgs img:hover {
+   opacity: 80%;
+  transform: scale(1.1);
+  transition: 300ms;
+}
+
+.typeImgs img:hover{
+  opacity: 80%;
   Transform: scale(1.1);
   transition: 300ms;
 }
@@ -150,7 +198,7 @@
   text-align: center;
   z-index: 1;
   font-size: 30px;
-  color: rgba(255, 255, 255, 0.726);
+  color: black;
 }
 /* Media Query for Mobile Devices */
 @media (max-width: 480px) {

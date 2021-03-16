@@ -15,7 +15,7 @@ const ResidenceDetails = () => {
   const { residences, updateResidence } = useContext(ResidenceContext);
   const { whoAmI } = useContext(UserContext);
   const { addBooking } = useContext(BookingContext);
-  const { getSpecificFeature } = useContext(FeatureContext);
+  const { getSpecificFeature,fetchFeatures } = useContext(FeatureContext);
   let residence = residences.find(r => r._id === id);
 
   const [features, setFeatures] = useState(null);
@@ -132,7 +132,11 @@ const ResidenceDetails = () => {
   
   useEffect(() => {
     if (residence) {
-      setFeatures(...getSpecificFeature(residence.featuresId))  
+        fetchFeatures().then((r) => {
+          console.log('here', r);
+          setFeatures(...getSpecificFeature(r,residence.featuresId));
+        })
+        //setFeatures(...getSpecificFeature(residence.featuresId));
     };    
   }, [residence])
 
@@ -147,7 +151,7 @@ const ResidenceDetails = () => {
         </div>
         <div className="infoWrapper">
           <div className="desc">
-            <h1>{residence.title}</h1>
+            <p className="resTitle">{residence.title}</p>
             <p><span>Country: </span>{residence.country}</p>
             <p><span>City: </span>{residence.city}</p>
             <p><span>Address: </span>{residence.address}</p>

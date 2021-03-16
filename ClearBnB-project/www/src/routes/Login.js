@@ -41,7 +41,7 @@ const Login = () => {
         <form onSubmit={tryToLogin}>
         <input ref={email} required placeholder="Email.." type="email" />
           <input ref={password} required placeholder="Password.." type="password" />
-          {failed && <p>Wrong username/password</p>}
+          {failed && <p>WRONG USERNAME/PASSWORD</p>}
           <button >Login</button>
           <div>  
     </div>
