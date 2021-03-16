@@ -1,47 +1,52 @@
 .about{
-  background-image: url(https://i.pinimg.com/originals/1e/7f/b2/1e7fb2cd8daf7c3dab51a60ef28099d7.jpg);
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/8/83/Shaki_Waterfall2.jpg);
   width: 100%;
-  min-height: 100vh;
-  margin-top: -10vh;
+  min-height: 90vh;
+}
+.about h1{
+  color: red;
+  text-align: center;
 }
 
-.about .grid-item{
-  margin-top: 20vh;
-  grid-column: 2;
+.about .grid-item-text{
   opacity: 90%;
   background: #eee;
   padding: 20px;
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
-  border-radius: 5px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
+.about .upperDescription{
+  padding: 30px;
+  text-align: center;
+  max-width: 400px;
+  margin:auto;
+  border-color: lightblue;
+  border-style: solid;
+  border-radius: 15px;
+  margin-top: 10px;
+  background-color: rgba(173, 216, 230, 0.459);
+}
+.about .lowerDescription{
+  padding: 30px;
+  text-align: center;
+  max-width: 400px;
+  margin:auto;
+  border-color: lightblue;
+  border-style: solid;
+  border-radius: 15px;
+  margin-top: 10px;
+  background-color: rgba(173, 216, 230, 0.459);
+}
 .about .grid-container {
   display: grid;
-  grid-template-columns: 15% 1fr 15%;
+  grid-template-columns: 2fr 3fr 2fr;
   padding: 10px;
 }
-
-@media (max-width: 650px){
-.about .grid-container {
-  display: grid;
-  grid-template-columns: 10% 1fr 10%;
-  padding: 10px;
-}
-}
-
-@media (max-width: 550px){
-.about .grid-container {
-  display: grid;
-  grid-template-columns: 2% 1fr 2%;
-  padding: 10px;
-}
-}
-
-@media (max-width: 450px){
-.about .grid-container {
-  display: grid;
-  grid-template-columns: 1% 1fr 1%;
-  padding: 10px;
-}
+.about .grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
 }
