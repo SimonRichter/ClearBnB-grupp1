@@ -3,6 +3,8 @@ import { UserContext } from '../contexts/UserContextProvider'
 import '../style/Nav.css';
 import { Link } from 'react-router-dom'
 import ProfileMenu from './ProfileMenu';
+import {NavItem} from 'react-bootstrap'
+
 
 const Nav = () => {
 

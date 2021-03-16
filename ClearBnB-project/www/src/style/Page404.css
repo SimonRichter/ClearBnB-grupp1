@@ -1,0 +1,17 @@
+.page404{
+  /* background-image: url(https://images.homedepot-static.com/productImages/23e773bd-fe78-4ee8-90b7-820c6c2c5767/svn/allures-illusions-coffee-cups-mugs-giant-coffee-64_1000.jpg); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 110vh;
+  margin-top: -3vh;
+  width: 100vw;
+  background-color: white;
+}
+.page404 img {
+  width: 100%;
+  margin-top: 10vh;
+}
+.page404 .container{
+  text-align: center;
+  padding-top: 3vh;
+}

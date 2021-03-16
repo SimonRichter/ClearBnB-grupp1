@@ -3,19 +3,17 @@ import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import ResidenceList from '../components/ResidenceList'
 import '../style/Residences.css';
 
-const Residences = () => {
+const Residences = (props) => {
 
+  const category = props.location.country;
   const { residences,fetchResidences } = useContext(ResidenceContext);
-  const [filteredList, setFilteredList] = useState([...residences]);
+  const [filteredList, setFilteredList] = useState(null);
+  const [showSearchFields, setShowSearchFields] = useState(false);
 
 
   const country = useRef('');
   const city = useRef('');
 
-
-  const showAll = () => {
-    setFilteredList([...residences]);
-  }
 
   const searchFor = (e) => {
     e.preventDefault();
@@ -26,39 +24,46 @@ const Residences = () => {
     }
 
     if (city.current.value !== '' && country.current.value !== '') {
-      const filter = residences.filter(r => r.country === country.current.value &&
-      r.city === city.current.value);
+      const filter = residences.filter(r => r.country.toUpperCase() === country.current.value.toUpperCase() &&
+      r.city.toUpperCase() === city.current.value.toUpperCase());
       setFilteredList([...filter]);
     }
     else if (country.current.value !== '' && city.current.value === '') {
-      const filter = residences.filter(r => r.country === country.current.value);
+      const filter = residences.filter(r => r.country.toUpperCase() === country.current.value.toUpperCase());
       setFilteredList([...filter]);
     }
     else if (country.current.value === '' && city.current.value !== '') {
-      const filter = residences.filter(r => r.city === city.current.value);
+      const filter = residences.filter(r => r.city.toUpperCase() === city.current.value.toUpperCase());
       setFilteredList([...filter]);
     }
 
-    console.log('here',country.current.value, city.current.value);
   }
 
   useEffect(() => {
-    const data = fetchResidences().then(r => setFilteredList([...r]));
+    fetchResidences().then(r => {
+    if (category) {
+      const filter = residences.filter(r => r.country === category);
+      setFilteredList([...filter]);
+    } else {
+      setFilteredList([...r]);
+    }
+    });
   },[])
   
  
 
   return (  
     <div className="residences">
-      <div className="searchFields">
-      <form onSubmit={searchFor}>
+      {!showSearchFields && <button onClick={() => setShowSearchFields(true)}>SEARCH 🔍</button>}
+      {showSearchFields && <div className="searchFields">
+        <p onClick={() => setShowSearchFields(false)}>❌</p>
+        <form onSubmit={searchFor}>
           <input ref={country} type="text" placeholder="Search by country.." />
-        <input ref={city} type="text" placeholder="Search by city.." />
-        <button>Search</button>
-      </form>
-      <button onClick={showAll}>Show all</button>
-      </div>
-      <ResidenceList residences={filteredList} />
+          <input ref={city} type="text" placeholder="Search by city.." />
+          <button>Search</button>
+        </form>
+      </div>}
+      {filteredList && <ResidenceList residences={filteredList} />}
     </div>
   );
 }

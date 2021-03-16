@@ -22,6 +22,7 @@ export const ResidenceProvider = (props) => {
      })
 
     res = await res.json()
+    fetchResidences();
   }
 
   const addResidence = async (residenceObj) => {
@@ -38,10 +39,7 @@ export const ResidenceProvider = (props) => {
     fetchResidences();
   }, []);
 
-  useEffect(() => {
-    fetchResidences();
-  }, [updateResidence]);
-
+  
   const values = {
     residences,
     setResidences,
