@@ -15,7 +15,7 @@
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 50% 100%;
   background-repeat: no-repeat;
-  background-size: 0% 2px;
+  background-size: 0% 1px;
   transition: background-size 0.3s;
   padding-bottom: 5px;
 }
@@ -32,6 +32,12 @@
 .logoImg {
   width: 9em;
   margin: 25px 0 5px 5px;
+}
+
+.logoImg:hover {
+  transform: scale(1.05);
+  transition: 200ms;
+  background-color: transparent;
 }
 
 .nav-bar h4 {
