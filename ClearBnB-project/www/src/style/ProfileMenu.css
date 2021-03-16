@@ -1,0 +1,13 @@
+.MuiSvgIcon-root:hover {
+  transform: scale(1.3);
+  transition: 300ms;
+  background-color: transparent;
+}
+.MuiButton-root:hover {
+  text-decoration: none;
+  background-color: red;
+}
+
+.MuiButton-label {
+  margin-top: 10px;
+}

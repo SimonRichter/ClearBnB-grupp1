@@ -9,13 +9,13 @@ import Home from './routes/Home';
 import About from './routes/About';
 import Residences from './routes/Residences';
 import ResidenceDetails from './routes/ResidenceDetails'
-import MyRentals from './routes/MyRentals'
 import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
 import Page404 from './routes/Page404'
 import { useEffect, useContext } from 'react';
 import AddResidence from './routes/AddResidence';
+import MyRentals from './routes/MyRentals'
 
 
 function App() {

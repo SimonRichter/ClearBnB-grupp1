@@ -10,6 +10,7 @@ export const BookingProvider = (props) => {
     let data = await fetch('rest/bookings');
     data = await data.json();
     setBookings([...data]);
+    return data;
   }
 
   const addBooking = async (bookingObj) => {
@@ -26,16 +27,18 @@ export const BookingProvider = (props) => {
       setBookings([bookingObj]);
     }
   }
-  
-  const values = {
-    bookings,
-    setBookings,
-    addBooking
-  }
 
   useEffect(() => {
   fetchBookings();
   }, [])
+  
+  const values = {
+    bookings,
+    setBookings,
+    addBooking,
+    fetchBookings
+  }
+
   
   return (
     <BookingContext.Provider value={values}>

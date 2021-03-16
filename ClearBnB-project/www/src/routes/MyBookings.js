@@ -6,18 +6,38 @@ import '../style/MyBookings.css';
 
 const MyBookings = () => {
 
-  const { bookings } = useContext(BookingContext);
-  const { whoAmI } = useContext(UserContext);
+  const { fetchBookings } = useContext(BookingContext);
+  const { whoIsOnline } = useContext(UserContext);
   const currentDate = new Date().getTime();
   const [myResidences, setMyResidences] = useState(null);
 
 
-  useEffect(() => {
-    if (bookings) {
-      const booked = bookings.filter(b => b.userId === whoAmI._id);
+  const start = async () => {
+
+    const fetched = await fetchBookings();
+    const user = await whoIsOnline();
+
+
+    const booked = fetched.filter(b => b.userId === user._id);
+    if (booked) {
       setMyResidences([...booked]);
-    } 
-  },[bookings,whoAmI])
+      console.log(myResidences);
+    }
+    
+
+  }
+
+  // useEffect(() => {
+  //   if (bookings) {
+  //     const booked = bookings.filter(b => b.userId === whoAmI._id);
+  //     setMyResidences([...booked]);
+  //   } 
+  // }, [bookings, whoAmI])
+  
+
+  useEffect(() => {
+    start();
+  },[])
 
   return (
     <div className="myBookings">
