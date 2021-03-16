@@ -5,17 +5,9 @@
 }
 .MuiButton-root:hover {
   text-decoration: none;
-  background-color: transparent;
+  background-color: red;
 }
-.MuiButton-text {
-  padding: 10px 10px;
-}
+
 .MuiButton-label {
   margin-top: 10px;
-}
-.MuiButton-root {
-  margin-top: 30px;
-}
-.profileMenu:hover {
-  background-color: transparent;
 }
