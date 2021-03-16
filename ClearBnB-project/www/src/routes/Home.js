@@ -29,6 +29,25 @@ const Home = () => {
   country: "Iceland" 
   };
 
+  const toHouse = { 
+  pathname: "/residences", 
+  type: "House" 
+  };
+  
+  const toApartment = { 
+  pathname: "/residences", 
+  type: "Apartment" 
+  };
+  
+  const toTent = { 
+  pathname: "/residences", 
+  type: "Tent" 
+  };
+  
+  const toTrailer = { 
+  pathname: "/residences", 
+  type: "Trailer" 
+  };
 
   const history = useHistory();
    const { setLoginToast, loginToast, setLogoutToast, logoutToast } = useContext(UserContext);
@@ -98,7 +117,28 @@ const Home = () => {
           <Link to={toIceland}><img src="https://www.countryflags.com/wp-content/uploads/iceland-flag-png-large.png" alt="" /></Link>
           <p>ICELAND</p>
         </div>
+      </div>
+       <div className="information2">
+        <p>FILTER RESIDENCES BY TYPE</p>
+      </div>
+      <div className="typeImgs">
+        <div>
+          <Link to={toTent}><img src="https://image.freepik.com/free-vector/camping-travel-tent-equipment-cartoon_18591-53394.jpg" alt="" /></Link>
+          <p>TENT</p>
         </div>
+        <div>
+          <Link to={toTrailer}><img src="https://previews.123rf.com/images/blamb/blamb1407/blamb140700941/29718891-a-retro-cartoon-steel-trailer-on-a-hill-.jpg" alt="" /></Link>
+          <p>TRAILER</p>
+        </div>
+        <div>
+          <Link to={toHouse}><img src="https://cdn2.vectorstock.com/i/1000x1000/83/06/funny-house-cartoon-vector-618306.jpg" alt="" /></Link>
+          <p>HOUSE</p>
+        </div>
+        <div>
+          <Link to={toApartment}><img src="https://as1.ftcdn.net/jpg/01/99/19/08/500_F_199190851_2trNihIOmqkfmUbJtjeKtATsYmE53gMw.jpg" alt="" /></Link>
+          <p>APARTMENT</p>
+        </div>
+      </div>      
     </div>
 
   );
