@@ -13,7 +13,7 @@ const ResidenceItem = ({ residence }) => {
   return (
     <div className="residenceItem" onClick={goToDetailPage}>
       <img src={residence.imageURLs[0]} alt="" />
-      <h4>{ residence.title }</h4>
+      <p>{ residence.title }</p>
     </div>
   )
 }
