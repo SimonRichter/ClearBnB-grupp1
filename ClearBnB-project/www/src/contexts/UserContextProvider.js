@@ -59,6 +59,7 @@ export const UserProvider = (props) => {
       setWhoAmI(null);
     } else {
       setWhoAmI({ ...data });
+      return data;
     }
   }
 
