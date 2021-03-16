@@ -14,8 +14,12 @@ const MyRentals = () => {
   useEffect(() => {
     const myRentals = residences.filter(r => r.userId === whoAmI._id);
     setRentals([...myRentals]);
-    console.log(rentals);
-  },[])
+  }, [])
+  
+  useEffect(() => {
+    const myRentals = residences.filter(r => r.userId === whoAmI._id);
+    setRentals([...myRentals]);
+  },[residences])
 
   return (
     <div className="myRentals">
