@@ -38,7 +38,8 @@ const { whoAmI, whoIsOnline } = useContext(UserContext);
       {!whoAmI && <Link to="/register">REGISTER</Link>} 
          <ProfileMenu/>
       </div>
-    </div>
+      </div>
+      </div>
   ); 
 }
 
