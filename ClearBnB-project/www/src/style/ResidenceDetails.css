@@ -160,7 +160,16 @@ transition: 300ms;
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  
+  .residenceDetail > .inner >  .infoWrapper{
+  grid-template-columns: 1fr;
+  }
+  .residenceDetail > .inner > .infoWrapper > .desc{
+    width: 100%;
+  }
+  .book-btn{
+    width: 100%;
+    text-align: center;
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   
