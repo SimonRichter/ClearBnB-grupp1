@@ -22,7 +22,7 @@ const Nav = () => {
   
 
   return (
-    <div className="nav-bar">
+    <div className={isActive ? "nav-bar shadow" : "nav-bar no-shadow"}>
       <h4>ClearBnB</h4>
       <div as={NavItem} className="hamburger-menu-opened">
         <p className="hamburger-menu" onClick={handleToggle}>☰</p>
