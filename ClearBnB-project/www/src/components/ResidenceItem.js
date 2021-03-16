@@ -11,10 +11,19 @@ const ResidenceItem = ({ residence }) => {
   }
 
   return (
-    <div className="residenceItem" onClick={goToDetailPage}>
-      <img src={residence.imageURLs[0]} alt="" />
-      <p>{ residence.title }</p>
+    <div className="flip-card" onClick={goToDetailPage}>
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+          <img src={residence.imageURLs[0]} alt="" />
+          <p>{residence.title}</p>
+      </div>
+        <div class="flip-card-back">
+        <h1>John Doe</h1> 
+        <p>Architect & Engineer</p> 
+        <p>We love that guy</p>
+        </div>
     </div>
+  </div>
   )
 }
 
