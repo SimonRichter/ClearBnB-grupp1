@@ -38,9 +38,22 @@
 }
 
 .flip-card-back {
-  background-color: #2980b9;
+  background-color: #eee;
   color: white;
   transform: rotateY(180deg);
+}
+.flip-card-back > p{
+  padding: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.flip-card-back > p > span{
+  color: black;
 }
 
 .flip-card-front > p{

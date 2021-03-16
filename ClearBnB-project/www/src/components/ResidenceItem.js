@@ -18,9 +18,10 @@ const ResidenceItem = ({ residence }) => {
           <p>{residence.title}</p>
       </div>
         <div class="flip-card-back">
-        <h1>John Doe</h1> 
-        <p>Architect & Engineer</p> 
-        <p>We love that guy</p>
+        <p><span>Country: </span>{residence.country}</p>
+        <p><span>City: </span>{residence.city}</p>
+        <p><span>Address: </span>{residence.address}</p>
+        <p><span>Price per night: </span>{residence.price}€</p>
         </div>
     </div>
   </div>
