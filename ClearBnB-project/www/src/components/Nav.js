@@ -1,18 +1,25 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../contexts/UserContextProvider'
 import '../style/Nav.css';
-import { Link } from 'react-router-dom'
-import ProfileMenu from './ProfileMenu';
-// import {NavItem} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+import { NavItem } from 'react-bootstrap'
+import ProfileMenu from './ProfileMenu.js'
 
 
 const Nav = () => {
 
-const { whoAmI, whoIsOnline } = useContext(UserContext);
+  const { whoAmI, logOut, whoIsOnline } = useContext(UserContext);
   
+
   useEffect(() => {
     whoIsOnline();
-  },[])
+  }, [])
+  
+  const [isActive, setActive] = useState("false");
+
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
 
   return (
     <div className={isActive ? "nav-bar" : "nav-bar"}>
@@ -31,12 +38,12 @@ const { whoAmI, whoIsOnline } = useContext(UserContext);
       <div className="links">
       <Link to="/">HOME</Link>
       <Link to="/about">ABOUT</Link>
-        <Link to="/Residences">RESIDENCES</Link>
+      <Link to="/Residences">RESIDENCES</Link>
       {!whoAmI && <Link to="/login">LOGIN</Link>}
       {!whoAmI && <Link to="/register">REGISTER</Link>} 
-         <ProfileMenu/>
       </div>
-    </div>
+      <ProfileMenu className="profileMenu"/>
+      </div>
   ); 
 }
 
