@@ -93,6 +93,22 @@
   background-color: rgba(245, 240, 240, 0.527);
 }
 
+.homeWrapper .information2{
+  padding-top: 60px;
+  background-color: rgba(245, 240, 240, 0.527);
+}
+
+.homeWrapper .information2 > P{
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  margin: 200px 0 5px 0;
+  color: white;
+  letter-spacing: 6.2px;
+  margin: 0;
+  padding: 10px;
+}
+
 .homeWrapper .information{
     padding-top: 60px;
 }
@@ -117,13 +133,38 @@
   letter-spacing: 6.2px;
 }
 
+.typeImgs > div > p{
+  margin: 5px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: white;
+  letter-spacing: 6.2px;
+}
+
 .divImgs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 40px;
   background-color: rgba(245, 240, 240, 0.527);
-  height: 647px;
   padding: 20px 20px 20px 20px;
+}
+
+.typeImgs{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40px;
+  background-color: rgba(245, 240, 240, 0.527);
+  height: 270px;
+}
+
+.typeImgs img{
+  margin-left: 20%;
+  opacity: 80%;
+  object-fit: cover;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
 }
 
 .divImgs img {
@@ -131,11 +172,16 @@
   opacity: 80%;
   object-fit: cover;
   width: 60%;
-  height: 30%;
+  height: 90%;
   border-radius: 50%;
 }
 
 .divImgs img:hover {
+  Transform: scale(1.1);
+  transition: 300ms;
+}
+
+.typeImgs img:hover{
   Transform: scale(1.1);
   transition: 300ms;
 }

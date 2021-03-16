@@ -7,13 +7,15 @@ import '../style/MyRental.css'
 const MyRentals = () => {
 
   const { whoAmI } = useContext(UserContext);
-  const { residences } = useContext(ResidenceContext);
+  const { residences,fetchResidences } = useContext(ResidenceContext);
 
   const [rentals, setRentals] = useState(null);
 
   useEffect(() => {
-    const myRentals = residences.filter(r => r.userId === whoAmI._id);
-    setRentals([...myRentals]);
+    fetchResidences().then(() => {
+      const myRentals = residences.filter(r => r.userId === whoAmI._id);
+      setRentals([...myRentals]);
+    });
   }, [])
   
   useEffect(() => {

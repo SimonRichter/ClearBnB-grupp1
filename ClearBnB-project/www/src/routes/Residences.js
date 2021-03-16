@@ -6,6 +6,7 @@ import '../style/Residences.css';
 const Residences = (props) => {
 
   const category = props.location.country;
+  const type = props.location.type;
   const { residences,fetchResidences } = useContext(ResidenceContext);
   const [filteredList, setFilteredList] = useState(null);
   const [showSearchFields, setShowSearchFields] = useState(false);
@@ -41,10 +42,14 @@ const Residences = (props) => {
 
   useEffect(() => {
     fetchResidences().then(r => {
-    if (category) {
+      if (category) {
       const filter = residences.filter(r => r.country === category);
       setFilteredList([...filter]);
-    } else {
+      }
+      else if (type) {
+      const filter = residences.filter(r => r.type === type);
+      setFilteredList([...filter]);
+      }else {
       setFilteredList([...r]);
     }
     });
