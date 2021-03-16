@@ -29,7 +29,22 @@
   width: 90%;
 }
 
+.residenceDetail > .inner >  .infoWrapper > .desc >  p{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: black;
+  letter-spacing: 1.2px;
+}
+
+.residenceDetail > .inner >  .infoWrapper > .desc > .resTitle{
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: black;
+  letter-spacing: 1.2px;
+}
+
 .residenceDetail > .inner >  .infoWrapper > .desc >  p > span{
+  color: #f50057;
   font-weight: bolder;
 }
 

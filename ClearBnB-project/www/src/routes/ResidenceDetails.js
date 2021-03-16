@@ -151,7 +151,7 @@ const ResidenceDetails = () => {
         </div>
         <div className="infoWrapper">
           <div className="desc">
-            <h1>{residence.title}</h1>
+            <p className="resTitle">{residence.title}</p>
             <p><span>Country: </span>{residence.country}</p>
             <p><span>City: </span>{residence.city}</p>
             <p><span>Address: </span>{residence.address}</p>
