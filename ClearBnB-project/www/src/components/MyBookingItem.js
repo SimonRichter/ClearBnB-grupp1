@@ -18,6 +18,7 @@ const MyBookingItem = ({ booked }) => {
   useEffect(() => {
     const booke = residences.filter(r => r._id === booked.residenceId)
     setMyBooking( ...booke );
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
   return (

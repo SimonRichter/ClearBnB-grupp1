@@ -1,0 +1,227 @@
+.addResWrapper {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin: 50px auto;
+  background-color: rgb(255, 255, 255);
+  width: 70vh;
+  border-radius: 0;
+
+  border: 3px solid rgba(0, 0, 0, 0.795);
+}
+
+.addResWrapper h3 {
+  padding-top: 30px;
+}
+
+.addResWrapper .advTitle {
+  margin-top: 30px;
+}
+
+.addResWrapper .optionBar {
+  outline: none;
+  width: 300px;
+  height: 30px;
+  margin-bottom: 30px;
+  cursor: pointer;
+  border-radius: 0;
+}
+.addResWrapper .optionBar:hover,
+.addResWrapper .optValue:hover {
+  background-color: rgba(0, 0, 0, 0.712);
+  color: rgb(245, 245, 245);
+}
+
+.addResWrapper .incGuests,
+.addResWrapper .decGuests {
+  outline: none;
+  border: none;
+  border-radius: 55%;
+  padding: 3px 5px 3px 5px;
+  width: 30px;
+  margin: 5px auto;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 18px;
+  background-color: #4699e0;
+}
+
+.addResWrapper .incGuests:hover,
+.addResWrapper .decGuests:hover {
+  background-color: #79bffc;
+}
+
+.addResWrapper .numberOfGuests {
+  border-radius: 0;
+  border: none;
+}
+.addResWrapper .guestDiv span {
+  margin: 5px 10px 5px 10px;
+}
+
+.addResWrapper .inputTitle {
+  outline: none;
+  width: 300px;
+  font-size: 17px;
+  border: none;
+  border-bottom: 1px solid rgb(0, 97, 153);
+  margin-bottom: 30px;
+}
+
+.addResWrapper .textBox {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  max-height: 40%;
+  max-width: 55%;
+  overflow: hidden;
+  outline: none;
+  border-radius: 0;
+}
+
+.addResWrapper .inputPrice {
+  border: none;
+  border-bottom: 1px solid rgb(0, 97, 153);
+  outline: none;
+  width: 250px;
+  height: 30px;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.addResWrapper .createBtn {
+  font-family: "Montserrat", sans-serif;
+  background-color: #127fbe;
+  height: 40px;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  width: 350px;
+  margin: 20px;
+  font-size: 17px;
+  cursor: pointer;
+}
+.addResWrapper .createBtn:hover {
+  color: white;
+  background-color: #003a5c;
+  transition: 700ms;
+}
+
+.addResWrapper .inputPrice[type="number"]:hover::-webkit-inner-spin-button {
+  width: 50px;
+  height: 40px;
+}
+
+/* CSS Styling for animation on checkboxes and Design */
+.addResWrapper .checkbox {
+  margin-bottom: 50px;
+}
+.addResWrapper .checkbox input {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+}
+
+.addResWrapper .checkbox label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 1.3rem;
+  text-align: left;
+  color: #333;
+  display: block;
+}
+.addResWrapper .checkbox input {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+}
+
+.addResWrapper .checkbox {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 2;
+  padding: 10px;
+  margin-left: 10vh;
+}
+
+.addResWrapper .checkbox .helper {
+  color: #999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 0;
+  border: 0.125rem solid currentColor;
+  border-radius: 0.0625rem;
+  -webkit-transition: border-color 0.28s ease;
+  transition: border-color 0.28s ease;
+}
+.addResWrapper .checkbox .helper::before,
+.addResWrapper .checkbox .helper::after {
+  position: absolute;
+  height: 0;
+  width: 0.2rem;
+  background-color: #337ab7;
+  display: block;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  border-radius: 0.25rem;
+  content: "";
+  -webkit-transition: opacity 0.28s ease, height 0s linear 0.28s;
+  transition: opacity 0.28s ease, height 0s linear 0.28s;
+  opacity: 0;
+}
+.addResWrapper .checkbox .helper::before {
+  top: 0.65rem;
+  left: 0.38rem;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  box-shadow: 0 0 0 0.0625rem #fff;
+}
+.addResWrapper .checkbox .helper::after {
+  top: 0.3rem;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.addResWrapper .checkbox label:hover .helper {
+  color: #337ab7;
+}
+.addResWrapper .checkbox input:checked ~ .helper {
+  color: #337ab7;
+}
+.checkbox input:checked ~ .helper::after,
+.checkbox input:checked ~ .helper::before {
+  opacity: 1;
+  -webkit-transition: height 0.28s ease;
+  transition: height 0.28s ease;
+}
+.addResWrapper .checkbox input:checked ~ .helper::after {
+  height: 0.5rem;
+}
+.addResWrapper .checkbox input:checked ~ .helper::before {
+  height: 1.2rem;
+  -webkit-transition-delay: 0.28s;
+  transition-delay: 0.28s;
+}
+
+.addResWrapper .datePickerDiv {
+  display: block;
+  margin: 0 auto;
+}
+
+.addResWrapper .react-datepicker__input-container input {
+  height: 150%;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  border-bottom: 1.5px solid rgb(0, 102, 149);
+}
+
+.addResWrapper .react-datepicker__close-icon button {
+  color: red;
+  background-color: red;
+}

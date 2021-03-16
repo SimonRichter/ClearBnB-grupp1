@@ -1,13 +1,34 @@
-import React, { useEffect, useContext, useState, useRef} from 'react';
+import React, {useContext} from 'react';
 import '../style/Home.css';
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContextProvider'
 import Snackbar from '@material-ui/core/Snackbar';
-import Button from '@material-ui/core/Button'
 import Alert from '@material-ui/lab/Alert';
 
 
 const Home = () => {
+
+  const toSweden = { 
+  pathname: "/residences", 
+  country: "Sweden" 
+  };
+
+  const toDenmark = { 
+  pathname: "/residences", 
+  country: "Denmark" 
+  };
+
+  const toFinland = { 
+  pathname: "/residences", 
+  country: "Finland" 
+  };
+
+  const toIceland = { 
+  pathname: "/residences", 
+  country: "Iceland" 
+  };
+
+
   const history = useHistory();
    const { setLoginToast, loginToast, setLogoutToast, logoutToast } = useContext(UserContext);
   
@@ -53,25 +74,29 @@ const Home = () => {
         <div><p>Start Travel</p></div>
         <button onClick={exploreHandler}  className="exploreBtn" >Explore the residences</button>
       </div>
-      <div class="arrow bounce"></div>
+      <div className="arrow bounce"></div>
       </div>
-       <p className="exploreText">EXPLORE THE WORLD</p>
+      <p className="exploreText">EXPLORE THE WORLD</p>
+      <div className="information">
+        <p>FILTER RESIDENCES BY COUNTRY</p>
+      </div>
       <div className="divImgs">
         <div>
-        <img src="https://cdn.shopify.com/s/files/1/1824/2601/files/photo_2020-10-12_10-45-26_480x480.jpg?v=1602524781" alt="" />
-        <p>Begin a adventure you've allways dreamed about.</p>
+          <Link to={toSweden}><img src="https://www.sweden.org.za/images/swedens-flag.jpg" alt="" /></Link>
+          <p>SWEDEN</p>
         </div>
         <div>
-        <img src="https://cdn.shopify.com/s/files/1/1824/2601/files/photo_2020-10-12_10-45-26_480x480.jpg?v=1602524781" alt="" />
-        <p>Begin a adventure you've allways dreamed about.</p>
+          <Link to={toDenmark}><img src="https://c4.wallpaperflare.com/wallpaper/3/770/559/flags-flag-of-denmark-danish-flag-flag-hd-wallpaper-preview.jpg" alt="" /></Link>
+          <p>DENMARK</p>
         </div>
         <div>
-        <img src="https://cdn.shopify.com/s/files/1/1824/2601/files/photo_2020-10-12_10-45-26_480x480.jpg?v=1602524781" alt="" />
-        <p>Begin a adventure you've allways dreamed about.</p>
+          <Link to={toFinland}><img src="https://www.countryflags.com/wp-content/uploads/finland-flag-png-large.png" alt="" /></Link>
+          <p>FINLAND</p>
         </div>
-        
-        
-        
+        <div>
+          <Link to={toIceland}><img src="https://www.countryflags.com/wp-content/uploads/iceland-flag-png-large.png" alt="" /></Link>
+          <p>ICELAND</p>
+        </div>
         </div>
     </div>
 

@@ -28,19 +28,20 @@ const ResidenceDetails = () => {
 
   const bookResidence = () => {
 
-    if (startDate === null && endDate === null) {
-      setunFilledFields(true);
-      return;
-    }    
-    setunFilledFields(false);
-    const differenceInTime = endDate.getTime() - startDate.getTime();
-    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
-    setTotalPrice(differenceInDays * residence.price);
-
     const startDateInMillis = Math.round(new Date(startDate).getTime() / 1000);
     const endDateInMillis = Math.round(new Date(endDate).getTime() / 1000);
     const oneDayInMillis = 86400000 / 1000;
     const allTheDaysBooked = [];
+
+    if (startDate === null && endDate === null) {
+      setunFilledFields(true);
+      return;
+    }
+    
+    setunFilledFields(false);
+    const differenceInTime = endDate.getTime() - startDate.getTime();
+    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    setTotalPrice(differenceInDays * residence.price);
 
     for (let i = startDateInMillis; i <= endDateInMillis; i += oneDayInMillis){
       allTheDaysBooked.push(i);
@@ -60,8 +61,6 @@ const ResidenceDetails = () => {
       price: totalPrice
     }
 
-
-    //Method to add bookingObj to DB via context.
     addBooking(bookingObj)
 
     setShowConfirmPage(true);
@@ -101,11 +100,30 @@ const ResidenceDetails = () => {
   }
 
 
-  useEffect(() => {    
+  useEffect(() => { 
+    const startDateInMillis = Math.round(new Date(startDate).getTime() / 1000);
+    const endDateInMillis = Math.round(new Date(endDate).getTime() / 1000);
+    const oneDayInMillis = 86400000 / 1000;
     if (startDate !== null && endDate !== null) {
       setunFilledFields(false);
-      const differenceInTime = endDate.getTime() - startDate.getTime();
-      const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+      let differenceInDays = 0;
+      for (let i = startDateInMillis; i < endDateInMillis; i += oneDayInMillis){
+        differenceInDays++;
+      }
+      
+      if (residence.bookedDays) {
+        let checkDoubles = [];
+        let howManyDaysBooked = 0;
+        residence.bookedDays.forEach(r => {
+          if (r > startDateInMillis && r < endDateInMillis) {
+            if (!checkDoubles.includes(r)) {
+              howManyDaysBooked++;
+              checkDoubles.push(r);
+            }
+          }
+        });
+        differenceInDays = differenceInDays - howManyDaysBooked;
+      }
       setTotalPrice(differenceInDays * residence.price);
     } else {
       setTotalPrice(null);

@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from 'react'
 import { UserContext } from '../contexts/UserContextProvider'
 import '../style/Nav.css';
 import {Link} from 'react-router-dom'
-import { Dropdown, NavItem, NavLink } from 'react-bootstrap'
+import {NavItem} from 'react-bootstrap'
 
 
 const Nav = () => {
@@ -38,7 +38,8 @@ const Nav = () => {
       <div className="links">
       <Link to="/">Home</Link>
       <Link to="/about">About</Link>
-      <Link to="/Residences">Residences</Link>
+        <Link to="/Residences">Residences</Link>
+      {whoAmI && <Link to="/addResidence">Host Residence</Link>} 
       {!whoAmI && <Link to="/login">Login</Link>}
       {!whoAmI && <Link to="/register">Register</Link>}
         {whoAmI && <Link to="/myBookings">My bookings</Link>}

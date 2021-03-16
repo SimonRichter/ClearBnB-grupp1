@@ -17,10 +17,21 @@ export const FeatureProvider = (props) => {
     return filteredFeature;
   };
 
+  const addFeature = async (featureObj) => {
+    let res = await fetch("/rest/features", {
+      method: 'POST',
+      headers: { 'content-type': 'application/json'},
+      body: JSON.stringify(featureObj)
+    })
+    res = await res.json();
+    return res;
+  }
+
   const values = {
     features,
     setFeatures,
-    getSpecificFeature
+    getSpecificFeature,
+    addFeature
   }
 
   useEffect(() => {

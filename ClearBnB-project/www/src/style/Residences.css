@@ -1,24 +1,55 @@
+.residences > button{
+  margin: 10px;
+  margin-bottom: 0;
+  margin-left: 55px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 6.2px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.residences > button:hover{
+  Transform: scale(1.1);
+  transition: 300ms;
+}
+
+.residences > .searchFields > p{
+  margin: 0;
+  cursor: pointer;
+  color: #f50057;
+  display: inline;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.residences > .searchFields > p:hover{
+  Transform: scale(1.1);
+  transition: 300ms;
+}
+
 .residences > .searchFields > form > input{
   border: none;
   border-radius: 10px;
   text-align: center;
-  display: block;
   font-size: large;
-  margin: 15px auto;
-  padding: 5px;
-  width: 40%;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
 }
 
 .residences > .searchFields > form > button{
+  padding: 10px;
   border: none;
   border-radius: 10px;
   background: rgb(68, 68, 248);
   color: white;
   font-size: large;
-  display: block;
-  margin: 10px auto;
-  width: 41%;
-  padding: 5px;
+  margin: 10px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -28,11 +59,16 @@
   background: rgb(68, 68, 248);
   color: white;
   font-size: large;
-  display: block;
-  margin: 10px auto;
+  margin: 10px;
   width: 41%;
   padding: 5px;
   cursor: pointer;
+}
+
+.residences > .searchFields > form{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
 }
 
 .residences > .searchFields > form > button:hover{
