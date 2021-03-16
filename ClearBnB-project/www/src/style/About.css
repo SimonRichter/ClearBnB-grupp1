@@ -1,5 +1,5 @@
 .about{
-  background-image: url(https://i.pinimg.com/originals/1e/7f/b2/1e7fb2cd8daf7c3dab51a60ef28099d7.jpg);
+  
   width: 100%;
   min-height: 100vh;
   margin-top: -10vh;
@@ -8,6 +8,14 @@
 .about .grid-item{
   margin-top: 20vh;
   grid-column: 2;
+} 
+.about > .persons{
+  margin: 10px auto;
+  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+.about .grid-item-text{
   opacity: 90%;
   background: #eee;
   padding: 20px;
@@ -44,4 +52,62 @@
   grid-template-columns: 1% 1fr 1%;
   padding: 10px;
 }
+.about .grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+}
+.flip-card{
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  perspective: 1000px;
+  width: 300px;
+  height: 300px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #eee;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #eee;
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-back > p{
+  padding: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-align: left;
 }
