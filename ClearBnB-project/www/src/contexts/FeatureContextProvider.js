@@ -10,10 +10,11 @@ export const FeatureProvider = (props) => {
     let data = await fetch('/rest/features');
     data = await data.json();
     setFeatures([...data]);
+    return data;
   }
   
-  const getSpecificFeature = (residenceFeatureId) => {
-    const filteredFeature = features.filter(f => f._id === residenceFeatureId)
+  const getSpecificFeature = (list,residenceFeatureId) => {
+    const filteredFeature = list.filter(f => f._id === residenceFeatureId)
     return filteredFeature;
   };
 

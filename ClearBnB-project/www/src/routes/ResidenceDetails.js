@@ -132,9 +132,11 @@ const ResidenceDetails = () => {
   
   useEffect(() => {
     if (residence) {
-      fetchFeatures().then(() => {
-        setFeatures(...getSpecificFeature(residence.featuresId)); 
-      }) 
+        fetchFeatures().then((r) => {
+          console.log('here', r);
+          setFeatures(...getSpecificFeature(r,residence.featuresId));
+        })
+        //setFeatures(...getSpecificFeature(residence.featuresId));
     };    
   }, [residence])
 
