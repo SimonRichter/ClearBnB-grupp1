@@ -2,6 +2,11 @@
   box-sizing: border-box;
   width: 100%;
   min-height: 90vh;
+  background-image: url("https://i.postimg.cc/DwGYFD3x/New-Project-1.png");
+  min-height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .about h1{
   color: red;
@@ -10,7 +15,7 @@
 
 .about > .persons{
   width: 90%;
-  margin: 10px auto;
+  margin: 0 auto;
   grid-gap: 30px;
   display: grid;
   grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
