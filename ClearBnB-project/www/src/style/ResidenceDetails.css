@@ -9,7 +9,8 @@
 }
 
 #react-modal-image-img {
-  max-width: 60%;
+  max-width: 50%;
+  max-height: 70%;
 }
 .residenceDetail > .inner > .infoWrapper {
   padding-right: 40px;
