@@ -27,8 +27,8 @@ const ResidenceDetails = () => {
   const [totalPrice, setTotalPrice] = useState(null);
   const [unFilledFields, setunFilledFields] = useState(null);
   const [showConfirmPage, setShowConfirmPage] = useState(false);
-  const [open, setOpen] = useState(true);
-
+  const [open, setOpen] = useState(false);
+  const [picture, setPicture] = useState(null);
 
   const bookResidence = () => {
 
@@ -148,30 +148,35 @@ const ResidenceDetails = () => {
     setOpen(false);
   };
   
-  const openLightbox = () => {
+  const openLightbox = (img) => {
+    setPicture(img.img);
     setOpen(true);
+    console.log(img.img);
+    console.log('här', open);
   }
+
 
 
   return (
     <div className="residenceDetail">
 
-      
       {open && <Lightbox
-        medium="https://static.dezeen.com/uploads/2020/02/house-in-the-landscape-niko-arcjitect-architecture-residential-russia-houses-khurtin_dezeen_2364_hero-852x479.jpg"
+        medium={picture}
         large="large"
         onClose={closeLightbox}
         hideDownload={false}
         showRotate={true}
         hideZoom={true}
-
       />}
+      
 
       <button onClick={openLightbox} >Open Image</button>
+
       {!showConfirmPage && residence && <div className="inner">
         <div className="images">
           {residence.imageURLs.map((img) => {
-            return (<img key={img} src={img} alt="" />)
+      
+            return (<img key={img} src={img} alt="" onClick={() => openLightbox({img})} />)
           })}
         </div>
         <div className="infoWrapper">
