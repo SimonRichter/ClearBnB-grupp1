@@ -1,5 +1,5 @@
 .about{
-  
+  box-sizing: border-box;
   width: 100%;
   min-height: 90vh;
 }
@@ -13,8 +13,8 @@
   margin: 10px auto;
   grid-gap: 30px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: center;
+  grid-template-columns: 22.5% 22.5% 22.5% 22.5%;
+  justify-content: start;
 }
 .about .grid-item-text{
   opacity: 90%;

@@ -59,3 +59,22 @@
   text-transform: uppercase;
   text-align: left;
 }
+
+.flip-card-back-person > p > span{
+  padding: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: black;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.flip-card-front-person > p {
+  padding: 4px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: black;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
