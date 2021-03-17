@@ -151,8 +151,6 @@ const ResidenceDetails = () => {
   const openLightbox = (img) => {
     setPicture(img.img);
     setOpen(true);
-    console.log(img.img);
-    console.log('här', open);
   }
 
 
@@ -168,14 +166,10 @@ const ResidenceDetails = () => {
         showRotate={true}
         hideZoom={true}
       />}
-      
-
-      <button onClick={openLightbox} >Open Image</button>
 
       {!showConfirmPage && residence && <div className="inner">
         <div className="images">
           {residence.imageURLs.map((img) => {
-      
             return (<img key={img} src={img} alt="" onClick={() => openLightbox({img})} />)
           })}
         </div>
