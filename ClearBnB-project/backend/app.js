@@ -97,7 +97,7 @@ app.delete('/api/login', (req, res) => {
 app.get('/api/login', (req, res) => {
   if(req.session.user){
     let user = {...req.session.user};
-    delete user[0].password; // remove password in answer
+    delete user.password; // remove password in answer
     res.json(user);
   }
   else {
