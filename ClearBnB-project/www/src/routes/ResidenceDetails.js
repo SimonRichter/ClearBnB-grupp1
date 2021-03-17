@@ -202,8 +202,8 @@ const ResidenceDetails = () => {
         {!whoAmI && <button className="book-btn" onClick={() => history.push("/login")}>Login to book</button>}
       </div>}
       {showConfirmPage && <div className="confirm">
-        <h1>Thank you.</h1>
-        <h4>Your booked residence was completed succsessfully.</h4>
+        <p className="head">Thank you.</p>
+        <p className="completed">Your booked residence was completed succsessfully.</p>
         <img src={residence.imageURLs[0]} alt="" />
         <p><span>Address: </span>{ residence.address }</p>
         <p><span>Start date: </span>{new Date(startDate).toString().substr(0,15)}</p>
