@@ -13,14 +13,14 @@
   max-height: 70%;
 }
 
-.__react_modal_image__icon_menu > a{
+.__react_modal_image__icon_menu > a {
   opacity: 80%;
 }
 
 .__react_modal_image__icon_menu > a:hover {
   opacity: 100%;
-   Transform: scale(1.1);
-    transition: 300ms;
+  transform: scale(1.1);
+  transition: 300ms;
 }
 
 .residenceDetail > .inner > .infoWrapper {
@@ -120,6 +120,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
+
 
 .residenceDetail > .inner > .infoWrapper > .features > .dontExist {
   color: rgb(158, 151, 151);

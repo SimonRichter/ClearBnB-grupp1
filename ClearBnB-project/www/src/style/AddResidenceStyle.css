@@ -3,14 +3,19 @@
   text-align: center;
   margin: 50px auto;
   background-color: rgb(255, 255, 255);
-  width: 70vh;
+  width: 72vh;
   border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.795);
+}
 
-  border: 3px solid rgba(0, 0, 0, 0.795);
+.logoOnForm {
+  width: 13em;
+  margin-top: 20px;
+  opacity: 50%;
 }
 
 .addResWrapper h3 {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .addResWrapper .advTitle {
@@ -75,13 +80,22 @@
   border-radius: 0;
 }
 
+.addResWrapper input::-webkit-outer-spin-button,
+.addResWrapper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.addResWrapper input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .addResWrapper .inputPrice {
   border: none;
   border-bottom: 1px solid rgb(0, 97, 153);
   outline: none;
-  width: 250px;
+  width: 50px;
   height: 30px;
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 30px;
 }
 
@@ -102,11 +116,6 @@
   color: white;
   background-color: #003a5c;
   transition: 700ms;
-}
-
-.addResWrapper .inputPrice[type="number"]:hover::-webkit-inner-spin-button {
-  width: 50px;
-  height: 40px;
 }
 
 /* CSS Styling for animation on checkboxes and Design */
@@ -208,6 +217,19 @@
 .addResWrapper .datePickerDiv {
   display: block;
   margin: 0 auto;
+}
+
+.startDate,
+.endDate {
+  background: #eee;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  font-size: large;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .addResWrapper .react-datepicker__input-container input {
