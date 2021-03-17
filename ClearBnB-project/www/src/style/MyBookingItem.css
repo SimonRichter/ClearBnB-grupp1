@@ -41,7 +41,15 @@
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  
+ .wrapperInItem {
+  width: 80%;
+  background: #eee;
+  margin: 15px auto;
+  padding: 10px;
+  border-radius: 1px;
+  box-shadow: 5px 10px 18px #888888;
+  cursor: pointer;
+} 
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   
