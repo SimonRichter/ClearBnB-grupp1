@@ -54,12 +54,11 @@
 }
 @media (max-width: 480px) {
   .login{
-  width: 100%;
-  height: 80vh;
+  background: no-repeat;
+  background-size: cover;
   background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
   object-fit: cover;
-  padding-top: 20vh;
-}
+  }
 .login > .form-for-login {
   opacity: 90%;
   width: 70%;
@@ -80,6 +79,12 @@
 }
 }
 @media (min-width: 481px) and (max-width: 767px) {
+  .login{
+  background: no-repeat;
+  background-size: cover;
+  background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
+  object-fit: cover;
+  }
  .login > .form-for-login {
   opacity: 90%;
   width: 70%;
@@ -98,8 +103,8 @@
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .login{
-    background: no-repeat;
-    background-size: cover;
+  background: no-repeat;
+  background-size: cover;
   background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
   object-fit: cover;
   padding-top: 30vh;
