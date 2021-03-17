@@ -113,15 +113,25 @@ transition: 300ms;
 }
 
 .residenceDetail > .confirm{
-  background: #eee;
+  background: white;
   width: 40%;
   margin: 20px auto;
   padding: 10px;
   border-radius: 5px;
 }
 
-.residenceDetail > .confirm > h1,h4{
-  text-align: center;
+.residenceDetail > .confirm > .head{
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: black;
+  letter-spacing: 3.1px;
+}
+
+.residenceDetail > .confirm > .completed{
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: black;
+  letter-spacing: 1.8px;
 }
 
 .residenceDetail > .confirm > img{
@@ -135,10 +145,18 @@ transition: 300ms;
 
 .residenceDetail > .confirm > p > span{
   font-weight: bolder;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: black;
+  letter-spacing: 1.1px;
 }
 
 .residenceDetail > .confirm > p{
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 1.1px;
 }
 
 .residenceDetail > .confirm > .btns{
