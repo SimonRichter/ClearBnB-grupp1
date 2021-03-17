@@ -31,3 +31,18 @@
 .wrapperInItem  > .wrap > .info > p > span{
   font-weight: bolder;
 }
+@media (max-width: 480px) {
+  .wrapperInItem > .wrap > img{
+  width: 100%;
+}
+  .wrapperInItem  > .wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}

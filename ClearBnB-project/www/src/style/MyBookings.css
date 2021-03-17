@@ -36,5 +36,17 @@
   color: #f50057;
   letter-spacing: 6.2px;
 }
-
+@media (max-width: 480px) {
+.myBookings > .wrapper{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 10px;
+}  
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
 
