@@ -65,6 +65,16 @@
   cursor: pointer;
 }
 
+.inputVisitor{
+  background: #eee;
+  width: 20%;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  font-size: large;
+}
+
 .book-btn{
   margin-top: 10px;
   margin-bottom: 10px;
