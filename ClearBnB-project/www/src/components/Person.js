@@ -1,4 +1,5 @@
 import React from 'react'
+import '../style/Person.css'
 
 const Person = ({person}) => {
   return (
@@ -6,7 +7,7 @@ const Person = ({person}) => {
     <div className="flip-card">
     <div class="flip-card-inner">
       <div class="flip-card-front">
-          <img src="https://cdn.discordapp.com/attachments/815586876261531659/821391699459702804/1581419371598.jpg" alt="" />
+            <img src={person.img} alt="" />
             <p>{person.name}</p>
       </div>
         <div class="flip-card-back">
