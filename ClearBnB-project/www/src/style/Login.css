@@ -58,7 +58,7 @@
   height: 80vh;
   background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
   object-fit: cover;
-  padding-top: 100px;
+  padding-top: 20vh;
 }
 .login > .form-for-login {
   opacity: 90%;
