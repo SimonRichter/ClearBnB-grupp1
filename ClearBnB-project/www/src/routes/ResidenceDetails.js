@@ -176,6 +176,7 @@ const ResidenceDetails = () => {
             <p className={features.dishwasher ? '' : 'dontExist'}><i className="material-icons">kitchen</i> Dishwasher</p>
           </div>}
         </div>
+        {whoAmI && <input className="inputPrice" type="number" min="1" max={residence.residenceLimit} placeholder="Amount of visitors" />}
         {whoAmI && <div className="dates">
           <DatePicker className="startDate"
             placeholderText="Arrival.."
