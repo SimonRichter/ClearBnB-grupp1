@@ -160,7 +160,6 @@ const ResidenceDetails = () => {
 
       {open && <Lightbox
         medium={picture}
-        large="large"
         onClose={closeLightbox}
         hideDownload={false}
         showRotate={true}

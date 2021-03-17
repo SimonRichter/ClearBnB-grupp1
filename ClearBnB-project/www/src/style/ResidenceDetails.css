@@ -12,6 +12,17 @@
   max-width: 80%;
   max-height: 70%;
 }
+
+.__react_modal_image__icon_menu > a{
+  opacity: 80%;
+}
+
+.__react_modal_image__icon_menu > a:hover {
+  opacity: 100%;
+   Transform: scale(1.1);
+    transition: 300ms;
+}
+
 .residenceDetail > .inner > .infoWrapper {
   padding-right: 40px;
 }
