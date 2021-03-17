@@ -7,6 +7,9 @@ import { UserContext } from '../contexts/UserContextProvider'
 import DatePicker from 'react-datepicker'
 import '../style/ResidenceDetails.css'
 import 'react-datepicker/dist/react-datepicker.css'
+import { Lightbox } from "react-modal-image";
+import { set } from 'mongoose';
+ 
 
 const ResidenceDetails = () => {
 
@@ -24,6 +27,7 @@ const ResidenceDetails = () => {
   const [totalPrice, setTotalPrice] = useState(null);
   const [unFilledFields, setunFilledFields] = useState(null);
   const [showConfirmPage, setShowConfirmPage] = useState(false);
+  const [open, setOpen] = useState(true);
 
 
   const bookResidence = () => {
@@ -140,9 +144,30 @@ const ResidenceDetails = () => {
     };    
   }, [residence])
 
+  const closeLightbox = () => {
+    setOpen(false);
+  };
+  
+  const openLightbox = () => {
+    setOpen(true);
+  }
+
 
   return (
     <div className="residenceDetail">
+
+      
+      {open && <Lightbox
+        medium="https://static.dezeen.com/uploads/2020/02/house-in-the-landscape-niko-arcjitect-architecture-residential-russia-houses-khurtin_dezeen_2364_hero-852x479.jpg"
+        large="large"
+        onClose={closeLightbox}
+        hideDownload={false}
+        showRotate={true}
+        hideZoom={true}
+
+      />}
+
+      <button onClick={openLightbox} >Open Image</button>
       {!showConfirmPage && residence && <div className="inner">
         <div className="images">
           {residence.imageURLs.map((img) => {
