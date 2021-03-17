@@ -3,7 +3,7 @@ import React from 'react'
 const Person = () => {
   return (
     <div className="person">
-
+      
     </div>
   );
 }
