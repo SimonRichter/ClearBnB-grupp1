@@ -8,6 +8,19 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.about > .information{
+  padding: 20px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.about > .information > .head{
+  margin: 0;
+  
+}
+
+
 .about h1{
   color: red;
   text-align: center;
