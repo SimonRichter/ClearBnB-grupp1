@@ -63,7 +63,7 @@
 .flip-card-back-person > p > span{
   padding: 4px;
   font-family: "Montserrat", sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   color: black;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -73,7 +73,7 @@
 .flip-card-front-person > p {
   padding: 4px;
   font-family: "Montserrat", sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   color: black;
   letter-spacing: 1.2px;
   text-transform: uppercase;
