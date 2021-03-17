@@ -15,9 +15,20 @@
   margin: 0 auto;
 }
 
+.about > .information > p{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: black;
+  letter-spacing: 1.1px;
+}
+
 .about > .information > .head{
   margin: 0;
-  
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #f50057;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
 }
 
 
