@@ -9,10 +9,12 @@
 }
 
 .about > .persons{
+  width: 90%;
   margin: 10px auto;
-  grid-gap: 10px;
+  grid-gap: 30px;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: center;
 }
 .about .grid-item-text{
   opacity: 90%;

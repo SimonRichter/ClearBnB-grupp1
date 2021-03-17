@@ -48,7 +48,9 @@ const About = () => {
           <div className="grid-item"></div>
         </div>
       </div>
-      {persons.map(p => (<Person person={p}/>))}
+      <div className="persons">
+        {persons.map(p => (<Person person={p} />))}
+      </div>  
   </div>
   );
 }

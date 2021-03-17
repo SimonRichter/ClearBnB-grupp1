@@ -1,7 +1,9 @@
-.flip-card{
+.person{
+  margin-bottom: 40px;
+}
+.flip-card-person{
   margin-top: 20px;
   padding: 20px;
-  background: white;
   border-radius: 10px;
   text-align: center;
   cursor: pointer;
@@ -10,7 +12,13 @@
   height: 300px;
 }
 
-.flip-card-inner {
+.flip-card-person img{
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.flip-card-inner-person {
   position: relative;
   width: 100%;
   height: 100%;
@@ -20,11 +28,11 @@
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
-.flip-card:hover .flip-card-inner {
+.flip-card-person:hover .flip-card-inner-person {
   transform: rotateY(180deg);
 }
 
-.flip-card-front, .flip-card-back {
+.flip-card-front-person, .flip-card-back-person {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -32,17 +40,17 @@
   backface-visibility: hidden;
 }
 
-.flip-card-front {
+.flip-card-front-person {
   background-color: #eee;
   color: black;
 }
 
-.flip-card-back {
+.flip-card-back-person {
   background-color: #eee;
   color: white;
   transform: rotateY(180deg);
 }
-.flip-card-back > p{
+.flip-card-back-person > p{
   padding: 4px;
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
