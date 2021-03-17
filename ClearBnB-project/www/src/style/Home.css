@@ -61,6 +61,7 @@
   color: #f50057;
   letter-spacing: 6.2px;
 }
+
 .exploreBtn {
   border: 2px solid rgba(255, 255, 255, 0.589);
   text-decoration: none;
@@ -218,11 +219,13 @@
     font-weight: bolder;
   }
   .startTravel {
-    margin-left: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: "Montserrat", sans-serif;
   }
   .startTravel p {
-    margin: 50px 0 5px 0;
+    display: inline-block;
   }
   .arrow {
     position: relative;
@@ -250,19 +253,16 @@
     height: 320vh;
     padding: 80px 10px 10px 10px;
   }
-  .divImgs p {
-    text-align: center;
-    font-size: 19px;
-    margin-left: 80px;
-    font-weight: bolder;
-  }
   .startTravel {
-    margin-left: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: "Montserrat", sans-serif;
   }
   .startTravel p {
-    margin: 50px 0 5px 0;
+    display: inline-block;
   }
+
   .arrow {
     position: relative;
     bottom: -18rem;
