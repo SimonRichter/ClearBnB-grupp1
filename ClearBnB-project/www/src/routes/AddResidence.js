@@ -291,8 +291,8 @@ const AddResidence = () => {
 
         <div className="termsDiv">
           <label>
-            <input type="checkbox" value="" /><i className="helper" ></i>Terms & Conditions. <InfoIcon/>
-        </label>
+            <input type="checkbox" value="" /><i className="helper" ></i>Terms & Conditions. 
+        </label><InfoIcon fontSize="small" color="disabled" />
         </div>
 
         <TermsAndConds/>
