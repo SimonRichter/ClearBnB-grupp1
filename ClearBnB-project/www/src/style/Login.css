@@ -2,7 +2,7 @@
   background-image: url("https://i.postimg.cc/DwGYFD3x/New-Project-1.png");
   object-fit: cover;
   padding-top: 200px;
-  height: 65vh; 
+  min-height: 65vh; 
   background-size: cover;
   background-repeat: no-repeat; 
 }
