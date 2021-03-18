@@ -6,9 +6,9 @@ import "react-datepicker/dist/react-datepicker.css";
 import { UserContext } from '../contexts/UserContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider'
-import TermsAndConds from '../components/TermsAndConds'
+import Modal from '@material-ui/core/Modal';
 import InfoIcon from '@material-ui/icons/Info';
-
+import { makeStyles } from '@material-ui/core/styles';
 
 
 const AddResidence = () => {
@@ -29,8 +29,8 @@ const AddResidence = () => {
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
+  const [open, setOpen] = useState(false);
 
-  const [showTerms, setShowTerms] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isChecked3, setIsChecked3] = useState(false);
@@ -88,6 +88,15 @@ const AddResidence = () => {
       setGuests(guests-1);
     }
   }
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
 
   const submitHandler = async(e) => {
@@ -177,6 +186,46 @@ const AddResidence = () => {
 
   const addFeatureHandler14 = ()=> {isChecked14 === false ? setIsChecked14(true) : setIsChecked14(false)}
 
+// Modal --------------------
+  function getModalStyle() {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    width: 400,
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
+  
+const classes = useStyles();
+  // getModalStyle is not a pure function, we roll the style only on the first render
+  const [modalStyle] = React.useState(getModalStyle);
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <h2 id="simple-modal-title">Terms and Conditions</h2><hr></hr>
+      <ul id="simple-modal-description">
+       <li> §1. ClearBnB has the right to remove the account if they suspect any ilegal behavior.</li>
+      <li>§2. If you host a residence you are allowed to remove it if needed.</li>
+        <li>§3. ClearBnB don't tolerates any type of spamming a residence.</li>
+        <li>§4. A user is allowed to host more then one residence at the time.</li>
+      </ul>
+ 
+    </div>
+  );
+
+  // End of Modal ---------------
   return (
     <div className="addResWrapper">
       <form onSubmit={submitHandler}>
@@ -292,10 +341,18 @@ const AddResidence = () => {
         <div className="termsDiv">
           <label>
             <input type="checkbox" value="" /><i className="helper" ></i>Terms & Conditions. 
-        </label><InfoIcon fontSize="small" color="disabled" />
+        </label><InfoIcon fontSize="small" color="disabled" onClick={handleOpen}/>
         </div>
 
-        <TermsAndConds/>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
+      </Modal>
+        
         <button className="createBtn">Host Residence</button>
       </form>
     </div>

@@ -25,16 +25,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TermsAndConds() {
+export default function TermsAndConds(props) {
+ 
+
   const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
+ 
+  const handleCloseTerms = () => {
     setOpen(false);
   };
 
@@ -49,12 +48,9 @@ export default function TermsAndConds() {
 
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        Open Modal
-      </button>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={handleCloseTerms}
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >

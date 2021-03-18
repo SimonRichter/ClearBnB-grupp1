@@ -351,3 +351,12 @@
 .addResWrapper ul {
   max-width: 30%;
 }
+
+#simple-modal-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#simple-modal-description > li {
+  margin: 10px 0 10px 0;
+}
