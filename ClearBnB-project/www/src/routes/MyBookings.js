@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import MyBookingItem from '../components/MyBookingItem';
 import { BookingContext } from '../contexts/BookingContextProvider'
 import { UserContext } from '../contexts/UserContextProvider'
+import { useHistory } from 'react-router-dom'
 import '../style/MyBookings.css';
 
 const MyBookings = () => {
@@ -10,7 +11,7 @@ const MyBookings = () => {
   const { whoIsOnline } = useContext(UserContext);
   const currentDate = new Date().getTime();
   const [myResidences, setMyResidences] = useState(null);
-
+  const history = useHistory();
 
   const start = async () => {
 
@@ -22,7 +23,8 @@ const MyBookings = () => {
     if (booked) {
       setMyResidences([...booked]);
       console.log(myResidences);
-    }
+    } 
+
     
 
   }
@@ -36,7 +38,14 @@ const MyBookings = () => {
   
 
   useEffect(() => {
-    start();
+    whoIsOnline().then(user => {
+      if (!user) {
+          history.push("/login")
+      } else {
+        start(); 
+      }
+    });
+    
   },[])
 
   return (
