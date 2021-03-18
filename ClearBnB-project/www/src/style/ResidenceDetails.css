@@ -95,9 +95,9 @@ transition: 300ms;
 
 .residenceDetail > .inner >  .valCheck{
   font-family: "Montserrat", sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   color: #f50057;
-  letter-spacing: 3.1px;
+  letter-spacing: 2.1px;
   text-transform: uppercase;
 }
 
@@ -143,9 +143,17 @@ transition: 300ms;
 
 .pickAVisitor{
   font-family: "Montserrat", sans-serif;
-  font-size: 12px;
+  font-size: 15px;
   color: #f50057;
-  letter-spacing: 3.1px;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+
+.bookWarn{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.1px;
   text-transform: uppercase;
 }
 

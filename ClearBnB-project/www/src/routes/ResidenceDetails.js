@@ -25,6 +25,7 @@ const ResidenceDetails = () => {
   const [unFilledFields, setunFilledFields] = useState(null);
   const [showConfirmPage, setShowConfirmPage] = useState(false);
   const [pickedVisitors, setPickedVisitors] = useState(true);
+  const [bookedWarning, setBookedWarning] = useState(false);
   const amountOfVisitors = useRef(null);
 
   const bookResidence = () => {
@@ -132,6 +133,11 @@ const ResidenceDetails = () => {
           }
         });
         differenceInDays = differenceInDays - howManyDaysBooked;
+        if (howManyDaysBooked) {
+          setBookedWarning(true);
+        } else {
+          setBookedWarning(false);
+        }
       }
       setTotalPrice(differenceInDays * residence.price);
     } else {
@@ -208,6 +214,7 @@ const ResidenceDetails = () => {
           />
         </div>}
         {totalPrice && <p><span>Total price: </span>{totalPrice} €</p>}
+        {bookedWarning && <p className="bookWarn">🧐 You have booked days between your start date and end date</p>}
         {unFilledFields && <p className="valCheck">You have to pick a start date and a end date to continue..</p>}
         {whoAmI && <button onClick={bookResidence} className="book-btn">Book</button>}
         {!whoAmI && <button className="book-btn" onClick={() => history.push("/login")}>Login to book</button>}
