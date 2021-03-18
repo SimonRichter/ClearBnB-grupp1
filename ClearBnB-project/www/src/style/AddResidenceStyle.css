@@ -234,3 +234,102 @@
   outline: none;
   border-bottom: 1.5px solid rgb(0, 102, 149);
 }
+
+/* terms */
+.addResWrapper .termsDiv {
+  margin-bottom: 50px;
+}
+.addResWrapper .termsDiv input {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+}
+
+.addResWrapper .termsDiv label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 1.3rem;
+  text-align: left;
+  color: #333;
+  display: block;
+}
+.addResWrapper .termsDiv input {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+}
+
+.addResWrapper .termsDiv {
+  padding: 10px;
+  margin: 10px 8vh 10px 26vh;
+}
+
+.addResWrapper .termInfo li {
+ width: 100%;
+ float: left;
+list-style-type: none;
+}
+
+.addResWrapper .termsDiv .helper {
+  color: #999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 0;
+  border: 0.125rem solid currentColor;
+  border-radius: 0.0625rem;
+  -webkit-transition: border-color 0.28s ease;
+  transition: border-color 0.28s ease;
+}
+.addResWrapper .termsDiv .helper::before,
+.addResWrapper .termsDiv .helper::after {
+  position: absolute;
+  height: 0;
+  width: 0.2rem;
+  background-color: #f50056e7;
+  display: block;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  border-radius: 0.25rem;
+  content: "";
+  -webkit-transition: opacity 0.28s ease, height 0s linear 0.28s;
+  transition: opacity 0.28s ease, height 0s linear 0.28s;
+  opacity: 0;
+}
+.addResWrapper .termsDiv .helper::before {
+  top: 0.65rem;
+  left: 0.38rem;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  box-shadow: 0 0 0 0.0625rem #fff;
+}
+.addResWrapper .termsDiv .helper::after {
+  top: 0.3rem;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.addResWrapper .termsDiv label:hover .helper {
+  color: #337ab7;
+}
+.addResWrapper .termsDiv input:checked ~ .helper {
+  color: #337ab7;
+}
+.termsDiv input:checked ~ .helper::after,
+.termsDiv input:checked ~ .helper::before {
+  opacity: 1;
+  -webkit-transition: height 0.28s ease;
+  transition: height 0.28s ease;
+}
+.addResWrapper .termsDiv input:checked ~ .helper::after {
+  height: 0.5rem;
+}
+.addResWrapper .termsDiv input:checked ~ .helper::before {
+  height: 1.2rem;
+  -webkit-transition-delay: 0.28s;
+  transition-delay: 0.28s;
+}

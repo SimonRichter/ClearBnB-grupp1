@@ -28,7 +28,7 @@ const AddResidence = () => {
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
 
-
+  const [showTerms, setShowTerms] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isChecked3, setIsChecked3] = useState(false);
@@ -145,6 +145,10 @@ const AddResidence = () => {
     history.push('/myRentals');
     
   
+  }
+
+  const showTermsHandler = () => {
+    showTerms === false ? setShowTerms(true) : setShowTerms(false);
   }
 
   const addFeatureHandler = ()=> {isChecked === false ? setIsChecked(true) : setIsChecked(false)}
@@ -286,6 +290,20 @@ const AddResidence = () => {
             isClearable     
           />    
         </div>
+
+        <div className="termsDiv">
+          <label>
+            <input type="checkbox" value="" /><i className="helper" ></i> Terms & Conditions.
+        </label> <span onClick={showTermsHandler} >?</span>
+        </div>
+        {showTerms && <div className="termInfo">
+          <ul>
+            <li>§1 ClearBnB has all the rights to remove the the residence if we suspect some ilegal content.</li>
+            <li>§2 By hosting a residence we will take a service-fee of 15%.</li>
+            <li>§3 A user can't remove a residence. Contact the ClearBnB Support for more info.</li>
+            <li>§4 We do not take responsibility for any demages on the residences.</li>
+          </ul>
+        </div>}
 
         <button className="createBtn">Host Residence</button>
       </form>
