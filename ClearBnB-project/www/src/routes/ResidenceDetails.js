@@ -7,6 +7,9 @@ import { UserContext } from '../contexts/UserContextProvider'
 import DatePicker from 'react-datepicker'
 import '../style/ResidenceDetails.css'
 import 'react-datepicker/dist/react-datepicker.css'
+import { Lightbox } from "react-modal-image";
+import { set } from 'mongoose';
+ 
 import MailOutlineRoundedIcon from '@material-ui/icons/MailOutlineRounded';
 
 const ResidenceDetails = () => {
@@ -27,6 +30,8 @@ const ResidenceDetails = () => {
   const [totalPrice, setTotalPrice] = useState(null);
   const [unFilledFields, setunFilledFields] = useState(null);
   const [showConfirmPage, setShowConfirmPage] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [picture, setPicture] = useState(null);
   const [pickedVisitors, setPickedVisitors] = useState(true);
   const [bookedWarning, setBookedWarning] = useState(false);
   const [showEmail, setShowEmail] = useState(false);
@@ -157,15 +162,35 @@ const ResidenceDetails = () => {
     };    
   }, [residence])
 
+  const closeLightbox = () => {
+    setOpen(false);
+  };
+  
+  const openLightbox = (img) => {
+    setPicture(img.img);
+    setOpen(true);
+  }
+
+
 
   return (
     <div className="residenceDetail">
+
+      {open && <Lightbox
+        medium={picture}
+        onClose={closeLightbox}
+        hideDownload={true}
+        showRotate={true}
+        hideZoom={true}
+      />}
+
       {!showConfirmPage && residence && <div className="inner">
         <div className="images">
           {residence.imageURLs.map((img) => {
-            return (<img key={img} src={img} alt="" />)
+            return (<img key={img} src={img} alt="" onClick={() => openLightbox({img})}/>)
           })}
         </div>
+        
         <div className="infoWrapper">
           <div className="desc">
             <p className="resTitle">{residence.title}</p>

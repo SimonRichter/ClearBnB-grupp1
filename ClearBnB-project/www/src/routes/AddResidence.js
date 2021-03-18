@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import '../style/AddResidenceStyle.css';
 import DatePicker from 'react-datepicker';
@@ -6,21 +6,30 @@ import "react-datepicker/dist/react-datepicker.css";
 import { UserContext } from '../contexts/UserContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider'
-import HomeIcon from '@material-ui/icons/Home';
+import InfoRoundedIcon from '@material-ui/icons/InfoRounded';
 
 
 
 const AddResidence = () => {
+
+  useEffect(() => {
+    whoIsOnline().then(user => {
+      if (!user) {
+          history.push("/")
+        }
+  });
+  },[]);
+
   const history = useHistory();
   const { addFeature } = useContext(FeatureContext)
   const { addResidence } = useContext(ResidenceContext)
-  const { whoAmI } = useContext(UserContext);
+  const { whoAmI, whoIsOnline } = useContext(UserContext);
 
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
 
-
+  const [showTerms, setShowTerms] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
   const [isChecked3, setIsChecked3] = useState(false);
@@ -139,6 +148,10 @@ const AddResidence = () => {
   
   }
 
+  const showTermsHandler = () => {
+    showTerms === false ? setShowTerms(true) : setShowTerms(false);
+  }
+
   const addFeatureHandler = ()=> {isChecked === false ? setIsChecked(true) : setIsChecked(false)}
 
   const addFeatureHandler2 = ()=> {isChecked2 === false ? setIsChecked2(true) : setIsChecked2(false)}
@@ -170,9 +183,11 @@ const AddResidence = () => {
   return (
     <div className="addResWrapper">
       <form onSubmit={submitHandler}>
+        <img className="logoOnForm" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt="" />
+        <hr/>
       <h3>What type of recidense would you like to host?</h3>
         <select required className="optionBar">
-        <option class="optValue" value="" disabled="disabled" selected="selected">Choose</option>
+        <option className="optValue" value="" disabled="disabled" selected="selected">Choose</option>
         <option ref={optType}>House</option>
         <option ref={optType}>Apartment</option>
         <option ref={optType}>Cabin</option>
@@ -184,9 +199,9 @@ const AddResidence = () => {
      
       
         <div className="guestDiv">
-        <button className="incGuests" onClick={incGuestHandler}>＋</button>
-        <span className="numberOfGuests">Guests: {guests}</span>
-        <button className="decGuests" onClick={decGuestHanlder}>－</button>
+         <button className="decGuests" onClick={decGuestHanlder}>－</button>
+           <span className="numberOfGuests">Guests: {guests}</span>
+         <button className="incGuests" onClick={incGuestHandler}>＋</button>
         </div>
 
         <p className="advTitle">Advertisment title</p>
@@ -195,7 +210,6 @@ const AddResidence = () => {
       
      
         <div className="checkbox">
-
         <label>
             <input type="checkbox" onClick={addFeatureHandler} ref={feature1} value={isChecked}  /><i className="helper" ></i>First-Aid Kit
         </label>
@@ -256,11 +270,11 @@ const AddResidence = () => {
         <textarea required ref={descriptionRef} className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
         
         <p>Price per night</p>
-        <span>€</span><input ref={priceRef} className="inputPrice" type="number" required step="20" min="20" placeholder="Price (min 20€)" />
+        <input ref={priceRef} className="inputPrice" required type="number" min="20" placeholder="MIN 20€" /><span>€</span>
 
         <div className="datePickerDiv">
           <p>Select hosting date</p>
-          <DatePicker
+          <DatePicker className="startDate"
             required
             placeholderText={'Start Date'}
             selected={selectedStartDate}
@@ -268,23 +282,17 @@ const AddResidence = () => {
             minDate={new Date()}
             isClearable
           />
-          <DatePicker
+          <DatePicker className="endDate"
             required
             placeholderText={'End Date'}
             selected={selectedEndDate}
             onChange={date => setSelectedEndDate(date)}
             minDate={selectedStartDate}
-            isClearable
-            
-          />
-
-          
+            isClearable     
+          />    
         </div>
 
-        
-        
         <button className="createBtn">Host Residence</button>
-        {/* whoAmI && <button className="createBtn">Login to host</button> --> */}
       </form>
     </div>
   )

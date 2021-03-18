@@ -51,8 +51,13 @@ export const UserProvider = (props) => {
       body: JSON.stringify(user)
     })
     res = await res.json();
-    setLoginToast(true);
-    return res;
+    if (!res) {
+      setLoginToast(false);
+    } else {
+      setLoginToast(true);
+      return res;
+    }
+    
   }
 
   const logOut = async () => {
@@ -72,6 +77,7 @@ export const UserProvider = (props) => {
     data = await data.json();
     if (!data) {
       setWhoAmI(null);
+      return null;
     } else {
       setWhoAmI({ ...data });
       return data;
@@ -89,7 +95,8 @@ export const UserProvider = (props) => {
     setLoginToast,
     loginToast,
     logoutToast,
-    setLogoutToast
+    setLogoutToast,
+    fetchUsers
   }
 
   return (

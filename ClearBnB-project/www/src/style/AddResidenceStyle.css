@@ -3,14 +3,19 @@
   text-align: center;
   margin: 50px auto;
   background-color: rgb(255, 255, 255);
-  width: 70vh;
+  width: 72vh;
   border-radius: 0;
+  border: 1px solid rgba(0, 0, 0, 0.795);
+}
 
-  border: 3px solid rgba(0, 0, 0, 0.795);
+.logoOnForm {
+  width: 13em;
+  margin-top: 20px;
+  opacity: 50%;
 }
 
 .addResWrapper h3 {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .addResWrapper .advTitle {
@@ -75,13 +80,22 @@
   border-radius: 0;
 }
 
+.addResWrapper input::-webkit-outer-spin-button,
+.addResWrapper input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.addResWrapper input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .addResWrapper .inputPrice {
   border: none;
   border-bottom: 1px solid rgb(0, 97, 153);
   outline: none;
-  width: 250px;
+  width: 50px;
   height: 30px;
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 30px;
 }
 
@@ -102,11 +116,6 @@
   color: white;
   background-color: #003a5c;
   transition: 700ms;
-}
-
-.addResWrapper .inputPrice[type="number"]:hover::-webkit-inner-spin-button {
-  width: 50px;
-  height: 40px;
 }
 
 /* CSS Styling for animation on checkboxes and Design */
@@ -206,8 +215,15 @@
 }
 
 .addResWrapper .datePickerDiv {
-  display: block;
+  display: grid;
   margin: 0 auto;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+  width: 30%;
+}
+
+.react-datepicker__close-icon {
+  margin-top: 4px;
 }
 
 .addResWrapper .react-datepicker__input-container input {
@@ -217,4 +233,121 @@
   border: none;
   outline: none;
   border-bottom: 1.5px solid rgb(0, 102, 149);
+}
+
+/* terms */
+.addResWrapper .termsDiv {
+  width: 30%;
+  padding: 10px;
+  margin: 10px 8vh 10px 26vh;
+}
+
+.addResWrapper .termsDiv input {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+}
+
+.addResWrapper .termsDiv label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 1.3rem;
+  text-align: left;
+  color: #333;
+  display: block;
+}
+.addResWrapper .termsDiv input {
+  width: auto;
+  opacity: 0.00000001;
+  position: absolute;
+  left: 0;
+}
+
+.addResWrapper .termInfo li {
+  width: 100%;
+  float: left;
+  list-style-type: none;
+  display: table-cell;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.addResWrapper .termsDiv .helper {
+  color: #999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 0;
+  border: 0.125rem solid currentColor;
+  border-radius: 0.0625rem;
+  -webkit-transition: border-color 0.28s ease;
+  transition: border-color 0.28s ease;
+}
+.addResWrapper .termsDiv .helper::before,
+.addResWrapper .termsDiv .helper::after {
+  position: absolute;
+  height: 0;
+  width: 0.2rem;
+  background-color: #f50056e7;
+  display: block;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+  border-radius: 0.25rem;
+  content: "";
+  -webkit-transition: opacity 0.28s ease, height 0s linear 0.28s;
+  transition: opacity 0.28s ease, height 0s linear 0.28s;
+  opacity: 0;
+}
+.addResWrapper .termsDiv .helper::before {
+  top: 0.65rem;
+  left: 0.38rem;
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+  box-shadow: 0 0 0 0.0625rem #fff;
+}
+.addResWrapper .termsDiv .helper::after {
+  top: 0.3rem;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.addResWrapper .termsDiv label:hover .helper {
+  color: #337ab7;
+}
+.addResWrapper .termsDiv input:checked ~ .helper {
+  color: #337ab7;
+}
+.termsDiv input:checked ~ .helper::after,
+.termsDiv input:checked ~ .helper::before {
+  opacity: 1;
+  -webkit-transition: height 0.28s ease;
+  transition: height 0.28s ease;
+}
+.addResWrapper .termsDiv input:checked ~ .helper::after {
+  height: 0.5rem;
+}
+.addResWrapper .termsDiv input:checked ~ .helper::before {
+  height: 1.2rem;
+  -webkit-transition-delay: 0.28s;
+  transition-delay: 0.28s;
+}
+
+.addResWrapper .MuiSvgIcon-root {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  margin: -30px 8vh 10px 20vh;
+}
+
+.addResWrapper .termInfo {
+  width: 100%;
+  margin-left: -3px;
+  margin-right: 20px;
+}
+
+.addResWrapper ul {
+  max-width: 30%;
 }
