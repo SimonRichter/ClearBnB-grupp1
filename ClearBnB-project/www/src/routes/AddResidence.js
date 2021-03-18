@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { UserContext } from '../contexts/UserContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider'
-import InfoRoundedIcon from '@material-ui/icons/InfoRounded';
+import TermsAndConds from '../components/TermsAndConds'
 
 
 
@@ -146,10 +146,6 @@ const AddResidence = () => {
     history.push('/myRentals');
     
   
-  }
-
-  const showTermsHandler = () => {
-    showTerms === false ? setShowTerms(true) : setShowTerms(false);
   }
 
   const addFeatureHandler = ()=> {isChecked === false ? setIsChecked(true) : setIsChecked(false)}
@@ -292,6 +288,13 @@ const AddResidence = () => {
           />    
         </div>
 
+        <div className="termsDiv">
+          <label>
+            <input type="checkbox" value="" /><i className="helper" ></i> Terms & Conditions.
+        </label>
+        </div>
+
+        <TermsAndConds/>
         <button className="createBtn">Host Residence</button>
       </form>
     </div>
