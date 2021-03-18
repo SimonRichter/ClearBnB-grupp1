@@ -38,7 +38,7 @@
 }
 
 .register button{
-  width: 95%;
+  width: 93%;
   display: block;
   margin: 0 auto;
   border: none;
@@ -47,6 +47,7 @@
   background: rgb(68, 68, 248);
   border-radius: 10px;
   cursor: pointer;
+  font-size: 2vh;
 }
 
 .register button:hover{
@@ -58,7 +59,9 @@
   min-height: 90vh;
   background-image: url("https://i.postimg.cc/DwGYFD3x/New-Project-1.png");
 }
-
+.register input[placeholder="First name"],[placeholder="Last name"],[placeholder="email"],[placeholder="password"],[placeholder="confirm password"]{
+  font-size: 2vh;
+} 
 @media (max-width: 480px) {
   .register .grid-item-input{
   width:85%;
@@ -98,7 +101,7 @@
   font-size: 40px;
 }
   .register input[placeholder="First name"],[placeholder="Last name"],[placeholder="email"],[placeholder="password"],[placeholder="confirm password"]{
-  font-size: 4vh;
+  font-size: 27px;
 } 
 }
 @media (min-width: 768px) and (max-width: 1024px) {
