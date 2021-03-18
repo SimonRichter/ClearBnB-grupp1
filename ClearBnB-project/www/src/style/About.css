@@ -95,7 +95,11 @@
 }  
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  
+  .about > .persons{
+  width: 80%;
+  grid-gap: 3px;
+  grid-template-columns: 1fr;
+}  
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   
