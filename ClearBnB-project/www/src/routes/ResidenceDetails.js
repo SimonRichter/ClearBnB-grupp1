@@ -161,7 +161,7 @@ const ResidenceDetails = () => {
       {open && <Lightbox
         medium={picture}
         onClose={closeLightbox}
-        hideDownload={false}
+        hideDownload={true}
         showRotate={true}
         hideZoom={true}
       />}
