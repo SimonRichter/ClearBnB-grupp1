@@ -42,7 +42,7 @@ const ResidenceDetails = () => {
     const oneDayInMillis = 86400000 / 1000;
     const allTheDaysBooked = [];
 
-    if (startDate === null && endDate === null) {
+    if (startDate === null || endDate === null) {
       setunFilledFields(true);
       return;
     }
