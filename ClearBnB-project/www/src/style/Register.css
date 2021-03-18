@@ -8,6 +8,14 @@
   text-align: center;
   border-radius: 5px;
 }
+
+.alreadyAUser{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.2px;
+}
+
 .register .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -49,6 +57,11 @@
   background-size: cover;
   min-height: 90vh;
   background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
+  width: 100%;
+  background-image: url("https://i.postimg.cc/DwGYFD3x/New-Project-1.png");
+  min-height: 90vh; 
+  background-size: cover;
+  background-repeat: no-repeat; 
 }
 
 @media (max-width: 480px) {

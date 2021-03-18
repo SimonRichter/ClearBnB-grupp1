@@ -23,7 +23,6 @@ const Login = () => {
     };
     
     const res = await login(user);
-    console.log(res);
     if (!res) {
       setFailed(true);
     } else {

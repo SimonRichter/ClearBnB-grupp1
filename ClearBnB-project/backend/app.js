@@ -49,11 +49,18 @@ app.post("/rest/:model", async (req, res) => {
 })
 
 app.post('/api/users', async (req, res) => {
+  let model = models['users'];
+
+  let valCheck = await model.findOne({ email: req.body.email });
+  if (valCheck) {
+    res.json({ success: false });
+    return;
+  }
+
   // Encrypt password
   const hash = crypto.createHmac('sha256', secret)
     .update(req.body.password).digest('hex');
   // Create new user
-  let model = models['users'];
   let user = new model({...req.body, password: hash});
   // NOTE: This system is unsafe since you can 
   // choose your own role on registration!

@@ -65,6 +65,16 @@
   cursor: pointer;
 }
 
+.inputVisitor{
+  background: #eee;
+  width: 20%;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  font-size: large;
+}
+
 .book-btn{
   margin-top: 10px;
   margin-bottom: 10px;
@@ -84,7 +94,11 @@ transition: 300ms;
 }
 
 .residenceDetail > .inner >  .valCheck{
-  color: red;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
 }
 
 
@@ -125,6 +139,22 @@ transition: 300ms;
   font-size: 30px;
   color: black;
   letter-spacing: 3.1px;
+}
+
+.pickAVisitor{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+
+.bookWarn{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
 }
 
 .residenceDetail > .confirm > .completed{

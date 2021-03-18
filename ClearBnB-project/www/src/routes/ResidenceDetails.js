@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState, useRef} from 'react'
 import { useParams,useHistory } from 'react-router-dom'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { BookingContext } from '../contexts/BookingContextProvider'
@@ -24,16 +24,25 @@ const ResidenceDetails = () => {
   const [totalPrice, setTotalPrice] = useState(null);
   const [unFilledFields, setunFilledFields] = useState(null);
   const [showConfirmPage, setShowConfirmPage] = useState(false);
-
+  const [pickedVisitors, setPickedVisitors] = useState(true);
+  const [bookedWarning, setBookedWarning] = useState(false);
+  const amountOfVisitors = useRef(null);
 
   const bookResidence = () => {
+
+    if (!amountOfVisitors.current.value) {
+      setPickedVisitors(false);
+      return;
+    }
+
+    setPickedVisitors(true);
 
     const startDateInMillis = Math.round(new Date(startDate).getTime() / 1000);
     const endDateInMillis = Math.round(new Date(endDate).getTime() / 1000);
     const oneDayInMillis = 86400000 / 1000;
     const allTheDaysBooked = [];
 
-    if (startDate === null && endDate === null) {
+    if (startDate === null || endDate === null) {
       setunFilledFields(true);
       return;
     }
@@ -58,7 +67,7 @@ const ResidenceDetails = () => {
       endDate: endDateInMillis,
       userId: whoAmI._id,
       residenceId: id,
-      price: totalPrice
+      price: (Math.round(totalPrice * 1.15))
     }
 
     addBooking(bookingObj)
@@ -123,6 +132,11 @@ const ResidenceDetails = () => {
           }
         });
         differenceInDays = differenceInDays - howManyDaysBooked;
+        if (howManyDaysBooked) {
+          setBookedWarning(true);
+        } else {
+          setBookedWarning(false);
+        }
       }
       setTotalPrice(differenceInDays * residence.price);
     } else {
@@ -133,7 +147,6 @@ const ResidenceDetails = () => {
   useEffect(() => {
     if (residence) {
         fetchFeatures().then((r) => {
-          console.log('here', r);
           setFeatures(...getSpecificFeature(r,residence.featuresId));
         })
         //setFeatures(...getSpecificFeature(residence.featuresId));
@@ -157,6 +170,7 @@ const ResidenceDetails = () => {
             <p><span>Address: </span>{residence.address}</p>
             <p><span>Type: </span>{residence.type}</p>
             <p><span>Price per night: </span>{residence.price}€</p>
+            <p><span>Residence limit: </span>{residence.residenceLimit}</p>
             <p><span>Description: </span>{residence.description}</p>
           </div>
           {features && <div className="features">
@@ -176,6 +190,8 @@ const ResidenceDetails = () => {
             <p className={features.dishwasher ? '' : 'dontExist'}><i className="material-icons">kitchen</i> Dishwasher</p>
           </div>}
         </div>
+        {whoAmI && <input className="inputVisitor" ref={amountOfVisitors} type="number" min="1" max={residence.residenceLimit} placeholder="Amount of visitors" />}
+        {!pickedVisitors && <p className="pickAVisitor">You have to fill in atleast one visitor to continue..</p>}
         {whoAmI && <div className="dates">
           <DatePicker className="startDate"
             placeholderText="Arrival.."
@@ -197,6 +213,8 @@ const ResidenceDetails = () => {
           />
         </div>}
         {totalPrice && <p><span>Total price: </span>{totalPrice} €</p>}
+        {totalPrice && <p><span>Total price with VAT: </span>{Math.round(totalPrice * 1.15)} €</p>}
+        {bookedWarning && <p className="bookWarn">🧐 You have booked days between your start date and end date</p>}
         {unFilledFields && <p className="valCheck">You have to pick a start date and a end date to continue..</p>}
         {whoAmI && <button onClick={bookResidence} className="book-btn">Book</button>}
         {!whoAmI && <button className="book-btn" onClick={() => history.push("/login")}>Login to book</button>}
@@ -208,7 +226,7 @@ const ResidenceDetails = () => {
         <p><span>Address: </span>{ residence.address }</p>
         <p><span>Start date: </span>{new Date(startDate).toString().substr(0,15)}</p>
         <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
-        <p><span>Total price: </span>{totalPrice} €</p>
+        <p><span>Total price: </span>{Math.round(totalPrice * 1.15)} €</p>
         <div className="btns">
           <button onClick={() => history.push("/")}>Homepage</button>
           <button onClick={() => history.push("/myBookings")}>My bookings</button>

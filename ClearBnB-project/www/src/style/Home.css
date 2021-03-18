@@ -96,11 +96,10 @@
   background-color: rgba(245, 240, 240, 0.527);
 }
 
-.homeWrapper .information2 > P{
+.homeWrapper .information2 > P, .homeWrapper .information > P {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
-  margin: 200px 0 5px 0;
   color: black;
   letter-spacing: 6.2px;
   margin: 0;
@@ -111,18 +110,7 @@
     padding-top: 60px;
 }
 
-.homeWrapper .information > P {
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  margin: 200px 0 5px 0;
-  color: black;
-  letter-spacing: 6.2px;
-  margin: 0;
-  padding: 10px;
-}
-
-.divImgs > div > p {
+.divImgs > div > p, .typeImgs > div > p{
   margin: 5px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -131,16 +119,7 @@
   letter-spacing: 6.2px;
 }
 
-.typeImgs > div > p{
-  margin: 5px;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  color: blck;
-  letter-spacing: 6.2px;
-}
-
-.divImgs {
+.divImgs, .typeImgs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 40px;
@@ -149,14 +128,10 @@
 }
 
 .typeImgs{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 40px;
-  background-color: rgba(245, 240, 240, 0.527);
   height: 270px;
 }
 
-.typeImgs img{
+.typeImgs img, .divImgs img{
   margin-left: 20%;
   opacity: 60%;
   object-fit: cover;
@@ -166,33 +141,21 @@
 }
 
 .divImgs img {
-  margin-left: 20%;
-  opacity: 60%;
-  object-fit: cover;
-  width: 60%;
   height: 90%;
-  border-radius: 50%;
 }
 
-.divImgs img:hover {
-   opacity: 80%;
+.divImgs img:hover, .typeImgs img:hover {
+  opacity: 80%;
   transform: scale(1.1);
   transition: 300ms;
 }
-
-.typeImgs img:hover{
-  opacity: 80%;
-  Transform: scale(1.1);
-  transition: 300ms;
-}
-
 
 .homeWrapper .toast {
   margin-top: 4em;
 }
 
 .exploreText {
-  margin-top: 430px;
+  margin-top: 45vh;
   text-align: center;
   z-index: 1;
   font-size: 30px;
@@ -203,14 +166,18 @@
   .exploreBtn {
     background-color: rgba(245, 245, 245, 0.11);
   }
-  .divImgs {
+  .divImgs, .typeImgs {
     display: grid;
     justify-items: center;
-    grid-template-columns: 77%;
-    grid-gap: 40px;
-    background-color: rgba(245, 240, 240, 0.527);
-    height: 160vh;
-    padding: 80px 10px 10px 0px;
+    grid-template-columns: 1fr 1fr; 
+    padding: 20px 10px 10px 0px;
+  }
+    .typeImgs {
+    height: 40vh;
+  }
+
+  .typeImgs img {
+    height: 12vh;
   }
   .divImgs p {
     text-align: center;
@@ -229,14 +196,13 @@
   }
   .arrow {
     position: relative;
-    bottom: -18rem;
+    bottom: -40vh;
     left: 50%;
     margin-left: -20px;
     width: 40px;
     height: 40px;
   }
   .exploreText {
-    margin-top: 450px;
     text-align: center;
     z-index: 1;
     font-size: 30px;
@@ -244,15 +210,20 @@
 }
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
-  .divImgs {
+  
+  .divImgs, .typeImgs {
     display: grid;
     justify-items: center;
-    grid-template-columns: 85%;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
     background-color: rgba(245, 240, 240, 0.527);
-    height: 320vh;
-    padding: 80px 10px 10px 10px;
+    padding: 20px 10px 10px 10px; 
   }
+
+  .typeImgs {
+    height: 60vh;
+  }
+
   .startTravel {
     display: flex;
     flex-direction: column;
@@ -265,28 +236,22 @@
 
   .arrow {
     position: relative;
-    bottom: -18rem;
+    bottom: -40vh;
     left: 50%;
     margin-left: -20px;
     width: 40px;
     height: 40px;
   }
   .exploreText {
-    margin-top: 360px;
     text-align: center;
     z-index: 1;
     font-size: 30px;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .divImgs {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 27% 27% 27%;
-    grid-gap: 40px;
-    background-color: rgba(245, 240, 240, 0.527);
-    height: 50vh;
-    padding: 80px 10px 10px 10px;
+
+  .typeImgs img {
+    height: 40%;
   }
   .divImgs p {
     text-align: center;
@@ -296,18 +261,20 @@
   }
   .arrow {
     position: relative;
-    bottom: -18rem;
+    bottom: -40vh;
     left: 50%;
     margin-left: -20px;
     width: 40px;
     height: 40px;
   }
   .exploreText {
-    margin-top: 480px;
     text-align: center;
     z-index: 1;
     font-size: 30px;
   }
 }
-@media (max-width: 1025px) {
+@media (min-width: 1025px) and (max-width: 1285px) {
+    .typeImgs img {
+    height: 15vh;
+  }
 }
