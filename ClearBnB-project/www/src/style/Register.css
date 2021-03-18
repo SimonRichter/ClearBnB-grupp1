@@ -8,6 +8,14 @@
   text-align: center;
   border-radius: 5px;
 }
+
+.alreadyAUser{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.2px;
+}
+
 .register .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -47,8 +55,10 @@
 }
 .register{
   width: 100%;
-  min-height: 90vh;
-  background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
+  background-image: url("https://i.postimg.cc/DwGYFD3x/New-Project-1.png");
+  min-height: 90vh; 
+  background-size: cover;
+  background-repeat: no-repeat; 
 }
 
 @media (max-width: 480px) {
@@ -64,7 +74,7 @@
 }
  .register .grid-item {
   background-color: rgba(128, 128, 128, 0);
-  padding: 0px 0px 20px 0px;
+  padding: 0vh 0vh 17vh 0vh;
   font-size: 30px;
   text-align: center;
 }
@@ -94,6 +104,10 @@
 } 
 }
 @media (min-width: 768px) and (max-width: 1024px) {
+  .register{
+  background-size: cover;
+  background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
+}
  .register .grid-item {
   background-color: rgba(128, 128, 128, 0);
   padding: 14vh 0px 20px 0px;
@@ -108,12 +122,3 @@
   font-size: 40px;
 } 
 }
-/* @media (max-width: 480px) {
-  
-}
-@media (min-width: 481px) and (max-width: 767px) {
-  
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  
-} */

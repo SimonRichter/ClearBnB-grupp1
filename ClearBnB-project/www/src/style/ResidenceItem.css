@@ -78,7 +78,9 @@
   transition: 300ms;
 }
 @media (max-width: 480px) {
-  
+  .flip-card:hover .flip-card-inner {
+  transform: rotateY(0deg);
+}
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .flip-card{
@@ -92,6 +94,9 @@
 .flip-card-front > p{
   font-size: 10px;
 }
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(0deg);
+}
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .flip-card{
@@ -104,5 +109,8 @@
 }
 .flip-card-front > p{
   font-size: 1vh;
+}
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(0deg);
 }
 }

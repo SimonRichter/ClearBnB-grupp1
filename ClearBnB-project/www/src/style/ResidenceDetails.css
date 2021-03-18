@@ -84,7 +84,17 @@
   cursor: pointer;
 }
 
-.book-btn {
+.inputVisitor{
+  background: #eee;
+  width: 20%;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  font-size: large;
+}
+
+.book-btn{
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
@@ -102,11 +112,16 @@
   transition: 300ms;
 }
 
-.residenceDetail > .inner > .valCheck {
-  color: red;
+.residenceDetail > .inner >  .valCheck{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
 }
 
-.residenceDetail > .inner > .infoWrapper > .features {
+
+.residenceDetail > .inner >  .infoWrapper >  .features > .features-wrapper{
   margin-top: 20px;
   width: 100%;
   max-height: 50vh;
@@ -124,22 +139,63 @@
   grid-gap: 10px;
 }
 
-.residenceDetail > .inner > .infoWrapper > .features > .dontExist {
+.owner > p {
+  margin-bottom: 10px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+
+.owner > .MuiSvgIcon-root{
+  margin-top: 20px;
+  color: #f50057;
+  cursor: pointer;
+}
+
+
+.residenceDetail > .inner >  .infoWrapper >  .features > .dontExist{
   color: rgb(158, 151, 151);
   text-decoration: line-through;
 }
 
-.residenceDetail > .confirm {
-  background: #eee;
+.residenceDetail > .confirm{
+  background: white;
   width: 40%;
   margin: 20px auto;
   padding: 10px;
   border-radius: 5px;
 }
 
-.residenceDetail > .confirm > h1,
-h4 {
-  text-align: center;
+.residenceDetail > .confirm > .head{
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: black;
+  letter-spacing: 3.1px;
+}
+
+.pickAVisitor{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+
+.bookWarn{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.1px;
+  text-transform: uppercase;
+}
+
+.residenceDetail > .confirm > .completed{
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: black;
+  letter-spacing: 1.8px;
 }
 
 .residenceDetail > .confirm > img {
@@ -153,10 +209,18 @@ h4 {
 
 .residenceDetail > .confirm > p > span {
   font-weight: bolder;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: black;
+  letter-spacing: 1.1px;
 }
 
 .residenceDetail > .confirm > p {
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 1.1px;
 }
 
 .residenceDetail > .confirm > .btns {

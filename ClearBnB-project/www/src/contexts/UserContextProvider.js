@@ -27,7 +27,21 @@ export const UserProvider = (props) => {
       body: JSON.stringify(user)
     })
     res = await res.json();
-    setUsers([...users, user])
+    if (res.success) {
+      setUsers([...users, user])
+
+      const userToLogin = {
+        email: user.email,
+        password: user.password
+      };
+
+      await login(userToLogin)
+      whoIsOnline();
+      return true;
+
+    } else {
+      return false;
+    }
   }
 
   const login = async user => {

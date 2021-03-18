@@ -15,15 +15,11 @@
 }
 .arrow {
   position: relative;
-  bottom: -21.5rem;
+  bottom: -40vh;
   left: 50%;
   margin-left: -20px;
   width: 40px;
   height: 40px;
-
-  /**
-   * Dark Arrow Down
-   */
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaGVpZ2h0PSI1MTIiIGlkPSJzdmcyIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6Y2M9Imh0dHA6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL25zIyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxuczpzb2RpcG9kaT0iaHR0cDovL3NvZGlwb2RpLnNvdXJjZWZvcmdlLm5ldC9EVEQvc29kaXBvZGktMC5kdGQiIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzIGlkPSJkZWZzNCIvPjxnIGlkPSJsYXllcjEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAsLTU0MC4zNjIyKSI+PHBhdGggZD0ibSAxMjcuNDA2MjUsNjU3Ljc4MTI1IGMgLTQuOTg1MywwLjA3ODQgLTkuOTEwNzcsMi4xNjMwOCAtMTMuNDM3NSw1LjY4NzUgbCAtNTUsNTUgYyAtMy42MDA1NjUsMy41OTkyNyAtNS42OTY4ODMsOC42NTg5NSAtNS42OTY4ODMsMTMuNzUgMCw1LjA5MTA1IDIuMDk2MzE4LDEwLjE1MDczIDUuNjk2ODgzLDEzLjc1IEwgMjQyLjI1LDkyOS4yNSBjIDMuNTk5MjcsMy42MDA1NiA4LjY1ODk1LDUuNjk2ODggMTMuNzUsNS42OTY4OCA1LjA5MTA1LDAgMTAuMTUwNzMsLTIuMDk2MzIgMTMuNzUsLTUuNjk2ODggTCA0NTMuMDMxMjUsNzQ1Ljk2ODc1IGMgMy42MDA1NiwtMy41OTkyNyA1LjY5Njg4LC04LjY1ODk1IDUuNjk2ODgsLTEzLjc1IDAsLTUuMDkxMDUgLTIuMDk2MzIsLTEwLjE1MDczIC01LjY5Njg4LC0xMy43NSBsIC01NSwtNTUgYyAtMy41OTgxNSwtMy41OTEyNyAtOC42NTA2OCwtNS42ODEyNyAtMTMuNzM0MzgsLTUuNjgxMjcgLTUuMDgzNjksMCAtMTAuMTM2MjIsMi4wOSAtMTMuNzM0MzcsNS42ODEyNyBMIDI1Niw3NzguMDMxMjUgMTQxLjQzNzUsNjYzLjQ2ODc1IGMgLTMuNjY2NzgsLTMuNjY0MjMgLTguODQ4MDEsLTUuNzY0NDIgLTE0LjAzMTI1LC01LjY4NzUgeiIgaWQ9InBhdGgzNzY2LTEiIHN0eWxlPSJmb250LXNpemU6bWVkaXVtO2ZvbnQtc3R5bGU6bm9ybWFsO2ZvbnQtdmFyaWFudDpub3JtYWw7Zm9udC13ZWlnaHQ6bm9ybWFsO2ZvbnQtc3RyZXRjaDpub3JtYWw7dGV4dC1pbmRlbnQ6MDt0ZXh0LWFsaWduOnN0YXJ0O3RleHQtZGVjb3JhdGlvbjpub25lO2xpbmUtaGVpZ2h0Om5vcm1hbDtsZXR0ZXItc3BhY2luZzpub3JtYWw7d29yZC1zcGFjaW5nOm5vcm1hbDt0ZXh0LXRyYW5zZm9ybTpub25lO2RpcmVjdGlvbjpsdHI7YmxvY2stcHJvZ3Jlc3Npb246dGI7d3JpdGluZy1tb2RlOmxyLXRiO3RleHQtYW5jaG9yOnN0YXJ0O2Jhc2VsaW5lLXNoaWZ0OmJhc2VsaW5lO2NvbG9yOiMwMDAwMDA7ZmlsbDojMjIyMjIyO2ZpbGwtb3BhY2l0eToxO2ZpbGwtcnVsZTpub256ZXJvO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDozOC44ODAwMDEwNzttYXJrZXI6bm9uZTt2aXNpYmlsaXR5OnZpc2libGU7ZGlzcGxheTppbmxpbmU7b3ZlcmZsb3c6dmlzaWJsZTtlbmFibGUtYmFja2dyb3VuZDphY2N1bXVsYXRlO2ZvbnQtZmFtaWx5OlNhbnM7LWlua3NjYXBlLWZvbnQtc3BlY2lmaWNhdGlvbjpTYW5zIi8+PC9nPjwvc3ZnPg==);
   background-size: contain;
 }
@@ -52,18 +48,20 @@
 }
 
 .startTravel {
-  margin-left: 60px;
+  margin-left: 5vw;
+  margin-top: 25vh;
   font-family: "Montserrat", sans-serif;
 }
 
 .startTravel p {
   font-size: 30px;
-  margin: 200px 0 5px 0;
+  margin: 0 0 5px 0;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   color: #f50057;
   letter-spacing: 6.2px;
 }
+
 .exploreBtn {
   border: 2px solid rgba(255, 255, 255, 0.589);
   text-decoration: none;
@@ -98,11 +96,10 @@
   background-color: rgba(245, 240, 240, 0.527);
 }
 
-.homeWrapper .information2 > P{
+.homeWrapper .information2 > P, .homeWrapper .information > P {
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
-  margin: 200px 0 5px 0;
   color: black;
   letter-spacing: 6.2px;
   margin: 0;
@@ -113,18 +110,7 @@
     padding-top: 60px;
 }
 
-.homeWrapper .information > P {
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  margin: 200px 0 5px 0;
-  color: black;
-  letter-spacing: 6.2px;
-  margin: 0;
-  padding: 10px;
-}
-
-.divImgs > div > p {
+.divImgs > div > p, .typeImgs > div > p{
   margin: 5px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
@@ -133,16 +119,7 @@
   letter-spacing: 6.2px;
 }
 
-.typeImgs > div > p{
-  margin: 5px;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 15px;
-  color: blck;
-  letter-spacing: 6.2px;
-}
-
-.divImgs {
+.divImgs, .typeImgs {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 40px;
@@ -151,14 +128,10 @@
 }
 
 .typeImgs{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 40px;
-  background-color: rgba(245, 240, 240, 0.527);
   height: 270px;
 }
 
-.typeImgs img{
+.typeImgs img, .divImgs img{
   margin-left: 20%;
   opacity: 60%;
   object-fit: cover;
@@ -168,29 +141,18 @@
 }
 
 .divImgs img {
-  margin-left: 20%;
-  opacity: 60%;
-  object-fit: cover;
-  width: 60%;
   height: 90%;
-  border-radius: 50%;
 }
 
-.divImgs img:hover {
-   opacity: 80%;
-  transform: scale(1.1);
-  transition: 300ms;
-}
-
-.typeImgs img:hover{
+.divImgs img:hover, .typeImgs img:hover {
   opacity: 80%;
-  Transform: scale(1.1);
+  transform: scale(1.1);
   transition: 300ms;
 }
 
 
 .exploreText {
-  margin-top: 430px;
+  margin-top: 45vh;
   text-align: center;
   z-index: 1;
   font-size: 30px;
@@ -201,15 +163,18 @@
   .exploreBtn {
     background-color: rgba(245, 245, 245, 0.11);
   }
-  .divImgs {
+  .divImgs, .typeImgs {
     display: grid;
     justify-items: center;
-    grid-template-columns: 77%;
-    grid-gap: 40px;
-    margin-top: 20px;
-    background-color: rgba(245, 240, 240, 0.527);
-    height: 160vh;
-    padding: 80px 10px 10px 0px;
+    grid-template-columns: 1fr 1fr; 
+    padding: 20px 10px 10px 0px;
+  }
+    .typeImgs {
+    height: 40vh;
+  }
+
+  .typeImgs img {
+    height: 12vh;
   }
   .divImgs p {
     text-align: center;
@@ -218,89 +183,72 @@
     font-weight: bolder;
   }
   .startTravel {
-    margin-left: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: "Montserrat", sans-serif;
   }
   .startTravel p {
-    font-size: 30px;
-    margin: 50px 0 5px 0;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    color: white;
-    letter-spacing: 6.2px;
+    display: inline-block;
   }
   .arrow {
     position: relative;
-    bottom: -18rem;
+    bottom: -40vh;
     left: 50%;
     margin-left: -20px;
     width: 40px;
     height: 40px;
   }
   .exploreText {
-    margin-top: 450px;
     text-align: center;
     z-index: 1;
     font-size: 30px;
-    color: rgba(255, 255, 255, 0.726);
   }
 }
 /* Media Query for low resolution  Tablets, Ipads */
 @media (min-width: 481px) and (max-width: 767px) {
-  .divImgs {
+  
+  .divImgs, .typeImgs {
     display: grid;
     justify-items: center;
-    grid-template-columns: 85%;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 40px;
-    margin-top: 20px;
     background-color: rgba(245, 240, 240, 0.527);
-    height: 320vh;
-    padding: 80px 10px 10px 10px;
+    padding: 20px 10px 10px 10px; 
   }
-  .divImgs p {
-    text-align: center;
-    font-size: 19px;
-    margin-left: 80px;
-    font-weight: bolder;
+
+  .typeImgs {
+    height: 60vh;
   }
+
   .startTravel {
-    margin-left: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-family: "Montserrat", sans-serif;
   }
   .startTravel p {
-    font-size: 30px;
-    margin: 50px 0 5px 0;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    color: white;
-    letter-spacing: 6.2px;
+    display: inline-block;
   }
+
   .arrow {
     position: relative;
-    bottom: -18rem;
+    bottom: -40vh;
     left: 50%;
     margin-left: -20px;
     width: 40px;
     height: 40px;
   }
   .exploreText {
-    margin-top: 360px;
     text-align: center;
     z-index: 1;
     font-size: 30px;
-    color: rgba(255, 255, 255, 0.726);
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .divImgs {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 27% 27% 27%;
-    grid-gap: 40px;
-    margin-top: 20px;
-    background-color: rgba(245, 240, 240, 0.527);
-    height: 50vh;
-    padding: 80px 10px 10px 10px;
+
+  .typeImgs img {
+    height: 40%;
   }
   .divImgs p {
     text-align: center;
@@ -310,19 +258,20 @@
   }
   .arrow {
     position: relative;
-    bottom: -18rem;
+    bottom: -40vh;
     left: 50%;
     margin-left: -20px;
     width: 40px;
     height: 40px;
   }
   .exploreText {
-    margin-top: 480px;
     text-align: center;
     z-index: 1;
     font-size: 30px;
-    color: rgba(255, 255, 255, 0.726);
   }
 }
-@media (max-width: 1025px) {
+@media (min-width: 1025px) and (max-width: 1285px) {
+    .typeImgs img {
+    height: 15vh;
+  }
 }
