@@ -214,8 +214,8 @@ const classes = useStyles();
   const [modalStyle] = useState(getModalStyle);
   const body = (
     <div style={modalStyle} className={classes.paper}>
-      <CloseRoundedIcon onClick={handleClose}/>
-      <h2 id="simple-modal-title">Terms and Conditions</h2><hr></hr>
+      <CloseRoundedIcon onClick={handleClose} />
+      <h2 id="simple-modal-title">Terms and Conditions</h2><hr/>
       <ul id="simple-modal-description">
        <li> §1. ClearBnB has the right to remove the account if they suspect any ilegal behavior.</li>
       <li>§2. If you host a residence you are allowed to remove it if needed.</li>
@@ -230,7 +230,7 @@ const classes = useStyles();
   return (
     <div className="addResWrapper">
       <form onSubmit={submitHandler}>
-        <img className="logoOnForm" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt="" />
+
         <hr/>
       <h3>What type of recidense would you like to host?</h3>
         <select required className="optionBar">
