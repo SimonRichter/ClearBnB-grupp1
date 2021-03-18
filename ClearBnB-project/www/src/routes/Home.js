@@ -2,9 +2,7 @@ import React, {useContext} from 'react';
 import '../style/Home.css';
 import {Link} from 'react-router-dom'
 import { useHistory } from 'react-router-dom'
-import { UserContext } from '../contexts/UserContextProvider'
-import Snackbar from '@material-ui/core/Snackbar';
-import Alert from '@material-ui/lab/Alert';
+
 
 
 const Home = () => {
@@ -50,42 +48,15 @@ const Home = () => {
   };
 
   const history = useHistory();
-   const { setLoginToast, loginToast, setLogoutToast, logoutToast } = useContext(UserContext);
-  
   
   const exploreHandler = () => {
     history.push("/residences")
   }
 
-  const handleCloseLogin = (reason) => {
-    if (reason === 'clickaway') { return; }
-    setLoginToast(false);
-  };
-
-  const handleCloseLogout = (reason) => {
-    if (reason === 'clickaway') { return; }
-    setLogoutToast(false);
-  };
-
-  const vertical = 'top'
-  const horizontal = 'right'
 
   return (
     <div className="homeWrapper">
-      <Snackbar className="toast"
-        anchorOrigin={{ vertical, horizontal }}
-        open={loginToast} autoHideDuration={2000} onClose={handleCloseLogin}>
-        <Alert onClose={handleCloseLogin} severity="success">
-          Logged in.
-        </Alert>
-      </Snackbar>
-      <Snackbar className="toast"
-        anchorOrigin={{ vertical, horizontal }}
-        open={logoutToast} autoHideDuration={2000} onClose={handleCloseLogout}>
-        <Alert onClose={handleCloseLogout} severity="success">
-          Logged out.
-        </Alert>
-      </Snackbar>
+   
 
       <div className="home">
       <img className="homeImage" src="https://i.postimg.cc/DwGYFD3x/New-Project-1.png" alt="" />
