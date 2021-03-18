@@ -165,6 +165,7 @@ const ResidenceDetails = () => {
             <p><span>Address: </span>{residence.address}</p>
             <p><span>Type: </span>{residence.type}</p>
             <p><span>Price per night: </span>{residence.price}€</p>
+            <p><span>Residence limit: </span>{residence.residenceLimit}</p>
             <p><span>Description: </span>{residence.description}</p>
           </div>
           {features && <div className="features">
