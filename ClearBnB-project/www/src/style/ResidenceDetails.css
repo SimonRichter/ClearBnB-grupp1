@@ -129,7 +129,7 @@ transition: 300ms;
   text-transform: uppercase;
 }
 
-.MuiSvgIcon-root{
+.owner > .MuiSvgIcon-root{
   margin-top: 20px;
   color: #f50057;
   cursor: pointer;
