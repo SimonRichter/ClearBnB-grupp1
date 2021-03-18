@@ -13,10 +13,12 @@ const ResidenceDetails = () => {
   const history = useHistory();
   const { id } = useParams();
   const { residences, updateResidence } = useContext(ResidenceContext);
-  const { whoAmI } = useContext(UserContext);
+  const { whoAmI,users } = useContext(UserContext);
   const { addBooking } = useContext(BookingContext);
   const { getSpecificFeature,fetchFeatures } = useContext(FeatureContext);
   let residence = residences.find(r => r._id === id);
+  let owner;
+  if (users && residence) { owner = users.find(u => u._id === residence.userId); }
 
   const [features, setFeatures] = useState(null);
   const [startDate, setStartDate] = useState(null);
@@ -26,6 +28,7 @@ const ResidenceDetails = () => {
   const [showConfirmPage, setShowConfirmPage] = useState(false);
   const [pickedVisitors, setPickedVisitors] = useState(true);
   const [bookedWarning, setBookedWarning] = useState(false);
+  const [showEmail, setShowEmail] = useState(false);
   const amountOfVisitors = useRef(null);
 
   const bookResidence = () => {
@@ -147,7 +150,7 @@ const ResidenceDetails = () => {
   useEffect(() => {
     if (residence) {
         fetchFeatures().then((r) => {
-          setFeatures(...getSpecificFeature(r,residence.featuresId));
+          setFeatures(...getSpecificFeature(r, residence.featuresId));
         })
         //setFeatures(...getSpecificFeature(residence.featuresId));
     };    
@@ -174,6 +177,7 @@ const ResidenceDetails = () => {
             <p><span>Description: </span>{residence.description}</p>
           </div>
           {features && <div className="features">
+            <div className="features-wrapper">
             <p className={features.shower ? '' : 'dontExist'}><i className="material-icons">shower</i> Shower</p>
             <p className={features.firstAidKit ? '' : 'dontExist'}><i className="material-icons">healing</i> first aid kit</p>
             <p className={features.parking ? '' : 'dontExist'}><i className="material-icons">local_parking</i> parking</p>
@@ -188,6 +192,11 @@ const ResidenceDetails = () => {
             <p className={features.pool ? '' : 'dontExist'}><i className="material-icons">pool</i> Pool</p>
             <p className={features.fridge ? '' : 'dontExist'}><i className="material-icons">kitchen</i> Fridge</p>
             <p className={features.dishwasher ? '' : 'dontExist'}><i className="material-icons">kitchen</i> Dishwasher</p>
+            </div>
+            {owner && <div className="owner">
+              <p onClick={() => setShowEmail(!showEmail)}>✉️</p>
+              {showEmail && <p>{owner.email}</p>}
+            </div>}
           </div>}
         </div>
         {whoAmI && <input className="inputVisitor" ref={amountOfVisitors} type="number" min="1" max={residence.residenceLimit} placeholder="Amount of visitors" />}
