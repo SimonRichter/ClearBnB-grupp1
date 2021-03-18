@@ -6,6 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { UserContext } from '../contexts/UserContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider'
+import InfoRoundedIcon from '@material-ui/icons/InfoRounded';
 
 
 
@@ -294,7 +295,7 @@ const AddResidence = () => {
         <div className="termsDiv">
           <label>
             <input type="checkbox" value="" /><i className="helper" ></i> Terms & Conditions.
-        </label> <span onClick={showTermsHandler} >?</span>
+        </label> <InfoRoundedIcon onClick={showTermsHandler} />
         </div>
         {showTerms && <div className="termInfo">
           <ul>

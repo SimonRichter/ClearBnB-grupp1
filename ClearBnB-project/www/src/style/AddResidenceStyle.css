@@ -237,8 +237,11 @@
 
 /* terms */
 .addResWrapper .termsDiv {
-  margin-bottom: 50px;
+  width: 30%;
+  padding: 10px;
+  margin: 10px 8vh 10px 26vh;
 }
+
 .addResWrapper .termsDiv input {
   width: auto;
   opacity: 0.00000001;
@@ -260,16 +263,14 @@
   position: absolute;
   left: 0;
 }
-
-.addResWrapper .termsDiv {
-  padding: 10px;
-  margin: 10px 8vh 10px 26vh;
+.termInfo {
+  border: 1px solid black;
 }
 
 .addResWrapper .termInfo li {
- width: 100%;
- float: left;
-list-style-type: none;
+  width: 100%;
+  float: left;
+  list-style-type: none;
 }
 
 .addResWrapper .termsDiv .helper {
@@ -332,4 +333,11 @@ list-style-type: none;
   height: 1.2rem;
   -webkit-transition-delay: 0.28s;
   transition-delay: 0.28s;
+}
+
+.MuiSvgIcon-root {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px;
+  margin: -30px 8vh 10px 20vh;
 }
