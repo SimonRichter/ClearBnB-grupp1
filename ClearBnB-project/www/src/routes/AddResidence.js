@@ -292,20 +292,6 @@ const AddResidence = () => {
           />    
         </div>
 
-        <div className="termsDiv">
-          <label>
-            <input type="checkbox" value="" /><i className="helper" ></i> Terms & Conditions.
-        </label> <InfoRoundedIcon onClick={showTermsHandler} />
-        </div>
-        {showTerms && <div className="termInfo">
-          <ul>
-            <li>§1 Rights to remove the the residence if we suspect some ilegal content.</li>
-            <li>§2 By hosting a residence we will take a service-fee of 15%.</li>
-            <li>§3 A user can't remove a residence. Contact the support for more info.</li>
-            <li>§4 We do not take responsibility for any damages on the residences.</li>
-            </ul>
-        </div>}
-
         <button className="createBtn">Host Residence</button>
       </form>
     </div>
