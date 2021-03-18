@@ -8,6 +8,14 @@
   text-align: center;
   border-radius: 5px;
 }
+
+.alreadyAUser{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 2.2px;
+}
+
 .register .grid-container {
   display: grid;
   grid-template-columns: auto auto auto;

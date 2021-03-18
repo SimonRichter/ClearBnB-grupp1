@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../style/Register.css';
 import { useRef, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
@@ -14,6 +14,7 @@ export default function CreateUser () {
   const email = useRef();
   const password = useRef();
   const confirmPassword = useRef();
+  const [alreadyAUser, setAlreadyAUser] = useState(false);
 
   const createUser = async e => {
     e.preventDefault();
@@ -26,6 +27,10 @@ export default function CreateUser () {
       confirmPassword: confirmPassword.current.value
     }
     const res = await addUser(user);
+    if (!res) {
+      setAlreadyAUser(true);
+      return;
+    }
    
     history.push('/login');
     
@@ -51,6 +56,7 @@ export default function CreateUser () {
               <div className="inner-grid"><input required ref={confirmPassword} key="6" placeholder="confirm password" /></div>
 
               <div className="inner-grid">
+                {alreadyAUser && <p className="alreadyAUser">⚠️ Their is already a user with this email address..</p>}
                 <button className="registerButton" key="7">Register</button>
               </div>
             </form>
