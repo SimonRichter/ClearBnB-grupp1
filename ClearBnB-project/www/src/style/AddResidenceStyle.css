@@ -360,3 +360,13 @@
 #simple-modal-description > li {
   margin: 10px 0 10px 0;
 }
+
+.makeStyles-paper-20:focus {
+  outline: none;
+  border: none;
+}
+
+.makeStyles-paper-20 > .MuiSvgIcon-root:hover {
+  cursor: pointer;
+  color: #f50057;
+}
