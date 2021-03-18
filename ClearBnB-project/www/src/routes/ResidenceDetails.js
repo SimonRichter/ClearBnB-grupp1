@@ -7,6 +7,7 @@ import { UserContext } from '../contexts/UserContextProvider'
 import DatePicker from 'react-datepicker'
 import '../style/ResidenceDetails.css'
 import 'react-datepicker/dist/react-datepicker.css'
+import MailOutlineRoundedIcon from '@material-ui/icons/MailOutlineRounded';
 
 const ResidenceDetails = () => {
 
@@ -194,7 +195,7 @@ const ResidenceDetails = () => {
             <p className={features.dishwasher ? '' : 'dontExist'}><i className="material-icons">kitchen</i> Dishwasher</p>
             </div>
             {owner && <div className="owner">
-              <p onClick={() => setShowEmail(!showEmail)}>✉️</p>
+              <MailOutlineRoundedIcon onClick={() => setShowEmail(!showEmail)} fontSize="large"/>
               {showEmail && <p>{owner.email}</p>}
             </div>}
           </div>}
