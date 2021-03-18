@@ -25,8 +25,8 @@ export default function CreateUser () {
       password: password.current.value,
       confirmPassword: confirmPassword.current.value
     }
-    await addUser(user);
-
+    const res = await addUser(user);
+   
     history.push('/login');
     
   }

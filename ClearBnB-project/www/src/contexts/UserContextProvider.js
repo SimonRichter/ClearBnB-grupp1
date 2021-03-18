@@ -27,7 +27,12 @@ export const UserProvider = (props) => {
       body: JSON.stringify(user)
     })
     res = await res.json();
-    setUsers([...users, user])
+    if (res.success) {
+      setUsers([...users, user])
+      return true;
+    } else {
+      return false;
+    }
   }
 
   const login = async user => {
