@@ -32,10 +32,7 @@ const MyRentals = () => {
       } else {
         const myRentals = residences.filter(r => r.userId === whoAmI._id);
         setRentals([...myRentals]);
-        }
-  });
-    
-
+        }});
   },[residences])
 
   return (

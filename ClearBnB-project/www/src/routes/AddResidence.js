@@ -182,7 +182,7 @@ const AddResidence = () => {
         <hr/>
       <h3>What type of recidense would you like to host?</h3>
         <select required className="optionBar">
-        <option class="optValue" value="" disabled="disabled" selected="selected">Choose</option>
+        <option className="optValue" value="" disabled="disabled" selected="selected">Choose</option>
         <option ref={optType}>House</option>
         <option ref={optType}>Apartment</option>
         <option ref={optType}>Cabin</option>
