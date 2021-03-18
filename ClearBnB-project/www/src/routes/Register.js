@@ -32,7 +32,7 @@ export default function CreateUser () {
       return;
     }
    
-    history.push('/login');
+    history.push('/');
     
   }
 

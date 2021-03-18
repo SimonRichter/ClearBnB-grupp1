@@ -29,7 +29,16 @@ export const UserProvider = (props) => {
     res = await res.json();
     if (res.success) {
       setUsers([...users, user])
+
+      const userToLogin = {
+        email: user.email,
+        password: user.password
+      };
+
+      await login(userToLogin)
+      whoIsOnline();
       return true;
+
     } else {
       return false;
     }
