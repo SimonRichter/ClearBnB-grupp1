@@ -78,3 +78,16 @@
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
+@media (max-width: 480px) {
+  .flip-card-person{
+  margin-top: 2px;
+  width: 90%;
+  height: 50vh;
+}
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
