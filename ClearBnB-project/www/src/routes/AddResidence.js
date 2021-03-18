@@ -9,6 +9,7 @@ import { ResidenceContext } from '../contexts/ResidenceContextProvider'
 import Modal from '@material-ui/core/Modal';
 import InfoIcon from '@material-ui/icons/Info';
 import { makeStyles } from '@material-ui/core/styles';
+import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 
 
 const AddResidence = () => {
@@ -211,9 +212,10 @@ const useStyles = makeStyles((theme) => ({
   
 const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
-  const [modalStyle] = React.useState(getModalStyle);
+  const [modalStyle] = useState(getModalStyle);
   const body = (
     <div style={modalStyle} className={classes.paper}>
+      <CloseRoundedIcon onClick={handleClose}/>
       <h2 id="simple-modal-title">Terms and Conditions</h2><hr></hr>
       <ul id="simple-modal-description">
        <li> §1. ClearBnB has the right to remove the account if they suspect any ilegal behavior.</li>
@@ -340,7 +342,7 @@ const classes = useStyles();
 
         <div className="termsDiv">
           <label>
-            <input type="checkbox" value="" /><i className="helper" ></i>Terms & Conditions. 
+            <input type="checkbox" required value="" /><i className="helper" ></i>Terms & Conditions. 
         </label><InfoIcon fontSize="small" color="disabled" onClick={handleOpen}/>
         </div>
 
