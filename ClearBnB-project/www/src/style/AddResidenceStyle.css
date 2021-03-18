@@ -339,12 +339,12 @@
   display: inline-block;
   cursor: pointer;
   padding: 10px;
-  margin: -30px 8vh 10px 20vh;
+  margin: -30px 8vh 10px 17vh;
 }
 
 .addResWrapper .termInfo {
   width: 100%;
-  margin-left: -3px;
+  margin-left: -10px;
   margin-right: 20px;
 }
 

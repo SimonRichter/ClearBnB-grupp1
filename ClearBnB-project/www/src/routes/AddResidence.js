@@ -7,6 +7,7 @@ import { UserContext } from '../contexts/UserContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider'
 import TermsAndConds from '../components/TermsAndConds'
+import InfoIcon from '@material-ui/icons/Info';
 
 
 
@@ -290,7 +291,7 @@ const AddResidence = () => {
 
         <div className="termsDiv">
           <label>
-            <input type="checkbox" value="" /><i className="helper" ></i> Terms & Conditions.
+            <input type="checkbox" value="" /><i className="helper" ></i>Terms & Conditions. <InfoIcon/>
         </label>
         </div>
 

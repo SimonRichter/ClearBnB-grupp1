@@ -4,8 +4,8 @@ import Modal from '@material-ui/core/Modal';
 
 
 function getModalStyle() {
-  const top = 50 + 70;
-  const left = 50 + 70;
+  const top = 50;
+  const left = 50;
 
   return {
     top: `${top}%`,
@@ -44,7 +44,6 @@ export default function TermsAndConds() {
       <p id="simple-modal-description">
         Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
       </p>
-      <TermsAndConds />
     </div>
   );
 
