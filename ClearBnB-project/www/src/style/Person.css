@@ -92,7 +92,7 @@
   height: 50vh;
 }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1400px) {
   .flip-card-person{
   margin-top: 2px;
   width: 90%;

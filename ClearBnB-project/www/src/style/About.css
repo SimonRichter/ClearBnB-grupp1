@@ -101,7 +101,7 @@
   grid-template-columns: 1fr;
 }  
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1400px) {
   .about > .persons{
   width: 80%;
   grid-gap: 3px;
