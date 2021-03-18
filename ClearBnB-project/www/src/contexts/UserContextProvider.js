@@ -37,8 +37,13 @@ export const UserProvider = (props) => {
       body: JSON.stringify(user)
     })
     res = await res.json();
-    setLoginToast(true);
-    return res;
+    if (!res) {
+      setLoginToast(false);
+    } else {
+      setLoginToast(true);
+      return res;
+    }
+    
   }
 
   const logOut = async () => {
