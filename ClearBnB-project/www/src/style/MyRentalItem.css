@@ -1,7 +1,8 @@
 
 .myRentalItem {
   display: grid;
-  grid-template-columns: 1fr 65%;
+  grid-template-columns: 1fr 55% 10%;
+  grid-gap: 10px;
   width: 70%;
   background: #eee;
   margin: 15px auto;
@@ -24,8 +25,17 @@
   object-fit: cover;
 }
 
-.myRentalItem  > .info{
+.myRentalItem  > .info >{
   justify-self: center;
+}
+
+.myRentalItem  > .delete > .deleteRes{
+margin-left: 20px;
+}
+
+.myRentalItem  > .delete > .deleteRes:hover{
+  Transform: scale(1.4);
+  transition: 300ms;
 }
 
 .myRentalItem  > .info > p > span{

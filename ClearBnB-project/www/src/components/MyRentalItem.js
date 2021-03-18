@@ -20,6 +20,9 @@ const MyRentalItem = ({ rental }) => {
         <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
         <p><span>Price/night: </span>{ rental.price }</p>
       </div>
+      <div className="delete">
+        <p className="deleteRes">❌</p>
+      </div>
     </div>
   );
 }
