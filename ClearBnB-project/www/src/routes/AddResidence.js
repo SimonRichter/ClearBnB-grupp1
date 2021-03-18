@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import '../style/AddResidenceStyle.css';
 import DatePicker from 'react-datepicker';
@@ -6,15 +6,23 @@ import "react-datepicker/dist/react-datepicker.css";
 import { UserContext } from '../contexts/UserContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider'
-import HomeIcon from '@material-ui/icons/Home';
 
 
 
 const AddResidence = () => {
+
+  useEffect(() => {
+    whoIsOnline().then(user => {
+      if (!user) {
+          history.push("/")
+        }
+  });
+  },[]);
+
   const history = useHistory();
   const { addFeature } = useContext(FeatureContext)
   const { addResidence } = useContext(ResidenceContext)
-  const { whoAmI } = useContext(UserContext);
+  const { whoAmI, whoIsOnline } = useContext(UserContext);
 
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
@@ -275,17 +283,11 @@ const AddResidence = () => {
             selected={selectedEndDate}
             onChange={date => setSelectedEndDate(date)}
             minDate={selectedStartDate}
-            isClearable
-            
-          />
-
-          
+            isClearable     
+          />    
         </div>
 
-        
-        
         <button className="createBtn">Host Residence</button>
-        {/* whoAmI && <button className="createBtn">Login to host</button> --> */}
       </form>
     </div>
   )

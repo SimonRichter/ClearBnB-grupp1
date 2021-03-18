@@ -58,6 +58,7 @@ export const UserProvider = (props) => {
     data = await data.json();
     if (!data) {
       setWhoAmI(null);
+      return null;
     } else {
       setWhoAmI({ ...data });
       return data;
@@ -75,7 +76,8 @@ export const UserProvider = (props) => {
     setLoginToast,
     loginToast,
     logoutToast,
-    setLogoutToast
+    setLogoutToast,
+    fetchUsers
   }
 
   return (

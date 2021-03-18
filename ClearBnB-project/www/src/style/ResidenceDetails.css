@@ -19,12 +19,15 @@
 
 .__react_modal_image__icon_menu > a:hover {
   opacity: 100%;
-  transform: scale(1.1);
-  transition: 300ms;
 }
 
 .residenceDetail > .inner > .infoWrapper {
   padding-right: 40px;
+}
+
+.residenceDetail > .inner .images img:hover {
+  opacity: 80%;
+  cursor: pointer;
 }
 
 .residenceDetail > .inner > .images {
@@ -120,7 +123,6 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
 }
-
 
 .residenceDetail > .inner > .infoWrapper > .features > .dontExist {
   color: rgb(158, 151, 151);

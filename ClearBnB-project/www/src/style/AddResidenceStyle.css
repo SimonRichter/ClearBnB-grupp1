@@ -215,21 +215,15 @@
 }
 
 .addResWrapper .datePickerDiv {
-  display: block;
+  display: grid;
   margin: 0 auto;
+  grid-template-columns: 1;
+  grid-template-rows: 1;
+  width: 30%;
 }
 
-.startDate,
-.endDate {
-  background: #eee;
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  font-size: large;
-  border: none;
-  border-radius: 10px;
-  text-align: center;
-  cursor: pointer;
+.react-datepicker__close-icon {
+  margin-top: 4px;
 }
 
 .addResWrapper .react-datepicker__input-container input {

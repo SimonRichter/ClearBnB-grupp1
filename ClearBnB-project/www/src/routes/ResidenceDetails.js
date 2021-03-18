@@ -169,9 +169,10 @@ const ResidenceDetails = () => {
       {!showConfirmPage && residence && <div className="inner">
         <div className="images">
           {residence.imageURLs.map((img) => {
-            return (<img key={img} src={img} alt="" onClick={() => openLightbox({img})} />)
+            return (<img key={img} src={img} alt="" onClick={() => openLightbox({img})}/>)
           })}
         </div>
+        
         <div className="infoWrapper">
           <div className="desc">
             <p className="resTitle">{residence.title}</p>
