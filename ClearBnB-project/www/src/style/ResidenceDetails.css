@@ -8,26 +8,8 @@
   margin-bottom: 20px;
 }
 
-#react-modal-image-img {
-  max-width: 80%;
-  max-height: 70%;
-}
-
-.__react_modal_image__icon_menu > a {
-  opacity: 80%;
-}
-
-.__react_modal_image__icon_menu > a:hover {
-  opacity: 100%;
-}
-
 .residenceDetail > .inner > .infoWrapper {
   padding-right: 40px;
-}
-
-.residenceDetail > .inner .images img:hover {
-  opacity: 80%;
-  cursor: pointer;
 }
 
 .residenceDetail > .inner > .images {
@@ -84,7 +66,7 @@
   cursor: pointer;
 }
 
-.inputVisitor{
+.inputVisitor {
   background: #eee;
   width: 20%;
   border: none;
@@ -94,7 +76,7 @@
   font-size: large;
 }
 
-.book-btn{
+.book-btn {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px;
@@ -112,7 +94,7 @@
   transition: 300ms;
 }
 
-.residenceDetail > .inner >  .valCheck{
+.residenceDetail > .inner > .valCheck {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   color: #f50057;
@@ -120,8 +102,7 @@
   text-transform: uppercase;
 }
 
-
-.residenceDetail > .inner >  .infoWrapper >  .features > .features-wrapper{
+.residenceDetail > .inner > .infoWrapper > .features > .features-wrapper {
   margin-top: 20px;
   width: 100%;
   max-height: 50vh;
@@ -148,19 +129,18 @@
   text-transform: uppercase;
 }
 
-.owner > .MuiSvgIcon-root{
+.owner > .MuiSvgIcon-root {
   margin-top: 20px;
   color: #f50057;
   cursor: pointer;
 }
 
-
-.residenceDetail > .inner >  .infoWrapper >  .features > .dontExist{
+.residenceDetail > .inner > .infoWrapper > .features > .dontExist {
   color: rgb(158, 151, 151);
   text-decoration: line-through;
 }
 
-.residenceDetail > .confirm{
+.residenceDetail > .confirm {
   background: white;
   width: 40%;
   margin: 20px auto;
@@ -168,14 +148,14 @@
   border-radius: 5px;
 }
 
-.residenceDetail > .confirm > .head{
+.residenceDetail > .confirm > .head {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   color: black;
   letter-spacing: 3.1px;
 }
 
-.pickAVisitor{
+.pickAVisitor {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   color: #f50057;
@@ -183,7 +163,7 @@
   text-transform: uppercase;
 }
 
-.bookWarn{
+.bookWarn {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   color: #f50057;
@@ -191,7 +171,7 @@
   text-transform: uppercase;
 }
 
-.residenceDetail > .confirm > .completed{
+.residenceDetail > .confirm > .completed {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   color: black;
