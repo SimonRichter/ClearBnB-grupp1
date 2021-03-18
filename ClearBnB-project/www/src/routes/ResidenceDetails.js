@@ -30,7 +30,6 @@ const ResidenceDetails = () => {
 
   const bookResidence = () => {
 
-    
     if (!amountOfVisitors.current.value) {
       setPickedVisitors(false);
       return;
@@ -61,19 +60,19 @@ const ResidenceDetails = () => {
       bookedDays: allTheDaysBooked
     }
 
-    //updateResidence(residence._id, bookedDaysObj);
+    updateResidence(residence._id, bookedDaysObj);
     
     const bookingObj = {
       startDate: startDateInMillis,
       endDate: endDateInMillis,
       userId: whoAmI._id,
       residenceId: id,
-      price: totalPrice
+      price: (Math.round(totalPrice * 1.15))
     }
 
-    //addBooking(bookingObj)
+    addBooking(bookingObj)
 
-    //setShowConfirmPage(true);
+    setShowConfirmPage(true);
   }
 
   const filterForStartDate = date => {
@@ -214,6 +213,7 @@ const ResidenceDetails = () => {
           />
         </div>}
         {totalPrice && <p><span>Total price: </span>{totalPrice} €</p>}
+        {totalPrice && <p><span>Total price with VAT: </span>{Math.round(totalPrice * 1.15)} €</p>}
         {bookedWarning && <p className="bookWarn">🧐 You have booked days between your start date and end date</p>}
         {unFilledFields && <p className="valCheck">You have to pick a start date and a end date to continue..</p>}
         {whoAmI && <button onClick={bookResidence} className="book-btn">Book</button>}
@@ -226,7 +226,7 @@ const ResidenceDetails = () => {
         <p><span>Address: </span>{ residence.address }</p>
         <p><span>Start date: </span>{new Date(startDate).toString().substr(0,15)}</p>
         <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
-        <p><span>Total price: </span>{totalPrice} €</p>
+        <p><span>Total price: </span>{Math.round(totalPrice * 1.15)} €</p>
         <div className="btns">
           <button onClick={() => history.push("/")}>Homepage</button>
           <button onClick={() => history.push("/myBookings")}>My bookings</button>
