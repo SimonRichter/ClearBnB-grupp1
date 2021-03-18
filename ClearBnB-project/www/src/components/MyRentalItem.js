@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import '../style/MyRentalItem.css'
+import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { useHistory } from 'react-router-dom'
 
 const MyRentalItem = ({ rental }) => {
-  
+
+  const { deleteResidence } = useContext(ResidenceContext);
   const history = useHistory();
   const startDate = rental.startDate * 1000;
   const endDate = rental.endDate * 1000;
 
-  const deleteResidence = () => {
-    console.log(rental._id);
+  const deleteResidences = () => {
+    deleteResidence(rental._id)
   }
 
 
@@ -25,7 +27,7 @@ const MyRentalItem = ({ rental }) => {
         <p><span>Price/night: </span>{ rental.price }</p>
       </div>
       <div className="delete">
-        <p className="deleteRes" onClick={deleteResidence}>❌</p>
+        <p className="deleteRes" onClick={deleteResidences}>❌</p>
       </div>
     </div>
   );

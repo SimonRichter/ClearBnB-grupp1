@@ -54,7 +54,8 @@ export const ResidenceProvider = (props) => {
     setResidences,
     updateResidence,
     fetchResidences,
-    addResidence
+    addResidence,
+    deleteResidence
   }
 
   return (
