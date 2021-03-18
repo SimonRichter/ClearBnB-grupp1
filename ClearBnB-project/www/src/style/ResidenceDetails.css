@@ -137,6 +137,14 @@ transition: 300ms;
   letter-spacing: 3.1px;
 }
 
+.pickAVisitor{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 3.1px;
+  text-transform: uppercase;
+}
+
 .residenceDetail > .confirm > .completed{
   font-family: "Montserrat", sans-serif;
   font-size: 20px;

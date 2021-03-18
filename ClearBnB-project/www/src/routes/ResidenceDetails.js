@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState, useRef} from 'react'
 import { useParams,useHistory } from 'react-router-dom'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { BookingContext } from '../contexts/BookingContextProvider'
@@ -24,9 +24,18 @@ const ResidenceDetails = () => {
   const [totalPrice, setTotalPrice] = useState(null);
   const [unFilledFields, setunFilledFields] = useState(null);
   const [showConfirmPage, setShowConfirmPage] = useState(false);
-
+  const [pickedVisitors, setPickedVisitors] = useState(true);
+  const amountOfVisitors = useRef(null);
 
   const bookResidence = () => {
+
+    
+    if (!amountOfVisitors.current.value) {
+      setPickedVisitors(false);
+      return;
+    }
+
+    setPickedVisitors(true);
 
     const startDateInMillis = Math.round(new Date(startDate).getTime() / 1000);
     const endDateInMillis = Math.round(new Date(endDate).getTime() / 1000);
@@ -51,7 +60,7 @@ const ResidenceDetails = () => {
       bookedDays: allTheDaysBooked
     }
 
-    updateResidence(residence._id, bookedDaysObj);
+    //updateResidence(residence._id, bookedDaysObj);
     
     const bookingObj = {
       startDate: startDateInMillis,
@@ -61,9 +70,9 @@ const ResidenceDetails = () => {
       price: totalPrice
     }
 
-    addBooking(bookingObj)
+    //addBooking(bookingObj)
 
-    setShowConfirmPage(true);
+    //setShowConfirmPage(true);
   }
 
   const filterForStartDate = date => {
@@ -133,7 +142,6 @@ const ResidenceDetails = () => {
   useEffect(() => {
     if (residence) {
         fetchFeatures().then((r) => {
-          console.log('here', r);
           setFeatures(...getSpecificFeature(r,residence.featuresId));
         })
         //setFeatures(...getSpecificFeature(residence.featuresId));
@@ -176,7 +184,8 @@ const ResidenceDetails = () => {
             <p className={features.dishwasher ? '' : 'dontExist'}><i className="material-icons">kitchen</i> Dishwasher</p>
           </div>}
         </div>
-        {whoAmI && <input className="inputVisitor" type="number" min="1" max={residence.residenceLimit} placeholder="Amount of visitors" />}
+        {whoAmI && <input className="inputVisitor" ref={amountOfVisitors} type="number" min="1" max={residence.residenceLimit} placeholder="Amount of visitors" />}
+        {!pickedVisitors && <p className="pickAVisitor">You have to fill in atleast one visitor to continue..</p>}
         {whoAmI && <div className="dates">
           <DatePicker className="startDate"
             placeholderText="Arrival.."
