@@ -14,6 +14,15 @@ export const ResidenceProvider = (props) => {
     return data;
   }
 
+  const deleteResidence = async (id) => {
+    let res = await fetch('/rest/residences/' + id, {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json' },
+    })
+    res = await res.json();
+    console.log(res);
+  }
+
   const updateResidence = async (id, residence) => {
      let res = await fetch('/rest/residences/' + id, {
       method: 'PUT',
