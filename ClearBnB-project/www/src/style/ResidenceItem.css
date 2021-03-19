@@ -114,3 +114,11 @@
   transform: rotateY(0deg);
 }
 }
+@media (min-width: 2000px){
+ .flip-card-front > p{
+  font-size: 1.5vh;
+} 
+.flip-card-back > p{
+  font-size: 1.5vh;
+}
+}
