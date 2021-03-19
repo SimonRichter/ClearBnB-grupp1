@@ -66,7 +66,6 @@ const ResidenceDetails = () => {
 
     const bookedObj = {
       bookedDays: allTheDaysBooked,
-      views: 1,
       earned: totalPrice
     }
 
@@ -162,6 +161,16 @@ const ResidenceDetails = () => {
         //setFeatures(...getSpecificFeature(residence.featuresId));
     };    
   }, [residence])
+
+  useEffect(() => {
+    if (id) {
+      console.log('inne');
+      const bookedObj = {
+        views: 1
+      }
+      updateResidence(id, bookedObj);
+    }
+  },[])
 
   const closeLightbox = () => {
     setOpen(false);
