@@ -125,3 +125,48 @@
   outline: none;
   border: none;
 }
+
+.deleteConfitmTitle{
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #f50057;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+}
+
+.deleteConfitmDeleteMsg{
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: #f50057;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+}
+
+.deleteConfitmInput{
+  outline: none;
+  border-radius: 2px;
+  display: block;
+  padding: 10px;
+  margin: 0 auto;
+  border: none;
+  background: #eee;
+  font-size: large;
+  width: 50%;
+  text-align: center;
+}
+
+.deleteConfitmButton{
+  width: 54%;
+  outline: none;
+  border-radius: 2px;
+  display: block;
+  padding: 10px;
+  margin: 10px auto;
+  border: none;
+  background: #f50057;
+  color: white;
+  font-size: large;
+  text-transform: uppercase;
+}

@@ -116,10 +116,10 @@ const classes = useStyles();
   const body = (
     <div style={modalStyle} className={classes.paper}>
       <CloseRoundedIcon onClick={handleClose} />
-        <p>Delete confirmation</p>
-      <input ref={passwordRef} type="password" placeholder="Enter your password" />
-      {showWrongPassword && <p>Wrong password..</p>}
-      <button onClick={deleteRes}>Confirm</button>
+      <p className="deleteConfitmTitle">Delete confirmation</p>
+      <input className="deleteConfitmInput" ref={passwordRef} type="password" placeholder="Enter your password" />
+      {showWrongPassword && <p className="deleteConfitmDeleteMsg">Wrong password..</p>}
+      <button className="deleteConfitmButton" onClick={deleteRes}>Confirm</button>
     </div>
   );
 
