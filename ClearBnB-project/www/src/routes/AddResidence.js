@@ -230,7 +230,7 @@ const classes = useStyles();
   return (
     <div className="addResWrapper">
       <form onSubmit={submitHandler}>
-
+        <img className="logoHost" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt=""/>
         <hr/>
       <h3>What type of recidense would you like to host?</h3>
         <select required className="optionBar">

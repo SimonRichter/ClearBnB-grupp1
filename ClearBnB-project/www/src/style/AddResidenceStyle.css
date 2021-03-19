@@ -370,3 +370,9 @@
   cursor: pointer;
   color: #f50057;
 }
+
+.logoHost {
+  width: 10em;
+  opacity: 70%;
+  margin: 15px;
+}
