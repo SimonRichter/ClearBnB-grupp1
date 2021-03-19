@@ -31,7 +31,8 @@ const Residences = mongoose.model('residence', {
   residenceLimit: { type: Number, required: true },
   bookedDays: { type: Array },
   earned: { type: Number },
-  views: { type: Number }
+  views: { type: Number },
+  amountOfBookings: { type: Number }
 });
 
 const Features = mongoose.model('feature', {

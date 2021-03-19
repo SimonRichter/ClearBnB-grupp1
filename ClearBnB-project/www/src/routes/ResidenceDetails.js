@@ -164,7 +164,6 @@ const ResidenceDetails = () => {
 
   useEffect(() => {
     if (id) {
-      console.log('inne');
       const bookedObj = {
         views: 1
       }
