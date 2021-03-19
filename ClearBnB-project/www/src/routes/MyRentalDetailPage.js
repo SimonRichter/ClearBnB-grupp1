@@ -2,6 +2,9 @@ import React, { useState, useContext, useEffect } from 'react';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { useParams, useHistory } from 'react-router-dom'
 import '../style/MyRentalDetail.css'
+import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 
 const MyRentalDetailPage = () => {
 
@@ -14,7 +17,17 @@ const MyRentalDetailPage = () => {
     if (residence) {
       setPercentOfBookings((residence.amountOfBookings / residence.views) * 100);
     }
-  },[residences])
+  }, [residences])
+  
+  const LightTooltip = withStyles((theme) => ({
+      tooltip: {
+        backgroundColor: "#f50057",
+        color: 'white',
+        boxShadow: theme.shadows[1],
+        fontSize: 15,
+      },
+  }))(Tooltip);
+
 
   const styleView = {
     height: residence.views + "%",
@@ -68,10 +81,22 @@ const MyRentalDetailPage = () => {
           {percentOfBookings && <p><span>Bookings procentage by pageviews: </span>{percentOfBookings.toFixed(2)}%</p>}
           </div>
           <div className="stats">
+                 
+            <LightTooltip title={"Pageviews: " + residence.views}>
             <div style={styleView} className="statViews"></div>
+            </LightTooltip>
+
+            <LightTooltip title={"Days booked: " + residence.bookedDays.length}>
             <div style={styleBookedDays} className="statBooked"></div>
+            </LightTooltip>
+            
+            <LightTooltip title={"Amount of bookings: " + residence.amountOfBookings}>
             <div style={styleBookings} className="statBookings"></div>
-            <div style={stylePercent} className="statPercent"></div>
+            </LightTooltip>
+
+            {percentOfBookings && <LightTooltip title={"Percent of bookings/views: " + percentOfBookings.toFixed(2) + "%"}>
+              <div style={stylePercent} className="statPercent"></div>
+            </LightTooltip>}
         </div>
         </div>
       </div>}
