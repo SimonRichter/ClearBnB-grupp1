@@ -246,6 +246,9 @@
     width: 100%;
     text-align: center;
   }
+  .residenceDetail > .inner > .images img {
+  height: 130%;
+}
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .residenceDetail > .inner > .infoWrapper {
