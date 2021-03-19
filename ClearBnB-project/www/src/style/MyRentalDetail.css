@@ -5,7 +5,7 @@
   padding: 20px;
   background: white;
   border-radius: 10px;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .inner{
@@ -51,4 +51,36 @@
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+}
+
+.statistics{
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: #eee;
+  height: 90%;
+}
+
+.statistics > p{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: black;
+  letter-spacing: 1.2px;
+}
+
+.statistics > p > span{
+  color: #f50057;
+  font-weight: bolder;
+}
+
+.statistics > .statisticsTitle{
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #f50057;
+  letter-spacing: 3.2px;
+  text-align: center;
+  text-transform: uppercase;
 }
