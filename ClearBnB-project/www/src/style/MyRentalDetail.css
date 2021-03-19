@@ -54,12 +54,13 @@
 }
 
 .statistics{
+  min-height: 50vh;
   padding: 20px;
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
   background: #eee;
-  height: 70%;
+  max-height: 50vh;
   display: grid;
   grid-template-rows: 40% 1fr;
 }

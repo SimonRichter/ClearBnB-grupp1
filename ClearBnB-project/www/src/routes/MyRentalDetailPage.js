@@ -16,7 +16,11 @@ const MyRentalDetailPage = () => {
 
   useEffect(() => {
     if (residence) {
-      setPercentOfBookings((residence.amountOfBookings / residence.views) * 100);
+      if (residence.amountOfBookings === null) {
+        setPercentOfBookings(null);
+      } else {
+        setPercentOfBookings((residence.amountOfBookings / residence.views) * 100);
+      }
     }
   }, [residences])
   
@@ -31,22 +35,22 @@ const MyRentalDetailPage = () => {
 
 
   const styleView = {
-    height: residence.views + "%",
+    height: residence.views ? residence.views + "%" : 0,
     maxHeight: "100%"
   }
 
    const styleBookedDays = {
-    height: residence.bookedDays + "%",
+    height: residence.bookedDays ? residence.bookedDays + "%" : 0,
     maxHeight: "100%"
    }
   
     const styleBookings = {
-      height: residence.amountOfBookings + "%",
+      height: residence.amountOfBookings ? residence.amountOfBookings + "%" : 0,
       maxHeight: "100%"
     }
   
     const stylePercent = {
-      height: percentOfBookings + "%",
+      height: percentOfBookings ? percentOfBookings + "%" : 0,
       maxHeight: "100%"
     }
 
@@ -75,11 +79,12 @@ const MyRentalDetailPage = () => {
         <div className="statistics">
           <div className="statInfo">
           <p className="statisticsTitle">statistics <EqualizerIcon size="large"/></p>
-          <p><span>Total booked days: </span>{residence.bookedDays.length}</p>
-          <p><span>Pageviews: </span>{residence.views}</p>
-          <p><span>Amount of bookings: </span>{residence.amountOfBookings}</p>
-          <p><span>Total earnings: </span>{residence.earned} €</p>
-          {percentOfBookings && <p><span>Bookings procentage by pageviews: </span>{percentOfBookings.toFixed(2)}%</p>}
+          <p><span>Total booked days: </span>{residence.bookedDays ? residence.bookedDays.length : 0}</p>
+          <p><span>Pageviews: </span>{residence.views ? residence.views : 0}</p>
+          <p><span>Amount of bookings: </span>{residence.amountOfBookings ? residence.amountOfBookings : 0}</p>
+          <p><span>Total earnings: </span>{residence.earned ? residence.earned : 0} €</p>
+            {percentOfBookings ? <p><span>Bookings procentage by pageviews: </span>{percentOfBookings.toFixed(2)}%</p> : 
+          <p><span>Bookings procentage by pageviews: </span>0%</p> }
           </div>
           <div className="stats">
                  
