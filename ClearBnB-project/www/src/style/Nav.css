@@ -69,7 +69,7 @@
 .links a {
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.5vh;
+  font-size: 1.3vh;
   color: #f50057;
   letter-spacing: 2.2px;
   padding-bottom: 5px;
@@ -238,4 +238,9 @@
   user-select: none;
   z-index: 999;
 }
+}
+@media (min-width: 2000px){
+ .links a {
+  font-size: 1.5vh;
+} 
 }
