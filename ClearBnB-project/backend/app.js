@@ -134,6 +134,18 @@ app.put('/rest/residences/:id', async (req, res) => {
     delete req.body.bookedDays
   }
 
+  if (req.body.views) {
+
+    if (residence.views === null) {
+      console.log('here',req.body.views);
+      residence.views = req.body.views;
+    }
+    else {
+      residence.views = residence.views +1;
+    }
+    delete req.body.views
+  }
+
   Object.assign(residence, req.body)
   await residence.save()
 

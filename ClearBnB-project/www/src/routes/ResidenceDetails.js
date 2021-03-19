@@ -60,11 +60,12 @@ const ResidenceDetails = () => {
       allTheDaysBooked.push(i);
     }
 
-    const bookedDaysObj = {
-      bookedDays: allTheDaysBooked
+    const bookedObj = {
+      bookedDays: allTheDaysBooked,
+      views: 1
     }
 
-    updateResidence(residence._id, bookedDaysObj);
+    updateResidence(residence._id, bookedObj);
     
     const bookingObj = {
       startDate: startDateInMillis,
