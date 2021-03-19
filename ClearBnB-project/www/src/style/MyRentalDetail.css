@@ -59,9 +59,9 @@
   margin-top: 20px;
   margin-bottom: 20px;
   background: #eee;
-  height: 90%;
+  height: 70%;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 40% 1fr;
 }
 
 .statistics > .statInfo > p{
@@ -89,11 +89,11 @@
 
 .statistics > .stats{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 10% 10% 10% 10%;
   grid-template-rows: 1fr;
 }
 
-.statistics > .stats > .statViews, .statBooked{
+.statistics > .stats > .statViews, .statBooked, .statBookings, .statPercent{
   border-radius: 5px;
   background: #f50057;
   width: 20px;

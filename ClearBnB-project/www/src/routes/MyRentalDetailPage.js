@@ -24,7 +24,17 @@ const MyRentalDetailPage = () => {
    const styleBookedDays = {
     height: residence.bookedDays + "%",
     maxHeight: "100%"
-  }
+   }
+  
+    const styleBookings = {
+      height: residence.amountOfBookings + "%",
+      maxHeight: "100%"
+    }
+  
+    const stylePercent = {
+      height: percentOfBookings + "%",
+      maxHeight: "100%"
+    }
 
   return (
     <div className="myRentalDetailPage">
@@ -60,6 +70,8 @@ const MyRentalDetailPage = () => {
           <div className="stats">
             <div style={styleView} className="statViews"></div>
             <div style={styleBookedDays} className="statBooked"></div>
+            <div style={styleBookings} className="statBookings"></div>
+            <div style={stylePercent} className="statPercent"></div>
         </div>
         </div>
       </div>}
