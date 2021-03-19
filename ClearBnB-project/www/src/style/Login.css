@@ -5,6 +5,7 @@
   min-height: 65vh; 
   background-size: cover;
   background-repeat: no-repeat; 
+  padding-top: 25vh;
 }
 
 .form-for-login > form > p {
@@ -29,12 +30,12 @@
   margin: 15px auto;
   border: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 1vh;
   display: block;
 }
 
 .form-for-login button{
-  width: 95%;
+  width: 94%;
   display: block;
   margin: 0 auto;
   border: none;
@@ -43,6 +44,7 @@
   background: rgb(68, 68, 248);
   border-radius: 5px;
   cursor: pointer;
+  font-size: 2vh;
 }
 
 .login .snackBarIndex{
@@ -53,14 +55,10 @@
   Transform: scale(1.02);
   transition: 300ms;
 }
-@media (max-width: 480px) {
-  .login{
-  width: 100%;
-  height: 80vh;
-  background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
-  object-fit: cover;
-  padding-top: 100px;
+.login input[type="email"],[type="password"]{
+  font-size: 2vh;
 }
+@media (max-width: 480px) {
 .login > .form-for-login {
   opacity: 90%;
   width: 70%;
@@ -70,13 +68,10 @@
   padding: 20px;
 }
 .form-for-login button{
-  width: 100%;
-  font-size: 40px;
-}
-.login input[type="email"]{
+  width: 97%;
   font-size: 30px;
 }
-.login input[type="password"]{
+.login input[type="email"],[type="password"]{
   font-size: 30px;
 }
 }
@@ -90,21 +85,14 @@
   padding: 20px;
  }
   .login input[type="email"],[type="password"]{
-  font-size: 40px;
+  font-size: 30px;
 }
 .form-for-login button{
   width: 95%;
-  font-size: 40px;
+  font-size: 30px;
 }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .login{
-    background: no-repeat;
-    background-size: cover;
-  background-image: url("https://a-static.besthdwallpaper.com/dagsljus-och-forest-tapet-1366x768-22181_46.jpg");
-  object-fit: cover;
-  padding-top: 30vh;
-}
   .login > .form-for-login {
   opacity: 90%;
   width: 70%;
@@ -113,11 +101,7 @@
   border-radius: 5px;
   padding: 20px;
  }
-  .login input[type="email"],[type="password"]{
-  font-size: 40px;
-}
 .form-for-login button{
-  width: 95%;
-  font-size: 40px;
+  width: 94%;
 }
 }

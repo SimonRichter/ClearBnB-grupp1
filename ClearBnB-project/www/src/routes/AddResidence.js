@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useContext, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
 import '../style/AddResidenceStyle.css';
 import DatePicker from 'react-datepicker';
@@ -6,20 +6,31 @@ import "react-datepicker/dist/react-datepicker.css";
 import { UserContext } from '../contexts/UserContextProvider'
 import { FeatureContext } from '../contexts/FeatureContextProvider';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider'
-import HomeIcon from '@material-ui/icons/Home';
-
+import Modal from '@material-ui/core/Modal';
+import InfoIcon from '@material-ui/icons/Info';
+import { makeStyles } from '@material-ui/core/styles';
+import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
 
 
 const AddResidence = () => {
+
+  useEffect(() => {
+    whoIsOnline().then(user => {
+      if (!user) {
+          history.push("/")
+        }
+  });
+  },[]);
+
   const history = useHistory();
   const { addFeature } = useContext(FeatureContext)
   const { addResidence } = useContext(ResidenceContext)
-  const { whoAmI } = useContext(UserContext);
+  const { whoAmI, whoIsOnline } = useContext(UserContext);
 
   const [selectedStartDate, setSelectedStartDate] = useState(null);
   const [selectedEndDate, setSelectedEndDate] = useState(null);
   const [guests, setGuests] = useState(1);
-
+  const [open, setOpen] = useState(false);
 
   const [isChecked, setIsChecked] = useState(false);
   const [isChecked2, setIsChecked2] = useState(false);
@@ -78,6 +89,15 @@ const AddResidence = () => {
       setGuests(guests-1);
     }
   }
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
 
 
   const submitHandler = async(e) => {
@@ -167,12 +187,54 @@ const AddResidence = () => {
 
   const addFeatureHandler14 = ()=> {isChecked14 === false ? setIsChecked14(true) : setIsChecked14(false)}
 
+// Modal --------------------
+  function getModalStyle() {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    width: 500,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
+  
+const classes = useStyles();
+  // getModalStyle is not a pure function, we roll the style only on the first render
+  const [modalStyle] = useState(getModalStyle);
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <CloseRoundedIcon onClick={handleClose} />
+      <h2 id="simple-modal-title">Terms and Conditions</h2><hr/>
+      <ul id="simple-modal-description">
+       <li> §1. ClearBnB has the right to remove the account if they suspect any ilegal behavior.</li>
+      <li>§2. If you host a residence you are allowed to remove it if needed.</li>
+        <li>§3. ClearBnB don't tolerates any type of spamming a residence.</li>
+        <li>§4. A user is allowed to host more then one residence at the time.</li>
+      </ul>
+ 
+    </div>
+  );
+
+  // End of Modal ---------------
   return (
     <div className="addResWrapper">
       <form onSubmit={submitHandler}>
+        <img className="logoHost" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt=""/>
+        <hr/>
       <h3>What type of recidense would you like to host?</h3>
         <select required className="optionBar">
-        <option class="optValue" value="" disabled="disabled" selected="selected">Choose</option>
+        <option className="optValue" value="" disabled="disabled" selected="selected">Type of residence</option>
         <option ref={optType}>House</option>
         <option ref={optType}>Apartment</option>
         <option ref={optType}>Cabin</option>
@@ -184,9 +246,9 @@ const AddResidence = () => {
      
       
         <div className="guestDiv">
-        <button className="incGuests" onClick={incGuestHandler}>＋</button>
-        <span className="numberOfGuests">Guests: {guests}</span>
-        <button className="decGuests" onClick={decGuestHanlder}>－</button>
+         <button className="decGuests" onClick={decGuestHanlder}>－</button>
+           <span className="numberOfGuests">Guests: {guests}</span>
+         <button className="incGuests" onClick={incGuestHandler}>＋</button>
         </div>
 
         <p className="advTitle">Advertisment title</p>
@@ -195,7 +257,6 @@ const AddResidence = () => {
       
      
         <div className="checkbox">
-
         <label>
             <input type="checkbox" onClick={addFeatureHandler} ref={feature1} value={isChecked}  /><i className="helper" ></i>First-Aid Kit
         </label>
@@ -256,11 +317,11 @@ const AddResidence = () => {
         <textarea required ref={descriptionRef} className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
         
         <p>Price per night</p>
-        <span>€</span><input ref={priceRef} className="inputPrice" type="number" required step="20" min="20" placeholder="Price (min 20€)" />
+        <input ref={priceRef} className="inputPrice" required type="number" min="20" placeholder="MIN 20" /><span>€</span>
 
         <div className="datePickerDiv">
           <p>Select hosting date</p>
-          <DatePicker
+          <DatePicker className="startDate"
             required
             placeholderText={'Start Date'}
             selected={selectedStartDate}
@@ -268,23 +329,32 @@ const AddResidence = () => {
             minDate={new Date()}
             isClearable
           />
-          <DatePicker
+          <DatePicker className="endDate"
             required
             placeholderText={'End Date'}
             selected={selectedEndDate}
             onChange={date => setSelectedEndDate(date)}
             minDate={selectedStartDate}
-            isClearable
-            
-          />
-
-          
+            isClearable     
+          />    
         </div>
 
-        
+        <div className="termsDiv">
+          <label>
+            <input type="checkbox" required value="" /><i className="helper" ></i>Terms & Conditions. 
+        </label><InfoIcon fontSize="small" color="disabled" onClick={handleOpen}/>
+        </div>
+
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="simple-modal-title"
+        aria-describedby="simple-modal-description"
+      >
+        {body}
+      </Modal>
         
         <button className="createBtn">Host Residence</button>
-        {/* whoAmI && <button className="createBtn">Login to host</button> --> */}
       </form>
     </div>
   )

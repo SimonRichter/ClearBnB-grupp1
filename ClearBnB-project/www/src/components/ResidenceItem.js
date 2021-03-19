@@ -12,12 +12,12 @@ const ResidenceItem = ({ residence }) => {
 
   return (
     <div className="flip-card" onClick={goToDetailPage}>
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
+    <div className="flip-card-inner">
+      <div className="flip-card-front">
           <img src={residence.imageURLs[0]} alt="" />
           <p>{residence.title}</p>
       </div>
-        <div class="flip-card-back">
+        <div className="flip-card-back">
         <p><span>Country: </span>{residence.country}</p>
         <p><span>City: </span>{residence.city}</p>
         <p><span>Address: </span>{residence.address}</p>

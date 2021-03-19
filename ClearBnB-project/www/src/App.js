@@ -1,7 +1,7 @@
 import Nav from './components/Nav';
 import './style/App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { UserProvider } from './contexts/UserContextProvider';
+import { UserProvider, UserContext} from './contexts/UserContextProvider';
 import { ResidenceProvider } from './contexts/ResidenceContextProvider';
 import { BookingProvider } from './contexts/BookingContextProvider';
 import { FeatureProvider } from './contexts/FeatureContextProvider'
@@ -14,23 +14,59 @@ import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
 import Page404 from './routes/Page404'
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import AddResidence from './routes/AddResidence';
 import MyRentals from './routes/MyRentals'
-
+import Snackbar from '@material-ui/core/Snackbar';
+import Alert from '@material-ui/lab/Alert';
 
 function App() {
+
+  const { setLoginToast, loginToast, setLogoutToast, logoutToast } = useContext(UserContext);
+
+    const handleCloseLogin = (reason) => {
+    if (reason === 'clickaway') { return; }
+    setLoginToast(false);
+  };
+
+  const handleCloseLogout = (reason) => {
+    if (reason === 'clickaway') { return; }
+    setLogoutToast(false);
+  };
+
+  const vertical = 'top'
+  const horizontal = 'right'
+
   return (
    
     <FeatureProvider>
     <BookingProvider>
     <ResidenceProvider>
-    <UserProvider>
+    
     <Router>
-    <div className="App">
+     <div className="App">
+                         
+     
+                    
+                
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
       <Nav />
-                <div className="wrapper"></div>
+        <div className="wrapper">
+           <Snackbar className="toast"
+            anchorOrigin={{ vertical, horizontal }}
+            open={loginToast} autoHideDuration={1000} onClose={handleCloseLogin}>
+          <Alert onClose={handleCloseLogin} severity="success">
+          Logged in.
+          </Alert>
+            </Snackbar>
+            <Snackbar className="toast"
+              anchorOrigin={{ vertical, horizontal }}
+              open={logoutToast} autoHideDuration={1000} onClose={handleCloseLogout}>
+          <Alert onClose={handleCloseLogout} severity="success">
+          Logged out.
+          </Alert>
+            </Snackbar>
+       </div>
       <Switch>
           <Route path="/" exact component={Home} /> 
           <Route path="/about" exact component={About} />   
@@ -46,7 +82,6 @@ function App() {
       </Switch>
     </div>
     </Router>
-    </UserProvider>
     </ResidenceProvider>
     </BookingProvider>
       </FeatureProvider>
