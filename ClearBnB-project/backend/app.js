@@ -69,20 +69,17 @@ app.post('/api/users', async (req, res) => {
 });
 
 app.post('/api/confirmDelete', async (req, res) => {
-  
+
   const hash = crypto.createHmac('sha256', secret)
     .update(req.body.password).digest('hex');
 
-  
   let model = models['users'];
   let user = await model.findOne({ email: req.body.email, password: hash });
   if(user){
-    // succesful login, save the user to the session object
-    req.session.user = user;
-    res.json({success: 'Logged in'});
+    res.json({success: 'true'});
   }
   else {
-    res.json('');
+    res.json({success: 'false'});
   }
 })
 
