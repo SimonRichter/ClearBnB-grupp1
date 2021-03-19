@@ -142,7 +142,7 @@ app.put('/rest/residences/:id', async (req, res) => {
     else {
       residence.views = residence.views +1;
     }
-    delete req.body.views
+    delete req.body.views;
   }
 
   if (req.body.earned) {
@@ -153,7 +153,18 @@ app.put('/rest/residences/:id', async (req, res) => {
     else {
       residence.earned = residence.earned + req.body.earned;
     }
-    delete req.body.earned
+    delete req.body.earned;
+  }
+
+  if (req.body.amountOfBookings) {
+
+    if (residence.amountOfBookings === null) {
+      residence.amountOfBookings = req.body.amountOfBookings;
+    }
+    else {
+      residence.amountOfBookings = residence.amountOfBookings + 1;
+    }
+    delete req.body.amountOfBookings;
   }
 
   Object.assign(residence, req.body)
