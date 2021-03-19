@@ -8,7 +8,6 @@ import DatePicker from 'react-datepicker'
 import '../style/ResidenceDetails.css'
 import 'react-datepicker/dist/react-datepicker.css'
 import { Lightbox } from "react-modal-image";
-import { set } from 'mongoose';
  
 import MailOutlineRoundedIcon from '@material-ui/icons/MailOutlineRounded';
 
