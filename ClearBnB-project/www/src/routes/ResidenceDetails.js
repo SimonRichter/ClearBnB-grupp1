@@ -66,6 +66,7 @@ const ResidenceDetails = () => {
 
     const bookedObj = {
       bookedDays: allTheDaysBooked,
+      amountOfBookings: 1,
       earned: totalPrice
     }
 
