@@ -8,6 +8,7 @@ const MyRentalDetailPage = () => {
   const { id } = useParams();
   const { residences, updateResidence } = useContext(ResidenceContext);
   let residence = residences.find(r => r._id === id);
+  let percentOfBookings = (residence.amountOfBookings / residence.views) * 100
 
   return (
     <div className="myRentalDetailPage">
@@ -37,6 +38,7 @@ const MyRentalDetailPage = () => {
           <p><span>Pageviews: </span>{residence.views}</p>
           <p><span>Amount of bookings: </span>{residence.amountOfBookings}</p>
           <p><span>Total earnings: </span>{residence.earned}</p>
+          <p><span>Bookings procentage by pageviews: </span>{percentOfBookings.toFixed(2)}%</p>
       </div>
       </div>
     </div>
