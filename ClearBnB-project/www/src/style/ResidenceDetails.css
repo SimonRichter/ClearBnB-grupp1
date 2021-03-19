@@ -249,6 +249,9 @@
   .residenceDetail > .inner > .images img {
   height: 130%;
 }
+.residenceDetail > .inner > .infoWrapper > .features > .features-wrapper > p{
+  text-align: center;
+}
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .residenceDetail > .inner > .infoWrapper {
