@@ -9,6 +9,7 @@ import Home from './routes/Home';
 import About from './routes/About';
 import Residences from './routes/Residences';
 import ResidenceDetails from './routes/ResidenceDetails'
+import MyRentalDetailPage from './routes/MyRentalDetailPage'
 import MyBookings from './routes/MyBookings'
 import Login from './routes/Login';
 import Register from './routes/Register';
@@ -75,7 +76,8 @@ function App() {
           <Route path="/residence/:id" exact component={ResidenceDetails} /> 
           <Route path="/addResidence" exact component={AddResidence}/>        
           <Route path="/myBookings" exact component={MyBookings} /> 
-          <Route path="/myRentals" exact component={MyRentals} />        
+          <Route path="/myRentals" exact component={MyRentals} />
+          <Route path="/myRentalDetailPage/:id" exact component={MyRentalDetailPage}/>
           <Route path="*" component={Page404}/>
       </Switch>
     </div>
