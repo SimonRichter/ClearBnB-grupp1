@@ -5,6 +5,7 @@ import '../style/MyRentalDetail.css'
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
+import EqualizerIcon from '@material-ui/icons/Equalizer';
 
 const MyRentalDetailPage = () => {
 
@@ -73,11 +74,11 @@ const MyRentalDetailPage = () => {
         </div>
         <div className="statistics">
           <div className="statInfo">
-          <p className="statisticsTitle">statistics</p>
+          <p className="statisticsTitle">statistics <EqualizerIcon size="large"/></p>
           <p><span>Total booked days: </span>{residence.bookedDays.length}</p>
           <p><span>Pageviews: </span>{residence.views}</p>
           <p><span>Amount of bookings: </span>{residence.amountOfBookings}</p>
-          <p><span>Total earnings: </span>{residence.earned}</p>
+          <p><span>Total earnings: </span>{residence.earned} €</p>
           {percentOfBookings && <p><span>Bookings procentage by pageviews: </span>{percentOfBookings.toFixed(2)}%</p>}
           </div>
           <div className="stats">
