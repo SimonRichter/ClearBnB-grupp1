@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
-import { useParams,useHistory } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
+import '../style/MyRentalDetail.css'
 
 const MyRentalDetailPage = () => {
 
