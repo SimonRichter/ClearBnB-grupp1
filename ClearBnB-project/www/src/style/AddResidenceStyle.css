@@ -355,6 +355,7 @@
 #simple-modal-title {
   text-align: center;
   margin-bottom: 30px;
+  opacity: 55%;
 }
 
 #simple-modal-description > li {
@@ -375,4 +376,9 @@
   width: 10em;
   opacity: 70%;
   margin: 15px;
+}
+
+.makeStyles-paper-64:focus {
+  outline: none;
+  border: none;
 }
