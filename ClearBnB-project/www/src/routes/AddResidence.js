@@ -150,7 +150,9 @@ const AddResidence = () => {
       featuresId: featureObj._id,
       userId: whoAmI._id,
       residenceLimit: guests,
-      bookedDays: null
+      bookedDays: null,
+      earned: null,
+      views: null
     }
     addResidence(residence)
     console.log(residence);
