@@ -11,11 +11,13 @@ const MyRentalDetailPage = () => {
 
   return (
     <div className="myRentalDetailPage">
-      <div className="images">
+          <div className="images">
           {residence.imageURLs.map((img) => {
             return (<img key={img} src={img} alt="" />)
           })}
         </div>
+        <div className="inner">
+        <div className="information">
         <div className="infoWrapper">
           <div className="desc">
             <p className="resTitle">{residence.title}</p>
@@ -26,8 +28,13 @@ const MyRentalDetailPage = () => {
             <p><span>Price per night: </span>{residence.price}€</p>
             <p><span>Residence limit: </span>{residence.residenceLimit}</p>
             <p><span>Description: </span>{residence.description}</p>
+          </div>
         </div>
-        </div>
+      </div>
+      <div className="statistics">
+        <p>{ }</p>
+      </div>
+      </div>
     </div>
   );
 }

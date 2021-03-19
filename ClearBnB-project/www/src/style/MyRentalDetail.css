@@ -1,0 +1,54 @@
+.myRentalDetailPage {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.inner{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.myRentalDetailPage > .inner > .information > .infoWrapper{
+  padding-right: 40px;
+}
+
+.myRentalDetailPage > .inner > .information > .infoWrapper > .desc{
+  width: 90%;
+}
+
+.myRentalDetailPage > .inner > .information >  .infoWrapper > .desc > .resTitle{
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: black;
+  letter-spacing: 1.2px;
+}
+
+.myRentalDetailPage > .inner > .information >  .infoWrapper > .desc >  p{
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: black;
+  letter-spacing: 1.2px;
+}
+
+.myRentalDetailPage > .inner > .information >  .infoWrapper > .desc >  p > span{
+  color: #f50057;
+  font-weight: bolder;
+}
+
+.myRentalDetailPage > .images{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.myRentalDetailPage > .images img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
