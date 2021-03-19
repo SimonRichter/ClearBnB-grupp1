@@ -66,7 +66,8 @@ const ResidenceDetails = () => {
 
     const bookedObj = {
       bookedDays: allTheDaysBooked,
-      views: 1
+      views: 1,
+      earned: totalPrice
     }
 
     updateResidence(residence._id, bookedObj);
