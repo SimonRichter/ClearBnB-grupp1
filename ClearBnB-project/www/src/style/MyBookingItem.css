@@ -54,3 +54,13 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   
 }
+@media (min-width: 2000px){
+  .wrapperInItem  > .wrap > .info > p{
+    font-size: 1.5vh;
+  }
+  .wrapperInItem > .wrap > img{
+    border-radius: 5px;
+    height: 15vh;
+    width: 15vh;
+  }
+}
