@@ -6,9 +6,10 @@
   background: white;
   border-radius: 10px;
   padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
-.myRentalDetailPage > .inner{
+.myRentalDetailPage > .inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -100,4 +101,27 @@
   width: 20px;
   height: 40px;
   align-self:flex-end;
+}
+
+.myRentalDetailPage > .inner > .delete > button{
+  cursor: pointer;
+  border-radius: 2px;
+  border: none;
+  padding: 10px;
+  background: #f50057;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: white;
+  letter-spacing: 3.2px;
+  text-transform: uppercase;
+}
+
+.myRentalDetailPage > .inner > .delete > button:hover{
+  Transform: scale(1.02);
+  transition: 300ms;
+}
+
+.myRentalDetailPage > .inner > .delete > .makeStyles-paper-64:focus {
+  outline: none;
+  border: none;
 }

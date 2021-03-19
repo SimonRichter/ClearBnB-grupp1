@@ -2,7 +2,7 @@
 .myRentalItem {
   cursor: pointer;
   display: grid;
-  grid-template-columns: 1fr 55% 10%;
+  grid-template-columns: 1fr 55%;
   grid-gap: 10px;
   width: 70%;
   background: #eee;

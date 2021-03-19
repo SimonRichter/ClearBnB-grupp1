@@ -6,6 +6,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
+import { makeStyles } from '@material-ui/core/styles';
+import CloseRoundedIcon from '@material-ui/icons/CloseRounded';
+import Modal from '@material-ui/core/Modal';
 
 const MyRentalDetailPage = () => {
 
@@ -17,6 +20,7 @@ const MyRentalDetailPage = () => {
   const [styleBookedDays, setStyleBookedDays] = useState(null)
   const [styleBookings, setStyleBookings] = useState(null)
   const [stylePercent, setStylePercent] = useState(null)
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     if (residence) {
@@ -56,6 +60,52 @@ const MyRentalDetailPage = () => {
         fontSize: 15,
       },
   }))(Tooltip);
+
+    const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
+  function getModalStyle() {
+  const top = 50;
+  const left = 50;
+
+  return {
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
+
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    position: 'absolute',
+    width: 500,
+    backgroundColor: theme.palette.background.paper,
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+  },
+}));
+  
+  const deleteResidence = () => {
+    console.log('haha')
+  }
+
+const classes = useStyles();
+  // getModalStyle is not a pure function, we roll the style only on the first render
+  const [modalStyle] = useState(getModalStyle);
+  const body = (
+    <div style={modalStyle} className={classes.paper}>
+      <CloseRoundedIcon onClick={handleClose} />
+        <p>Delete confirmation</p>
+        <input type="password" placeholder="Enter your password" />
+      <button onClick={deleteResidence}>Confirm</button>
+    </div>
+  );
 
 
   return (
@@ -113,6 +163,17 @@ const MyRentalDetailPage = () => {
             </LightTooltip>}
 
         </div>
+        </div>
+        <div className="delete">
+          <button onClick={handleOpen}>Delete residence</button>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="simple-modal-title"
+            aria-describedby="simple-modal-description"
+          >
+            {body}
+          </Modal>
         </div>
       </div>}
     </div>

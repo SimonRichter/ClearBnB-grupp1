@@ -68,6 +68,24 @@ app.post('/api/users', async (req, res) => {
   res.json({success: true});
 });
 
+app.post('/api/confirmDelete', async (req, res) => {
+  
+  const hash = crypto.createHmac('sha256', secret)
+    .update(req.body.password).digest('hex');
+
+  
+  let model = models['users'];
+  let user = await model.findOne({ email: req.body.email, password: hash });
+  if(user){
+    // succesful login, save the user to the session object
+    req.session.user = user;
+    res.json({success: 'Logged in'});
+  }
+  else {
+    res.json('');
+  }
+})
+
 
 app.post('/api/login', async (req, res) => {
     // note: req.session is unique per user/browser
