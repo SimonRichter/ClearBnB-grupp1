@@ -13,6 +13,10 @@ const MyRentalDetailPage = () => {
   const { residences } = useContext(ResidenceContext);
   let residence = residences.find(r => r._id === id);
   const [percentOfBookings, setPercentOfBookings] = useState(null);
+  const [styleView, setStyleView] = useState(null)
+  const [styleBookedDays, setStyleBookedDays] = useState(null)
+  const [styleBookings, setStyleBookings] = useState(null)
+  const [stylePercent, setStylePercent] = useState(null)
 
   useEffect(() => {
     if (residence) {
@@ -21,8 +25,28 @@ const MyRentalDetailPage = () => {
       } else {
         setPercentOfBookings((residence.amountOfBookings / residence.views) * 100);
       }
+
+      setStyleView({
+        height: residence.views ? residence.views + "%" : 1,
+        maxHeight: "100%"
+      });
+
+      setStyleBookedDays({
+        height: residence.bookedDays ? residence.bookedDays + "%" : 1,
+        maxHeight: "100%"
+      });
+
+      setStyleBookings({
+        height: residence.amountOfBookings ? residence.amountOfBookings + "%" : 1,
+        maxHeight: "100%"
+      });
+
+      setStylePercent({
+        height: percentOfBookings ? percentOfBookings + "%" : 1,
+        maxHeight: "100%"
+      })
     }
-  }, [residences])
+  }, [residences,percentOfBookings])
   
   const LightTooltip = withStyles((theme) => ({
       tooltip: {
@@ -33,26 +57,6 @@ const MyRentalDetailPage = () => {
       },
   }))(Tooltip);
 
-
-  const styleView = {
-    height: residence.views ? residence.views + "%" : 0,
-    maxHeight: "100%"
-  }
-
-   const styleBookedDays = {
-    height: residence.bookedDays ? residence.bookedDays + "%" : 0,
-    maxHeight: "100%"
-   }
-  
-    const styleBookings = {
-      height: residence.amountOfBookings ? residence.amountOfBookings + "%" : 0,
-      maxHeight: "100%"
-    }
-  
-    const stylePercent = {
-      height: percentOfBookings ? percentOfBookings + "%" : 0,
-      maxHeight: "100%"
-    }
 
   return (
     <div className="myRentalDetailPage">
@@ -88,21 +92,26 @@ const MyRentalDetailPage = () => {
           </div>
           <div className="stats">
                  
-            <LightTooltip title={"Pageviews: " + residence.views}>
+            <LightTooltip title={residence.views ? "Pageviews: " + residence.views :"Pageviews: " +  0}>
             <div style={styleView} className="statViews"></div>
             </LightTooltip>
 
-            <LightTooltip title={"Days booked: " + residence.bookedDays.length}>
+            <LightTooltip title={residence.bookedDays.length ? "Days booked: " + residence.bookedDays.length :"Days booked: " +  0}>
             <div style={styleBookedDays} className="statBooked"></div>
             </LightTooltip>
             
-            <LightTooltip title={"Amount of bookings: " + residence.amountOfBookings}>
+            <LightTooltip title={residence.amountOfBookings ? "Amount of bookings: " + residence.amountOfBookings :"Amount of bookings: " +  0}>
             <div style={styleBookings} className="statBookings"></div>
             </LightTooltip>
 
             {percentOfBookings && <LightTooltip title={"Percent of bookings/views: " + percentOfBookings.toFixed(2) + "%"}>
               <div style={stylePercent} className="statPercent"></div>
             </LightTooltip>}
+
+            {!percentOfBookings && <LightTooltip title={"Percent of bookings/views: " + "0 %"}>
+              <div style={stylePercent} className="statPercent"></div>
+            </LightTooltip>}
+
         </div>
         </div>
       </div>}
