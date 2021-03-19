@@ -277,3 +277,17 @@
     text-align: center;
   }
 }
+@media (min-width: 2000px){
+  .residenceDetail > .inner > .infoWrapper > .desc > p{
+    font-size: 1.5vh;
+}
+ .residenceDetail > .inner > .infoWrapper > .features > .features-wrapper{
+    font-size: 1.5vh;
+}
+.residenceDetail > .confirm > .btns > button {
+  font-size: 1.5vh;
+}
+.book-btn {
+  font-size: 1.5vh;
+}
+}
