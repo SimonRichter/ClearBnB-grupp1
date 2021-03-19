@@ -137,13 +137,23 @@ app.put('/rest/residences/:id', async (req, res) => {
   if (req.body.views) {
 
     if (residence.views === null) {
-      console.log('here',req.body.views);
       residence.views = req.body.views;
     }
     else {
       residence.views = residence.views +1;
     }
     delete req.body.views
+  }
+
+  if (req.body.earned) {
+
+    if (residence.earned === null) {
+      residence.earned = req.body.earned;
+    }
+    else {
+      residence.earned = residence.earned + req.body.earned;
+    }
+    delete req.body.earned
   }
 
   Object.assign(residence, req.body)
