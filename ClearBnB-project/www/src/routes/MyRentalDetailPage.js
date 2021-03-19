@@ -1,5 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
+import { UserContext } from '../contexts/UserContextProvider'
 import { useParams, useHistory } from 'react-router-dom'
 import '../style/MyRentalDetail.css'
 import { withStyles } from '@material-ui/core/styles';
@@ -12,8 +13,10 @@ import Modal from '@material-ui/core/Modal';
 
 const MyRentalDetailPage = () => {
 
+  const passwordRef = useRef(null);
   const { id } = useParams();
-  const { residences } = useContext(ResidenceContext);
+  const { whoAmI } = useContext(UserContext);
+  const { residences,confirmDelete,deleteResidence } = useContext(ResidenceContext);
   let residence = residences.find(r => r._id === id);
   const [percentOfBookings, setPercentOfBookings] = useState(null);
   const [styleView, setStyleView] = useState(null)
@@ -91,8 +94,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
   
-  const deleteResidence = () => {
-    console.log('haha')
+  const deleteResidence = async () => {
+    const userObj = {
+      email: whoAmI.email,
+      password: passwordRef.current.value
+    }
+
+    const res = await confirmDelete(userObj);
+    
+    if (res.success) {
+      deleteResidence(residence._id);
+    }
   }
 
 const classes = useStyles();
@@ -102,7 +114,7 @@ const classes = useStyles();
     <div style={modalStyle} className={classes.paper}>
       <CloseRoundedIcon onClick={handleClose} />
         <p>Delete confirmation</p>
-        <input type="password" placeholder="Enter your password" />
+      <input ref={passwordRef} type="password" placeholder="Enter your password" />
       <button onClick={deleteResidence}>Confirm</button>
     </div>
   );
