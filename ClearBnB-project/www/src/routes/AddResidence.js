@@ -234,7 +234,7 @@ const classes = useStyles();
         <hr/>
       <h3>What type of recidense would you like to host?</h3>
         <select required className="optionBar">
-        <option className="optValue" value="" disabled="disabled" selected="selected">Choose</option>
+        <option className="optValue" value="" disabled="disabled" selected="selected">Type of residence</option>
         <option ref={optType}>House</option>
         <option ref={optType}>Apartment</option>
         <option ref={optType}>Cabin</option>
@@ -317,7 +317,7 @@ const classes = useStyles();
         <textarea required ref={descriptionRef} className="textBox" placeholder="Describe your residence..." name="w3review" rows="4" cols="50"></textarea>
         
         <p>Price per night</p>
-        <input ref={priceRef} className="inputPrice" required type="number" min="20" placeholder="MIN 20€" /><span>€</span>
+        <input ref={priceRef} className="inputPrice" required type="number" min="20" placeholder="MIN 20" /><span>€</span>
 
         <div className="datePickerDiv">
           <p>Select hosting date</p>
