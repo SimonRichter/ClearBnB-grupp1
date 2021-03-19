@@ -34,7 +34,8 @@ const MyRentalDetailPage = () => {
         <div className="statistics">
         <p className="statisticsTitle">statistics</p>
           <p><span>Total booked days: </span>{residence.bookedDays.length}</p>
-          <p></p>
+          <p><span>Page views: </span>{residence.views}</p>
+          <p><span>Total earnings: </span>{residence.earned}</p>
       </div>
       </div>
     </div>
