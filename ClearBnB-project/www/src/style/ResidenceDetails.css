@@ -236,22 +236,27 @@
   transition: 300ms;
 }
 @media (max-width: 480px) {
+  .inputVisitor {
+  width: 93%;
+  }
+  .residenceDetail .dates {
+    grid-template-columns: 93%;
+  }
   .residenceDetail > .inner > .infoWrapper {
     grid-template-columns: 1fr;
   }
   .residenceDetail > .inner > .infoWrapper > .desc {
-    width: 100%;
+    width: 110%;
   }
   .residenceDetail .book-btn {
-    width: 100%;
-    text-align: center;
+    width: 99%;
   }
   .residenceDetail > .inner > .images img {
   height: 130%;
-}
-.residenceDetail > .inner > .infoWrapper > .features > .features-wrapper > p{
-  text-align: center;
-}
+  }
+  .residenceDetail > .inner > .infoWrapper > .features > .features-wrapper > p{
+    text-align: center;
+  }
 }
 @media (min-width: 481px) and (max-width: 767px) {
   .residenceDetail > .inner > .infoWrapper {
@@ -280,24 +285,24 @@
 @media (min-width: 2000px){
   .residenceDetail > .inner > .infoWrapper > .desc > p{
     font-size: 1.5vh;
-}
- .residenceDetail > .inner > .infoWrapper > .features > .features-wrapper{
+  }
+  .residenceDetail > .inner > .infoWrapper > .features > .features-wrapper{
+      font-size: 1.5vh;
+  }
+  .residenceDetail > .confirm > .btns > button {
     font-size: 1.5vh;
-}
-.residenceDetail > .confirm > .btns > button {
-  font-size: 1.5vh;
-}
-.startDate,
-.endDate {
-  font-size: 1.5vh;
-}
+  }
+  .startDate,
+  .endDate {
+    font-size: 1.5vh;
+  }
 
-.inputVisitor {
-  font-size: 1.5vh;
+  .inputVisitor {
+    font-size: 1.5vh;
 
-}
-.book-btn {
-  font-size: 1.5vh;
-  width: 21%;
-}
+  }
+  .book-btn {
+    font-size: 1.5vh;
+    width: 21%;
+  }
 }
