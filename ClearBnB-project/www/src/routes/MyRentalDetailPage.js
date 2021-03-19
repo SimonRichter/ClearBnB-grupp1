@@ -24,6 +24,7 @@ const MyRentalDetailPage = () => {
   const [styleBookings, setStyleBookings] = useState(null)
   const [stylePercent, setStylePercent] = useState(null)
   const [open, setOpen] = useState(false);
+  const [showWrongPassword, setShowWrongPassword] = useState(false);
 
   useEffect(() => {
     if (residence) {
@@ -94,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
   
-  const deleteResidence = async () => {
+  const deleteRes = async () => {
     const userObj = {
       email: whoAmI.email,
       password: passwordRef.current.value
@@ -102,8 +103,10 @@ const useStyles = makeStyles((theme) => ({
 
     const res = await confirmDelete(userObj);
     
-    if (res.success) {
+    if (res.success === "true") {
       deleteResidence(residence._id);
+    } else {
+      setShowWrongPassword(true);
     }
   }
 
@@ -115,7 +118,8 @@ const classes = useStyles();
       <CloseRoundedIcon onClick={handleClose} />
         <p>Delete confirmation</p>
       <input ref={passwordRef} type="password" placeholder="Enter your password" />
-      <button onClick={deleteResidence}>Confirm</button>
+      {showWrongPassword && <p>Wrong password..</p>}
+      <button onClick={deleteRes}>Confirm</button>
     </div>
   );
 

@@ -20,7 +20,6 @@ export const ResidenceProvider = (props) => {
       headers: { 'content-type': 'application/json' },
     })
     res = await res.json();
-    console.log(res);
   }
 
   const confirmDelete = async (userObj) => {
