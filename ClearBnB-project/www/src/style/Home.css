@@ -275,3 +275,8 @@
     height: 15vh;
   }
 }
+@media (min-width: 2000px){
+  .startTravel p {
+  font-size: 1.5vh;
+}
+}
