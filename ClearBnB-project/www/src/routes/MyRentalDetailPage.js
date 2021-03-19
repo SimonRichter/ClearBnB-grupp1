@@ -13,6 +13,7 @@ import Modal from '@material-ui/core/Modal';
 
 const MyRentalDetailPage = () => {
 
+  const history = useHistory();
   const passwordRef = useRef(null);
   const { id } = useParams();
   const { whoAmI } = useContext(UserContext);
@@ -105,6 +106,7 @@ const useStyles = makeStyles((theme) => ({
     
     if (res.success === "true") {
       deleteResidence(residence._id);
+      history.push("/myRentals");
     } else {
       setShowWrongPassword(true);
     }
