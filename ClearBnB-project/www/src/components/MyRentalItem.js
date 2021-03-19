@@ -20,7 +20,7 @@ const MyRentalItem = ({ rental }) => {
       <div className="img">
         <img src={rental.imageURLs[0]} alt=""/>
       </div>
-      <div className="info" onClick={() => history.push("/residence/" + rental._id)}>
+      <div className="info" onClick={() => history.push("/myRentalDetailPage/" + rental._id)}>
         <p><span>Title: </span>{rental.title}</p>
         <p><span>Start date: </span>{new Date(startDate).toString().substr(0, 15)}</p>
         <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
