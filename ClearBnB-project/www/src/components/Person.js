@@ -10,7 +10,7 @@ const Person = ({person}) => {
     <div className="flip-card-inner-person">
           <div className="flip-card-front-person">
             <div className="flipIcon"><FlipToBackIcon/></div>
-            <img src={person.img} alt="" />
+            <img key={person.email} src={person.img} alt="" />
             <p>{person.name}</p>
       </div>
         <div className="flip-card-back-person">
