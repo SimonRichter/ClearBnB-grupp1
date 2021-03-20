@@ -208,6 +208,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    outline:'none' // Tar bort modal-outline
   },
 }));
   
@@ -351,7 +352,7 @@ const classes = useStyles();
         open={open}
         onClose={handleClose}
         aria-labelledby="simple-modal-title"
-        aria-describedby="simple-modal-description"
+          aria-describedby="simple-modal-description"
       >
         {body}
       </Modal>

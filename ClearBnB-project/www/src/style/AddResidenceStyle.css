@@ -362,11 +362,6 @@
   margin: 10px 0 10px 0;
 }
 
-.makeStyles-paper-20:focus {
-  outline: none;
-  border: none;
-}
-
 .addResWrapper .makeStyles-paper-20 > .MuiSvgIcon-root:hover {
   cursor: pointer;
   color: #f50057;
@@ -378,7 +373,4 @@
   margin: 15px;
 }
 
-.addResWrapper .makeStyles-paper-64:focus {
-  outline: none;
-  border: none;
-}
+
