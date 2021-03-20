@@ -208,7 +208,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.background.paper,
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
-    outline:'none' // Tar bort modal-outline
+    outline: 'none', // Tar bort modal-outline
   },
 }));
   
@@ -220,10 +220,13 @@ const classes = useStyles();
       <CloseRoundedIcon onClick={handleClose} />
       <h2 id="simple-modal-title">Terms and Conditions</h2><hr/>
       <ul id="simple-modal-description">
-       <li> §1. ClearBnB has the right to remove the account if they suspect any ilegal behavior.</li>
-      <li>§2. If you host a residence you are allowed to remove it if needed.</li>
-        <li>§3. ClearBnB don't tolerates any type of spamming a residence.</li>
-        <li>§4. A user is allowed to host more then one residence at the time.</li>
+        <li>§1. ClearBnB has the right to remove the account/residence if they suspect any ilegal behavior.</li>
+        <li>§2. If you host a residence you are allowed to remove it if needed.</li>
+        <li>§3. Removing a residence will automatically give money back to the bookers.</li>
+        <li>§4. ClearBnB don't tolerates any type of spamming of a residence. [Account's will be suspended]</li>
+        <li>§5. A user is allowed to host more then one residence at the time.</li>
+        <li>§6. ClearBnB takes a VAT-cost of 15% for every booking. </li>
+        <li>§7. The host's email adress will be available in the residence-page.</li>
       </ul>
  
     </div>

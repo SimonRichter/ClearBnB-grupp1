@@ -1,8 +1,19 @@
-.myRentals{
+.myRentals {
   background: white;
   width: 70%;
   margin: 10px auto;
   padding: 10px;
   min-height: 80vh;
   border-radius: 10px;
+}
+
+.myRentals > p {
+  margin: 5px;
+  padding: 10px 5px 10px 5px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  color: #f50057;
+  letter-spacing: 6.2px;
+  border-bottom: 1px solid #f50057;
 }
