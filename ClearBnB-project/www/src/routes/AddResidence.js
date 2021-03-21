@@ -239,8 +239,8 @@ const classes = useStyles();
         <img className="logoHost" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt=""/>
         <hr/>
       <h3>What type of recidense would you like to host?</h3>
-        <select required className="optionBar">
-        <option className="optValue" value="" disabled="disabled" selected="selected">Type of residence</option>
+        <select required className="optionBar" >
+        <option className="optValue" defaultValue="DEFAULT" disabled="disabled" >Type of residence</option>
         <option ref={optType}>House</option>
         <option ref={optType}>Apartment</option>
         <option ref={optType}>Cabin</option>
