@@ -52,7 +52,7 @@ const About = () => {
           </p>
       </div>
       <div className="persons">
-        {persons.map(p => (<Person person={p} />))}
+        {persons.map(p => (<Person person={p} key={p.email} />))}
       </div>  
   </div>
   );
