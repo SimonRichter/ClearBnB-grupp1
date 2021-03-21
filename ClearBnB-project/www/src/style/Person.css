@@ -36,7 +36,7 @@
 .flip-card-back-person {
   position: absolute;
   width: 100%;
-  height: 110%;
+  height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
@@ -72,9 +72,9 @@
 }
 
 .flip-card-front-person > p {
-  padding: 4px;
+  padding: 0.5px;
   font-family: "Montserrat", sans-serif;
-  font-size: 2vh;
+  font-size: 1.8vh;
   color: black;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -87,7 +87,6 @@
   display: inline;
   direction: row;
   align-items: baseline;
-
 }
 @media (max-width: 480px) {
   .flip-card-person {
