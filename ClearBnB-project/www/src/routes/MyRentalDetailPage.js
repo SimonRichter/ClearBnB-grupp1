@@ -127,15 +127,15 @@ const classes = useStyles();
     </div>
   );
 
-  const editField = () => {
-    setEditCountry(!editCountry);
+  const editField = (setEdit, edit) => {
+    setEdit(!edit);
   }
 
-  const confirmEdit = () => {
-    const newCountry =  editCountryRef.current.value;
+  const confirmEdit = (ref, objType) => {
+    const newEdit = ref.current.value;
 
     const residenceObj = {
-      country: newCountry
+    [objType]: newEdit
     };
 
     updateResidence(residence._id, residenceObj);
@@ -155,7 +155,7 @@ const classes = useStyles();
           <div className="infoWrapper">
             <div className="desc">
               <p className="resTitle">{residence.title} <span className="editInfo"> ✏️</span></p>
-              <p><span>{editCountry && <span onClick={confirmEdit}>✅</span>}Country: </span>{!editCountry && residence.country} <span>{editCountry && <input ref={editCountryRef} type="text" placeholder={residence.country} />}</span> <span className="editInfo" onClick={editField}> ✏️</span></p>
+              <p><span>{editCountry && <span onClick={() => confirmEdit(editCountryRef, 'country')}>✅</span>}Country: </span>{!editCountry && residence.country} <span>{editCountry && <input ref={editCountryRef} type="text" placeholder={residence.country} />}</span> <span className="editInfo" onClick={() => editField(setEditCountry,editCountry)}> ✏️</span></p>
               <p><span>City: </span>{residence.city}<span className="editInfo"> ✏️</span></p>
               <p><span>Address: </span>{residence.address}<span className="editInfo"> ✏️</span></p>
               <p><span>Type: </span>{residence.type}<span className="editInfo"> ✏️</span></p>
