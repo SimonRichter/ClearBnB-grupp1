@@ -145,6 +145,10 @@ const classes = useStyles();
     setEdit(!edit);
   }
 
+  const undoEdit = (setEdit) => {
+    setEdit(false);
+  }
+
   const confirmEdit = (ref, objType, setBack) => {
     const newEdit = ref.current.value;
 
@@ -169,54 +173,70 @@ const classes = useStyles();
           <div className="infoWrapper">
             <div className="desc">
 
-              <p className="resTitle"><span>{editTitle && <span onClick={() => confirmEdit(editTitleRef, 'title', setEditTitle)}>✅</span>}</span>
+              <p className="resTitle"><span>{editTitle && <span onClick={() => confirmEdit(editTitleRef, 'title', setEditTitle)}>✅</span>}
+                {editTitle && <span onClick={() => undoEdit(setEditTitle)}>↩️</span>}
+                </span>
                 {!editTitle && residence.title}
                 <span>{editTitle && <input ref={editTitleRef} type="text" placeholder={residence.title} />}</span>
-                <span className="editInfo" onClick={() => editField(setEditTitle, editTitle)}> ✏️</span>
+                <span className="editInfo" onClick={() => editField(setEditTitle, editTitle)}>{!editTitle && <span> ✏️</span>}</span>
               </p>
 
-              <p><span>{editCountry && <span onClick={() => confirmEdit(editCountryRef, 'country',setEditCountry)}>✅</span>}Country: </span>
+              <p><span>{editCountry && <span onClick={() => confirmEdit(editCountryRef, 'country', setEditCountry)}>✅</span>}
+                {editCountry && <span onClick={() => undoEdit(setEditCountry)}>↩️</span>}
+                Country: </span>
                 {!editCountry && residence.country}
                 <span>{editCountry && <input ref={editCountryRef} type="text" placeholder={residence.country} />}</span>
-                <span className="editInfo" onClick={() => editField(setEditCountry, editCountry)}> ✏️</span>
+                <span className="editInfo" onClick={() => editField(setEditCountry, editCountry)}>{!editCountry && <span> ✏️</span>}</span>
               </p>
                             
-              <p><span>{editCity && <span onClick={() => confirmEdit(editCityRef, 'city',setEditCity)}>✅</span>}City: </span>
+              <p><span>{editCity && <span onClick={() => confirmEdit(editCityRef, 'city', setEditCity)}>✅</span>}
+                {editCity && <span onClick={() => undoEdit(setEditCity)}>↩️</span>}
+                City: </span>
                 {!editCity && residence.city}
                 <span>{editCity && <input ref={editCityRef} type="text" placeholder={residence.city} />}</span>
-                <span className="editInfo" onClick={() => editField(setEditCity, editCity)}> ✏️</span>
+                <span className="editInfo" onClick={() => editField(setEditCity, editCity)}>{!editCity && <span> ✏️</span>}</span>
               </p>
 
 
-              <p><span>{editAddress && <span onClick={() => confirmEdit(editAddressRef, 'address',setEditAddress)}>✅</span>}Address: </span>
+              <p><span>{editAddress && <span onClick={() => confirmEdit(editAddressRef, 'address', setEditAddress)}>✅</span>}
+                {editAddress && <span onClick={() => undoEdit(setEditAddress)}>↩️</span>}
+                Address: </span>
                 {!editAddress && residence.address}
                 <span>{editAddress && <input ref={editAddressRef} type="text" placeholder={residence.address} />}</span>
-                <span className="editInfo" onClick={() => editField(setEditAddress, editAddress)}> ✏️</span>
+                <span className="editInfo" onClick={() => editField(setEditAddress, editAddress)}>{!editAddress && <span> ✏️</span>}</span>
               </p>
 
 
-              <p><span>{editType && <span onClick={() => confirmEdit(editTypeRef, 'type',setEditType)}>✅</span>}Type: </span>
+              <p><span>{editType && <span onClick={() => confirmEdit(editTypeRef, 'type', setEditType)}>✅</span>}
+                {editType && <span onClick={() => undoEdit(setEditType)}>↩️</span>}
+                Type: </span>
                 {!editType && residence.type}
                 <span>{editType && <input ref={editTypeRef} type="text" placeholder={residence.type} />}</span>
-                <span className="editInfo" onClick={() => editField(setEditType, editType)}> ✏️</span>
+                <span className="editInfo" onClick={() => editField(setEditType, editType)}>{!editType && <span> ✏️</span>}</span>
               </p>
 
-              <p><span>{editPrice && <span onClick={() => confirmEdit(editPriceRef, 'price',setEditPrice)}>✅</span>}Price: </span>
+              <p><span>{editPrice && <span onClick={() => confirmEdit(editPriceRef, 'price', setEditPrice)}>✅</span>}
+                {editPrice && <span onClick={() => undoEdit(setEditPrice)}>↩️</span>}
+                Price: </span>
                 {!editPrice && residence.price}
                 <span>{editPrice && <input ref={editPriceRef} type="text" placeholder={residence.price} />}</span>
-                <span className="editInfo" onClick={() => editField(setEditPrice, editPrice)}> ✏️</span>
+                <span className="editInfo" onClick={() => editField(setEditPrice, editPrice)}>{!editPrice && <span> ✏️</span>}</span>
               </p>
 
-              <p><span>{editLimit && <span onClick={() => confirmEdit(editLimitRef, 'residenceLimit',setEditLimit)}>✅</span>}Residence Limit: </span>
+              <p><span>{editLimit && <span onClick={() => confirmEdit(editLimitRef, 'residenceLimit', setEditLimit)}>✅</span>}
+                {editLimit && <span onClick={() => undoEdit(setEditLimit)}>↩️</span>}
+                Residence Limit: </span>
                 {!editLimit && residence.residenceLimit}
                 <span>{editLimit && <input ref={editLimitRef} type="text" placeholder={residence.residenceLimit} />}</span>
-                <span className="editInfo" onClick={() => editField(setEditLimit, editLimit)}> ✏️</span>
+                <span className="editInfo" onClick={() => editField(setEditLimit, editLimit)}>{!editLimit && <span> ✏️</span>}</span>
               </p>
 
-              <p><span>{editDesc && <span onClick={() => confirmEdit(editDescRef, 'description',setEditDesc)}>✅</span>}Description: </span>
+              <p><span>{editDesc && <span onClick={() => confirmEdit(editDescRef, 'description', setEditDesc)}>✅</span>}
+                {editDesc && <span onClick={() => undoEdit(setEditDesc)}>↩️</span>}
+                Description: </span>
                 {!editDesc && residence.description}
                 <span>{editDesc && <textarea ref={editDescRef} type="text" placeholder={residence.description} />}</span>
-                <span className="editInfo" onClick={() => editField(setEditDesc, editDesc)}> ✏️</span>
+                <span className="editInfo" onClick={() => editField(setEditDesc, editDesc)}>{!editDesc && <span> ✏️</span>}</span>
               </p>
 
             </div>
