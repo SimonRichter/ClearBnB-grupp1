@@ -55,7 +55,7 @@ const MyBookings = () => {
           <p>FUTURE BOOKINGS</p>
           {myResidences.map(r => {
             if (r.startDate * 1000 > currentDate) {
-            return( <div className="futureBookings"><MyBookingItem key={r._id} booked={r} /></div>)
+            return( <div key={r._id} className="futureBookings"><MyBookingItem key={r._id} booked={r} /></div>)
             }
           })}
         </div>  
@@ -63,7 +63,7 @@ const MyBookings = () => {
           <p>BOOKING HISTORY</p>
           {myResidences.map(r => {
             if (r.startDate * 1000 < currentDate) {
-            return( <div className="passedBookings"><MyBookingItem key={r._id} booked={r} /></div>)
+            return( <div key={r._id} className="passedBookings"><MyBookingItem key={r._id} booked={r} /></div>)
             }
           })}
        </div>   

@@ -1,7 +1,7 @@
-.person{
+.person {
   margin-bottom: 30px;
 }
-.flip-card-person{
+.flip-card-person {
   margin-top: 20px;
   padding: 20px;
   border-radius: 10px;
@@ -12,7 +12,7 @@
   height: 50vh;
 }
 
-.flip-card-person img{
+.flip-card-person img {
   width: 100%;
   height: 75%;
   object-fit: cover;
@@ -25,14 +25,15 @@
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .flip-card-person:hover .flip-card-inner-person {
   transform: rotateY(180deg);
 }
 
-.flip-card-front-person, .flip-card-back-person {
+.flip-card-front-person,
+.flip-card-back-person {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -50,7 +51,7 @@
   color: white;
   transform: rotateY(180deg);
 }
-.flip-card-back-person > p{
+.flip-card-back-person > p {
   padding: 4px;
   font-family: "Montserrat", sans-serif;
   font-size: 2vh;
@@ -60,7 +61,7 @@
   text-align: left;
 }
 
-.flip-card-back-person > p > span{
+.flip-card-back-person > p > span {
   padding: 4px;
   font-family: "Montserrat", sans-serif;
   font-size: 2vh;
@@ -71,40 +72,49 @@
 }
 
 .flip-card-front-person > p {
-  padding: 4px;
+  padding: 0.5px;
   font-family: "Montserrat", sans-serif;
-  font-size: 2vh;
+  font-size: 1.8vh;
   color: black;
   letter-spacing: 1.2px;
   text-transform: uppercase;
 }
-@media (max-width: 480px) {
-  .flip-card-person{
-  margin-top: 2px;
-  padding: 2px;
-  width: 100%;
-  height: 50vh;
-  justify-items: center;
+
+.flip-card-front-person .roleTag {
+  color: #f50057;
+  margin-bottom: 50px;
+  font-size: 12px;
+  display: inline;
+  direction: row;
+  align-items: baseline;
 }
+@media (max-width: 480px) {
+  .flip-card-person {
+    margin-top: 2px;
+    padding: 2px;
+    width: 100%;
+    height: 50vh;
+    justify-items: center;
+  }
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  .flip-card-person{
-  margin-top: 2px;
-  width: 90%;
-  height: 50vh;
-  justify-items: center;
-}
+  .flip-card-person {
+    margin-top: 2px;
+    width: 90%;
+    height: 50vh;
+    justify-items: center;
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .flip-card-person{
-  margin-top: 2px;
-  width: 90%;
-  height: 50vh;
-  justify-items: center;
+  .flip-card-person {
+    margin-top: 2px;
+    width: 90%;
+    height: 50vh;
+    justify-items: center;
+  }
 }
-}
-@media (min-width: 1025px){
+@media (min-width: 1025px) {
   .person .flipIcon {
-  display: none;
+    display: none;
   }
 }

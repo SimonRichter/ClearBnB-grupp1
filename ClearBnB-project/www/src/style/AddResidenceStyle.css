@@ -362,23 +362,15 @@
   margin: 10px 0 10px 0;
 }
 
-.makeStyles-paper-20:focus {
-  outline: none;
-  border: none;
-}
-
-.makeStyles-paper-20 > .MuiSvgIcon-root:hover {
+.addResWrapper .makeStyles-paper-20 > .MuiSvgIcon-root:hover {
   cursor: pointer;
   color: #f50057;
 }
 
-.logoHost {
+.addResWrapper .logoHost {
   width: 10em;
   opacity: 70%;
   margin: 15px;
 }
 
-.makeStyles-paper-64:focus {
-  outline: none;
-  border: none;
-}
+

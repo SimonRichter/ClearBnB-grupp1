@@ -24,7 +24,7 @@ const MyRentalItem = ({ rental }) => {
         <p><span>Title: </span>{rental.title}</p>
         <p><span>Start date: </span>{new Date(startDate).toString().substr(0, 15)}</p>
         <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
-        <p><span>Price/night: </span>{ rental.price }</p>
+        <p><span>Price/night: </span>{ rental.price }€</p>
       </div>
       <div className="delete">
         <p className="deleteRes" onClick={deleteResidences}>❌</p>

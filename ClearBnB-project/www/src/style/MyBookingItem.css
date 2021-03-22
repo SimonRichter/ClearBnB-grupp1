@@ -1,4 +1,4 @@
-.myBookingItems{
+.myBookingItems {
   box-sizing: border-box;
 }
 
@@ -12,44 +12,45 @@
   cursor: pointer;
 }
 
-.wrapperInItem:hover{
-  Transform: scale(1.02);
+.wrapperInItem:hover {
+  transform: scale(1.02);
   transition: 300ms;
 }
 
-.wrapperInItem > .wrap > img{
+.wrapperInItem > .wrap > img {
   border-radius: 5px;
   height: 150px;
   width: 150px;
 }
 
-.wrapperInItem  > .wrap {
+.wrapperInItem > .wrap {
   display: grid;
-  grid-template-columns: 1fr 60%;
+  grid-template-columns: 1fr 70%;
 }
 
-.wrapperInItem  > .wrap > .info > p > span{
+.wrapperInItem > .wrap > .info > p > span {
   font-weight: bolder;
 }
+
 @media (max-width: 480px) {
-  .wrapperInItem > .wrap > img{
-  width: 100%;
-}
-  .wrapperInItem  > .wrap {
+  .wrapperInItem > .wrap > img {
+    width: 100%;
+  }
+  .wrapperInItem > .wrap {
     display: grid;
     grid-template-columns: 1fr;
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
- .wrapperInItem {
-  width: 80%;
-  background: #eee;
-  margin: 15px auto;
-  padding: 10px;
-  border-radius: 1px;
-  box-shadow: 5px 10px 18px #888888;
-  cursor: pointer;
-} 
+  .wrapperInItem {
+    width: 80%;
+    background: #eee;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 1px;
+    box-shadow: 5px 10px 18px #888888;
+    cursor: pointer;
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   
@@ -64,3 +65,4 @@
     width: 15vh;
   }
 }
+

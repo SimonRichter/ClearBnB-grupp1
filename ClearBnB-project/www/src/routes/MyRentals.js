@@ -37,6 +37,7 @@ const MyRentals = () => {
 
   return (
     <div className="myRentals">
+      <p>MY RESIDENCES</p>
       {rentals && rentals.map(r => (<MyRentalItem key={r._id} rental={r}/>))}
     </div>
   );

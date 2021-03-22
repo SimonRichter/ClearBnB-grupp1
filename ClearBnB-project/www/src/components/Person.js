@@ -12,6 +12,8 @@ const Person = ({person}) => {
             <div className="flipIcon"><FlipToBackIcon/></div>
             <img src={person.img} alt="" />
             <p>{person.name}</p>
+            <p className="roleTag">🛡 {person.role}</p>
+            
       </div>
         <div className="flip-card-back-person">
             <p><span>NAME: </span>{person.name}</p>
