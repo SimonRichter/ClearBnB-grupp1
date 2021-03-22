@@ -16,6 +16,13 @@ const MyRentalDetailPage = () => {
   const history = useHistory();
   const passwordRef = useRef(null);
   const editCountryRef = useRef(null);
+  const editTitleRef = useRef(null);
+  const editCityRef = useRef(null);
+  const editPriceRef = useRef(null);
+  const editDescRef = useRef(null);
+  const editTypeRef = useRef(null);
+  const editAddressRef = useRef(null);
+  const editLimitRef = useRef(null);
   const { id } = useParams();
   const { whoAmI } = useContext(UserContext);
   const { residences,confirmDelete,deleteResidence,updateResidence } = useContext(ResidenceContext);
@@ -28,6 +35,13 @@ const MyRentalDetailPage = () => {
   const [open, setOpen] = useState(false);
   const [showWrongPassword, setShowWrongPassword] = useState(false);
   const [editCountry, setEditCountry] = useState(false);
+  const [editTitle, setEditTitle] = useState(false);
+  const [editCity, setEditCity] = useState(false);
+  const [editPrice, setEditPrice] = useState(false);
+  const [editDesc, setEditDesc] = useState(false);
+  const [editType, setEditType] = useState(false);
+  const [editAddress, setEditAddress] = useState(false);
+  const [editLimit, setEditLimit] = useState(false);
 
   useEffect(() => {
     if (residence) {
@@ -131,7 +145,7 @@ const classes = useStyles();
     setEdit(!edit);
   }
 
-  const confirmEdit = (ref, objType) => {
+  const confirmEdit = (ref, objType, setBack) => {
     const newEdit = ref.current.value;
 
     const residenceObj = {
@@ -139,7 +153,7 @@ const classes = useStyles();
     };
 
     updateResidence(residence._id, residenceObj);
-    setEditCountry(false);
+    setBack(false);
   }
 
 
@@ -154,14 +168,57 @@ const classes = useStyles();
         <div className="information">
           <div className="infoWrapper">
             <div className="desc">
-              <p className="resTitle">{residence.title} <span className="editInfo"> ✏️</span></p>
-              <p><span>{editCountry && <span onClick={() => confirmEdit(editCountryRef, 'country')}>✅</span>}Country: </span>{!editCountry && residence.country} <span>{editCountry && <input ref={editCountryRef} type="text" placeholder={residence.country} />}</span> <span className="editInfo" onClick={() => editField(setEditCountry,editCountry)}> ✏️</span></p>
-              <p><span>City: </span>{residence.city}<span className="editInfo"> ✏️</span></p>
-              <p><span>Address: </span>{residence.address}<span className="editInfo"> ✏️</span></p>
-              <p><span>Type: </span>{residence.type}<span className="editInfo"> ✏️</span></p>
-              <p><span>Price per night: </span>{residence.price}€<span className="editInfo"> ✏️</span></p>
-              <p><span>Residence limit: </span>{residence.residenceLimit}<span className="editInfo"> ✏️</span></p>
-              <p><span>Description: </span>{residence.description}<span className="editInfo"> ✏️</span></p>
+
+              <p className="resTitle"><span>{editTitle && <span onClick={() => confirmEdit(editTitleRef, 'title', setEditTitle)}>✅</span>}</span>
+                {!editTitle && residence.title}
+                <span>{editTitle && <input ref={editTitleRef} type="text" placeholder={residence.title} />}</span>
+                <span className="editInfo" onClick={() => editField(setEditTitle, editTitle)}> ✏️</span>
+              </p>
+
+              <p><span>{editCountry && <span onClick={() => confirmEdit(editCountryRef, 'country',setEditCountry)}>✅</span>}Country: </span>
+                {!editCountry && residence.country}
+                <span>{editCountry && <input ref={editCountryRef} type="text" placeholder={residence.country} />}</span>
+                <span className="editInfo" onClick={() => editField(setEditCountry, editCountry)}> ✏️</span>
+              </p>
+                            
+              <p><span>{editCity && <span onClick={() => confirmEdit(editCityRef, 'city',setEditCity)}>✅</span>}City: </span>
+                {!editCity && residence.city}
+                <span>{editCity && <input ref={editCityRef} type="text" placeholder={residence.city} />}</span>
+                <span className="editInfo" onClick={() => editField(setEditCity, editCity)}> ✏️</span>
+              </p>
+
+
+              <p><span>{editAddress && <span onClick={() => confirmEdit(editAddressRef, 'address',setEditAddress)}>✅</span>}Address: </span>
+                {!editAddress && residence.address}
+                <span>{editAddress && <input ref={editAddressRef} type="text" placeholder={residence.address} />}</span>
+                <span className="editInfo" onClick={() => editField(setEditAddress, editAddress)}> ✏️</span>
+              </p>
+
+
+              <p><span>{editType && <span onClick={() => confirmEdit(editTypeRef, 'type',setEditType)}>✅</span>}Type: </span>
+                {!editType && residence.type}
+                <span>{editType && <input ref={editTypeRef} type="text" placeholder={residence.type} />}</span>
+                <span className="editInfo" onClick={() => editField(setEditType, editType)}> ✏️</span>
+              </p>
+
+              <p><span>{editPrice && <span onClick={() => confirmEdit(editPriceRef, 'price',setEditPrice)}>✅</span>}Price: </span>
+                {!editPrice && residence.price}
+                <span>{editPrice && <input ref={editPriceRef} type="text" placeholder={residence.price} />}</span>
+                <span className="editInfo" onClick={() => editField(setEditPrice, editPrice)}> ✏️</span>
+              </p>
+
+              <p><span>{editLimit && <span onClick={() => confirmEdit(editLimitRef, 'residenceLimit',setEditLimit)}>✅</span>}Residence Limit: </span>
+                {!editLimit && residence.residenceLimit}
+                <span>{editLimit && <input ref={editLimitRef} type="text" placeholder={residence.residenceLimit} />}</span>
+                <span className="editInfo" onClick={() => editField(setEditLimit, editLimit)}> ✏️</span>
+              </p>
+
+              <p><span>{editDesc && <span onClick={() => confirmEdit(editDescRef, 'description',setEditDesc)}>✅</span>}Description: </span>
+                {!editDesc && residence.description}
+                <span>{editDesc && <textarea ref={editDescRef} type="text" placeholder={residence.description} />}</span>
+                <span className="editInfo" onClick={() => editField(setEditDesc, editDesc)}> ✏️</span>
+              </p>
+
             </div>
           </div>
         </div>
