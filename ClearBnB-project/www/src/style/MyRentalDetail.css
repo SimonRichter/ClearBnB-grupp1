@@ -180,3 +180,10 @@
 .editInfo:hover{
   opacity: 100%;
 }
+
+.myRentalDetailPage > .inner > .information >  .infoWrapper > .desc > p > span > input{
+  border: none;
+  outline: none;
+  font-size: 17px;
+  min-width: 10%;
+}

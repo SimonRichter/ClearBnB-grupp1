@@ -15,6 +15,7 @@ const MyRentalDetailPage = () => {
 
   const history = useHistory();
   const passwordRef = useRef(null);
+  const editCountryRef = useRef(null);
   const { id } = useParams();
   const { whoAmI } = useContext(UserContext);
   const { residences,confirmDelete,deleteResidence } = useContext(ResidenceContext);
@@ -26,6 +27,7 @@ const MyRentalDetailPage = () => {
   const [stylePercent, setStylePercent] = useState(null)
   const [open, setOpen] = useState(false);
   const [showWrongPassword, setShowWrongPassword] = useState(false);
+  const [editCountry, setEditCountry] = useState(false);
 
   useEffect(() => {
     if (residence) {
@@ -125,6 +127,15 @@ const classes = useStyles();
     </div>
   );
 
+  const editField = () => {
+    setEditCountry(!editCountry);
+  }
+
+  const confirmEdit = () => {
+    console.log(editCountryRef.current.value);
+    setEditCountry(false);
+  }
+
 
   return (
     <div className="myRentalDetailPage">
@@ -137,8 +148,8 @@ const classes = useStyles();
         <div className="information">
           <div className="infoWrapper">
             <div className="desc">
-              <p className="resTitle">{residence.title}<span className="editInfo"> ✏️</span></p>
-              <p><span>Country: </span>residence.country<span className="editInfo"> ✏️</span></p>
+              <p className="resTitle">{residence.title} <span className="editInfo"> ✏️</span></p>
+              <p><span>{editCountry && <span onClick={confirmEdit}>✅</span>}Country: </span>{!editCountry && residence.country} <span>{editCountry && <input ref={editCountryRef} type="text" placeholder={residence.country} />}</span> <span className="editInfo" onClick={editField}> ✏️</span></p>
               <p><span>City: </span>{residence.city}<span className="editInfo"> ✏️</span></p>
               <p><span>Address: </span>{residence.address}<span className="editInfo"> ✏️</span></p>
               <p><span>Type: </span>{residence.type}<span className="editInfo"> ✏️</span></p>
