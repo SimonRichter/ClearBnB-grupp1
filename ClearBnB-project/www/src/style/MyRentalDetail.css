@@ -187,3 +187,8 @@
   font-size: 17px;
   min-width: 10%;
 }
+
+.myRentalDetailPage > .inner > .information >  .infoWrapper > .desc > p > span{
+  cursor: pointer;
+  font-size: 17px;
+}
