@@ -18,7 +18,7 @@ const MyRentalDetailPage = () => {
   const editCountryRef = useRef(null);
   const { id } = useParams();
   const { whoAmI } = useContext(UserContext);
-  const { residences,confirmDelete,deleteResidence } = useContext(ResidenceContext);
+  const { residences,confirmDelete,deleteResidence,updateResidence } = useContext(ResidenceContext);
   let residence = residences.find(r => r._id === id);
   const [percentOfBookings, setPercentOfBookings] = useState(null);
   const [styleView, setStyleView] = useState(null)
@@ -132,7 +132,13 @@ const classes = useStyles();
   }
 
   const confirmEdit = () => {
-    console.log(editCountryRef.current.value);
+    const newCountry =  editCountryRef.current.value;
+
+    const residenceObj = {
+      country: newCountry
+    };
+
+    updateResidence(residence._id, residenceObj);
     setEditCountry(false);
   }
 
