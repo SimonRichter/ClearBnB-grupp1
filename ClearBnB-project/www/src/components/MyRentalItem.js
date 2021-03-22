@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import '../style/MyRentalItem.css'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { useHistory } from 'react-router-dom'
+import EqualizerIcon from '@material-ui/icons/Equalizer';
 
 const MyRentalItem = ({ rental }) => {
 
@@ -25,6 +26,9 @@ const MyRentalItem = ({ rental }) => {
         <p><span>Start date: </span>{new Date(startDate).toString().substr(0, 15)}</p>
         <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
         <p><span>Price/night: </span>{ rental.price }</p>
+      </div>
+      <div className="stats">
+        <EqualizerIcon fontSize="large" className="statsSymbol" />
       </div>
     </div>
   );

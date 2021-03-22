@@ -2,7 +2,7 @@
 .myRentalItem {
   cursor: pointer;
   display: grid;
-  grid-template-columns: 1fr 55%;
+  grid-template-columns: 1fr 55% 20%;
   grid-gap: 10px;
   width: 70%;
   background: #eee;
@@ -40,4 +40,8 @@ margin-left: 20px;
 
 .myRentalItem  > .info > p > span{
   font-weight: bolder;
+}
+
+.statsSymbol{
+  color: #f50057;
 }
