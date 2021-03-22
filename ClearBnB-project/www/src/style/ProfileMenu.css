@@ -7,3 +7,14 @@
   text-decoration: none;
   background-color: red;
 }
+@media (min-width: 2000px){
+  .profileMenu svg{
+    font-size: 4rem;
+  }
+  .MuiTypography-body1 {
+    font-size: 3rem !important;
+  }
+  .MuiSvgIcon-fontSizeSmall {
+    font-size: 3em !important;
+  }
+}
