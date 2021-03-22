@@ -137,14 +137,14 @@ const classes = useStyles();
         <div className="information">
           <div className="infoWrapper">
             <div className="desc">
-              <p className="resTitle">{residence.title}</p>
-              <p><span>Country: </span>{residence.country}</p>
-              <p><span>City: </span>{residence.city}</p>
-              <p><span>Address: </span>{residence.address}</p>
-              <p><span>Type: </span>{residence.type}</p>
-              <p><span>Price per night: </span>{residence.price}€</p>
-              <p><span>Residence limit: </span>{residence.residenceLimit}</p>
-              <p><span>Description: </span>{residence.description}</p>
+              <p className="resTitle">{residence.title}<span className="editInfo"> ✏️</span></p>
+              <p><span>Country: </span>residence.country<span className="editInfo"> ✏️</span></p>
+              <p><span>City: </span>{residence.city}<span className="editInfo"> ✏️</span></p>
+              <p><span>Address: </span>{residence.address}<span className="editInfo"> ✏️</span></p>
+              <p><span>Type: </span>{residence.type}<span className="editInfo"> ✏️</span></p>
+              <p><span>Price per night: </span>{residence.price}€<span className="editInfo"> ✏️</span></p>
+              <p><span>Residence limit: </span>{residence.residenceLimit}<span className="editInfo"> ✏️</span></p>
+              <p><span>Description: </span>{residence.description}<span className="editInfo"> ✏️</span></p>
             </div>
           </div>
         </div>

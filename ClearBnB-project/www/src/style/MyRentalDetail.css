@@ -170,3 +170,13 @@
   font-size: large;
   text-transform: uppercase;
 }
+
+.editInfo{
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 70%;
+}
+
+.editInfo:hover{
+  opacity: 100%;
+}
