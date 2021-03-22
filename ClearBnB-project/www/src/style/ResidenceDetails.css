@@ -246,7 +246,7 @@
     grid-template-columns: 1fr;
   }
   .residenceDetail > .inner > .infoWrapper > .desc {
-    width: 110%;
+    width: 112%;
   }
   .residenceDetail .book-btn {
     width: 99%;
@@ -265,6 +265,9 @@
   .residenceDetail > .inner > .infoWrapper > .desc {
     width: 100%;
   }
+  .residenceDetail > .inner > .infoWrapper > .desc {
+    width: 108%;
+  }
   .residenceDetail .book-btn {
     width: 100%;
     text-align: center;
@@ -282,6 +285,9 @@
   }
   .residenceDetail > .inner > .infoWrapper > .desc {
     width: 100%;
+  }
+  .residenceDetail > .inner > .infoWrapper > .desc {
+    width: 104%;
   }
   .residenceDetail .book-btn {
     width: 100%;
