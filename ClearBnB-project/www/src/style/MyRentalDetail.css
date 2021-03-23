@@ -192,3 +192,20 @@
   cursor: pointer;
   font-size: 17px;
 }
+@media (max-width: 480px) {
+ .myRentalDetailPage > .inner {
+  grid-template-columns: 1fr;
+  } 
+  .myRentalDetailPage > .inner > .information > .infoWrapper{
+    padding-right: 0px;
+  }
+  .myRentalDetailPage > .inner > .information > .infoWrapper > .desc{
+    width: 100%;
+  }
+}
+@media (min-width: 481px) and (max-width: 767px) {
+  
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+}
