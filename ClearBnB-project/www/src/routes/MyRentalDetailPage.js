@@ -272,11 +272,11 @@ const classes = useStyles();
             <div style={styleBookings} className="statBookings"></div>
             </LightTooltip>
           
-            {percentOfBookings !== null && <LightTooltip title={"Percent of bookings/views: " + percentOfBookings.toFixed(2) + "%"}>
+            {percentOfBookings && <LightTooltip title={"Percent of bookings/views: " + percentOfBookings.toFixed(2) + "%"}>
               <div style={stylePercent} className="statPercent"></div>
             </LightTooltip>}
 
-            {!percentOfBookings === null && <LightTooltip title={"Percent of bookings/views: " + "0 %"}>
+            {!percentOfBookings && <LightTooltip title={"Percent of bookings/views: " + "0 %"}>
               <div style={stylePercent} className="statPercent"></div>
             </LightTooltip>}
         </div>
