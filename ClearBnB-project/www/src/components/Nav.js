@@ -22,6 +22,10 @@ const Nav = () => {
   const closeHamburger = () => {
     setActive(!isActive);
   }
+  const logOutAndCloseHamburger = () => {
+    closeHamburger();
+    logOut();
+  }
   return (
     <div className={isActive ? "nav-bar" : "nav-bar"}>
       <div className="hamburger-menu-opened">
@@ -32,7 +36,7 @@ const Nav = () => {
           <Link to="/Residences" onClick={() => closeHamburger()}>Residences</Link>
           {!whoAmI && <Link to="/login" onClick={() => closeHamburger()}>Login</Link>}
           {!whoAmI && <Link to="/register" onClick={() => closeHamburger()}>Register</Link>}
-          {whoAmI && <Link to="/" onClick={() => logOut(), closeHamburger()}>Log out</Link>}
+          {whoAmI && <Link to="/" onClick={() => logOutAndCloseHamburger()}>Log out</Link>}
         </div>
       </div>
      <Link to="/"><img className="logoImg" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt=""/></Link>
