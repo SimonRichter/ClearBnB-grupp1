@@ -68,6 +68,21 @@ app.post('/api/users', async (req, res) => {
   res.json({success: true});
 });
 
+app.post('/api/confirmDelete', async (req, res) => {
+
+  const hash = crypto.createHmac('sha256', secret)
+    .update(req.body.password).digest('hex');
+
+  let model = models['users'];
+  let user = await model.findOne({ email: req.body.email, password: hash });
+  if(user){
+    res.json({success: 'true'});
+  }
+  else {
+    res.json({success: 'false'});
+  }
+})
+
 
 app.post('/api/login', async (req, res) => {
     // note: req.session is unique per user/browser
@@ -132,6 +147,39 @@ app.put('/rest/residences/:id', async (req, res) => {
       residence.bookedDays = [...residence.bookedDays, ...req.body.bookedDays];
     }
     delete req.body.bookedDays
+  }
+
+  if (req.body.views) {
+
+    if (residence.views === null) {
+      residence.views = req.body.views;
+    }
+    else {
+      residence.views = residence.views +1;
+    }
+    delete req.body.views;
+  }
+
+  if (req.body.earned) {
+
+    if (residence.earned === null) {
+      residence.earned = req.body.earned;
+    }
+    else {
+      residence.earned = residence.earned + req.body.earned;
+    }
+    delete req.body.earned;
+  }
+
+  if (req.body.amountOfBookings) {
+
+    if (residence.amountOfBookings === null) {
+      residence.amountOfBookings = req.body.amountOfBookings;
+    }
+    else {
+      residence.amountOfBookings = residence.amountOfBookings + 1;
+    }
+    delete req.body.amountOfBookings;
   }
 
   Object.assign(residence, req.body)

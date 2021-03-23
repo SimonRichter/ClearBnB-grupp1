@@ -20,7 +20,16 @@ export const ResidenceProvider = (props) => {
       headers: { 'content-type': 'application/json' },
     })
     res = await res.json();
-    console.log(res);
+  }
+
+  const confirmDelete = async (userObj) => {
+      let res = await fetch("/api/confirmDelete", {
+      method: 'POST',
+      headers: { 'content-type': 'application/json'},
+      body: JSON.stringify(userObj)
+      })
+    res = await res.json()
+    return res;
   }
 
   const updateResidence = async (id, residence) => {
@@ -55,7 +64,8 @@ export const ResidenceProvider = (props) => {
     updateResidence,
     fetchResidences,
     addResidence,
-    deleteResidence
+    deleteResidence,
+    confirmDelete
   }
 
   return (
