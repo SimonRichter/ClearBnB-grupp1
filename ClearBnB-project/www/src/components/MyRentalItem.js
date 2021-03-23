@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import '../style/MyRentalItem.css'
 import { ResidenceContext } from '../contexts/ResidenceContextProvider';
 import { useHistory } from 'react-router-dom'
+import EqualizerIcon from '@material-ui/icons/Equalizer';
 
 const MyRentalItem = ({ rental }) => {
 
@@ -16,18 +17,18 @@ const MyRentalItem = ({ rental }) => {
 
 
   return (
-    <div className="myRentalItem">
+    <div className="myRentalItem" onClick={() => history.push("/myRentalDetailPage/" + rental._id)}>
       <div className="img">
         <img src={rental.imageURLs[0]} alt=""/>
       </div>
-      <div className="info" onClick={() => history.push("/myRentalDetailPage/" + rental._id)}>
+      <div className="info">
         <p><span>Title: </span>{rental.title}</p>
         <p><span>Start date: </span>{new Date(startDate).toString().substr(0, 15)}</p>
         <p><span>End date: </span>{new Date(endDate).toString().substr(0, 15)}</p>
         <p><span>Price/night: </span>{ rental.price }€</p>
       </div>
-      <div className="delete">
-        <p className="deleteRes" onClick={deleteResidences}>❌</p>
+      <div className="stats">
+        <EqualizerIcon fontSize="large" className="statsSymbol" />
       </div>
     </div>
   );

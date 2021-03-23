@@ -64,11 +64,13 @@ const ResidenceDetails = () => {
       allTheDaysBooked.push(i);
     }
 
-    const bookedDaysObj = {
-      bookedDays: allTheDaysBooked
+    const bookedObj = {
+      bookedDays: allTheDaysBooked,
+      amountOfBookings: 1,
+      earned: totalPrice
     }
 
-    updateResidence(residence._id, bookedDaysObj);
+    updateResidence(residence._id, bookedObj);
     
     const bookingObj = {
       startDate: startDateInMillis,
@@ -160,6 +162,15 @@ const ResidenceDetails = () => {
         //setFeatures(...getSpecificFeature(residence.featuresId));
     };    
   }, [residence])
+
+  useEffect(() => {
+    if (id) {
+      const bookedObj = {
+        views: 1
+      }
+      updateResidence(id, bookedObj);
+    }
+  },[])
 
   const closeLightbox = () => {
     setOpen(false);
