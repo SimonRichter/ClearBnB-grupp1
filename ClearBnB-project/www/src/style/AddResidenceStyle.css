@@ -399,8 +399,14 @@
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  
+ .addResWrapper .checkbox {
+    display: grid;
+    row-gap: 20px;
+  } 
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  
+  .addResWrapper .checkbox {
+    display: grid;
+    row-gap: 20px;
+  }
 }
