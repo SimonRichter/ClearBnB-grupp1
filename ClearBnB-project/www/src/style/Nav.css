@@ -13,6 +13,7 @@
   user-select: none;
   z-index: 999;
 }
+/* Removes background color on click. */
 .nav-bar *:focus {
   -webkit-tap-highlight-color: transparent;
   outline: none;
