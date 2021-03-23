@@ -221,5 +221,30 @@
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  
+  .myRentalDetailPage > .inner > .information > .infoWrapper{
+    padding-right: 5px;
+  }
+  .myRentalDetailPage > .inner > .information > .infoWrapper > .desc{
+    width: 100%;
+  }
+  .myRentalDetailPage > .inner > .delete{
+    justify-self: center;
+  }
+}
+@media (min-width: 2000px){
+  .myRentalDetailPage p{
+    font-size: 3rem;
+  }
+  .myRentalDetailPage > .inner > .information >  .infoWrapper > .desc > .resTitle{
+    font-size: 3rem;
+  }
+  .myRentalDetailPage > .inner > .information >  .infoWrapper > .desc > p > span{
+    font-size: 1.5rem;
+  }
+  .myRentalDetailPage > .inner > .information >  .infoWrapper > .desc > p{
+    font-size: 1.5rem;
+  }
+  .statistics > .statInfo > p{
+    font-size: 1.5rem;
+  }
 }
