@@ -1,7 +1,7 @@
 .myRentals {
   background: white;
   width: 70%;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 10px;
   min-height: 80vh;
   border-radius: 10px;
@@ -16,4 +16,20 @@
   color: #f50057;
   letter-spacing: 6.2px;
   border-bottom: 1px solid #f5005660;
+}
+
+@media (max-width: 480px) {
+  
+}
+
+@media (min-width: 481px) and (max-width: 1151px) {
+  .myRentals {
+    width: 90%;
+  }
+}
+
+@media (min-width: 1151px) and (max-width: 1400px) {
+  .myRentals {
+    width: 80%;
+  }
 }

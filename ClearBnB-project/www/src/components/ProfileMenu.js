@@ -106,7 +106,7 @@ export default function CustomizedMenus(props) {
           <ListItemIcon>
             <LibraryBooksRoundedIcon fontSize="small"/>
           </ListItemIcon>
-          <ListItemText primary="My bookings"/>
+          <ListItemText primary="My Bookings"/>
         </StyledMenuItem>
 
         <StyledMenuItem onClick={() => onLogOut()}>
