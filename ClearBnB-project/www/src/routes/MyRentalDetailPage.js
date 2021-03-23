@@ -45,7 +45,7 @@ const MyRentalDetailPage = () => {
 
   useEffect(() => {
     if (residence) {
-      if (residence.amountOfBookings === null) {
+      if (!residence.amountOfBookings) {
         setPercentOfBookings(null);
       } else {
         setPercentOfBookings((residence.amountOfBookings / residence.views) * 100);
@@ -272,14 +272,13 @@ const classes = useStyles();
             <div style={styleBookings} className="statBookings"></div>
             </LightTooltip>
           
-            {percentOfBookings && <LightTooltip title={"Percent of bookings/views: " + percentOfBookings.toFixed(2) + "%"}>
+            {percentOfBookings !== null && <LightTooltip title={"Percent of bookings/views: " + percentOfBookings.toFixed(2) + "%"}>
               <div style={stylePercent} className="statPercent"></div>
             </LightTooltip>}
 
-            {!percentOfBookings && <LightTooltip title={"Percent of bookings/views: " + "0 %"}>
+            {!percentOfBookings === null && <LightTooltip title={"Percent of bookings/views: " + "0 %"}>
               <div style={stylePercent} className="statPercent"></div>
             </LightTooltip>}
-
         </div>
         </div>
         <div className="delete">
