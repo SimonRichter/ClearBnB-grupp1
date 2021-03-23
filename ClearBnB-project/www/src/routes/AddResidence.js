@@ -152,7 +152,8 @@ const AddResidence = () => {
       residenceLimit: guests,
       bookedDays: null,
       earned: null,
-      views: null
+      views: null,
+      amountOfBookings: null
     }
     addResidence(residence)
     console.log(residence);
