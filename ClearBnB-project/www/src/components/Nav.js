@@ -19,18 +19,20 @@ const Nav = () => {
   const handleToggle = () => {
     setActive(!isActive);
   };
-
+  const closeHamburger = () => {
+    setActive(!isActive);
+  }
   return (
     <div className={isActive ? "nav-bar" : "nav-bar"}>
       <div className="hamburger-menu-opened">
         <p className="hamburger-menu" onClick={handleToggle}>☰</p>
         <div className={isActive ? "display-none" : "flex-column"}>
-          <Link to="/" >Home</Link>
-          <Link to="/about">About</Link>
-          <Link to="/Residences">Residences</Link>
-          {!whoAmI && <Link to="/login">Login</Link>}
-          {!whoAmI && <Link to="/register">Register</Link>}
-          {whoAmI && <Link to="/" onClick={() => logOut()}>Log out</Link>}
+          <Link to="/" onClick={() => closeHamburger()}>Home</Link>
+          <Link to="/about" onClick={() => closeHamburger()}>About</Link>
+          <Link to="/Residences" onClick={() => closeHamburger()}>Residences</Link>
+          {!whoAmI && <Link to="/login" onClick={() => closeHamburger()}>Login</Link>}
+          {!whoAmI && <Link to="/register" onClick={() => closeHamburger()}>Register</Link>}
+          {whoAmI && <Link to="/" onClick={() => logOut(), closeHamburger()}>Log out</Link>}
         </div>
       </div>
      <Link to="/"><img className="logoImg" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt=""/></Link>
