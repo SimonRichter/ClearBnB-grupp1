@@ -202,9 +202,23 @@
   .myRentalDetailPage > .inner > .information > .infoWrapper > .desc{
     width: 100%;
   }
+  .myRentalDetailPage > .inner > .delete{
+    justify-self: center;
+  }
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  
+  .myRentalDetailPage > .inner {
+  grid-template-columns: 1fr;
+  } 
+  .myRentalDetailPage > .inner > .information > .infoWrapper{
+    padding-right: 0px;
+  }
+  .myRentalDetailPage > .inner > .information > .infoWrapper > .desc{
+    width: 100%;
+  }
+  .myRentalDetailPage > .inner > .delete{
+    justify-self: center;
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   
