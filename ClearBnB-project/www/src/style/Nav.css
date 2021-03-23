@@ -13,6 +13,12 @@
   user-select: none;
   z-index: 999;
 }
+.nav-bar *:focus {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
 
 .hamburger-menu-opened {
   display: none;
