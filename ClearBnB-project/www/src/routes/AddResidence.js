@@ -47,7 +47,8 @@ const AddResidence = () => {
   const [isChecked13, setIsChecked13] = useState(false);
   const [isChecked14, setIsChecked14] = useState(false);
 
-  const optType = useRef(null);
+  const [optionValue, setOptionValue] = useState('');
+
   const adTitle = useRef(null);
   const countryRef = useRef(null);
   const cityRef = useRef(null);
@@ -98,11 +99,14 @@ const AddResidence = () => {
     setOpen(false);
   };
 
+  const changeOptionHandler = (e) => {
+    setOptionValue(e.target.value);
+    console.log(e.target.value);
+  }
 
 
   const submitHandler = async(e) => {
      e.preventDefault();
-    let optTyp = optType.current.value;
     const theTitle = adTitle.current.value;
     const theCountry = countryRef.current.value;
     const theCity = cityRef.current.value;
@@ -134,7 +138,7 @@ const AddResidence = () => {
       fridge: feature13.current.value === "true" ? true : false,
       dishwasher: feature14.current.value === "true" ? true : false,
     }
-    // const featureObj = await addFeature(features);
+    const featureObj = await addFeature(features);
     
     const residence = {
       title: theTitle,
@@ -142,12 +146,12 @@ const AddResidence = () => {
       country: theCountry,
       city: theCity,
       address: theAdress,
-      type: optTyp,
+      type: optionValue,
       description: theDescription,
       startDate: theStartDate,
       endDate: theEndDate,
       imageURLs: images,
-      // featuresId: featureObj._id,
+      featuresId: featureObj._id,
       userId: whoAmI._id,
       residenceLimit: guests,
       bookedDays: null,
@@ -155,11 +159,10 @@ const AddResidence = () => {
       views: null,
       amountOfBookings: null
     }
-    // addResidence(residence)
-    console.log(residence);
-    console.log('här', optTyp);
+    addResidence(residence)
+ 
     
-    // history.push('/myRentals');
+    history.push('/myRentals');
   }
 
   const addFeatureHandler = ()=> {isChecked === false ? setIsChecked(true) : setIsChecked(false)}
@@ -240,14 +243,14 @@ const classes = useStyles();
         <img className="logoHost" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt=""/>
         <hr/>
       <h3>What type of recidense would you like to host?</h3>
-        <select required className="optionBar" >
+        <select value={optionValue} onChange={changeOptionHandler} required className="optionBar" >
         <option className="optValue" defaultValue="DEFAULT" disabled="disabled" >Type of residence</option>
-        <option ref={optType}>House</option>
-        <option ref={optType}>Apartment</option>
-        <option ref={optType}>Cabin</option>
-        <option ref={optType}>Tent</option>
-        <option ref={optType}>Mansion</option>
-          <option ref={optType}>Trailer</option>
+          <option>House</option>
+        <option >Apartment</option>
+        <option >Cabin</option>
+        <option >Tent</option>
+        <option >Mansion</option>
+          <option >Trailer</option>
         </select>
         
      
