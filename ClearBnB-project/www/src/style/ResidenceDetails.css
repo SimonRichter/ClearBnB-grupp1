@@ -145,7 +145,7 @@
   cursor: pointer;
 }
 
-.residenceDetail > .inner > .infoWrapper > .features > .dontExist {
+.residenceDetail > .inner > .infoWrapper > .features > .features-wrapper > .dontExist {
   color: rgb(158, 151, 151);
   text-decoration: line-through;
 }
