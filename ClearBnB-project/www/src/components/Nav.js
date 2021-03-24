@@ -14,19 +14,19 @@ const Nav = () => {
     whoIsOnline();
   }, [])
   
-  const [isActive, setActive] = useState("false");
+  const [isActive, setActive] = useState(false);
 
   const handleToggle = () => {
     setActive(!isActive);
   };
   const closeHamburger = () => {
-    setActive(!isActive);
+    setActive(false);
   }
   return (
-    <div className={isActive ? "nav-bar" : "nav-bar"}>
+    <div className="nav-bar">
       <div className="hamburger-menu-opened">
         <p className="hamburger-menu" onClick={handleToggle}>☰</p>
-        <div className={isActive ? "display-none" : "flex-column"}>
+        <div className={!isActive ? "display-none" : "flex-column"}>
           <Link to="/" onClick={() => closeHamburger()}>Home</Link>
           <Link to="/about" onClick={() => closeHamburger()}>About</Link>
           <Link to="/Residences" onClick={() => closeHamburger()}>Residences</Link>
@@ -42,7 +42,7 @@ const Nav = () => {
       {!whoAmI && <Link to="/login">LOGIN</Link>}
       {!whoAmI && <Link to="/register">REGISTER</Link>} 
       </div>
-      <ProfileMenu className="profileMenu"/>
+      <ProfileMenu closeHamburger={closeHamburger} className="profileMenu"/>
       </div>
   ); 
 }

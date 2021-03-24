@@ -58,6 +58,7 @@ export default function CustomizedMenus(props) {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    props.closeHamburger();
   };
 
   const handleClose = () => {
@@ -75,6 +76,8 @@ export default function CustomizedMenus(props) {
         aria-controls="customized-menu"
         aria-haspopup="true"
         onClick={handleClick}>
+        
+        
         
         <AccountCircleIcon
           color='secondary'
