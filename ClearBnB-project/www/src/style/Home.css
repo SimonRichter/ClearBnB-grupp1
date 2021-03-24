@@ -127,10 +127,6 @@
   padding: 20px 20px 20px 20px;
 }
 
-.typeImgs{
-  height: 270px;
-}
-
 .typeImgs img, .divImgs img{
   margin-left: 20%;
   opacity: 60%;
@@ -273,5 +269,13 @@
 @media (min-width: 1025px) and (max-width: 1285px) {
     .typeImgs img {
     height: 15vh;
+  }
+}
+@media (min-width: 2000px){
+  .startTravel p {
+  font-size: 1.5vh;
+}
+  .homeWrapper .startTravel{
+    margin-bottom: 9vh;
   }
 }

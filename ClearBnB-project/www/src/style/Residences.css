@@ -98,10 +98,6 @@
     font-size: 30px;
     width: 92%;
   }
-  /* .residences > .searchFields  > button{
-    font-size: 30px;
-    width: 95%;
-  } */
   .residences > .searchFields > form{
   grid-template-columns: 1fr;
   }
@@ -116,10 +112,6 @@
     font-size: 30px;
     width: 93%;
   }
-  /* .residences > .searchFields  > button{
-    font-size: 30px;
-    width: 93%;
-  } */
   .residences > .searchFields > form{
   grid-template-columns: 1fr;
   }
@@ -134,8 +126,20 @@
     font-size: 30px;
     width: 92%;
   }
-  /* .residences > .searchFields  > button{
-    font-size: 30px;
+}
+@media (min-width: 2000px){
+  .residences > .searchFields > form > input{
+    font-size: 2vh;
+    width: 90%;
+  }
+  .residences > .searchFields > form > button{
+    font-size: 2vh;
     width: 92%;
-  } */
+  }
+  .residences > button{
+  font-size: 1.5vh;
+  }
+  .residences > .searchFields > p{
+  font-size: 1.5vh;
+}
 }

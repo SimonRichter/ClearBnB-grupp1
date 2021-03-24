@@ -112,9 +112,22 @@
     height: 50vh;
     justify-items: center;
   }
+  .flip-card-front-person .roleTag {
+  font-size: 1rem;
+  }
 }
 @media (min-width: 1025px) {
   .person .flipIcon {
     display: none;
+  }
+}
+@media (min-width: 2000px){
+  .flip-card-front-person .roleTag {
+  font-size: 1rem;
+  }
+}
+@media (min-width: 3000px){
+  .flip-card-front-person .roleTag {
+    font-size: 2rem;
   }
 }

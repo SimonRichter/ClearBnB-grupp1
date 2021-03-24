@@ -115,7 +115,7 @@
 .residenceDetail > .inner > .infoWrapper > .features > .features-wrapper {
   margin-top: 20px;
   width: 100%;
-  max-height: 50vh;
+  max-height: 500vh;
   padding: 20px;
   background: #eee;
   border-radius: 10px;
@@ -236,14 +236,25 @@
   transition: 300ms;
 }
 @media (max-width: 480px) {
+  .inputVisitor {
+  width: 93%;
+  }
+  .residenceDetail .dates {
+    grid-template-columns: 93%;
+  }
   .residenceDetail > .inner > .infoWrapper {
     grid-template-columns: 1fr;
   }
   .residenceDetail > .inner > .infoWrapper > .desc {
-    width: 100%;
+    width: 112%;
   }
   .residenceDetail .book-btn {
-    width: 100%;
+    width: 99%;
+  }
+  .residenceDetail > .inner > .images img {
+  height: 130%;
+  }
+  .residenceDetail > .inner > .infoWrapper > .features > .features-wrapper > p{
     text-align: center;
   }
 }
@@ -254,9 +265,18 @@
   .residenceDetail > .inner > .infoWrapper > .desc {
     width: 100%;
   }
+  .residenceDetail > .inner > .infoWrapper > .desc {
+    width: 108%;
+  }
   .residenceDetail .book-btn {
     width: 100%;
     text-align: center;
+  }
+  .inputVisitor {
+    width: 96%;
+  }
+  .residenceDetail .dates {
+    grid-template-columns: 96%;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -266,8 +286,71 @@
   .residenceDetail > .inner > .infoWrapper > .desc {
     width: 100%;
   }
+  .residenceDetail > .inner > .infoWrapper > .desc {
+    width: 104%;
+  }
   .residenceDetail .book-btn {
     width: 100%;
     text-align: center;
+  }
+  .inputVisitor {
+    width: 97.5%;
+  }
+  .residenceDetail .dates {
+    grid-template-columns: 97.5%;
+  }
+}
+@media (min-width: 2000px){
+  .residenceDetail > .inner > .infoWrapper > .desc > p{
+    font-size: 1.5vh;
+  }
+  .residenceDetail > .inner > .infoWrapper > .features > .features-wrapper{
+      font-size: 1.5vh;
+  }
+  .residenceDetail > .confirm > .btns > button {
+    font-size: 1.5vh;
+  }
+  .startDate,
+  .endDate {
+    font-size: 1.5vh;
+  }
+
+  .inputVisitor {
+    font-size: 1.5vh;
+
+  }
+  .book-btn {
+    font-size: 1.5vh;
+    width: 21%;
+  }
+  .residenceDetail svg {
+    font-size: 3vh;
+  }
+}
+@media (min-width: 3000px){
+ .residenceDetail > .inner > .infoWrapper > .desc > p{
+    font-size: 1.5vh;
+  }
+  .residenceDetail > .inner > .infoWrapper > .features > .features-wrapper{
+      font-size: 1.5vh;
+  }
+  .residenceDetail > .confirm > .btns > button {
+    font-size: 1.5vh;
+  }
+  .startDate,
+  .endDate {
+    font-size: 1.5vh;
+  }
+
+  .inputVisitor {
+    font-size: 1.5vh;
+
+  }
+  .book-btn {
+    font-size: 1.5vh;
+    width: 20.5%;
+  } 
+  .residenceDetail svg {
+    font-size: 3vh;
   }
 }

@@ -13,6 +13,13 @@
   user-select: none;
   z-index: 999;
 }
+/* Removes background color on click. */
+.nav-bar *:focus {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
 
 .hamburger-menu-opened {
   display: none;
@@ -41,8 +48,8 @@
 }
 
 .logoImg {
-  width: 9em;
-  margin: 30px 0 5px 5px;
+  width: 8rem;
+  margin: 30px 0 20px 5px;
 }
 
 .logoImg:hover {
@@ -69,7 +76,7 @@
 .links a {
   text-align: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 15px;
+  font-size: 1rem;
   color: #f50057;
   letter-spacing: 2.2px;
   padding-bottom: 5px;
@@ -106,9 +113,10 @@
     margin-left: 5px;
   }
 
-    .logoImg {
+  .logoImg {
     margin: 0;
-    height: 28.5px;
+    height: 2rem;
+    width:10rem;  
   }
 
   .display-none {
@@ -168,7 +176,8 @@
 
   .logoImg {
     margin: 0;
-    height: 28.5px;
+    height: 2rem;
+    width:10rem;  
   }
   .nav-bar a {
     display: flex;
@@ -238,4 +247,16 @@
   user-select: none;
   z-index: 999;
 }
+}
+@media (min-width: 2000px){
+ .links a {
+  font-size: 1.5rem;
+} 
+.logoImg {
+    height: 2rem;
+    width:10rem;
+  }
+  .profileMenu > button{
+    width: 10vh;
+  }
 }

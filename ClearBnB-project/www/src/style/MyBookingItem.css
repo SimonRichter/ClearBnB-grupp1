@@ -51,6 +51,25 @@
     box-shadow: 5px 10px 18px #888888;
     cursor: pointer;
   }
+  .wrapperInItem > .wrap {
+    display: grid;
+    grid-template-columns: 1fr 60%;
+  }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1300px) {
+  .wrapperInItem > .wrap {
+  display: grid;
+  grid-template-columns: 1fr 59%;
 }
+}
+@media (min-width: 2000px){
+  .wrapperInItem  > .wrap > .info > p{
+    font-size: 1.5vh;
+  }
+  .wrapperInItem > .wrap > img{
+    border-radius: 5px;
+    height: 15vh;
+    width: 15vh;
+  }
+}
+
