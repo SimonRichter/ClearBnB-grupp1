@@ -9,33 +9,25 @@
   grid-gap: 10px;
 }
 
-.myBookings > .wrapper > .future{
-  border-radius: 10px;
-  background: white;
-}
-
-.myBookings > .wrapper > .future > p{
-  margin: 5px;
-  text-align: center;
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  color: #f50057;
-  letter-spacing: 6.2px;
-}
-
+.myBookings > .wrapper > .future, 
 .myBookings > .wrapper > .passed{
   border-radius: 10px;
   background: white;
+  padding: 10px;
 }
 
+.myBookings > .wrapper > .future > p,
 .myBookings > .wrapper > .passed > p{
   margin: 5px;
+  padding: 10px 5px 10px 5px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
   color: #f50057;
   letter-spacing: 6.2px;
+  border-bottom: 1px solid #f5005660;
 }
+
 @media (max-width: 480px) {
 .myBookings > .wrapper{
   grid-template-columns: 100%;
