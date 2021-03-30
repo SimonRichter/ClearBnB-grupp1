@@ -138,7 +138,7 @@ const AddResidence = () => {
       fridge: feature13.current.value === "true" ? true : false,
       dishwasher: feature14.current.value === "true" ? true : false,
     }
-    // const featureObj = await addFeature(features);
+    const featureObj = await addFeature(features);
     
     const residence = {
       title: theTitle,
@@ -151,7 +151,7 @@ const AddResidence = () => {
       startDate: theStartDate,
       endDate: theEndDate,
       imageURLs: images,
-      // featuresId: featureObj._id,
+      featuresId: featureObj._id,
       userId: whoAmI._id,
       residenceLimit: guests,
       bookedDays: null,
@@ -159,10 +159,10 @@ const AddResidence = () => {
       views: null,
       amountOfBookings: null
     }
-    // addResidence(residence)
+    addResidence(residence)
     console.log(residence);
     
-    // history.push('/myRentals');
+    history.push('/myRentals');
   }
 
   const addFeatureHandler = ()=> {isChecked === false ? setIsChecked(true) : setIsChecked(false)}
