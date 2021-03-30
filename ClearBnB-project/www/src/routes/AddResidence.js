@@ -47,7 +47,7 @@ const AddResidence = () => {
   const [isChecked13, setIsChecked13] = useState(false);
   const [isChecked14, setIsChecked14] = useState(false);
 
-  const [optionValue, setOptionValue] = useState('');
+  const [optionValue, setOptionValue] = useState("House");
 
   const adTitle = useRef(null);
   const countryRef = useRef(null);
@@ -138,7 +138,7 @@ const AddResidence = () => {
       fridge: feature13.current.value === "true" ? true : false,
       dishwasher: feature14.current.value === "true" ? true : false,
     }
-    const featureObj = await addFeature(features);
+    // const featureObj = await addFeature(features);
     
     const residence = {
       title: theTitle,
@@ -151,7 +151,7 @@ const AddResidence = () => {
       startDate: theStartDate,
       endDate: theEndDate,
       imageURLs: images,
-      featuresId: featureObj._id,
+      // featuresId: featureObj._id,
       userId: whoAmI._id,
       residenceLimit: guests,
       bookedDays: null,
@@ -159,10 +159,10 @@ const AddResidence = () => {
       views: null,
       amountOfBookings: null
     }
-    addResidence(residence)
- 
+    // addResidence(residence)
+    console.log(residence);
     
-    history.push('/myRentals');
+    // history.push('/myRentals');
   }
 
   const addFeatureHandler = ()=> {isChecked === false ? setIsChecked(true) : setIsChecked(false)}
@@ -244,8 +244,8 @@ const classes = useStyles();
         <hr/>
       <h3>What type of recidense would you like to host?</h3>
         <select value={optionValue} onChange={changeOptionHandler} required className="optionBar" >
-        <option className="optValue" defaultValue="DEFAULT" disabled="disabled" >Type of residence</option>
-          <option>House</option>
+        <option defaultValue="DEFAULT" disabled="disabled" >Type of residence</option>
+        <option>House</option>
         <option >Apartment</option>
         <option >Cabin</option>
         <option >Tent</option>
