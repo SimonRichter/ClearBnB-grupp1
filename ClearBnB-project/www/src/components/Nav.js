@@ -34,7 +34,7 @@ const Nav = () => {
           {!whoAmI && <Link to="/register" onClick={() => closeHamburger()}>Register</Link>}
         </div>
       </div>
-     <Link to="/"><img className="logoImg" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt=""/></Link>
+      <Link to="/" onClick={() => closeHamburger()}><img className="logoImg" src="https://i.postimg.cc/020TTsWC/logo-transparent-2.png" alt=""/></Link>
       <div className="links">
       <Link to="/">HOME</Link>
       <Link to="/about">ABOUT</Link>
