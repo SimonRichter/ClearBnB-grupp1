@@ -4,7 +4,7 @@ import { useRef, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContextProvider'
 
-// const CreateUser = () => {
+
 export default function CreateUser () {
   const history = useHistory();
   const { addUser } = useContext(UserContext);
@@ -31,7 +31,7 @@ export default function CreateUser () {
       setAlreadyAUser(true);
       return;
     }
-   
+
     history.push('/');
     
   }
@@ -70,6 +70,3 @@ export default function CreateUser () {
     );
   
 }
-
-// export default CreateUser(CreateUser)
-// export default CreateUser;

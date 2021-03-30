@@ -18,23 +18,11 @@ const MyBookings = () => {
     const fetched = await fetchBookings();
     const user = await whoIsOnline();
 
-
     const booked = fetched.filter(b => b.userId === user._id);
     if (booked) {
       setMyResidences([...booked]);
-      console.log(myResidences);
     } 
-
-    
-
   }
-
-  // useEffect(() => {
-  //   if (bookings) {
-  //     const booked = bookings.filter(b => b.userId === whoAmI._id);
-  //     setMyResidences([...booked]);
-  //   } 
-  // }, [bookings, whoAmI])
   
 
   useEffect(() => {

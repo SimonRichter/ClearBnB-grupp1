@@ -159,7 +159,6 @@ const ResidenceDetails = () => {
         fetchFeatures().then((r) => {
           setFeatures(...getSpecificFeature(r, residence.featuresId));
         })
-        //setFeatures(...getSpecificFeature(residence.featuresId));
     };    
   }, [residence])
 
@@ -180,7 +179,6 @@ const ResidenceDetails = () => {
     setPicture(img.img);
     setOpen(true);
   }
-
 
 
   return (

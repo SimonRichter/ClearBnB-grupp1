@@ -11,7 +11,6 @@ const Residences = (props) => {
   const [filteredList, setFilteredList] = useState(null);
   const [showSearchFields, setShowSearchFields] = useState(false);
 
-
   const country = useRef('');
   const city = useRef('');
 

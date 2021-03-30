@@ -7,7 +7,7 @@ import ProfileMenu from './ProfileMenu.js'
 
 const Nav = () => {
 
-  const { whoAmI, logOut, whoIsOnline } = useContext(UserContext);
+  const { whoAmI, whoIsOnline } = useContext(UserContext);
   
 
   useEffect(() => {

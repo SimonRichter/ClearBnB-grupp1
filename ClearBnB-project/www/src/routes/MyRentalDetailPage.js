@@ -152,7 +152,6 @@ const classes = useStyles();
 
   const confirmEdit = (ref, objType, setBack) => {
     const newEdit = ref.current.value;
-
     const residenceObj = {
     [objType]: newEdit
     };
