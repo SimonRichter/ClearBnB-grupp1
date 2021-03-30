@@ -101,7 +101,6 @@ const AddResidence = () => {
 
   const changeOptionHandler = (e) => {
     setOptionValue(e.target.value);
-    console.log(e.target.value);
   }
 
 
@@ -160,7 +159,6 @@ const AddResidence = () => {
       amountOfBookings: null
     }
     addResidence(residence)
-    console.log(residence);
     
     history.push('/myRentals');
   }

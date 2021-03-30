@@ -68,7 +68,6 @@ export const UserProvider = (props) => {
     res = await res.json();
     setWhoAmI(null);
     setLogoutToast(true);
-    console.log(res);
     
   }
 

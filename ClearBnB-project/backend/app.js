@@ -28,19 +28,21 @@ app.use(session({
   store: new connectMongo({mongooseConnection: mongoose.connection})
 }));
 
+// get for models
 app.get("/rest/:model", async (req, res) => {
   let model = models[req.params.model]
   let doc = await model.find()
   res.json(doc)
 })
 
+//get specific model by id
 app.get("/rest/:model/:id", async (req, res) => {
   let model = models[req.params.model]
   let doc = await model.findById(req.params.id).populate(['residenceId', 'userId', 'featuresId']).exec();
   res.json(doc);
 })
 
-
+// add a model
 app.post("/rest/:model", async (req, res) => {
   let model = models[req.params.model]
   let doc = new model(req.body);
@@ -48,6 +50,7 @@ app.post("/rest/:model", async (req, res) => {
   res.json(doc);
 })
 
+// Add a user
 app.post('/api/users', async (req, res) => {
   let model = models['users'];
 
@@ -68,6 +71,7 @@ app.post('/api/users', async (req, res) => {
   res.json({success: true});
 });
 
+// delete a residence confirm password
 app.post('/api/confirmDelete', async (req, res) => {
 
   const hash = crypto.createHmac('sha256', secret)
@@ -83,7 +87,7 @@ app.post('/api/confirmDelete', async (req, res) => {
   }
 })
 
-
+// login
 app.post('/api/login', async (req, res) => {
     // note: req.session is unique per user/browser
   if(req.session.user){
@@ -105,7 +109,7 @@ app.post('/api/login', async (req, res) => {
     res.json('');
   }
 });
-
+//logout
 app.delete('/api/login', (req, res) => {
   if(req.session.user){
     delete req.session.user;
@@ -115,7 +119,7 @@ app.delete('/api/login', (req, res) => {
     res.json({error: 'Was not logged in'});
   }
 });
-
+//get the user who is online
 app.get('/api/login', (req, res) => {
   if(req.session.user){
     let user = {...req.session.user};
@@ -126,13 +130,13 @@ app.get('/api/login', (req, res) => {
     res.json('');
   }
 });
-
+// delete a model with id
 app.delete('/rest/:model/:id', async (req, res) => {
   let model = models[req.params.model];
   let doc = await model.findByIdAndDelete(req.params.id);
   res.json(doc);
 });
-
+// update a residence
 app.put('/rest/residences/:id', async (req, res) => {
   let model = models['residences']
 
