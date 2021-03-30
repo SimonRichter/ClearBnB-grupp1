@@ -192,6 +192,13 @@
   cursor: pointer;
   font-size: 17px;
 }
+
+@media (max-width: 420px) {
+  .statistics{
+  min-height: 90vh;
+}
+}
+
 @media (max-width: 480px) {
  .myRentalDetailPage > .inner {
   grid-template-columns: 1fr;
