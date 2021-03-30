@@ -63,7 +63,7 @@
 
 .addResWrapper .inputTitle {
   outline: none;
-  width: 300px;
+  width: 40vh;
   font-size: 17px;
   border: none;
   border-bottom: 1px solid #006199;
@@ -399,10 +399,10 @@
   }
 }
 @media (min-width: 481px) and (max-width: 767px) {
- .addResWrapper .checkbox {
+  .addResWrapper .checkbox {
     display: grid;
     row-gap: 20px;
-  } 
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .addResWrapper .checkbox {
